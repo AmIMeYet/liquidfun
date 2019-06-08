@@ -22,8 +22,8 @@ option(BOX2D_INSTALL "Install Box2D libs, includes, and CMake scripts" ${BOX2D_I
 option(BOX2D_INSTALL_DOC "Install Box2D documentation" OFF)
 option(BOX2D_BUILD_SHARED "Build Box2D shared libraries" OFF)
 option(BOX2D_BUILD_STATIC "Build Box2D static libraries" ON)
-option(BOX2D_BUILD_EXAMPLES "Build Box2D examples" ON)
-option(BOX2D_BUILD_UNITTESTS "Build Box2D Unit Tests" ON)
+option(BOX2D_BUILD_EXAMPLES "Build Box2D examples" OFF)
+option(BOX2D_BUILD_UNITTESTS "Build Box2D Unit Tests" OFF)
 # NOTE: Code coverage only works on Linux & OSX.
 option(BOX2D_CODE_COVERAGE "Enable the code coverage build option." OFF)
 
@@ -37,10 +37,23 @@ if(CMAKE_CXX_COMPILER MATCHES ".*clang")
   # set_target_properties Can not find target to add properties to: Threads::Threads
   find_package(Threads)
 endif()
-if (WIN32)
+#if (WIN32)
+#  find_package(Threads)
+#endif()
+
+if(${CMAKE_VERSION} VERSION_GREATER "3.11.0") 
+  cmake_policy(SET CMP0075 OLD)
+  find_package(Fontconfig)
+endif()
+
+if(${CMAKE_VERSION} VERSION_GREATER "3.0.0") 
+  #target_link_libraries(liquidfun Freetype::Freetype)
+  find_package(Freetype)
+  find_package(X11)
   find_package(Threads)
 endif()
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 add_definitions( -DLIQUIDFUN_EXTERNAL_LANGUAGE_API=1 )
 
@@ -75,7 +88,7 @@ if(MSVC)
 elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX OR
        CMAKE_COMPILER_IS_CLANGXX)
   # Set the maximum warning level for gcc.
-  set(C_FLAGS_WARNINGS "-Wall -Werror -Wno-long-long -Wno-variadic-macros")
+  set(C_FLAGS_WARNINGS "-Wall -Wno-long-long -Wno-variadic-macros")
 endif()
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${C_FLAGS_WARNINGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${C_FLAGS_WARNINGS}")

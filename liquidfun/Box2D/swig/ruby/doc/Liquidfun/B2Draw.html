@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Liquidfun::B2Draw</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../liquidfun_wrap_cxx.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="liquidfun_wrap.cxx">liquidfun_wrap.cxx</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-append_flags">#append_flags</a></li>
+					
+					<li><a href="#method-i-clear_flags">#clear_flags</a></li>
+					
+					<li><a href="#method-i-draw_circle">#draw_circle</a></li>
+					
+					<li><a href="#method-i-draw_particles">#draw_particles</a></li>
+					
+					<li><a href="#method-i-draw_polygon">#draw_polygon</a></li>
+					
+					<li><a href="#method-i-draw_segment">#draw_segment</a></li>
+					
+					<li><a href="#method-i-draw_solid_circle">#draw_solid_circle</a></li>
+					
+					<li><a href="#method-i-draw_solid_polygon">#draw_solid_polygon</a></li>
+					
+					<li><a href="#method-i-draw_transform">#draw_transform</a></li>
+					
+					<li><a href="#method-i-get_flags">#get_flags</a></li>
+					
+					<li><a href="#method-i-set_flags">#set_flags</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Liquidfun.html">Liquidfun</a></li>
+				
+					<li><a href="../Liquidfun/B2Body.html">Liquidfun::B2Body</a></li>
+				
+					<li><a href="../Liquidfun/B2BodyDef.html">Liquidfun::B2BodyDef</a></li>
+				
+					<li><a href="../Liquidfun/B2CircleShape.html">Liquidfun::B2CircleShape</a></li>
+				
+					<li><a href="../Liquidfun/B2Color.html">Liquidfun::B2Color</a></li>
+				
+					<li><a href="../Liquidfun/B2Draw.html">Liquidfun::B2Draw</a></li>
+				
+					<li><a href="../Liquidfun/B2EdgeShape.html">Liquidfun::B2EdgeShape</a></li>
+				
+					<li><a href="../Liquidfun/B2Filter.html">Liquidfun::B2Filter</a></li>
+				
+					<li><a href="../Liquidfun/B2Fixture.html">Liquidfun::B2Fixture</a></li>
+				
+					<li><a href="../Liquidfun/B2FixtureDef.html">Liquidfun::B2FixtureDef</a></li>
+				
+					<li><a href="../Liquidfun/B2MassData.html">Liquidfun::B2MassData</a></li>
+				
+					<li><a href="../Liquidfun/B2PolygonShape.html">Liquidfun::B2PolygonShape</a></li>
+				
+					<li><a href="../Liquidfun/B2QueryCallback.html">Liquidfun::B2QueryCallback</a></li>
+				
+					<li><a href="../Liquidfun/B2Shape.html">Liquidfun::B2Shape</a></li>
+				
+					<li><a href="../Liquidfun/B2Transform.html">Liquidfun::B2Transform</a></li>
+				
+					<li><a href="../Liquidfun/B2Vec2.html">Liquidfun::B2Vec2</a></li>
+				
+					<li><a href="../Liquidfun/B2Version.html">Liquidfun::B2Version</a></li>
+				
+					<li><a href="../Liquidfun/B2World.html">Liquidfun::B2World</a></li>
+				
+					<li><a href="../SWIG.html">SWIG</a></li>
+				
+					<li><a href="../SWIG/Pointer.html">SWIG::Pointer</a></li>
+				
+					<li><a href="../NullReferenceError.html">NullReferenceError</a></li>
+				
+					<li><a href="../ObjectPreviouslyDeleted.html">ObjectPreviouslyDeleted</a></li>
+				
+					<li><a href="../swig_runtime_data.html">swig_runtime_data</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Liquidfun::B2Draw</h1>
+
+		<div id="description">
+			<p>
+Proxy of C++ <a href="B2Draw.html">Liquidfun::B2Draw</a> class
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">new</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+Class constructor.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_new_B2Draw(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="append-flags-method" class="method-detail ">
+				<a name="method-i-append_flags"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">append_flags(uint32 flags)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="append-flags-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_append_flags(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="clear-flags-method" class="method-detail ">
+				<a name="method-i-clear_flags"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">clear_flags(uint32 flags)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="clear-flags-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_clear_flags(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="draw-circle-method" class="method-detail ">
+				<a name="method-i-draw_circle"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">draw_circle(B2Vec2 center, float32 radius, B2Color color)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="draw-circle-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_draw_circle(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="draw-particles-method" class="method-detail ">
+				<a name="method-i-draw_particles"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">draw_particles(B2Vec2 centers, float32 radius, b2ParticleColor const * colors, int32 count)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="draw-particles-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_draw_particles(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="draw-polygon-method" class="method-detail ">
+				<a name="method-i-draw_polygon"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">draw_polygon(B2Vec2 vertices, int32 vertexCount, B2Color color)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="draw-polygon-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_draw_polygon(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="draw-segment-method" class="method-detail ">
+				<a name="method-i-draw_segment"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">draw_segment(B2Vec2 p1, B2Vec2 p2, B2Color color)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="draw-segment-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_draw_segment(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="draw-solid-circle-method" class="method-detail ">
+				<a name="method-i-draw_solid_circle"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">draw_solid_circle(B2Vec2 center, float32 radius, B2Vec2 axis, B2Color color)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="draw-solid-circle-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_draw_solid_circle(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="draw-solid-polygon-method" class="method-detail ">
+				<a name="method-i-draw_solid_polygon"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">draw_solid_polygon(B2Vec2 vertices, int32 vertexCount, B2Color color)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="draw-solid-polygon-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_draw_solid_polygon(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="draw-transform-method" class="method-detail ">
+				<a name="method-i-draw_transform"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">draw_transform(B2Transform xf)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="draw-transform-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_draw_transform(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-flags-method" class="method-detail ">
+				<a name="method-i-get_flags"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">get_flags &rarr; uint32</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-flags-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_get_flags(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-flags-method" class="method-detail ">
+				<a name="method-i-set_flags"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-callseq">set_flags(uint32 flags)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+  
+</pre>
+<p>
+An instance method.
+</p>
+<pre>
+  </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="set-flags-source">
+<pre>
+SWIGINTERN VALUE
+_wrap_B2Draw_set_flags(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

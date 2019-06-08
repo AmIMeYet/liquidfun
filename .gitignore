@@ -1,0 +1,9 @@
+.DS_Store
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.keystore
+**/.vscode/**
+**/.idea/**

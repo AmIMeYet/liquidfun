@@ -280,6 +280,8 @@ public:
 
 	/// Set gravity with direct floats.
 	void SetGravity(float32 gravityX, float32 gravityY);
+
+	b2Draw* GetDebugDraw();
 #endif // LIQUIDFUN_EXTERNAL_LANGUAGE_API
 
 private:
@@ -454,6 +456,11 @@ inline b2World::b2World(float32 gravityX, float32 gravityY)
 inline void b2World::SetGravity(float32 gravityX, float32 gravityY)
 {
 	SetGravity(b2Vec2(gravityX, gravityY));
+}
+
+inline b2Draw* b2World::GetDebugDraw()
+{
+	return m_debugDraw;
 }
 #endif // LIQUIDFUN_EXTERNAL_LANGUAGE_API
 

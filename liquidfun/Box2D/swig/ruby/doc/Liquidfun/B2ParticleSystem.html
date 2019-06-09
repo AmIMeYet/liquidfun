@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Liquidfun::B2ParticleSystem - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-create_particle">#create_particle</a>
+    
+    <li ><a href="#method-i-create_particle_group">#create_particle_group</a>
+    
+    <li ><a href="#method-i-destroy_particles_in_shape">#destroy_particles_in_shape</a>
+    
+    <li ><a href="#method-i-get_particle_count">#get_particle_count</a>
+    
+    <li ><a href="#method-i-get_particle_group_count">#get_particle_group_count</a>
+    
+    <li ><a href="#method-i-get_particle_group_list">#get_particle_group_list</a>
+    
+    <li ><a href="#method-i-get_particle_position_x">#get_particle_position_x</a>
+    
+    <li ><a href="#method-i-get_particle_position_y">#get_particle_position_y</a>
+    
+    <li ><a href="#method-i-join_particle_groups">#join_particle_groups</a>
+    
+    <li ><a href="#method-i-query_shape_aabb">#query_shape_aabb</a>
+    
+    <li ><a href="#method-i-set_damping">#set_damping</a>
+    
+    <li ><a href="#method-i-set_max_particle_count">#set_max_particle_count</a>
+    
+    <li ><a href="#method-i-set_particle_velocity">#set_particle_velocity</a>
+    
+    <li ><a href="#method-i-set_radius">#set_radius</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Liquidfun::B2ParticleSystem">
+  <h1 id="class-Liquidfun::B2ParticleSystem" class="class">
+    class Liquidfun::B2ParticleSystem
+  </h1>
+
+  <section class="description">
+    
+<p>Proxy of C++ <a href="B2ParticleSystem.html"><code>Liquidfun::B2ParticleSystem</code></a> class</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create_particle" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            create_particle(B2ParticleDef C_def) &rarr; int32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_particle-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_create_particle(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2ParticleDef *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem *&quot;,&quot;CreateParticle&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2ParticleDef,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleDef const &amp;&quot;,&quot;CreateParticle&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2ParticleDef const &amp;&quot;,&quot;CreateParticle&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2ParticleDef * &gt;(argp2);
+  {
+    try {
+      result = (int32)(arg1)-&gt;CreateParticle((b2ParticleDef const &amp;)*arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast&lt; int &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_particle_group" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            create_particle_group(B2ParticleGroupDef C_def) &rarr; B2ParticleGroup
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_particle_group-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_create_particle_group(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2ParticleGroupDef *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  b2ParticleGroup *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem *&quot;,&quot;CreateParticleGroup&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2ParticleGroupDef,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleGroupDef const &amp;&quot;,&quot;CreateParticleGroup&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2ParticleGroupDef const &amp;&quot;,&quot;CreateParticleGroup&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2ParticleGroupDef * &gt;(argp2);
+  {
+    try {
+      result = (b2ParticleGroup *)(arg1)-&gt;CreateParticleGroup((b2ParticleGroupDef const &amp;)*arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_particles_in_shape" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            destroy_particles_in_shape(B2Shape shape, B2Transform xf)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_particles_in_shape-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_destroy_particles_in_shape(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2Shape *arg2 = 0 ;
+  b2Transform *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  
+  if ((argc &lt; 2) || (argc &gt; 2)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 2)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem *&quot;,&quot;DestroyParticlesInShape&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Shape,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Shape const &amp;&quot;,&quot;DestroyParticlesInShape&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Shape const &amp;&quot;,&quot;DestroyParticlesInShape&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2Shape * &gt;(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &amp;argp3, SWIGTYPE_p_b2Transform,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Transform const &amp;&quot;,&quot;DestroyParticlesInShape&quot;, 3, argv[1] )); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Transform const &amp;&quot;,&quot;DestroyParticlesInShape&quot;, 3, argv[1])); 
+  }
+  arg3 = reinterpret_cast&lt; b2Transform * &gt;(argp3);
+  {
+    try {
+      (arg1)-&gt;DestroyParticlesInShape((b2Shape const &amp;)*arg2,(b2Transform const &amp;)*arg3);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_particle_count" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_particle_count &rarr; int32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_particle_count-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_count(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem const *&quot;,&quot;GetParticleCount&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  {
+    try {
+      result = (int32)((b2ParticleSystem const *)arg1)-&gt;GetParticleCount();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast&lt; int &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_particle_group_count" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_particle_group_count &rarr; int32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_particle_group_count-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_group_count(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem const *&quot;,&quot;GetParticleGroupCount&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  {
+    try {
+      result = (int32)((b2ParticleSystem const *)arg1)-&gt;GetParticleGroupCount();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast&lt; int &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_particle_group_list" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_particle_group_list &rarr; B2ParticleGroup
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_particle_group_list-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_group_list(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2ParticleGroup *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem const *&quot;,&quot;GetParticleGroupList&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  {
+    try {
+      result = (b2ParticleGroup *)((b2ParticleSystem const *)arg1)-&gt;GetParticleGroupList();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_particle_position_x" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_particle_position_x(int32 index) &rarr; float
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_particle_position_x-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_position_x(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  float result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem const *&quot;,&quot;GetParticlePositionX&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;int32&quot;,&quot;GetParticlePositionX&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; int32 &gt;(val2);
+  {
+    try {
+      result = (float)((b2ParticleSystem const *)arg1)-&gt;GetParticlePositionX(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_particle_position_y" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_particle_position_y(int32 index) &rarr; float
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_particle_position_y-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_position_y(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  float result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem const *&quot;,&quot;GetParticlePositionY&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;int32&quot;,&quot;GetParticlePositionY&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; int32 &gt;(val2);
+  {
+    try {
+      result = (float)((b2ParticleSystem const *)arg1)-&gt;GetParticlePositionY(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-join_particle_groups" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            join_particle_groups(B2ParticleGroup groupA, B2ParticleGroup groupB)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="join_particle_groups-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_join_particle_groups(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2ParticleGroup *arg2 = (b2ParticleGroup *) 0 ;
+  b2ParticleGroup *arg3 = (b2ParticleGroup *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  
+  if ((argc &lt; 2) || (argc &gt; 2)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 2)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem *&quot;,&quot;JoinParticleGroups&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleGroup *&quot;,&quot;JoinParticleGroups&quot;, 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast&lt; b2ParticleGroup * &gt;(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &amp;argp3,SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleGroup *&quot;,&quot;JoinParticleGroups&quot;, 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast&lt; b2ParticleGroup * &gt;(argp3);
+  {
+    try {
+      (arg1)-&gt;JoinParticleGroups(arg2,arg3);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-query_shape_aabb" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            query_shape_aabb(B2QueryCallback callback, B2Shape shape, B2Transform xf)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="query_shape_aabb-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_query_shape_aabb(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2QueryCallback *arg2 = (b2QueryCallback *) 0 ;
+  b2Shape *arg3 = 0 ;
+  b2Transform *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  
+  if ((argc &lt; 3) || (argc &gt; 3)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 3)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem const *&quot;,&quot;QueryShapeAABB&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2QueryCallback, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2QueryCallback *&quot;,&quot;QueryShapeAABB&quot;, 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast&lt; b2QueryCallback * &gt;(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &amp;argp3, SWIGTYPE_p_b2Shape,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Shape const &amp;&quot;,&quot;QueryShapeAABB&quot;, 3, argv[1] )); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Shape const &amp;&quot;,&quot;QueryShapeAABB&quot;, 3, argv[1])); 
+  }
+  arg3 = reinterpret_cast&lt; b2Shape * &gt;(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &amp;argp4, SWIGTYPE_p_b2Transform,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Transform const &amp;&quot;,&quot;QueryShapeAABB&quot;, 4, argv[2] )); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Transform const &amp;&quot;,&quot;QueryShapeAABB&quot;, 4, argv[2])); 
+  }
+  arg4 = reinterpret_cast&lt; b2Transform * &gt;(argp4);
+  {
+    try {
+      ((b2ParticleSystem const *)arg1)-&gt;QueryShapeAABB(arg2,(b2Shape const &amp;)*arg3,(b2Transform const &amp;)*arg4);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_damping" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_damping(float32 damping)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_damping-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_set_damping(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem *&quot;,&quot;SetDamping&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetDamping&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetDamping(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_max_particle_count" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_max_particle_count(int32 count)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_max_particle_count-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_set_max_particle_count(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem *&quot;,&quot;SetMaxParticleCount&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;int32&quot;,&quot;SetMaxParticleCount&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; int32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetMaxParticleCount(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_particle_velocity" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_particle_velocity(int32 index, float32 vx, float32 vy)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_particle_velocity-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_set_particle_velocity(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  int32 arg2 ;
+  float32 arg3 ;
+  float32 arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  float val4 ;
+  int ecode4 = 0 ;
+  
+  if ((argc &lt; 3) || (argc &gt; 3)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 3)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem *&quot;,&quot;SetParticleVelocity&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;int32&quot;,&quot;SetParticleVelocity&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; int32 &gt;(val2);
+  ecode3 = SWIG_AsVal_float(argv[1], &amp;val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetParticleVelocity&quot;, 3, argv[1] ));
+  } 
+  arg3 = static_cast&lt; float32 &gt;(val3);
+  ecode4 = SWIG_AsVal_float(argv[2], &amp;val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetParticleVelocity&quot;, 4, argv[2] ));
+  } 
+  arg4 = static_cast&lt; float32 &gt;(val4);
+  {
+    try {
+      (arg1)-&gt;SetParticleVelocity(arg2,arg3,arg4);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_radius" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_radius(float32 radius)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_radius-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2ParticleSystem_set_radius(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2ParticleSystem *&quot;,&quot;SetRadius&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2ParticleSystem * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetRadius&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetRadius(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

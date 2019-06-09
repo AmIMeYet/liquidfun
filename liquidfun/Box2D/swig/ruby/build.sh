@@ -1,4 +1,4 @@
-swig -c++ -ruby -autorename liquidfun.swig
+swig4.0.1 -c++ -ruby -autorename liquidfun.swig
 ruby extconf.rb
-make
+make V=1
 rdoc -E cxx=c -f html liquidfun_wrap.cxx

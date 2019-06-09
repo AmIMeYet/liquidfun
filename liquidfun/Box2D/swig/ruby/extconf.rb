@@ -16,6 +16,6 @@ $DLDFLAGS << " -L$(srcdir)/../../Box2D/Debug/ -lliquidfun "
 # $CXXFLAGS << " -L$(srcdir)/../../Box2D/Release/libliquidfun -lGR -lm -Wl,-rpath,$(srcdir)/../../Box2D/Release/libliquidfun "
 # $CXXFLAGS += " -I/usr/local/gr/include -L/usr/local/gr/lib -lGR -lm -Wl,-rpath,/usr/local/gr/lib " ??
 
-$CXXFLAGS += " -g "
+$CXXFLAGS += " -g -O0"
 
 create_makefile('liquidfun')

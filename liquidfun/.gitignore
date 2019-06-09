@@ -18,6 +18,7 @@ Box2D/*.pc
 Box2D/*.rc
 Box2D/Box2D.opensdf
 Box2D/Box2D.sdf
+Box2D/Box2D.cbp
 Box2D/Box2D.xcodeproj/**
 Box2D/Box2D/Makefile
 Box2D/Box2D/Makefile_*

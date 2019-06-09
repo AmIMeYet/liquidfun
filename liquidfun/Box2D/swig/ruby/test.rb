@@ -59,6 +59,23 @@ fixtureDef.friction = 0.3
 # Add the shape to the body.
 body.create_fixture(fixtureDef)
 
+## Liquifun Particle Module
+
+particleSystemDef = Liquidfun::B2ParticleSystemDef.new
+particleSystem = world.create_particle_system(particleSystemDef)
+
+particleDef = Liquidfun::B2ParticleDef.new
+# particleDef.flags = b2_elasticParticle
+particleDef.set_color(0, 0, 255, 255)#.color = Liquidfun::B2ParticleColor.new(0, 0, 255, 255) # RGBA
+
+10.times do |i|
+    particleDef.position = Liquidfun::B2Vec2.new(i, 0)
+    tempIndex = particleSystem.create_particle(particleDef)
+    puts tempIndex
+end
+
+##
+
 # Prepare for simulation. Typically we use a time step of 1/60 of a
 # second (60Hz) and 10 iterations. This provides a high quality simulation
 # in most game scenarios.
@@ -165,7 +182,7 @@ class GosuDraw < Liquidfun::B2Draw
 
         vertices.each_with_index do |p2, i|
             p1 = vertices[i-1]
-            Gosu.draw_line(SCALE * p1.x, SCALE * p1.y, c, @scale * p2.x, @scale * p2.y, c)
+            Gosu.draw_line(@scale * p1.x, @scale * p1.y, c, @scale * p2.x, @scale * p2.y, c)
         end
 
         # vertices.each_cons(2) do |p1, p2|
@@ -207,9 +224,25 @@ class GosuDraw < Liquidfun::B2Draw
     # end
 
 	# # Draw a particle array
-    # def draw_particles(centers, radius, colors, count)
-    #     puts "draw_particles"
-    # end
+    def draw_particles(centers, radius, colors)
+        # centers.each_cons(2) do |x, y|
+        centers.each_with_index do |p, i|
+            color = colors[i]
+            c = Gosu::Color.new(255, 255.0 * color.r, 255.0 * color.g, 255.0 * color.b)
+            # c = Gosu::Color::WHITE
+            # vertices = [TestVec.new(10, 10), TestVec.new(20, 20), TestVec.new(30, 30), TestVec.new(40, 40)]
+    
+            Gosu.draw_quad(
+                @scale * p.x, @scale * (p.y-radius), c,
+                @scale * (p.x + radius), @scale * p.y, c,
+                @scale * p.x, @scale * (p.y+radius), c,
+                @scale * (p.x - radius), @scale * p.y, c)
+            # vertices.each_with_index do |p2, i|
+            #     p1 = vertices[i-1]
+            #     Gosu.draw_line(SCALE * p1.x, SCALE * p1.y, c, @scale * p2.x, @scale * p2.y, c)
+            # end
+        end
+    end
 
 	# # Draw a line segment.
     # def draw_segment(p1, p2, color)
@@ -231,7 +264,7 @@ class LiquidfunTest < Gosu::Window
         @body = body
 
         gosuDraw = GosuDraw.new(WINDOW_WIDTH, WINDOW_HEIGHT)
-        gosuDraw.set_flags(Liquidfun::B2Draw::SHAPE_BIT)
+        gosuDraw.set_flags(Liquidfun::B2Draw::SHAPE_BIT | Liquidfun::B2Draw::PARTICLE_BIT)
         @world.set_debug_draw(gosuDraw)
     end
 

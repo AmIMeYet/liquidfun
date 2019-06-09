@@ -27,7 +27,7 @@
 %ignore b2ParticleDef::userData;
 
 /// Ignore methods that generate new objects
-%ignore b2ParticleColor::GetColor;
+%ignore b2ParticleColor::GetColor; // TODO check?
 
 // SWIG will emit warning 401 about b2TypedIntrusiveListNode<b2ParticleHandle>
 // even when we %ignore b2ParticleHandle. Filter the warning.

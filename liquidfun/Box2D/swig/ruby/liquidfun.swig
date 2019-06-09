@@ -67,6 +67,7 @@ typedef unsigned char uint8;
 %ignore operator-=;
 %ignore operator-;
 
+%ignore operator!=;
 
 // Exception wrapping
 %exception {
@@ -98,6 +99,6 @@ typedef unsigned char uint8;
 %include "Dynamics/b2World.swig"
 %include "Dynamics/b2WorldCallbacks.swig"
 
-// %include "Particle/b2Particle.swig"
-// %include "Particle/b2ParticleGroup.swig"
-// %include "Particle/b2ParticleSystem.swig"
+%include "Particle/b2Particle.swig"
+%include "Particle/b2ParticleGroup.swig"
+%include "Particle/b2ParticleSystem.swig"

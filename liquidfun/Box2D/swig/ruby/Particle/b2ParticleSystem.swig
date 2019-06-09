@@ -28,13 +28,11 @@ enum b2ExceptionType {
 };
 
 struct b2Exception {
-    const char* jniType;
+    const int swigType;
     const char* errorMsg;
 } g_liquidfunExceptions[NUM_ERRORS] = {
-    {"java/lang/IllegalArgumentException",
-         "Supplied buffer is too small"},
-    {"java/lang/ArrayIndexOutOfBoundsException",
-        "Particle index is out of bounds. Check startIndex and numParticles."},
+    {SWIG_OverflowError, "Supplied buffer is too small"},
+    {SWIG_IndexError, "Particle index is out of bounds. Check startIndex and numParticles."},
 };
 %}
 
@@ -43,33 +41,32 @@ struct b2Exception {
 //     (void* outBuf, int size)
 // to different Java intermediate ByteBuffer types.
 // See the Get*Buffer() functions for examples.
-%typemap(jni) (void* outBuf, int size) "jobject"
-%typemap(jtype) (void* outBuf, int size) "java.nio.ByteBuffer"
-%typemap(jstype) (void* outBuf, int size) "java.nio.ByteBuffer"
-%typemap(javain) (void* outBuf, int size) "$javainput"
-%typemap(javaout) (void* outBuf, int size) {
-    return $jnicall;
-}
+// %typemap(jni) (void* outBuf, int size) "jobject"
+// %typemap(jtype) (void* outBuf, int size) "java.nio.ByteBuffer"
+// %typemap(jstype) (void* outBuf, int size) "java.nio.ByteBuffer"
+// %typemap(javain) (void* outBuf, int size) "$javainput"
+// %typemap(javaout) (void* outBuf, int size) {
+//     return $jnicall;
+// }
 // This extracts the Java ByteBuffer address from C++
 %typemap(in) (void* outBuf, int size) {
     $1 = jenv->GetDirectBufferAddress($input);
     $2 = jenv->GetDirectBufferCapacity($input);
     if (($1 == NULL) && ($2 != 0)) {
-        SWIG_JavaThrowException(
-                jenv,
-                SWIG_JavaRuntimeException,
-                "Unable to get address of java.nio.ByteBuffer. "
-                "Is the ByteBuffer initialized?");
+        SWIG_exception(SWIG_RuntimeError, "Unable to determine output buffer correctly");
     }
 }
 // This checks the output of the C++ functions for exceptions
 %typemap(argout) (void* outBuf, int size) {
     if($result != NO_EXCEPTIONS) {
-        jclass clazz = jenv->FindClass(
-                g_liquidfunExceptions[$result].jniType);
-        jenv->ThrowNew(clazz, g_liquidfunExceptions[$result].errorMsg);
+        SWIG_exception(g_liquidfunExceptions[$result].swigType, g_liquidfunExceptions[$result].errorMsg);\
     }
 }
+
+// TODO Undo
+%ignore CopyPositionBuffer;
+%ignore CopyColorBuffer;
+%ignore CopyWeightBuffer;
 
 // Disallow constructors and destructors; only made through b2World
 %nodefaultctor b2ParticleSystem;

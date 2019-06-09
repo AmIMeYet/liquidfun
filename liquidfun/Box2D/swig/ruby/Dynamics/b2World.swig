@@ -30,15 +30,16 @@ class b2Body;
 %header %{
     static void mark_b2World(void* ptr) {
         b2World* world = (b2World*) ptr;
-        /* Loop over each object and tell the garbage collector  that we are holding a reference to them. */ 
-        // int count = world->GetBodyCount();
-        b2Body* bodyList = world->GetBodyList();
-        for (b2Body* b = bodyList; b; b = b->GetNext())
-        {
-            VALUE object = SWIG_RubyInstanceFor(b);
-            if (object != Qnil) {
-                rb_gc_mark(object);
-            } 
+        /* Loop over each object and tell the garbage collector  that we are holding a reference to them. */
+        if (world->GetBodyCount() > 0) {
+            b2Body* bodyList = world->GetBodyList();
+            for (b2Body* b = bodyList; b; b = b->GetNext())
+            {
+                VALUE object = SWIG_RubyInstanceFor(b);
+                if (object != Qnil) {
+                    rb_gc_mark(object);
+                } 
+            }
         }
 
         b2Draw* debugDraw = world->GetDebugDraw();
@@ -48,15 +49,21 @@ class b2Body;
                 rb_gc_mark(object);
             } 
         }
-        // for(int i = 0; i < count; ++i) {
-        //     Body* animal = world->get_animal(i);
-        //     VALUE object = SWIG_RubyInstanceFor(animal);
-        //     if (object != Qnil) {
-        //         rb_gc_mark(object);
-        //     } 
-        // }
+
+        b2ParticleSystem* particleSystemList = world->GetParticleSystemList();
+        if (particleSystemList) {
+            for (b2ParticleSystem* ps = particleSystemList; ps; ps = ps->GetNext())
+            {
+                VALUE object = SWIG_RubyInstanceFor(ps);
+                if (object != Qnil) {
+                    rb_gc_mark(object);
+                } 
+            }
+        }
     }
 %}
+
+// %apply SWIGTYPE *DISOWN {const b2ParticleSystemDef* def};
 
 /// b2World class
 class b2World {
@@ -85,3 +92,6 @@ public:
 
     void SetGravity(float32 gravityX, float32 gravityY);
 };
+
+
+// %clear const b2ParticleSystemDef* def;

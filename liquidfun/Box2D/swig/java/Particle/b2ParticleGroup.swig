@@ -61,8 +61,8 @@ public:
     int32 GetBufferIndex() const;
     int32 GetGroupFlags() const;
 };
-%clearnodefaultdtor; // Re-enable default constructors
-%clearnodefaultctor; // Re-enable default destructors
+%clearnodefaultdtor; // Re-enable default destructors
+%clearnodefaultctor; // Re-enable default constructors
 
 /// Ignore member variables so SWIG doesn't auto-generate get/setters
 %ignore b2ParticleGroupDef::userData;

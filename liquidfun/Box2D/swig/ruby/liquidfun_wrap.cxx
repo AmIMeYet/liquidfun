@@ -2211,30 +2211,35 @@ namespace Swig {
 #define SWIGTYPE_p_b2JointEdge swig_types[11]
 #define SWIGTYPE_p_b2MassData swig_types[12]
 #define SWIGTYPE_p_b2ParticleColor swig_types[13]
-#define SWIGTYPE_p_b2ParticleSystem swig_types[14]
-#define SWIGTYPE_p_b2ParticleSystemDef swig_types[15]
-#define SWIGTYPE_p_b2PolygonShape swig_types[16]
-#define SWIGTYPE_p_b2QueryCallback swig_types[17]
-#define SWIGTYPE_p_b2RayCastInput swig_types[18]
-#define SWIGTYPE_p_b2RayCastOutput swig_types[19]
-#define SWIGTYPE_p_b2Shape swig_types[20]
-#define SWIGTYPE_p_b2Transform swig_types[21]
-#define SWIGTYPE_p_b2Vec2 swig_types[22]
-#define SWIGTYPE_p_b2Version swig_types[23]
-#define SWIGTYPE_p_b2World swig_types[24]
-#define SWIGTYPE_p_char swig_types[25]
-#define SWIGTYPE_p_double swig_types[26]
-#define SWIGTYPE_p_float swig_types[27]
-#define SWIGTYPE_p_int swig_types[28]
-#define SWIGTYPE_p_long_long swig_types[29]
-#define SWIGTYPE_p_short swig_types[30]
-#define SWIGTYPE_p_signed_char swig_types[31]
-#define SWIGTYPE_p_unsigned_char swig_types[32]
-#define SWIGTYPE_p_unsigned_int swig_types[33]
-#define SWIGTYPE_p_unsigned_long_long swig_types[34]
-#define SWIGTYPE_p_unsigned_short swig_types[35]
-static swig_type_info *swig_types[37];
-static swig_module_info swig_module = {swig_types, 36, 0, 0, 0, 0};
+#define SWIGTYPE_p_b2ParticleDef swig_types[14]
+#define SWIGTYPE_p_b2ParticleGroup swig_types[15]
+#define SWIGTYPE_p_b2ParticleGroupDef swig_types[16]
+#define SWIGTYPE_p_b2ParticlePair swig_types[17]
+#define SWIGTYPE_p_b2ParticleSystem swig_types[18]
+#define SWIGTYPE_p_b2ParticleSystemDef swig_types[19]
+#define SWIGTYPE_p_b2ParticleTriad swig_types[20]
+#define SWIGTYPE_p_b2PolygonShape swig_types[21]
+#define SWIGTYPE_p_b2QueryCallback swig_types[22]
+#define SWIGTYPE_p_b2RayCastInput swig_types[23]
+#define SWIGTYPE_p_b2RayCastOutput swig_types[24]
+#define SWIGTYPE_p_b2Shape swig_types[25]
+#define SWIGTYPE_p_b2Transform swig_types[26]
+#define SWIGTYPE_p_b2Vec2 swig_types[27]
+#define SWIGTYPE_p_b2Version swig_types[28]
+#define SWIGTYPE_p_b2World swig_types[29]
+#define SWIGTYPE_p_char swig_types[30]
+#define SWIGTYPE_p_double swig_types[31]
+#define SWIGTYPE_p_float swig_types[32]
+#define SWIGTYPE_p_int swig_types[33]
+#define SWIGTYPE_p_long_long swig_types[34]
+#define SWIGTYPE_p_short swig_types[35]
+#define SWIGTYPE_p_signed_char swig_types[36]
+#define SWIGTYPE_p_unsigned_char swig_types[37]
+#define SWIGTYPE_p_unsigned_int swig_types[38]
+#define SWIGTYPE_p_unsigned_long_long swig_types[39]
+#define SWIGTYPE_p_unsigned_short swig_types[40]
+static swig_type_info *swig_types[42];
+static swig_module_info swig_module = {swig_types, 41, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2577,16 +2582,17 @@ SWIG_From_short  (short value)
 
     static void mark_b2World(void* ptr) {
         b2World* world = (b2World*) ptr;
-        /* Loop over each object and tell the garbage collector  that we are holding a reference to them. */ 
-        // int count = world->GetBodyCount();
-        // b2Body* bodyList = world->GetBodyList();
-        // for (b2Body* b = bodyList; b; b = b->GetNext())
-        // {
-        //     VALUE object = SWIG_RubyInstanceFor(b);
-        //     if (object != Qnil) {
-        //         rb_gc_mark(object);
-        //     } 
-        // }
+        /* Loop over each object and tell the garbage collector  that we are holding a reference to them. */
+        if (world->GetBodyCount() > 0) {
+            b2Body* bodyList = world->GetBodyList();
+            for (b2Body* b = bodyList; b; b = b->GetNext())
+            {
+                VALUE object = SWIG_RubyInstanceFor(b);
+                if (object != Qnil) {
+                    rb_gc_mark(object);
+                } 
+            }
+        }
 
         b2Draw* debugDraw = world->GetDebugDraw();
         if (debugDraw != NULL) {
@@ -2595,14 +2601,57 @@ SWIG_From_short  (short value)
                 rb_gc_mark(object);
             } 
         }
-        // for(int i = 0; i < count; ++i) {
-        //     Body* animal = world->get_animal(i);
-        //     VALUE object = SWIG_RubyInstanceFor(animal);
-        //     if (object != Qnil) {
-        //         rb_gc_mark(object);
-        //     } 
-        // }
+
+        b2ParticleSystem* particleSystemList = world->GetParticleSystemList();
+        if (particleSystemList) {
+            for (b2ParticleSystem* ps = particleSystemList; ps; ps = ps->GetNext())
+            {
+                VALUE object = SWIG_RubyInstanceFor(ps);
+                if (object != Qnil) {
+                    rb_gc_mark(object);
+                } 
+            }
+        }
     }
+
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_char (VALUE obj, unsigned char *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v > UCHAR_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< unsigned char >(v);
+    }
+  }  
+  return res;
+}
+
+
+SWIGINTERNINLINE VALUE
+SWIG_From_unsigned_SS_char  (unsigned char value)
+{    
+  return SWIG_From_unsigned_SS_long  (value);
+}
+
+
+enum b2ExceptionType {
+    BUFFER_TOO_SMALL,
+    PARTICLE_INDEX_OUTOFBOUNDS,
+    NUM_ERRORS,
+    NO_EXCEPTIONS,
+};
+
+struct b2Exception {
+    const int swigType;
+    const char* errorMsg;
+} g_liquidfunExceptions[NUM_ERRORS] = {
+    {SWIG_OverflowError, "Supplied buffer is too small"},
+    {SWIG_IndexError, "Particle index is out of bounds. Check startIndex and numParticles."},
+};
 
 /* ---------------------------------------------------
  * C++ director class helpers
@@ -2631,22 +2680,12 @@ void SwigDirector_B2Draw::DrawPolygon(b2Vec2 const *vertices, int32 vertexCount,
   VALUE SWIGUNUSED result;
   
   {
-    // VALUE ary = rb_ary_new2(vertexCount);
-    // for(int i = 0; i < vertexCount; ++i) {
-    //     rb_ary_push(ary, SWIG_NewPointerObj(SWIG_as_voidptr(&(vertices[i])), SWIGTYPE_p_b2Vec2, 0));
-    // }
-    // obj0 = ary;
     obj0 = rb_ary_new2(vertexCount);
     VALUE vertex;
     for(int i = 0; i < vertexCount; ++i) {
-      // vertex = rb_ary_new2(2);
-      // rb_ary_push(vertex, SWIG_From_double((float32)vertices[i].x));
-      // rb_ary_push(vertex, SWIG_From_double((float32)vertices[i].y));
       vertex = SWIG_NewPointerObj(SWIG_as_voidptr(&(vertices[i])), SWIGTYPE_p_b2Vec2, 0);
-      
       rb_ary_push(obj0, vertex);
     }
-    // obj0 = ary;
   }
   obj1 = SWIG_NewPointerObj(SWIG_as_voidptr(&color), SWIGTYPE_p_b2Color,  0 );
   result = rb_funcall(swig_get_self(), rb_intern("draw_polygon"), 2,obj0,obj1);
@@ -2659,22 +2698,12 @@ void SwigDirector_B2Draw::DrawSolidPolygon(b2Vec2 const *vertices, int32 vertexC
   VALUE SWIGUNUSED result;
   
   {
-    // VALUE ary = rb_ary_new2(vertexCount);
-    // for(int i = 0; i < vertexCount; ++i) {
-    //     rb_ary_push(ary, SWIG_NewPointerObj(SWIG_as_voidptr(&(vertices[i])), SWIGTYPE_p_b2Vec2, 0));
-    // }
-    // obj0 = ary;
     obj0 = rb_ary_new2(vertexCount);
     VALUE vertex;
     for(int i = 0; i < vertexCount; ++i) {
-      // vertex = rb_ary_new2(2);
-      // rb_ary_push(vertex, SWIG_From_double((float32)vertices[i].x));
-      // rb_ary_push(vertex, SWIG_From_double((float32)vertices[i].y));
       vertex = SWIG_NewPointerObj(SWIG_as_voidptr(&(vertices[i])), SWIGTYPE_p_b2Vec2, 0);
-      
       rb_ary_push(obj0, vertex);
     }
-    // obj0 = ary;
   }
   obj1 = SWIG_NewPointerObj(SWIG_as_voidptr(&color), SWIGTYPE_p_b2Color,  0 );
   result = rb_funcall(swig_get_self(), rb_intern("draw_solid_polygon"), 2,obj0,obj1);
@@ -2713,31 +2742,31 @@ void SwigDirector_B2Draw::DrawParticles(b2Vec2 const *centers, float32 radius, b
   VALUE obj0 = Qnil ;
   VALUE obj1 = Qnil ;
   VALUE obj2 = Qnil ;
-  VALUE obj3 = Qnil ;
   VALUE SWIGUNUSED result;
   
   {
-    VALUE ary = rb_ary_new2(count);
+    obj0 = rb_ary_new2(count);
+    VALUE vertex;
     for(int i = 0; i < count; i++) {
-      rb_ary_push(ary, SWIG_NewPointerObj(SWIG_as_voidptr(&centers[i]), SWIGTYPE_p_b2Vec2, 0));
+      vertex = SWIG_NewPointerObj(SWIG_as_voidptr(&centers[i]), SWIGTYPE_p_b2Vec2, 0);
+      rb_ary_push(obj0, vertex);
     }
-    obj0 = ary;
   }
   obj1 = SWIG_From_float(static_cast< float >(radius));
   {
     if (colors != NULL) {
-      VALUE ary = rb_ary_new2(count);
+      obj2 = rb_ary_new2(count);
+      VALUE vertex;
       for(int i = 0; i < count; i++) {
-        rb_ary_push(ary, SWIG_NewPointerObj(SWIG_as_voidptr(&colors[i]), SWIGTYPE_p_b2ParticleColor, 0));
+        vertex = SWIG_NewPointerObj(SWIG_as_voidptr(&colors[i]), SWIGTYPE_p_b2ParticleColor, 0);
+        rb_ary_push(obj2, vertex);
       }
-      obj2 = ary;
     }
     else {
       obj2 = Qnil;
     }
   }
-  obj3 = SWIG_From_int(static_cast< int >(count));
-  result = rb_funcall(swig_get_self(), rb_intern("draw_particles"), 4,obj0,obj1,obj2,obj3);
+  result = rb_funcall(swig_get_self(), rb_intern("draw_particles"), 3,obj0,obj1,obj2);
 }
 
 
@@ -5408,7 +5437,7 @@ fail:
   Document-method: Liquidfun::B2Draw.draw_particles
 
   call-seq:
-    draw_particles(B2Vec2 centers, float32 radius, b2ParticleColor const * colors, int32 count)
+    draw_particles(B2Vec2 centers, float32 radius, B2ParticleColor colors, int32 count)
 
 An instance method.
 
@@ -12635,7 +12664,7 @@ fail:
   Document-method: Liquidfun::B2World.create_particle_system
 
   call-seq:
-    create_particle_system(b2ParticleSystemDef const * C_def) -> b2ParticleSystem *
+    create_particle_system(B2ParticleSystemDef C_def) -> B2ParticleSystem
 
 An instance method.
 
@@ -12870,7 +12899,7 @@ fail:
   Document-method: Liquidfun::B2QueryCallback.report_particle
 
   call-seq:
-    report_particle(b2ParticleSystem const * particleSystem, int32 index) -> bool
+    report_particle(B2ParticleSystem particleSystem, int32 index) -> bool
 
 An instance method.
 
@@ -12960,6 +12989,7147 @@ fail:
 }
 
 
+/*
+  Document-class: Liquidfun::B2ParticleColor
+
+  Proxy of C++ Liquidfun::B2ParticleColor class
+
+
+*/
+static swig_class SwigClassB2ParticleColor;
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.new
+
+  call-seq:
+    B2ParticleColor.new
+    B2ParticleColor.new(uint8 r, uint8 g, uint8 b, uint8 a)
+    B2ParticleColor.new(B2Color color)
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2ParticleColor__SWIG_0(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2ParticleColor";
+  b2ParticleColor *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2ParticleColor *)new b2ParticleColor();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.new
+
+  call-seq:
+    B2ParticleColor.new()
+    B2ParticleColor.new(uint8 r, uint8 g, uint8 b, uint8 a)
+    B2ParticleColor.new(B2Color color)
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2ParticleColor__SWIG_1(int argc, VALUE *argv, VALUE self) {
+  uint8 arg1 ;
+  uint8 arg2 ;
+  uint8 arg3 ;
+  uint8 arg4 ;
+  unsigned char val1 ;
+  int ecode1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  unsigned char val3 ;
+  int ecode3 = 0 ;
+  unsigned char val4 ;
+  int ecode4 = 0 ;
+  const char *classname SWIGUNUSED = "Liquidfun::B2ParticleColor";
+  b2ParticleColor *result = 0 ;
+  
+  if ((argc < 4) || (argc > 4)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
+  }
+  ecode1 = SWIG_AsVal_unsigned_SS_char(argv[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), Ruby_Format_TypeError( "", "uint8","b2ParticleColor", 1, argv[0] ));
+  } 
+  arg1 = static_cast< uint8 >(val1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint8","b2ParticleColor", 2, argv[1] ));
+  } 
+  arg2 = static_cast< uint8 >(val2);
+  ecode3 = SWIG_AsVal_unsigned_SS_char(argv[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "uint8","b2ParticleColor", 3, argv[2] ));
+  } 
+  arg3 = static_cast< uint8 >(val3);
+  ecode4 = SWIG_AsVal_unsigned_SS_char(argv[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( "", "uint8","b2ParticleColor", 4, argv[3] ));
+  } 
+  arg4 = static_cast< uint8 >(val4);
+  {
+    try {
+      result = (b2ParticleColor *)new b2ParticleColor(arg1,arg2,arg3,arg4);
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2ParticleColor_allocate(VALUE self)
+#else
+_wrap_B2ParticleColor_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleColor);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+SWIGINTERN VALUE
+_wrap_new_B2ParticleColor__SWIG_2(int argc, VALUE *argv, VALUE self) {
+  b2Color *arg1 = 0 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  const char *classname SWIGUNUSED = "Liquidfun::B2ParticleColor";
+  b2ParticleColor *result = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_b2Color,  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Color const &","b2ParticleColor", 1, argv[0] )); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Color const &","b2ParticleColor", 1, argv[0])); 
+  }
+  arg1 = reinterpret_cast< b2Color * >(argp1);
+  {
+    try {
+      result = (b2ParticleColor *)new b2ParticleColor((b2Color const &)*arg1);
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE _wrap_new_B2ParticleColor(int nargs, VALUE *args, VALUE self) {
+  int argc;
+  VALUE argv[4];
+  int ii;
+  
+  argc = nargs;
+  if (argc > 4) SWIG_fail;
+  for (ii = 0; (ii < argc); ++ii) {
+    argv[ii] = args[ii];
+  }
+  if (argc == 0) {
+    return _wrap_new_B2ParticleColor__SWIG_0(nargs, args, self);
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_b2Color, SWIG_POINTER_NO_NULL);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_B2ParticleColor__SWIG_2(nargs, args, self);
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      int res = SWIG_AsVal_unsigned_SS_char(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_unsigned_SS_char(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_unsigned_SS_char(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_unsigned_SS_char(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_new_B2ParticleColor__SWIG_1(nargs, args, self);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  Ruby_Format_OverloadedError( argc, 4, "b2ParticleColor.new", 
+    "    b2ParticleColor.new()\n"
+    "    b2ParticleColor.new(uint8 r, uint8 g, uint8 b, uint8 a)\n"
+    "    b2ParticleColor.new(b2Color const &color)\n");
+  
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.is_zero
+
+  call-seq:
+    is_zero -> bool
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_is_zero(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor const *","IsZero", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  {
+    try {
+      result = (bool)((b2ParticleColor const *)arg1)->IsZero();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.set
+
+  call-seq:
+    set(uint8 r_, uint8 g_, uint8 b_, uint8 a_)
+    set(B2Color color)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_set__SWIG_0(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  uint8 arg2 ;
+  uint8 arg3 ;
+  uint8 arg4 ;
+  uint8 arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  unsigned char val3 ;
+  int ecode3 = 0 ;
+  unsigned char val4 ;
+  int ecode4 = 0 ;
+  unsigned char val5 ;
+  int ecode5 = 0 ;
+  
+  if ((argc < 4) || (argc > 4)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","Set", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint8","Set", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint8 >(val2);
+  ecode3 = SWIG_AsVal_unsigned_SS_char(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "uint8","Set", 3, argv[1] ));
+  } 
+  arg3 = static_cast< uint8 >(val3);
+  ecode4 = SWIG_AsVal_unsigned_SS_char(argv[2], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( "", "uint8","Set", 4, argv[2] ));
+  } 
+  arg4 = static_cast< uint8 >(val4);
+  ecode5 = SWIG_AsVal_unsigned_SS_char(argv[3], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), Ruby_Format_TypeError( "", "uint8","Set", 5, argv[3] ));
+  } 
+  arg5 = static_cast< uint8 >(val5);
+  {
+    try {
+      (arg1)->Set(arg2,arg3,arg4,arg5);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_set__SWIG_1(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  b2Color *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","Set", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Color,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Color const &","Set", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Color const &","Set", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Color * >(argp2);
+  {
+    try {
+      (arg1)->Set((b2Color const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE _wrap_B2ParticleColor_set(int nargs, VALUE *args, VALUE self) {
+  int argc;
+  VALUE argv[6];
+  int ii;
+  
+  argc = nargs + 1;
+  argv[0] = self;
+  if (argc > 6) SWIG_fail;
+  for (ii = 1; (ii < argc); ++ii) {
+    argv[ii] = args[ii-1];
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_b2ParticleColor, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_b2Color, SWIG_POINTER_NO_NULL);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_B2ParticleColor_set__SWIG_1(nargs, args, self);
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_b2ParticleColor, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_unsigned_SS_char(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_unsigned_SS_char(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_unsigned_SS_char(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_unsigned_SS_char(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              return _wrap_B2ParticleColor_set__SWIG_0(nargs, args, self);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  Ruby_Format_OverloadedError( argc, 6, "B2ParticleColor.set", 
+    "    void B2ParticleColor.set(uint8 r_, uint8 g_, uint8 b_, uint8 a_)\n"
+    "    void B2ParticleColor.set(b2Color const &color)\n");
+  
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.*
+
+  call-seq:
+    *(float32 s) -> B2ParticleColor
+    *(uint8 s) -> B2ParticleColor
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor___mul____SWIG_0(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2ParticleColor result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor const *","operator *", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","operator *", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = ((b2ParticleColor const *)arg1)->operator *(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2ParticleColor(static_cast< const b2ParticleColor& >(result))), SWIGTYPE_p_b2ParticleColor, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleColor___mul____SWIG_1(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  uint8 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  b2ParticleColor result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor const *","operator *", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint8","operator *", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint8 >(val2);
+  {
+    try {
+      result = ((b2ParticleColor const *)arg1)->operator *(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2ParticleColor(static_cast< const b2ParticleColor& >(result))), SWIGTYPE_p_b2ParticleColor, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE _wrap_B2ParticleColor___mul__(int nargs, VALUE *args, VALUE self) {
+  int argc;
+  VALUE argv[3];
+  int ii;
+  
+  argc = nargs + 1;
+  argv[0] = self;
+  if (argc > 3) SWIG_fail;
+  for (ii = 1; (ii < argc); ++ii) {
+    argv[ii] = args[ii-1];
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_b2ParticleColor, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_unsigned_SS_char(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_B2ParticleColor___mul____SWIG_1(nargs, args, self);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_b2ParticleColor, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_float(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_B2ParticleColor___mul____SWIG_0(nargs, args, self);
+      }
+    }
+  }
+  
+fail:
+  Ruby_Format_OverloadedError( argc, 3, "B2ParticleColor.__mul__", 
+    "    b2ParticleColor B2ParticleColor.__mul__(float32 s)\n"
+    "    b2ParticleColor B2ParticleColor.__mul__(uint8 s)\n");
+  
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.+
+
+  call-seq:
+    +(color) -> B2ParticleColor
+
+Add operator.
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor___add__(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  b2ParticleColor *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  b2ParticleColor result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor const *","operator +", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2ParticleColor,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleColor const &","operator +", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2ParticleColor const &","operator +", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2ParticleColor * >(argp2);
+  {
+    try {
+      result = ((b2ParticleColor const *)arg1)->operator +((b2ParticleColor const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2ParticleColor(static_cast< const b2ParticleColor& >(result))), SWIGTYPE_p_b2ParticleColor, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.-
+
+  call-seq:
+    -(color) -> B2ParticleColor
+
+Substraction operator.
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor___sub__(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  b2ParticleColor *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  b2ParticleColor result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor const *","operator -", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2ParticleColor,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleColor const &","operator -", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2ParticleColor const &","operator -", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2ParticleColor * >(argp2);
+  {
+    try {
+      result = ((b2ParticleColor const *)arg1)->operator -((b2ParticleColor const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2ParticleColor(static_cast< const b2ParticleColor& >(result))), SWIGTYPE_p_b2ParticleColor, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.==
+
+  call-seq:
+    ==(color) -> bool
+
+Equality comparison operator.
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor___eq__(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  b2ParticleColor *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor const *","operator ==", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2ParticleColor,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleColor const &","operator ==", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2ParticleColor const &","operator ==", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2ParticleColor * >(argp2);
+  {
+    try {
+      result = (bool)((b2ParticleColor const *)arg1)->operator ==((b2ParticleColor const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.mix
+
+  call-seq:
+    mix(B2ParticleColor mixColor, int32 const strength)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_mix(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  b2ParticleColor *arg2 = (b2ParticleColor *) (b2ParticleColor *)0 ;
+  int32 arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","Mix", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleColor *const","Mix", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2ParticleColor * >(argp2);
+  ecode3 = SWIG_AsVal_int(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "int32","Mix", 3, argv[1] ));
+  } 
+  arg3 = static_cast< int32 >(val3);
+  {
+    try {
+      (arg1)->Mix(arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.mix_colors
+
+  call-seq:
+    mix_colors(B2ParticleColor colorA, B2ParticleColor colorB, int32 const strength)
+
+A class method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_mix_colors(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) (b2ParticleColor *)0 ;
+  b2ParticleColor *arg2 = (b2ParticleColor *) (b2ParticleColor *)0 ;
+  int32 arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *const","b2ParticleColor::MixColors", 1, argv[0] )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleColor *const","b2ParticleColor::MixColors", 2, argv[1] )); 
+  }
+  arg2 = reinterpret_cast< b2ParticleColor * >(argp2);
+  ecode3 = SWIG_AsVal_int(argv[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "int32","b2ParticleColor::MixColors", 3, argv[2] ));
+  } 
+  arg3 = static_cast< int32 >(val3);
+  {
+    try {
+      b2ParticleColor::MixColors(arg1,arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.r
+
+  call-seq:
+    r -> uint8
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleColor.r=
+
+  call-seq:
+    r=(x) -> uint8
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_r_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  uint8 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","r", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint8","r", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint8 >(val2);
+  if (arg1) (arg1)->r = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_r_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint8 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","r", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  result = (uint8) ((arg1)->r);
+  vresult = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.g
+
+  call-seq:
+    g -> uint8
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleColor.g=
+
+  call-seq:
+    g=(x) -> uint8
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_g_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  uint8 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","g", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint8","g", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint8 >(val2);
+  if (arg1) (arg1)->g = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_g_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint8 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","g", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  result = (uint8) ((arg1)->g);
+  vresult = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.b
+
+  call-seq:
+    b -> uint8
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleColor.b=
+
+  call-seq:
+    b=(x) -> uint8
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_b_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  uint8 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","b", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint8","b", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint8 >(val2);
+  if (arg1) (arg1)->b = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_b_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint8 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","b", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  result = (uint8) ((arg1)->b);
+  vresult = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleColor.a
+
+  call-seq:
+    a -> uint8
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleColor.a=
+
+  call-seq:
+    a=(x) -> uint8
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_a_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  uint8 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","a", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint8","a", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint8 >(val2);
+  if (arg1) (arg1)->a = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleColor_a_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleColor *arg1 = (b2ParticleColor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint8 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleColor *","a", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleColor * >(argp1);
+  result = (uint8) ((arg1)->a);
+  vresult = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2ParticleColor(void *self) {
+    b2ParticleColor *arg1 = (b2ParticleColor *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-method: Liquidfun.b2ParticleColor_zero
+
+  call-seq:
+    b2ParticleColor_zero -> B2ParticleColor
+
+Get value of attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_b2ParticleColor_zero_get(VALUE self) {
+  VALUE _val;
+  
+  _val = SWIG_NewPointerObj(SWIG_as_voidptr(&b2ParticleColor_zero), SWIGTYPE_p_b2ParticleColor,  0 );
+  return _val;
+}
+
+
+/*
+  Document-method: Liquidfun.b2ParticleColor_zero=
+
+  call-seq:
+    b2ParticleColor_zero=(x) -> B2ParticleColor
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_b2ParticleColor_zero_set(VALUE self, VALUE _val) {
+  {
+    void *argp = 0;
+    int res = SWIG_ConvertPtr(_val, &argp, SWIGTYPE_p_b2ParticleColor,  0 );
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), "in variable '""b2ParticleColor_zero""' of type '""b2ParticleColor""'");
+    }
+    if (!argp) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""b2ParticleColor_zero""' of type '""b2ParticleColor""'");
+    } else {
+      b2ParticleColor_zero = *(reinterpret_cast< b2ParticleColor * >(argp));
+    }
+  }
+  return _val;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-class: Liquidfun::B2ParticleDef
+
+  Proxy of C++ Liquidfun::B2ParticleDef class
+
+
+*/
+static swig_class SwigClassB2ParticleDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2ParticleDef_allocate(VALUE self)
+#else
+_wrap_B2ParticleDef_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.new
+
+  call-seq:
+    B2ParticleDef.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2ParticleDef(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2ParticleDef";
+  b2ParticleDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2ParticleDef *)new b2ParticleDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.set_position
+
+  call-seq:
+    set_position(float32 x, float32 y)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_set_position(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  float32 arg2 ;
+  float32 arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","SetPosition", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetPosition", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  ecode3 = SWIG_AsVal_float(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "float32","SetPosition", 3, argv[1] ));
+  } 
+  arg3 = static_cast< float32 >(val3);
+  {
+    try {
+      (arg1)->SetPosition(arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.set_color
+
+  call-seq:
+    set_color(int32 r, int32 g, int32 b, int32 a)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_set_color(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  int32 arg2 ;
+  int32 arg3 ;
+  int32 arg4 ;
+  int32 arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  
+  if ((argc < 4) || (argc > 4)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","SetColor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","SetColor", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  ecode3 = SWIG_AsVal_int(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "int32","SetColor", 3, argv[1] ));
+  } 
+  arg3 = static_cast< int32 >(val3);
+  ecode4 = SWIG_AsVal_int(argv[2], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( "", "int32","SetColor", 4, argv[2] ));
+  } 
+  arg4 = static_cast< int32 >(val4);
+  ecode5 = SWIG_AsVal_int(argv[3], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), Ruby_Format_TypeError( "", "int32","SetColor", 5, argv[3] ));
+  } 
+  arg5 = static_cast< int32 >(val5);
+  {
+    try {
+      (arg1)->SetColor(arg2,arg3,arg4,arg5);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.flags
+
+  call-seq:
+    flags -> uint32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleDef.flags=
+
+  call-seq:
+    flags=(x) -> uint32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_flags_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  uint32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","flags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint32","flags", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint32 >(val2);
+  if (arg1) (arg1)->flags = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_flags_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","flags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  result = (uint32) ((arg1)->flags);
+  vresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.position
+
+  call-seq:
+    position -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleDef.position=
+
+  call-seq:
+    position=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_position_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","position", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","position", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","position", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->position = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_position_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","position", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->position);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.velocity
+
+  call-seq:
+    velocity -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleDef.velocity=
+
+  call-seq:
+    velocity=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_velocity_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","velocity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","velocity", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","velocity", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->velocity = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_velocity_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","velocity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->velocity);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.color
+
+  call-seq:
+    color -> B2ParticleColor
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleDef.color=
+
+  call-seq:
+    color=(x) -> B2ParticleColor
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_color_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  b2ParticleColor *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","color", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2ParticleColor,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleColor const &","color", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2ParticleColor const &","color", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2ParticleColor * >(argp2);
+  if (arg1) (arg1)->color = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_color_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2ParticleColor *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","color", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  result = (b2ParticleColor *) & ((arg1)->color);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.lifetime
+
+  call-seq:
+    lifetime -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleDef.lifetime=
+
+  call-seq:
+    lifetime=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_lifetime_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","lifetime", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","lifetime", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->lifetime = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_lifetime_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","lifetime", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  result = (float32) ((arg1)->lifetime);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleDef.group
+
+  call-seq:
+    group -> B2ParticleGroup
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleDef.group=
+
+  call-seq:
+    group=(x) -> B2ParticleGroup
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_group_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  b2ParticleGroup *arg2 = (b2ParticleGroup *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","group", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2ParticleGroup, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleGroup *","group", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2ParticleGroup * >(argp2);
+  if (arg1) (arg1)->group = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleDef_group_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleDef *arg1 = (b2ParticleDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2ParticleGroup *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleDef *","group", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleDef * >(argp1);
+  result = (b2ParticleGroup *) ((arg1)->group);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2ParticleDef(void *self) {
+    b2ParticleDef *arg1 = (b2ParticleDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-method: Liquidfun.b_2calculate_particle_iterations
+
+  call-seq:
+    b_2calculate_particle_iterations(float32 gravity, float32 radius, float32 timeStep) -> int32
+
+A module function.
+
+*/
+SWIGINTERN VALUE
+_wrap_b_2calculate_particle_iterations(int argc, VALUE *argv, VALUE self) {
+  float32 arg1 ;
+  float32 arg2 ;
+  float32 arg3 ;
+  float val1 ;
+  int ecode1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  ecode1 = SWIG_AsVal_float(argv[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), Ruby_Format_TypeError( "", "float32","b2CalculateParticleIterations", 1, argv[0] ));
+  } 
+  arg1 = static_cast< float32 >(val1);
+  ecode2 = SWIG_AsVal_float(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","b2CalculateParticleIterations", 2, argv[1] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  ecode3 = SWIG_AsVal_float(argv[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "float32","b2CalculateParticleIterations", 3, argv[2] ));
+  } 
+  arg3 = static_cast< float32 >(val3);
+  {
+    try {
+      result = (int32)b2CalculateParticleIterations(arg1,arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-class: Liquidfun::B2ParticleGroup
+
+  Proxy of C++ Liquidfun::B2ParticleGroup class
+
+
+*/
+static swig_class SwigClassB2ParticleGroup;
+
+/*
+  Document-method: Liquidfun::B2ParticleGroup.get_next
+
+  call-seq:
+    get_next -> B2ParticleGroup
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroup_get_next(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroup *arg1 = (b2ParticleGroup *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2ParticleGroup *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroup const *","GetNext", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroup * >(argp1);
+  {
+    try {
+      result = (b2ParticleGroup *)((b2ParticleGroup const *)arg1)->GetNext();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroup.get_particle_count
+
+  call-seq:
+    get_particle_count -> int32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroup_get_particle_count(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroup *arg1 = (b2ParticleGroup *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroup const *","GetParticleCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroup * >(argp1);
+  {
+    try {
+      result = (int32)((b2ParticleGroup const *)arg1)->GetParticleCount();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroup.get_buffer_index
+
+  call-seq:
+    get_buffer_index -> int32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroup_get_buffer_index(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroup *arg1 = (b2ParticleGroup *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroup const *","GetBufferIndex", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroup * >(argp1);
+  {
+    try {
+      result = (int32)((b2ParticleGroup const *)arg1)->GetBufferIndex();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroup.get_group_flags
+
+  call-seq:
+    get_group_flags -> int32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroup_get_group_flags(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroup *arg1 = (b2ParticleGroup *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroup const *","GetGroupFlags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroup * >(argp1);
+  {
+    try {
+      result = (int32)((b2ParticleGroup const *)arg1)->GetGroupFlags();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-class: Liquidfun::B2ParticleGroupDef
+
+  Proxy of C++ Liquidfun::B2ParticleGroupDef class
+
+
+*/
+static swig_class SwigClassB2ParticleGroupDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2ParticleGroupDef_allocate(VALUE self)
+#else
+_wrap_B2ParticleGroupDef_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleGroupDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.new
+
+  call-seq:
+    B2ParticleGroupDef.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2ParticleGroupDef(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2ParticleGroupDef";
+  b2ParticleGroupDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2ParticleGroupDef *)new b2ParticleGroupDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2ParticleGroupDef(void *self) {
+    b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.flags
+
+  call-seq:
+    flags -> uint32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.flags=
+
+  call-seq:
+    flags=(x) -> uint32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_flags_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  uint32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","flags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint32","flags", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint32 >(val2);
+  if (arg1) (arg1)->flags = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_flags_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","flags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (uint32) ((arg1)->flags);
+  vresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.groupFlags
+
+  call-seq:
+    groupFlags -> uint32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.groupFlags=
+
+  call-seq:
+    groupFlags=(x) -> uint32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_groupFlags_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  uint32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","groupFlags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint32","groupFlags", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint32 >(val2);
+  if (arg1) (arg1)->groupFlags = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_groupFlags_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","groupFlags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (uint32) ((arg1)->groupFlags);
+  vresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.position
+
+  call-seq:
+    position -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.position=
+
+  call-seq:
+    position=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_position_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","position", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","position", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","position", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->position = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_position_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","position", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->position);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.angle
+
+  call-seq:
+    angle -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.angle=
+
+  call-seq:
+    angle=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_angle_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","angle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","angle", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->angle = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_angle_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","angle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (float32) ((arg1)->angle);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.linearVelocity
+
+  call-seq:
+    linearVelocity -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.linearVelocity=
+
+  call-seq:
+    linearVelocity=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_linearVelocity_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","linearVelocity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","linearVelocity", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","linearVelocity", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->linearVelocity = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_linearVelocity_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","linearVelocity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->linearVelocity);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.angularVelocity
+
+  call-seq:
+    angularVelocity -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.angularVelocity=
+
+  call-seq:
+    angularVelocity=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_angularVelocity_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","angularVelocity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","angularVelocity", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->angularVelocity = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_angularVelocity_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","angularVelocity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (float32) ((arg1)->angularVelocity);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.color
+
+  call-seq:
+    color -> B2ParticleColor
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.color=
+
+  call-seq:
+    color=(x) -> B2ParticleColor
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_color_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  b2ParticleColor *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","color", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2ParticleColor,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleColor const &","color", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2ParticleColor const &","color", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2ParticleColor * >(argp2);
+  if (arg1) (arg1)->color = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_color_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2ParticleColor *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","color", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (b2ParticleColor *) & ((arg1)->color);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleColor, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.strength
+
+  call-seq:
+    strength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.strength=
+
+  call-seq:
+    strength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_strength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","strength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","strength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->strength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_strength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","strength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (float32) ((arg1)->strength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.shape
+
+  call-seq:
+    shape -> B2Shape
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.shape=
+
+  call-seq:
+    shape=(x) -> B2Shape
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_shape_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  b2Shape *arg2 = (b2Shape *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","shape", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Shape, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Shape const *","shape", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Shape * >(argp2);
+  if (arg1) (arg1)->shape = (b2Shape const *)arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_shape_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Shape *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","shape", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (b2Shape *) ((arg1)->shape);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Shape, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.shapeCount
+
+  call-seq:
+    shapeCount -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.shapeCount=
+
+  call-seq:
+    shapeCount=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_shapeCount_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","shapeCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","shapeCount", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->shapeCount = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_shapeCount_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","shapeCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (int32) ((arg1)->shapeCount);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.stride
+
+  call-seq:
+    stride -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.stride=
+
+  call-seq:
+    stride=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_stride_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","stride", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","stride", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->stride = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_stride_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","stride", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (float32) ((arg1)->stride);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.particleCount
+
+  call-seq:
+    particleCount -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.particleCount=
+
+  call-seq:
+    particleCount=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_particleCount_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","particleCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","particleCount", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->particleCount = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_particleCount_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","particleCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (int32) ((arg1)->particleCount);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.positionData
+
+  call-seq:
+    positionData -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.positionData=
+
+  call-seq:
+    positionData=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_positionData_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  b2Vec2 *arg2 = (b2Vec2 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","positionData", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Vec2, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const *","positionData", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->positionData = (b2Vec2 const *)arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_positionData_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","positionData", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (b2Vec2 *) ((arg1)->positionData);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.lifetime
+
+  call-seq:
+    lifetime -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.lifetime=
+
+  call-seq:
+    lifetime=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_lifetime_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","lifetime", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","lifetime", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->lifetime = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_lifetime_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","lifetime", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (float32) ((arg1)->lifetime);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.group
+
+  call-seq:
+    group -> B2ParticleGroup
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.group=
+
+  call-seq:
+    group=(x) -> B2ParticleGroup
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_group_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  b2ParticleGroup *arg2 = (b2ParticleGroup *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","group", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2ParticleGroup, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleGroup *","group", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2ParticleGroup * >(argp2);
+  if (arg1) (arg1)->group = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_group_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2ParticleGroup *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","group", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (b2ParticleGroup *) ((arg1)->group);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.circleShapes
+
+  call-seq:
+    circleShapes -> B2CircleShape
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.circleShapes=
+
+  call-seq:
+    circleShapes=(x) -> B2CircleShape
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_circleShapes_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  b2CircleShape *arg2 = (b2CircleShape *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","circleShapes", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2CircleShape, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2CircleShape const *","circleShapes", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2CircleShape * >(argp2);
+  if (arg1) (arg1)->circleShapes = (b2CircleShape const *)arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_circleShapes_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2CircleShape *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","circleShapes", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (b2CircleShape *) ((arg1)->circleShapes);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2CircleShape, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.ownShapesArray
+
+  call-seq:
+    ownShapesArray -> bool
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.ownShapesArray=
+
+  call-seq:
+    ownShapesArray=(x) -> bool
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_ownShapesArray_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","ownShapesArray", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","ownShapesArray", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->ownShapesArray = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_ownShapesArray_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","ownShapesArray", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  result = (bool) ((arg1)->ownShapesArray);
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.free_shapes_memory
+
+  call-seq:
+    free_shapes_memory
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_free_shapes_memory(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","FreeShapesMemory", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  {
+    try {
+      (arg1)->FreeShapesMemory();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.set_circle_shapes_from_vertex_list
+
+  call-seq:
+    set_circle_shapes_from_vertex_list(void * inBuf, float radius)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_set_circle_shapes_from_vertex_list(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  void *arg2 = (void *) 0 ;
+  int arg3 ;
+  float arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val4 ;
+  int ecode4 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","SetCircleShapesFromVertexList", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  {
+    /* Get the length of the array */
+    int size = RARRAY_LEN(argv[0]); 
+    int i;
+    float* tmp = (float *) malloc(size*sizeof(float));
+    /* Get the first element in memory */
+    VALUE *ptr = RARRAY_PTR(argv[0]); 
+    for (i=0; i < size; i++, ptr++) {
+      /* Convert Ruby float to C++ float */
+      float val;
+      int encodeResult = SWIG_AsVal_float(*ptr, &val);
+      if (!SWIG_IsOK(encodeResult)) {
+        SWIG_exception_fail(SWIG_ArgError(encodeResult), Ruby_Format_TypeError( "", "float32","SetCircleShapesFromVertexList", 2, argv[0] ));
+      } 
+      tmp[i]= val;
+    }
+    arg2 = static_cast< void * >(tmp);
+    arg3 = size;
+    //     /* Get the length of the array */
+    //   int size = RARRAY_LEN(argv[0]); 
+    //   int i;
+    //   arg2 = (float **) malloc((size+1)*sizeof(float *));
+    //   /* Get the first element in memory */
+    //   VALUE *ptr = RARRAY_PTR(argv[0]); 
+    //   for (i=0; i < size; i++, ptr++) {
+    //     /* Convert Ruby Object String to char* */
+    //     float val;
+    //     int encodeResult = SWIG_AsVal_float(*ptr, &val);
+    //     if (!SWIG_IsOK(encodeResult)) {
+    //         SWIG_exception_fail(SWIG_ArgError(encodeResult), Ruby_Format_TypeError( "", "float32","b2Color", 3, argv[2] ));
+    //     } 
+    //     arg2[i]= static_cast< float32 >(val);
+    //     // arg2[i]= StringValuePtr(*ptr); 
+    //   }
+    //   arg2[i]=NULL; /* End of list */
+  }
+  ecode4 = SWIG_AsVal_float(argv[1], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( "", "float","SetCircleShapesFromVertexList", 4, argv[1] ));
+  } 
+  arg4 = static_cast< float >(val4);
+  {
+    try {
+      (arg1)->SetCircleShapesFromVertexList(arg2,arg3,arg4);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.set_position
+
+  call-seq:
+    set_position(float32 x, float32 y)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_set_position(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  float32 arg2 ;
+  float32 arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","SetPosition", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetPosition", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  ecode3 = SWIG_AsVal_float(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "float32","SetPosition", 3, argv[1] ));
+  } 
+  arg3 = static_cast< float32 >(val3);
+  {
+    try {
+      (arg1)->SetPosition(arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleGroupDef.set_color
+
+  call-seq:
+    set_color(int32 r, int32 g, int32 b, int32 a)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleGroupDef_set_color(int argc, VALUE *argv, VALUE self) {
+  b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
+  int32 arg2 ;
+  int32 arg3 ;
+  int32 arg4 ;
+  int32 arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  
+  if ((argc < 4) || (argc > 4)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleGroupDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleGroupDef *","SetColor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleGroupDef * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","SetColor", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  ecode3 = SWIG_AsVal_int(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "int32","SetColor", 3, argv[1] ));
+  } 
+  arg3 = static_cast< int32 >(val3);
+  ecode4 = SWIG_AsVal_int(argv[2], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( "", "int32","SetColor", 4, argv[2] ));
+  } 
+  arg4 = static_cast< int32 >(val4);
+  ecode5 = SWIG_AsVal_int(argv[3], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), Ruby_Format_TypeError( "", "int32","SetColor", 5, argv[3] ));
+  } 
+  arg5 = static_cast< int32 >(val5);
+  {
+    try {
+      (arg1)->SetColor(arg2,arg3,arg4,arg5);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-class: Liquidfun::B2ParticleSystem
+
+  Proxy of C++ Liquidfun::B2ParticleSystem class
+
+
+*/
+static swig_class SwigClassB2ParticleSystem;
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.create_particle
+
+  call-seq:
+    create_particle(B2ParticleDef C_def) -> int32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_create_particle(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2ParticleDef *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem *","CreateParticle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2ParticleDef,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleDef const &","CreateParticle", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2ParticleDef const &","CreateParticle", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2ParticleDef * >(argp2);
+  {
+    try {
+      result = (int32)(arg1)->CreateParticle((b2ParticleDef const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.join_particle_groups
+
+  call-seq:
+    join_particle_groups(B2ParticleGroup groupA, B2ParticleGroup groupB)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_join_particle_groups(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2ParticleGroup *arg2 = (b2ParticleGroup *) 0 ;
+  b2ParticleGroup *arg3 = (b2ParticleGroup *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem *","JoinParticleGroups", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleGroup *","JoinParticleGroups", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2ParticleGroup * >(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "b2ParticleGroup *","JoinParticleGroups", 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast< b2ParticleGroup * >(argp3);
+  {
+    try {
+      (arg1)->JoinParticleGroups(arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.get_particle_group_list
+
+  call-seq:
+    get_particle_group_list -> B2ParticleGroup
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_group_list(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2ParticleGroup *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem const *","GetParticleGroupList", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  {
+    try {
+      result = (b2ParticleGroup *)((b2ParticleSystem const *)arg1)->GetParticleGroupList();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.destroy_particles_in_shape
+
+  call-seq:
+    destroy_particles_in_shape(B2Shape shape, B2Transform xf)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_destroy_particles_in_shape(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2Shape *arg2 = 0 ;
+  b2Transform *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem *","DestroyParticlesInShape", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Shape,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Shape const &","DestroyParticlesInShape", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Shape const &","DestroyParticlesInShape", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Shape * >(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &argp3, SWIGTYPE_p_b2Transform,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "b2Transform const &","DestroyParticlesInShape", 3, argv[1] )); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Transform const &","DestroyParticlesInShape", 3, argv[1])); 
+  }
+  arg3 = reinterpret_cast< b2Transform * >(argp3);
+  {
+    try {
+      (arg1)->DestroyParticlesInShape((b2Shape const &)*arg2,(b2Transform const &)*arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.create_particle_group
+
+  call-seq:
+    create_particle_group(B2ParticleGroupDef C_def) -> B2ParticleGroup
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_create_particle_group(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2ParticleGroupDef *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  b2ParticleGroup *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem *","CreateParticleGroup", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2ParticleGroupDef,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2ParticleGroupDef const &","CreateParticleGroup", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2ParticleGroupDef const &","CreateParticleGroup", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2ParticleGroupDef * >(argp2);
+  {
+    try {
+      result = (b2ParticleGroup *)(arg1)->CreateParticleGroup((b2ParticleGroupDef const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2ParticleGroup, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.get_particle_group_count
+
+  call-seq:
+    get_particle_group_count -> int32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_group_count(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem const *","GetParticleGroupCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  {
+    try {
+      result = (int32)((b2ParticleSystem const *)arg1)->GetParticleGroupCount();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.get_particle_count
+
+  call-seq:
+    get_particle_count -> int32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_count(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem const *","GetParticleCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  {
+    try {
+      result = (int32)((b2ParticleSystem const *)arg1)->GetParticleCount();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.set_max_particle_count
+
+  call-seq:
+    set_max_particle_count(int32 count)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_set_max_particle_count(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem *","SetMaxParticleCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","SetMaxParticleCount", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  {
+    try {
+      (arg1)->SetMaxParticleCount(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.set_damping
+
+  call-seq:
+    set_damping(float32 damping)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_set_damping(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem *","SetDamping", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetDamping", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetDamping(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.set_radius
+
+  call-seq:
+    set_radius(float32 radius)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_set_radius(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem *","SetRadius", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetRadius", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetRadius(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.query_shape_aabb
+
+  call-seq:
+    query_shape_aabb(B2QueryCallback callback, B2Shape shape, B2Transform xf)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_query_shape_aabb(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  b2QueryCallback *arg2 = (b2QueryCallback *) 0 ;
+  b2Shape *arg3 = 0 ;
+  b2Transform *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem const *","QueryShapeAABB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2QueryCallback, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2QueryCallback *","QueryShapeAABB", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2QueryCallback * >(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &argp3, SWIGTYPE_p_b2Shape,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "b2Shape const &","QueryShapeAABB", 3, argv[1] )); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Shape const &","QueryShapeAABB", 3, argv[1])); 
+  }
+  arg3 = reinterpret_cast< b2Shape * >(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &argp4, SWIGTYPE_p_b2Transform,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "b2Transform const &","QueryShapeAABB", 4, argv[2] )); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Transform const &","QueryShapeAABB", 4, argv[2])); 
+  }
+  arg4 = reinterpret_cast< b2Transform * >(argp4);
+  {
+    try {
+      ((b2ParticleSystem const *)arg1)->QueryShapeAABB(arg2,(b2Shape const &)*arg3,(b2Transform const &)*arg4);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.set_particle_velocity
+
+  call-seq:
+    set_particle_velocity(int32 index, float32 vx, float32 vy)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_set_particle_velocity(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  int32 arg2 ;
+  float32 arg3 ;
+  float32 arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  float val4 ;
+  int ecode4 = 0 ;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem *","SetParticleVelocity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","SetParticleVelocity", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  ecode3 = SWIG_AsVal_float(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "float32","SetParticleVelocity", 3, argv[1] ));
+  } 
+  arg3 = static_cast< float32 >(val3);
+  ecode4 = SWIG_AsVal_float(argv[2], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( "", "float32","SetParticleVelocity", 4, argv[2] ));
+  } 
+  arg4 = static_cast< float32 >(val4);
+  {
+    try {
+      (arg1)->SetParticleVelocity(arg2,arg3,arg4);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.get_particle_position_x
+
+  call-seq:
+    get_particle_position_x(int32 index) -> float
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_position_x(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  float result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem const *","GetParticlePositionX", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","GetParticlePositionX", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  {
+    try {
+      result = (float)((b2ParticleSystem const *)arg1)->GetParticlePositionX(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystem.get_particle_position_y
+
+  call-seq:
+    get_particle_position_y(int32 index) -> float
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystem_get_particle_position_y(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystem *arg1 = (b2ParticleSystem *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  float result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystem const *","GetParticlePositionY", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystem * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","GetParticlePositionY", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  {
+    try {
+      result = (float)((b2ParticleSystem const *)arg1)->GetParticlePositionY(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-class: Liquidfun::B2ParticlePair
+
+  Proxy of C++ Liquidfun::B2ParticlePair class
+
+
+*/
+static swig_class SwigClassB2ParticlePair;
+
+/*
+  Document-method: Liquidfun::B2ParticlePair.indexA
+
+  call-seq:
+    indexA -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticlePair.indexA=
+
+  call-seq:
+    indexA=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_indexA_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","indexA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","indexA", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->indexA = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_indexA_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","indexA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  result = (int32) ((arg1)->indexA);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticlePair.indexB
+
+  call-seq:
+    indexB -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticlePair.indexB=
+
+  call-seq:
+    indexB=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_indexB_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","indexB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","indexB", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->indexB = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_indexB_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","indexB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  result = (int32) ((arg1)->indexB);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticlePair.flags
+
+  call-seq:
+    flags -> uint32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticlePair.flags=
+
+  call-seq:
+    flags=(x) -> uint32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_flags_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  uint32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","flags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint32","flags", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint32 >(val2);
+  if (arg1) (arg1)->flags = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_flags_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","flags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  result = (uint32) ((arg1)->flags);
+  vresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticlePair.strength
+
+  call-seq:
+    strength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticlePair.strength=
+
+  call-seq:
+    strength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_strength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","strength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","strength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->strength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_strength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","strength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  result = (float32) ((arg1)->strength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticlePair.distance
+
+  call-seq:
+    distance -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticlePair.distance=
+
+  call-seq:
+    distance=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_distance_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","distance", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","distance", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->distance = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticlePair_distance_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticlePair, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticlePair *","distance", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticlePair * >(argp1);
+  result = (float32) ((arg1)->distance);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2ParticlePair_allocate(VALUE self)
+#else
+_wrap_B2ParticlePair_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticlePair);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticlePair.new
+
+  call-seq:
+    B2ParticlePair.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2ParticlePair(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2ParticlePair";
+  b2ParticlePair *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2ParticlePair *)new b2ParticlePair();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2ParticlePair(void *self) {
+    b2ParticlePair *arg1 = (b2ParticlePair *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2ParticleTriad
+
+  Proxy of C++ Liquidfun::B2ParticleTriad class
+
+
+*/
+static swig_class SwigClassB2ParticleTriad;
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.indexA
+
+  call-seq:
+    indexA -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.indexA=
+
+  call-seq:
+    indexA=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_indexA_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","indexA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","indexA", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->indexA = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_indexA_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","indexA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (int32) ((arg1)->indexA);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.indexB
+
+  call-seq:
+    indexB -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.indexB=
+
+  call-seq:
+    indexB=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_indexB_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","indexB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","indexB", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->indexB = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_indexB_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","indexB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (int32) ((arg1)->indexB);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.indexC
+
+  call-seq:
+    indexC -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.indexC=
+
+  call-seq:
+    indexC=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_indexC_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","indexC", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","indexC", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->indexC = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_indexC_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","indexC", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (int32) ((arg1)->indexC);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.flags
+
+  call-seq:
+    flags -> uint32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.flags=
+
+  call-seq:
+    flags=(x) -> uint32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_flags_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  uint32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","flags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint32","flags", 2, argv[0] ));
+  } 
+  arg2 = static_cast< uint32 >(val2);
+  if (arg1) (arg1)->flags = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_flags_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","flags", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (uint32) ((arg1)->flags);
+  vresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.strength
+
+  call-seq:
+    strength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.strength=
+
+  call-seq:
+    strength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_strength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","strength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","strength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->strength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_strength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","strength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (float32) ((arg1)->strength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.pa
+
+  call-seq:
+    pa -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.pa=
+
+  call-seq:
+    pa=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_pa_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","pa", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","pa", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","pa", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->pa = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_pa_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","pa", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->pa);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.pb
+
+  call-seq:
+    pb -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.pb=
+
+  call-seq:
+    pb=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_pb_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","pb", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","pb", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","pb", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->pb = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_pb_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","pb", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->pb);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.pc
+
+  call-seq:
+    pc -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.pc=
+
+  call-seq:
+    pc=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_pc_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","pc", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","pc", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","pc", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->pc = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_pc_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","pc", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->pc);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.ka
+
+  call-seq:
+    ka -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.ka=
+
+  call-seq:
+    ka=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_ka_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","ka", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","ka", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->ka = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_ka_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","ka", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (float32) ((arg1)->ka);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.kb
+
+  call-seq:
+    kb -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.kb=
+
+  call-seq:
+    kb=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_kb_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","kb", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","kb", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->kb = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_kb_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","kb", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (float32) ((arg1)->kb);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.kc
+
+  call-seq:
+    kc -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.kc=
+
+  call-seq:
+    kc=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_kc_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","kc", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","kc", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->kc = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_kc_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","kc", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (float32) ((arg1)->kc);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.s
+
+  call-seq:
+    s -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleTriad.s=
+
+  call-seq:
+    s=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_s_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","s", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","s", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->s = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleTriad_s_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleTriad, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleTriad *","s", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleTriad * >(argp1);
+  result = (float32) ((arg1)->s);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2ParticleTriad_allocate(VALUE self)
+#else
+_wrap_B2ParticleTriad_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleTriad);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleTriad.new
+
+  call-seq:
+    B2ParticleTriad.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2ParticleTriad(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2ParticleTriad";
+  b2ParticleTriad *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2ParticleTriad *)new b2ParticleTriad();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2ParticleTriad(void *self) {
+    b2ParticleTriad *arg1 = (b2ParticleTriad *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2ParticleSystemDef
+
+  Proxy of C++ Liquidfun::B2ParticleSystemDef class
+
+
+*/
+static swig_class SwigClassB2ParticleSystemDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2ParticleSystemDef_allocate(VALUE self)
+#else
+_wrap_B2ParticleSystemDef_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleSystemDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.new
+
+  call-seq:
+    B2ParticleSystemDef.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2ParticleSystemDef(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2ParticleSystemDef";
+  b2ParticleSystemDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2ParticleSystemDef *)new b2ParticleSystemDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.strictContactCheck
+
+  call-seq:
+    strictContactCheck -> bool
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.strictContactCheck=
+
+  call-seq:
+    strictContactCheck=(x) -> bool
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_strictContactCheck_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","strictContactCheck", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","strictContactCheck", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->strictContactCheck = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_strictContactCheck_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","strictContactCheck", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (bool) ((arg1)->strictContactCheck);
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.density
+
+  call-seq:
+    density -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.density=
+
+  call-seq:
+    density=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_density_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","density", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","density", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->density = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_density_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","density", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->density);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.gravityScale
+
+  call-seq:
+    gravityScale -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.gravityScale=
+
+  call-seq:
+    gravityScale=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_gravityScale_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","gravityScale", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","gravityScale", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->gravityScale = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_gravityScale_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","gravityScale", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->gravityScale);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.radius
+
+  call-seq:
+    radius -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.radius=
+
+  call-seq:
+    radius=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_radius_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","radius", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","radius", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->radius = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_radius_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","radius", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->radius);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.maxCount
+
+  call-seq:
+    maxCount -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.maxCount=
+
+  call-seq:
+    maxCount=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_maxCount_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","maxCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","maxCount", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->maxCount = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_maxCount_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","maxCount", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (int32) ((arg1)->maxCount);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.pressureStrength
+
+  call-seq:
+    pressureStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.pressureStrength=
+
+  call-seq:
+    pressureStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_pressureStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","pressureStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","pressureStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->pressureStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_pressureStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","pressureStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->pressureStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.dampingStrength
+
+  call-seq:
+    dampingStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.dampingStrength=
+
+  call-seq:
+    dampingStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_dampingStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","dampingStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","dampingStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->dampingStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_dampingStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","dampingStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->dampingStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.elasticStrength
+
+  call-seq:
+    elasticStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.elasticStrength=
+
+  call-seq:
+    elasticStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_elasticStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","elasticStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","elasticStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->elasticStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_elasticStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","elasticStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->elasticStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.springStrength
+
+  call-seq:
+    springStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.springStrength=
+
+  call-seq:
+    springStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_springStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","springStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","springStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->springStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_springStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","springStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->springStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.viscousStrength
+
+  call-seq:
+    viscousStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.viscousStrength=
+
+  call-seq:
+    viscousStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_viscousStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","viscousStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","viscousStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->viscousStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_viscousStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","viscousStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->viscousStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.surfaceTensionPressureStrength
+
+  call-seq:
+    surfaceTensionPressureStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.surfaceTensionPressureStrength=
+
+  call-seq:
+    surfaceTensionPressureStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_surfaceTensionPressureStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","surfaceTensionPressureStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","surfaceTensionPressureStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->surfaceTensionPressureStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_surfaceTensionPressureStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","surfaceTensionPressureStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->surfaceTensionPressureStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.surfaceTensionNormalStrength
+
+  call-seq:
+    surfaceTensionNormalStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.surfaceTensionNormalStrength=
+
+  call-seq:
+    surfaceTensionNormalStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_surfaceTensionNormalStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","surfaceTensionNormalStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","surfaceTensionNormalStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->surfaceTensionNormalStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_surfaceTensionNormalStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","surfaceTensionNormalStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->surfaceTensionNormalStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.repulsiveStrength
+
+  call-seq:
+    repulsiveStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.repulsiveStrength=
+
+  call-seq:
+    repulsiveStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_repulsiveStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","repulsiveStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","repulsiveStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->repulsiveStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_repulsiveStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","repulsiveStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->repulsiveStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.powderStrength
+
+  call-seq:
+    powderStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.powderStrength=
+
+  call-seq:
+    powderStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_powderStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","powderStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","powderStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->powderStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_powderStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","powderStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->powderStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.ejectionStrength
+
+  call-seq:
+    ejectionStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.ejectionStrength=
+
+  call-seq:
+    ejectionStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_ejectionStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","ejectionStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","ejectionStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->ejectionStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_ejectionStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","ejectionStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->ejectionStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureStrength
+
+  call-seq:
+    staticPressureStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureStrength=
+
+  call-seq:
+    staticPressureStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_staticPressureStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","staticPressureStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","staticPressureStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->staticPressureStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_staticPressureStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","staticPressureStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->staticPressureStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureRelaxation
+
+  call-seq:
+    staticPressureRelaxation -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureRelaxation=
+
+  call-seq:
+    staticPressureRelaxation=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_staticPressureRelaxation_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","staticPressureRelaxation", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","staticPressureRelaxation", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->staticPressureRelaxation = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_staticPressureRelaxation_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","staticPressureRelaxation", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->staticPressureRelaxation);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureIterations
+
+  call-seq:
+    staticPressureIterations -> int32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureIterations=
+
+  call-seq:
+    staticPressureIterations=(x) -> int32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_staticPressureIterations_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","staticPressureIterations", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int32","staticPressureIterations", 2, argv[0] ));
+  } 
+  arg2 = static_cast< int32 >(val2);
+  if (arg1) (arg1)->staticPressureIterations = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_staticPressureIterations_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","staticPressureIterations", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (int32) ((arg1)->staticPressureIterations);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.colorMixingStrength
+
+  call-seq:
+    colorMixingStrength -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.colorMixingStrength=
+
+  call-seq:
+    colorMixingStrength=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_colorMixingStrength_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","colorMixingStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","colorMixingStrength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->colorMixingStrength = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_colorMixingStrength_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","colorMixingStrength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->colorMixingStrength);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.destroyByAge
+
+  call-seq:
+    destroyByAge -> bool
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.destroyByAge=
+
+  call-seq:
+    destroyByAge=(x) -> bool
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_destroyByAge_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","destroyByAge", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","destroyByAge", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->destroyByAge = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_destroyByAge_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","destroyByAge", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (bool) ((arg1)->destroyByAge);
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.lifetimeGranularity
+
+  call-seq:
+    lifetimeGranularity -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2ParticleSystemDef.lifetimeGranularity=
+
+  call-seq:
+    lifetimeGranularity=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_lifetimeGranularity_set(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","lifetimeGranularity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","lifetimeGranularity", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->lifetimeGranularity = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2ParticleSystemDef_lifetimeGranularity_get(int argc, VALUE *argv, VALUE self) {
+  b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2ParticleSystemDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2ParticleSystemDef *","lifetimeGranularity", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2ParticleSystemDef * >(argp1);
+  result = (float32) ((arg1)->lifetimeGranularity);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2ParticleSystemDef(void *self) {
+    b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
@@ -12986,8 +20156,13 @@ static swig_type_info _swigt__p_b2FixtureDef = {"_p_b2FixtureDef", "b2FixtureDef
 static swig_type_info _swigt__p_b2JointEdge = {"_p_b2JointEdge", "b2JointEdge *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2MassData = {"_p_b2MassData", "b2MassData *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2ParticleColor = {"_p_b2ParticleColor", "b2ParticleColor *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2ParticleDef = {"_p_b2ParticleDef", "b2ParticleDef *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2ParticleGroup = {"_p_b2ParticleGroup", "b2ParticleGroup *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2ParticleGroupDef = {"_p_b2ParticleGroupDef", "b2ParticleGroupDef *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2ParticlePair = {"_p_b2ParticlePair", "b2ParticlePair *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2ParticleSystem = {"_p_b2ParticleSystem", "b2ParticleSystem *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2ParticleSystemDef = {"_p_b2ParticleSystemDef", "b2ParticleSystemDef *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2ParticleTriad = {"_p_b2ParticleTriad", "b2ParticleTriad *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2PolygonShape = {"_p_b2PolygonShape", "b2PolygonShape *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2QueryCallback = {"_p_b2QueryCallback", "b2QueryCallback *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2RayCastInput = {"_p_b2RayCastInput", "b2RayCastInput *", 0, 0, (void*)0, 0};
@@ -13024,8 +20199,13 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_b2JointEdge,
   &_swigt__p_b2MassData,
   &_swigt__p_b2ParticleColor,
+  &_swigt__p_b2ParticleDef,
+  &_swigt__p_b2ParticleGroup,
+  &_swigt__p_b2ParticleGroupDef,
+  &_swigt__p_b2ParticlePair,
   &_swigt__p_b2ParticleSystem,
   &_swigt__p_b2ParticleSystemDef,
+  &_swigt__p_b2ParticleTriad,
   &_swigt__p_b2PolygonShape,
   &_swigt__p_b2QueryCallback,
   &_swigt__p_b2RayCastInput,
@@ -13062,8 +20242,13 @@ static swig_cast_info _swigc__p_b2FixtureDef[] = {  {&_swigt__p_b2FixtureDef, 0,
 static swig_cast_info _swigc__p_b2JointEdge[] = {  {&_swigt__p_b2JointEdge, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2MassData[] = {  {&_swigt__p_b2MassData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2ParticleColor[] = {  {&_swigt__p_b2ParticleColor, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2ParticleDef[] = {  {&_swigt__p_b2ParticleDef, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2ParticleGroup[] = {  {&_swigt__p_b2ParticleGroup, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2ParticleGroupDef[] = {  {&_swigt__p_b2ParticleGroupDef, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2ParticlePair[] = {  {&_swigt__p_b2ParticlePair, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2ParticleSystem[] = {  {&_swigt__p_b2ParticleSystem, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2ParticleSystemDef[] = {  {&_swigt__p_b2ParticleSystemDef, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2ParticleTriad[] = {  {&_swigt__p_b2ParticleTriad, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2PolygonShape[] = {  {&_swigt__p_b2PolygonShape, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2QueryCallback[] = {  {&_swigt__p_b2QueryCallback, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2RayCastInput[] = {  {&_swigt__p_b2RayCastInput, 0, 0, 0},{0, 0, 0, 0}};
@@ -13100,8 +20285,13 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_b2JointEdge,
   _swigc__p_b2MassData,
   _swigc__p_b2ParticleColor,
+  _swigc__p_b2ParticleDef,
+  _swigc__p_b2ParticleGroup,
+  _swigc__p_b2ParticleGroupDef,
+  _swigc__p_b2ParticlePair,
   _swigc__p_b2ParticleSystem,
   _swigc__p_b2ParticleSystemDef,
+  _swigc__p_b2ParticleTriad,
   _swigc__p_b2PolygonShape,
   _swigc__p_b2QueryCallback,
   _swigc__p_b2RayCastInput,
@@ -13739,5 +20929,251 @@ SWIGEXPORT void Init_liquidfun(void) {
   SwigClassB2QueryCallback.mark = 0;
   SwigClassB2QueryCallback.destroy = (void (*)(void *)) free_b2QueryCallback;
   SwigClassB2QueryCallback.trackObjects = 1;
+  rb_define_const(mLiquidfun, "B2_WATERPARTICLE", SWIG_From_int(static_cast< int >(b2_waterParticle)));
+  rb_define_const(mLiquidfun, "B2_ZOMBIEPARTICLE", SWIG_From_int(static_cast< int >(b2_zombieParticle)));
+  rb_define_const(mLiquidfun, "B2_WALLPARTICLE", SWIG_From_int(static_cast< int >(b2_wallParticle)));
+  rb_define_const(mLiquidfun, "B2_SPRINGPARTICLE", SWIG_From_int(static_cast< int >(b2_springParticle)));
+  rb_define_const(mLiquidfun, "B2_ELASTICPARTICLE", SWIG_From_int(static_cast< int >(b2_elasticParticle)));
+  rb_define_const(mLiquidfun, "B2_VISCOUSPARTICLE", SWIG_From_int(static_cast< int >(b2_viscousParticle)));
+  rb_define_const(mLiquidfun, "B2_POWDERPARTICLE", SWIG_From_int(static_cast< int >(b2_powderParticle)));
+  rb_define_const(mLiquidfun, "B2_TENSILEPARTICLE", SWIG_From_int(static_cast< int >(b2_tensileParticle)));
+  rb_define_const(mLiquidfun, "B2_COLORMIXINGPARTICLE", SWIG_From_int(static_cast< int >(b2_colorMixingParticle)));
+  rb_define_const(mLiquidfun, "B2_DESTRUCTIONLISTENERPARTICLE", SWIG_From_int(static_cast< int >(b2_destructionListenerParticle)));
+  rb_define_const(mLiquidfun, "B2_BARRIERPARTICLE", SWIG_From_int(static_cast< int >(b2_barrierParticle)));
+  rb_define_const(mLiquidfun, "B2_STATICPRESSUREPARTICLE", SWIG_From_int(static_cast< int >(b2_staticPressureParticle)));
+  rb_define_const(mLiquidfun, "B2_REACTIVEPARTICLE", SWIG_From_int(static_cast< int >(b2_reactiveParticle)));
+  rb_define_const(mLiquidfun, "B2_REPULSIVEPARTICLE", SWIG_From_int(static_cast< int >(b2_repulsiveParticle)));
+  rb_define_const(mLiquidfun, "B2_FIXTURECONTACTLISTENERPARTICLE", SWIG_From_int(static_cast< int >(b2_fixtureContactListenerParticle)));
+  rb_define_const(mLiquidfun, "B2_PARTICLECONTACTLISTENERPARTICLE", SWIG_From_int(static_cast< int >(b2_particleContactListenerParticle)));
+  rb_define_const(mLiquidfun, "B2_FIXTURECONTACTFILTERPARTICLE", SWIG_From_int(static_cast< int >(b2_fixtureContactFilterParticle)));
+  rb_define_const(mLiquidfun, "B2_PARTICLECONTACTFILTERPARTICLE", SWIG_From_int(static_cast< int >(b2_particleContactFilterParticle)));
+  
+  SwigClassB2ParticleColor.klass = rb_define_class_under(mLiquidfun, "B2ParticleColor", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2ParticleColor, (void *) &SwigClassB2ParticleColor);
+  rb_define_alloc_func(SwigClassB2ParticleColor.klass, _wrap_B2ParticleColor_allocate);
+  rb_define_method(SwigClassB2ParticleColor.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleColor), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "is_zero", VALUEFUNC(_wrap_B2ParticleColor_is_zero), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "set", VALUEFUNC(_wrap_B2ParticleColor_set), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "*", VALUEFUNC(_wrap_B2ParticleColor___mul__), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "+", VALUEFUNC(_wrap_B2ParticleColor___add__), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "-", VALUEFUNC(_wrap_B2ParticleColor___sub__), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "==", VALUEFUNC(_wrap_B2ParticleColor___eq__), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "mix", VALUEFUNC(_wrap_B2ParticleColor_mix), -1);
+  rb_define_singleton_method(SwigClassB2ParticleColor.klass, "mix_colors", VALUEFUNC(_wrap_B2ParticleColor_mix_colors), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "r=", VALUEFUNC(_wrap_B2ParticleColor_r_set), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "r", VALUEFUNC(_wrap_B2ParticleColor_r_get), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "g=", VALUEFUNC(_wrap_B2ParticleColor_g_set), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "g", VALUEFUNC(_wrap_B2ParticleColor_g_get), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "b=", VALUEFUNC(_wrap_B2ParticleColor_b_set), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "b", VALUEFUNC(_wrap_B2ParticleColor_b_get), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "a=", VALUEFUNC(_wrap_B2ParticleColor_a_set), -1);
+  rb_define_method(SwigClassB2ParticleColor.klass, "a", VALUEFUNC(_wrap_B2ParticleColor_a_get), -1);
+  SwigClassB2ParticleColor.mark = 0;
+  SwigClassB2ParticleColor.destroy = (void (*)(void *)) free_b2ParticleColor;
+  SwigClassB2ParticleColor.trackObjects = 1;
+  rb_define_singleton_method(mLiquidfun, "b2ParticleColor_zero", VALUEFUNC(_wrap_b2ParticleColor_zero_get), 0);
+  rb_define_singleton_method(mLiquidfun, "b2ParticleColor_zero=", VALUEFUNC(_wrap_b2ParticleColor_zero_set), 1);
+  
+  SwigClassB2ParticleDef.klass = rb_define_class_under(mLiquidfun, "B2ParticleDef", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2ParticleDef, (void *) &SwigClassB2ParticleDef);
+  rb_define_alloc_func(SwigClassB2ParticleDef.klass, _wrap_B2ParticleDef_allocate);
+  rb_define_method(SwigClassB2ParticleDef.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleDef), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "set_position", VALUEFUNC(_wrap_B2ParticleDef_set_position), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "set_color", VALUEFUNC(_wrap_B2ParticleDef_set_color), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "flags=", VALUEFUNC(_wrap_B2ParticleDef_flags_set), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "flags", VALUEFUNC(_wrap_B2ParticleDef_flags_get), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "position=", VALUEFUNC(_wrap_B2ParticleDef_position_set), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "position", VALUEFUNC(_wrap_B2ParticleDef_position_get), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "velocity=", VALUEFUNC(_wrap_B2ParticleDef_velocity_set), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "velocity", VALUEFUNC(_wrap_B2ParticleDef_velocity_get), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "color=", VALUEFUNC(_wrap_B2ParticleDef_color_set), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "color", VALUEFUNC(_wrap_B2ParticleDef_color_get), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "lifetime=", VALUEFUNC(_wrap_B2ParticleDef_lifetime_set), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "lifetime", VALUEFUNC(_wrap_B2ParticleDef_lifetime_get), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "group=", VALUEFUNC(_wrap_B2ParticleDef_group_set), -1);
+  rb_define_method(SwigClassB2ParticleDef.klass, "group", VALUEFUNC(_wrap_B2ParticleDef_group_get), -1);
+  SwigClassB2ParticleDef.mark = 0;
+  SwigClassB2ParticleDef.destroy = (void (*)(void *)) free_b2ParticleDef;
+  SwigClassB2ParticleDef.trackObjects = 1;
+  rb_define_module_function(mLiquidfun, "b_2calculate_particle_iterations", VALUEFUNC(_wrap_b_2calculate_particle_iterations), -1);
+  
+  SwigClassB2ParticleGroup.klass = rb_define_class_under(mLiquidfun, "B2ParticleGroup", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2ParticleGroup, (void *) &SwigClassB2ParticleGroup);
+  rb_undef_alloc_func(SwigClassB2ParticleGroup.klass);
+  rb_define_method(SwigClassB2ParticleGroup.klass, "get_next", VALUEFUNC(_wrap_B2ParticleGroup_get_next), -1);
+  rb_define_method(SwigClassB2ParticleGroup.klass, "get_particle_count", VALUEFUNC(_wrap_B2ParticleGroup_get_particle_count), -1);
+  rb_define_method(SwigClassB2ParticleGroup.klass, "get_buffer_index", VALUEFUNC(_wrap_B2ParticleGroup_get_buffer_index), -1);
+  rb_define_method(SwigClassB2ParticleGroup.klass, "get_group_flags", VALUEFUNC(_wrap_B2ParticleGroup_get_group_flags), -1);
+  SwigClassB2ParticleGroup.mark = 0;
+  SwigClassB2ParticleGroup.trackObjects = 1;
+  rb_define_const(mLiquidfun, "B2_SOLIDPARTICLEGROUP", SWIG_From_int(static_cast< int >(b2_solidParticleGroup)));
+  rb_define_const(mLiquidfun, "B2_RIGIDPARTICLEGROUP", SWIG_From_int(static_cast< int >(b2_rigidParticleGroup)));
+  rb_define_const(mLiquidfun, "B2_PARTICLEGROUPCANBEEMPTY", SWIG_From_int(static_cast< int >(b2_particleGroupCanBeEmpty)));
+  
+  SwigClassB2ParticleGroupDef.klass = rb_define_class_under(mLiquidfun, "B2ParticleGroupDef", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2ParticleGroupDef, (void *) &SwigClassB2ParticleGroupDef);
+  rb_define_alloc_func(SwigClassB2ParticleGroupDef.klass, _wrap_B2ParticleGroupDef_allocate);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleGroupDef), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "flags=", VALUEFUNC(_wrap_B2ParticleGroupDef_flags_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "flags", VALUEFUNC(_wrap_B2ParticleGroupDef_flags_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "groupFlags=", VALUEFUNC(_wrap_B2ParticleGroupDef_groupFlags_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "groupFlags", VALUEFUNC(_wrap_B2ParticleGroupDef_groupFlags_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "position=", VALUEFUNC(_wrap_B2ParticleGroupDef_position_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "position", VALUEFUNC(_wrap_B2ParticleGroupDef_position_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "angle=", VALUEFUNC(_wrap_B2ParticleGroupDef_angle_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "angle", VALUEFUNC(_wrap_B2ParticleGroupDef_angle_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "linearVelocity=", VALUEFUNC(_wrap_B2ParticleGroupDef_linearVelocity_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "linearVelocity", VALUEFUNC(_wrap_B2ParticleGroupDef_linearVelocity_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "angularVelocity=", VALUEFUNC(_wrap_B2ParticleGroupDef_angularVelocity_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "angularVelocity", VALUEFUNC(_wrap_B2ParticleGroupDef_angularVelocity_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "color=", VALUEFUNC(_wrap_B2ParticleGroupDef_color_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "color", VALUEFUNC(_wrap_B2ParticleGroupDef_color_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "strength=", VALUEFUNC(_wrap_B2ParticleGroupDef_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "strength", VALUEFUNC(_wrap_B2ParticleGroupDef_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "shape=", VALUEFUNC(_wrap_B2ParticleGroupDef_shape_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "shape", VALUEFUNC(_wrap_B2ParticleGroupDef_shape_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "shapeCount=", VALUEFUNC(_wrap_B2ParticleGroupDef_shapeCount_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "shapeCount", VALUEFUNC(_wrap_B2ParticleGroupDef_shapeCount_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "stride=", VALUEFUNC(_wrap_B2ParticleGroupDef_stride_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "stride", VALUEFUNC(_wrap_B2ParticleGroupDef_stride_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "particleCount=", VALUEFUNC(_wrap_B2ParticleGroupDef_particleCount_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "particleCount", VALUEFUNC(_wrap_B2ParticleGroupDef_particleCount_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "positionData=", VALUEFUNC(_wrap_B2ParticleGroupDef_positionData_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "positionData", VALUEFUNC(_wrap_B2ParticleGroupDef_positionData_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "lifetime=", VALUEFUNC(_wrap_B2ParticleGroupDef_lifetime_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "lifetime", VALUEFUNC(_wrap_B2ParticleGroupDef_lifetime_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "group=", VALUEFUNC(_wrap_B2ParticleGroupDef_group_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "group", VALUEFUNC(_wrap_B2ParticleGroupDef_group_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "circleShapes=", VALUEFUNC(_wrap_B2ParticleGroupDef_circleShapes_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "circleShapes", VALUEFUNC(_wrap_B2ParticleGroupDef_circleShapes_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "ownShapesArray=", VALUEFUNC(_wrap_B2ParticleGroupDef_ownShapesArray_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "ownShapesArray", VALUEFUNC(_wrap_B2ParticleGroupDef_ownShapesArray_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "free_shapes_memory", VALUEFUNC(_wrap_B2ParticleGroupDef_free_shapes_memory), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "set_circle_shapes_from_vertex_list", VALUEFUNC(_wrap_B2ParticleGroupDef_set_circle_shapes_from_vertex_list), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "set_position", VALUEFUNC(_wrap_B2ParticleGroupDef_set_position), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "set_color", VALUEFUNC(_wrap_B2ParticleGroupDef_set_color), -1);
+  SwigClassB2ParticleGroupDef.mark = 0;
+  SwigClassB2ParticleGroupDef.destroy = (void (*)(void *)) free_b2ParticleGroupDef;
+  SwigClassB2ParticleGroupDef.trackObjects = 1;
+  
+  SwigClassB2ParticleSystem.klass = rb_define_class_under(mLiquidfun, "B2ParticleSystem", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2ParticleSystem, (void *) &SwigClassB2ParticleSystem);
+  rb_undef_alloc_func(SwigClassB2ParticleSystem.klass);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "create_particle", VALUEFUNC(_wrap_B2ParticleSystem_create_particle), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "join_particle_groups", VALUEFUNC(_wrap_B2ParticleSystem_join_particle_groups), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "get_particle_group_list", VALUEFUNC(_wrap_B2ParticleSystem_get_particle_group_list), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "destroy_particles_in_shape", VALUEFUNC(_wrap_B2ParticleSystem_destroy_particles_in_shape), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "create_particle_group", VALUEFUNC(_wrap_B2ParticleSystem_create_particle_group), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "get_particle_group_count", VALUEFUNC(_wrap_B2ParticleSystem_get_particle_group_count), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "get_particle_count", VALUEFUNC(_wrap_B2ParticleSystem_get_particle_count), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "set_max_particle_count", VALUEFUNC(_wrap_B2ParticleSystem_set_max_particle_count), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "set_damping", VALUEFUNC(_wrap_B2ParticleSystem_set_damping), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "set_radius", VALUEFUNC(_wrap_B2ParticleSystem_set_radius), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "query_shape_aabb", VALUEFUNC(_wrap_B2ParticleSystem_query_shape_aabb), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "set_particle_velocity", VALUEFUNC(_wrap_B2ParticleSystem_set_particle_velocity), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "get_particle_position_x", VALUEFUNC(_wrap_B2ParticleSystem_get_particle_position_x), -1);
+  rb_define_method(SwigClassB2ParticleSystem.klass, "get_particle_position_y", VALUEFUNC(_wrap_B2ParticleSystem_get_particle_position_y), -1);
+  SwigClassB2ParticleSystem.mark = 0;
+  SwigClassB2ParticleSystem.trackObjects = 1;
+  
+  SwigClassB2ParticlePair.klass = rb_define_class_under(mLiquidfun, "B2ParticlePair", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2ParticlePair, (void *) &SwigClassB2ParticlePair);
+  rb_define_alloc_func(SwigClassB2ParticlePair.klass, _wrap_B2ParticlePair_allocate);
+  rb_define_method(SwigClassB2ParticlePair.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticlePair), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "indexA=", VALUEFUNC(_wrap_B2ParticlePair_indexA_set), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "indexA", VALUEFUNC(_wrap_B2ParticlePair_indexA_get), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "indexB=", VALUEFUNC(_wrap_B2ParticlePair_indexB_set), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "indexB", VALUEFUNC(_wrap_B2ParticlePair_indexB_get), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "flags=", VALUEFUNC(_wrap_B2ParticlePair_flags_set), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "flags", VALUEFUNC(_wrap_B2ParticlePair_flags_get), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "strength=", VALUEFUNC(_wrap_B2ParticlePair_strength_set), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "strength", VALUEFUNC(_wrap_B2ParticlePair_strength_get), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "distance=", VALUEFUNC(_wrap_B2ParticlePair_distance_set), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "distance", VALUEFUNC(_wrap_B2ParticlePair_distance_get), -1);
+  SwigClassB2ParticlePair.mark = 0;
+  SwigClassB2ParticlePair.destroy = (void (*)(void *)) free_b2ParticlePair;
+  SwigClassB2ParticlePair.trackObjects = 1;
+  
+  SwigClassB2ParticleTriad.klass = rb_define_class_under(mLiquidfun, "B2ParticleTriad", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2ParticleTriad, (void *) &SwigClassB2ParticleTriad);
+  rb_define_alloc_func(SwigClassB2ParticleTriad.klass, _wrap_B2ParticleTriad_allocate);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleTriad), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "indexA=", VALUEFUNC(_wrap_B2ParticleTriad_indexA_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "indexA", VALUEFUNC(_wrap_B2ParticleTriad_indexA_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "indexB=", VALUEFUNC(_wrap_B2ParticleTriad_indexB_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "indexB", VALUEFUNC(_wrap_B2ParticleTriad_indexB_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "indexC=", VALUEFUNC(_wrap_B2ParticleTriad_indexC_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "indexC", VALUEFUNC(_wrap_B2ParticleTriad_indexC_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "flags=", VALUEFUNC(_wrap_B2ParticleTriad_flags_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "flags", VALUEFUNC(_wrap_B2ParticleTriad_flags_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "strength=", VALUEFUNC(_wrap_B2ParticleTriad_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "strength", VALUEFUNC(_wrap_B2ParticleTriad_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "pa=", VALUEFUNC(_wrap_B2ParticleTriad_pa_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "pa", VALUEFUNC(_wrap_B2ParticleTriad_pa_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "pb=", VALUEFUNC(_wrap_B2ParticleTriad_pb_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "pb", VALUEFUNC(_wrap_B2ParticleTriad_pb_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "pc=", VALUEFUNC(_wrap_B2ParticleTriad_pc_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "pc", VALUEFUNC(_wrap_B2ParticleTriad_pc_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "ka=", VALUEFUNC(_wrap_B2ParticleTriad_ka_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "ka", VALUEFUNC(_wrap_B2ParticleTriad_ka_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "kb=", VALUEFUNC(_wrap_B2ParticleTriad_kb_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "kb", VALUEFUNC(_wrap_B2ParticleTriad_kb_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "kc=", VALUEFUNC(_wrap_B2ParticleTriad_kc_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "kc", VALUEFUNC(_wrap_B2ParticleTriad_kc_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "s=", VALUEFUNC(_wrap_B2ParticleTriad_s_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "s", VALUEFUNC(_wrap_B2ParticleTriad_s_get), -1);
+  SwigClassB2ParticleTriad.mark = 0;
+  SwigClassB2ParticleTriad.destroy = (void (*)(void *)) free_b2ParticleTriad;
+  SwigClassB2ParticleTriad.trackObjects = 1;
+  
+  SwigClassB2ParticleSystemDef.klass = rb_define_class_under(mLiquidfun, "B2ParticleSystemDef", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2ParticleSystemDef, (void *) &SwigClassB2ParticleSystemDef);
+  rb_define_alloc_func(SwigClassB2ParticleSystemDef.klass, _wrap_B2ParticleSystemDef_allocate);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleSystemDef), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "strictContactCheck=", VALUEFUNC(_wrap_B2ParticleSystemDef_strictContactCheck_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "strictContactCheck", VALUEFUNC(_wrap_B2ParticleSystemDef_strictContactCheck_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "density=", VALUEFUNC(_wrap_B2ParticleSystemDef_density_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "density", VALUEFUNC(_wrap_B2ParticleSystemDef_density_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "gravityScale=", VALUEFUNC(_wrap_B2ParticleSystemDef_gravityScale_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "gravityScale", VALUEFUNC(_wrap_B2ParticleSystemDef_gravityScale_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "radius=", VALUEFUNC(_wrap_B2ParticleSystemDef_radius_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "radius", VALUEFUNC(_wrap_B2ParticleSystemDef_radius_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "maxCount=", VALUEFUNC(_wrap_B2ParticleSystemDef_maxCount_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "maxCount", VALUEFUNC(_wrap_B2ParticleSystemDef_maxCount_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "pressureStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_pressureStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "pressureStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_pressureStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "dampingStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_dampingStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "dampingStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_dampingStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "elasticStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_elasticStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "elasticStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_elasticStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "springStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_springStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "springStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_springStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "viscousStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_viscousStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "viscousStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_viscousStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surfaceTensionPressureStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_surfaceTensionPressureStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surfaceTensionPressureStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_surfaceTensionPressureStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surfaceTensionNormalStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_surfaceTensionNormalStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surfaceTensionNormalStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_surfaceTensionNormalStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "repulsiveStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_repulsiveStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "repulsiveStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_repulsiveStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "powderStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_powderStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "powderStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_powderStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "ejectionStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_ejectionStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "ejectionStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_ejectionStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureRelaxation=", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureRelaxation_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureRelaxation", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureRelaxation_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureIterations=", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureIterations_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureIterations", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureIterations_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "colorMixingStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_colorMixingStrength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "colorMixingStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_colorMixingStrength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "destroyByAge=", VALUEFUNC(_wrap_B2ParticleSystemDef_destroyByAge_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "destroyByAge", VALUEFUNC(_wrap_B2ParticleSystemDef_destroyByAge_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "lifetimeGranularity=", VALUEFUNC(_wrap_B2ParticleSystemDef_lifetimeGranularity_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "lifetimeGranularity", VALUEFUNC(_wrap_B2ParticleSystemDef_lifetimeGranularity_get), -1);
+  SwigClassB2ParticleSystemDef.mark = 0;
+  SwigClassB2ParticleSystemDef.destroy = (void (*)(void *)) free_b2ParticleSystemDef;
+  SwigClassB2ParticleSystemDef.trackObjects = 1;
 }
 

@@ -87,7 +87,7 @@ CFLAGS   = $(CCDLFLAGS) $(cflags)  -fPIC $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) -I$(srcdir)/../..
 DEFS     = 
 CPPFLAGS =   $(DEFS) $(cppflags)
-CXXFLAGS = $(CCDLFLAGS) $(cxxflags) -g  $(ARCH_FLAG)
+CXXFLAGS = $(CCDLFLAGS) $(cxxflags) -g $(ARCH_FLAG)
 ldflags  = -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic
 dldflags = -Wl,--compress-debug-sections=zlib -L$(srcdir)/../../Box2D/Debug/ -lliquidfun  
 ARCH_FLAG = 

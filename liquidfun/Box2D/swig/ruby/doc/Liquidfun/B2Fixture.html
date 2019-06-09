@@ -1,1017 +1,1572 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta charset="UTF-8">
 
-	<title>Class: Liquidfun::B2Fixture</title>
+<title>class Liquidfun::B2Fixture - RDoc Documentation</title>
 
-	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
 
-	<script src="../js/jquery.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/thickbox-compressed.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/quicksearch.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/darkfish.js" type="text/javascript"
-		charset="utf-8"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
 
-</head>
-<body class="class">
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
 
-	<div id="metadata">
-		<div id="home-metadata">
-			<div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-			</div>
-		</div>
 
-		<div id="file-metadata">
-			<div id="file-list-section" class="section">
-				<h3 class="section-header">In Files</h3>
-				<div class="section-body">
-					<ul>
-					
-						<li><a href="../liquidfun_wrap_cxx.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="liquidfun_wrap.cxx">liquidfun_wrap.cxx</a></li>
-					
-					</ul>
-				</div>
-			</div>
 
-			
-		</div>
 
-		<div id="class-metadata">
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
 
-			<!-- Parent Class -->
-			
-			<div id="parent-class-section" class="section">
-				<h3 class="section-header">Parent</h3>
-				
-				<p class="link">Object</p>
-				
-			</div>
-			
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
 
-			<!-- Namespace Contents -->
-			
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
 
-			<!-- Method Quickref -->
-			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#method-i-compute_distance">#compute_distance</a></li>
-					
-					<li><a href="#method-i-dump">#dump</a></li>
-					
-					<li><a href="#method-i-get_aabb">#get_aabb</a></li>
-					
-					<li><a href="#method-i-get_body">#get_body</a></li>
-					
-					<li><a href="#method-i-get_density">#get_density</a></li>
-					
-					<li><a href="#method-i-get_filter_data">#get_filter_data</a></li>
-					
-					<li><a href="#method-i-get_friction">#get_friction</a></li>
-					
-					<li><a href="#method-i-get_mass_data">#get_mass_data</a></li>
-					
-					<li><a href="#method-i-get_next">#get_next</a></li>
-					
-					<li><a href="#method-i-get_restitution">#get_restitution</a></li>
-					
-					<li><a href="#method-i-get_shape">#get_shape</a></li>
-					
-					<li><a href="#method-i-get_type">#get_type</a></li>
-					
-					<li><a href="#method-i-is_sensor">#is_sensor</a></li>
-					
-					<li><a href="#method-i-ray_cast">#ray_cast</a></li>
-					
-					<li><a href="#method-i-refilter">#refilter</a></li>
-					
-					<li><a href="#method-i-set_density">#set_density</a></li>
-					
-					<li><a href="#method-i-set_filter_data">#set_filter_data</a></li>
-					
-					<li><a href="#method-i-set_friction">#set_friction</a></li>
-					
-					<li><a href="#method-i-set_restitution">#set_restitution</a></li>
-					
-					<li><a href="#method-i-set_sensor">#set_sensor</a></li>
-					
-					<li><a href="#method-i-test_point">#test_point</a></li>
-					
-				</ul>
-			</div>
-			
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
 
-			<!-- Included Modules -->
-			
-		</div>
+  </div>
 
-		<div id="project-metadata">
-			
-			
-
-			<div id="classindex-section" class="section project-section">
-				<h3 class="section-header">Class Index
-					<span class="search-toggle"><img src="../images/find.png"
-						height="16" width="16" alt="[+]"
-						title="show/hide quicksearch" /></span></h3>
-				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-				<fieldset>
-					<legend>Quicksearch</legend>
-					<input type="text" name="quicksearch" value=""
-						class="quicksearch-field" />
-				</fieldset>
-				</form>
-
-				<ul class="link-list">
-				
-					<li><a href="../Liquidfun.html">Liquidfun</a></li>
-				
-					<li><a href="../Liquidfun/B2Body.html">Liquidfun::B2Body</a></li>
-				
-					<li><a href="../Liquidfun/B2BodyDef.html">Liquidfun::B2BodyDef</a></li>
-				
-					<li><a href="../Liquidfun/B2CircleShape.html">Liquidfun::B2CircleShape</a></li>
-				
-					<li><a href="../Liquidfun/B2Color.html">Liquidfun::B2Color</a></li>
-				
-					<li><a href="../Liquidfun/B2Draw.html">Liquidfun::B2Draw</a></li>
-				
-					<li><a href="../Liquidfun/B2EdgeShape.html">Liquidfun::B2EdgeShape</a></li>
-				
-					<li><a href="../Liquidfun/B2Filter.html">Liquidfun::B2Filter</a></li>
-				
-					<li><a href="../Liquidfun/B2Fixture.html">Liquidfun::B2Fixture</a></li>
-				
-					<li><a href="../Liquidfun/B2FixtureDef.html">Liquidfun::B2FixtureDef</a></li>
-				
-					<li><a href="../Liquidfun/B2MassData.html">Liquidfun::B2MassData</a></li>
-				
-					<li><a href="../Liquidfun/B2PolygonShape.html">Liquidfun::B2PolygonShape</a></li>
-				
-					<li><a href="../Liquidfun/B2QueryCallback.html">Liquidfun::B2QueryCallback</a></li>
-				
-					<li><a href="../Liquidfun/B2Shape.html">Liquidfun::B2Shape</a></li>
-				
-					<li><a href="../Liquidfun/B2Transform.html">Liquidfun::B2Transform</a></li>
-				
-					<li><a href="../Liquidfun/B2Vec2.html">Liquidfun::B2Vec2</a></li>
-				
-					<li><a href="../Liquidfun/B2Version.html">Liquidfun::B2Version</a></li>
-				
-					<li><a href="../Liquidfun/B2World.html">Liquidfun::B2World</a></li>
-				
-					<li><a href="../SWIG.html">SWIG</a></li>
-				
-					<li><a href="../SWIG/Pointer.html">SWIG::Pointer</a></li>
-				
-					<li><a href="../NullReferenceError.html">NullReferenceError</a></li>
-				
-					<li><a href="../ObjectPreviouslyDeleted.html">ObjectPreviouslyDeleted</a></li>
-				
-					<li><a href="../swig_runtime_data.html">swig_runtime_data</a></li>
-				
-				</ul>
-				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
-			</div>
-
-			
-		</div>
-	</div>
-
-	<div id="documentation">
-		<h1 class="class">Liquidfun::B2Fixture</h1>
-
-		<div id="description">
-			<p>
-Proxy of C++ <a href="B2Fixture.html">Liquidfun::B2Fixture</a> class
-</p>
-
-		</div>
-
-		<!-- Constants -->
-		
-
-		<!-- Attributes -->
-		
-
-		<!-- Methods -->
-		
-		<div id="public-instance-method-details" class="method-section section">
-			<h3 class="section-header">Public Instance Methods</h3>
-
-		
-			<div id="compute-distance-method" class="method-detail ">
-				<a name="method-i-compute_distance"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">compute_distance(B2Vec2 p, float32 * distance, B2Vec2 normal, int32 childIndex)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
 
-					
-					<div class="method-source-code"
-						id="compute-distance-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_compute_distance(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
 
-				
-
-				
-			</div>
-
-		
-			<div id="dump-method" class="method-detail ">
-				<a name="method-i-dump"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">dump(int32 bodyIndex)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
-
-					
-					<div class="method-source-code"
-						id="dump-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_dump(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="get-aabb-method" class="method-detail ">
-				<a name="method-i-get_aabb"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_aabb(int32 childIndex) &rarr; b2AABB const &</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+  <p class="link">Object
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+</div>
 
-					
-					<div class="method-source-code"
-						id="get-aabb-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_get_aabb(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-				
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-compute_distance">#compute_distance</a>
+    
+    <li ><a href="#method-i-dump">#dump</a>
+    
+    <li ><a href="#method-i-get_aabb">#get_aabb</a>
+    
+    <li ><a href="#method-i-get_body">#get_body</a>
+    
+    <li ><a href="#method-i-get_density">#get_density</a>
+    
+    <li ><a href="#method-i-get_filter_data">#get_filter_data</a>
+    
+    <li ><a href="#method-i-get_friction">#get_friction</a>
+    
+    <li ><a href="#method-i-get_mass_data">#get_mass_data</a>
+    
+    <li ><a href="#method-i-get_next">#get_next</a>
+    
+    <li ><a href="#method-i-get_restitution">#get_restitution</a>
+    
+    <li ><a href="#method-i-get_shape">#get_shape</a>
+    
+    <li ><a href="#method-i-get_type">#get_type</a>
+    
+    <li ><a href="#method-i-is_sensor">#is_sensor</a>
+    
+    <li ><a href="#method-i-ray_cast">#ray_cast</a>
+    
+    <li ><a href="#method-i-refilter">#refilter</a>
+    
+    <li ><a href="#method-i-set_density">#set_density</a>
+    
+    <li ><a href="#method-i-set_filter_data">#set_filter_data</a>
+    
+    <li ><a href="#method-i-set_friction">#set_friction</a>
+    
+    <li ><a href="#method-i-set_restitution">#set_restitution</a>
+    
+    <li ><a href="#method-i-set_sensor">#set_sensor</a>
+    
+    <li ><a href="#method-i-test_point">#test_point</a>
+    
+  </ul>
+</div>
 
-				
-			</div>
+  </div>
+</nav>
 
-		
-			<div id="get-body-method" class="method-detail ">
-				<a name="method-i-get_body"></a>
+<main role="main" aria-labelledby="class-Liquidfun::B2Fixture">
+  <h1 id="class-Liquidfun::B2Fixture" class="class">
+    class Liquidfun::B2Fixture
+  </h1>
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_body &rarr; B2Body
-    get_body &rarr; B2Body</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+  <section class="description">
+    
+<p>Proxy of C++ <a href="B2Fixture.html"><code>Liquidfun::B2Fixture</code></a> class</p>
 
-				<div class="method-description">
-					
-					<pre>
+  </section>
+
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
-					
-				</div>
+    
 
-				
+    
 
-				
-			</div>
+    
 
-		
-			<div id="get-density-method" class="method-detail ">
-				<a name="method-i-get_density"></a>
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_density &rarr; float32</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+    
+      <div id="method-i-compute_distance" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            compute_distance(B2Vec2 p, float32 * distance, B2Vec2 normal, int32 childIndex)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-				<div class="method-description">
-					
-					<pre>
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="compute_distance-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_compute_distance(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  float32 *arg3 = (float32 *) 0 ;
+  b2Vec2 *arg4 = (b2Vec2 *) 0 ;
+  int32 arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 4) || (argc &gt; 4)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 4)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;ComputeDistance&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;ComputeDistance&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;ComputeDistance&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2Vec2 * &gt;(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &amp;argp3,SWIGTYPE_p_float, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( &quot;&quot;, &quot;float32 *&quot;,&quot;ComputeDistance&quot;, 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast&lt; float32 * &gt;(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &amp;argp4,SWIGTYPE_p_b2Vec2, 0 |  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 *&quot;,&quot;ComputeDistance&quot;, 4, argv[2] )); 
+  }
+  arg4 = reinterpret_cast&lt; b2Vec2 * &gt;(argp4);
+  ecode5 = SWIG_AsVal_int(argv[3], &amp;val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), Ruby_Format_TypeError( &quot;&quot;, &quot;int32&quot;,&quot;ComputeDistance&quot;, 5, argv[3] ));
+  } 
+  arg5 = static_cast&lt; int32 &gt;(val5);
+  {
+    try {
+      ((b2Fixture const *)arg1)-&gt;ComputeDistance((b2Vec2 const &amp;)*arg2,arg3,arg4,arg5);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="get-density-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_get_density(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-dump" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            dump(int32 bodyIndex)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-			<div id="get-filter-data-method" class="method-detail ">
-				<a name="method-i-get_filter_data"></a>
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_filter_data &rarr; B2Filter</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="dump-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_dump(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture *&quot;,&quot;Dump&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;int32&quot;,&quot;Dump&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; int32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;Dump(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="get-filter-data-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_get_filter_data(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_aabb" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_aabb(int32 childIndex) &rarr; b2AABB const &amp;
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-			<div id="get-friction-method" class="method-detail ">
-				<a name="method-i-get_friction"></a>
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_friction &rarr; float32</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_aabb-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_get_aabb(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  int32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  b2AABB *result = 0 ;
+  VALUE vresult = Qnil;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;GetAABB&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;int32&quot;,&quot;GetAABB&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; int32 &gt;(val2);
+  {
+    try {
+      result = (b2AABB *) &amp;((b2Fixture const *)arg1)-&gt;GetAABB(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2AABB, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="get-friction-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_get_friction(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_body" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_body</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
 
-		
-			<div id="get-mass-data-method" class="method-detail ">
-				<a name="method-i-get_mass_data"></a>
+        <div class="method-description">
+          
+          
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_mass_data(B2MassData massData)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_body-source">
+            <pre>SWIGINTERN VALUE _wrap_B2Fixture_get_body(int nargs, VALUE *args, VALUE self) {
+  int argc;
+  VALUE argv[2];
+  int ii;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
-
-					
-					<div class="method-source-code"
-						id="get-mass-data-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_get_mass_data(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="get-next-method" class="method-detail ">
-				<a name="method-i-get_next"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_next &rarr; B2Fixture
-    get_next &rarr; B2Fixture</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+  argc = nargs + 1;
+  argv[0] = self;
+  if (argc &gt; 2) SWIG_fail;
+  for (ii = 1; (ii &lt; argc); ++ii) {
+    argv[ii] = args[ii-1];
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &amp;vptr, SWIGTYPE_p_b2Fixture, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_B2Fixture_get_body__SWIG_0(nargs, args, self);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &amp;vptr, SWIGTYPE_p_b2Fixture, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_B2Fixture_get_body__SWIG_1(nargs, args, self);
+    }
+  }
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="get-restitution-method" class="method-detail ">
-				<a name="method-i-get_restitution"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_restitution &rarr; float32</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+fail:
+  Ruby_Format_OverloadedError( argc, 2, &quot;B2Fixture.get_body&quot;, 
+    &quot;    b2Body B2Fixture.get_body()\n&quot;
+    &quot;    b2Body const * B2Fixture.get_body()\n&quot;);
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="get-restitution-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_get_restitution(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_density" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_density &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-			<div id="get-shape-method" class="method-detail ">
-				<a name="method-i-get_shape"></a>
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_shape &rarr; B2Shape
-    get_shape &rarr; B2Shape</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_density-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_get_density(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;GetDensity&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2Fixture const *)arg1)-&gt;GetDensity();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_filter_data" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_filter_data &rarr; B2Filter
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-			<div id="get-type-method" class="method-detail ">
-				<a name="method-i-get_type"></a>
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">get_type &rarr; int</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_filter_data-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_get_filter_data(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Filter *result = 0 ;
+  VALUE vresult = Qnil;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;GetFilterData&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  {
+    try {
+      result = (b2Filter *) &amp;((b2Fixture const *)arg1)-&gt;GetFilterData();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Filter, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="get-type-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_get_type(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_friction" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_friction &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-			<div id="is-sensor-method" class="method-detail ">
-				<a name="method-i-is_sensor"></a>
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">is_sensor &rarr; bool</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_friction-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_get_friction(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;GetFriction&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2Fixture const *)arg1)-&gt;GetFriction();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="is-sensor-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_is_sensor(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_mass_data" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_mass_data(B2MassData massData)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-			<div id="ray-cast-method" class="method-detail ">
-				<a name="method-i-ray_cast"></a>
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">ray_cast(b2RayCastOutput * output, b2RayCastInput const & input, int32 childIndex) &rarr; bool</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_mass_data-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_get_mass_data(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  b2MassData *arg2 = (b2MassData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;GetMassData&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2MassData, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MassData *&quot;,&quot;GetMassData&quot;, 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast&lt; b2MassData * &gt;(argp2);
+  {
+    try {
+      ((b2Fixture const *)arg1)-&gt;GetMassData(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="ray-cast-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_ray_cast(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_next" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_next</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
 
-		
-			<div id="refilter-method" class="method-detail ">
-				<a name="method-i-refilter"></a>
+        <div class="method-description">
+          
+          
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">refilter</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_next-source">
+            <pre>SWIGINTERN VALUE _wrap_B2Fixture_get_next(int nargs, VALUE *args, VALUE self) {
+  int argc;
+  VALUE argv[2];
+  int ii;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
-
-					
-					<div class="method-source-code"
-						id="refilter-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_refilter(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="set-density-method" class="method-detail ">
-				<a name="method-i-set_density"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">set_density(float32 density)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+  argc = nargs + 1;
+  argv[0] = self;
+  if (argc &gt; 2) SWIG_fail;
+  for (ii = 1; (ii &lt; argc); ++ii) {
+    argv[ii] = args[ii-1];
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &amp;vptr, SWIGTYPE_p_b2Fixture, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_B2Fixture_get_next__SWIG_0(nargs, args, self);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &amp;vptr, SWIGTYPE_p_b2Fixture, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_B2Fixture_get_next__SWIG_1(nargs, args, self);
+    }
+  }
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
-
-					
-					<div class="method-source-code"
-						id="set-density-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_set_density(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="set-filter-data-method" class="method-detail ">
-				<a name="method-i-set_filter_data"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">set_filter_data(B2Filter filter)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+fail:
+  Ruby_Format_OverloadedError( argc, 2, &quot;B2Fixture.get_next&quot;, 
+    &quot;    b2Fixture B2Fixture.get_next()\n&quot;
+    &quot;    b2Fixture const * B2Fixture.get_next()\n&quot;);
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="set-filter-data-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_set_filter_data(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_restitution" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_restitution &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-			<div id="set-friction-method" class="method-detail ">
-				<a name="method-i-set_friction"></a>
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">set_friction(float32 friction)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_restitution-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_get_restitution(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;GetRestitution&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2Fixture const *)arg1)-&gt;GetRestitution();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="set-friction-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_set_friction(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_shape" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_shape</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
 
-		
-			<div id="set-restitution-method" class="method-detail ">
-				<a name="method-i-set_restitution"></a>
+        <div class="method-description">
+          
+          
+          
+          
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">set_restitution(float32 restitution)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="get_shape-source">
+            <pre>SWIGINTERN VALUE _wrap_B2Fixture_get_shape(int nargs, VALUE *args, VALUE self) {
+  int argc;
+  VALUE argv[2];
+  int ii;
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
-
-					
-					<div class="method-source-code"
-						id="set-restitution-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_set_restitution(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="set-sensor-method" class="method-detail ">
-				<a name="method-i-set_sensor"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">set_sensor(bool sensor)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+  argc = nargs + 1;
+  argv[0] = self;
+  if (argc &gt; 2) SWIG_fail;
+  for (ii = 1; (ii &lt; argc); ++ii) {
+    argv[ii] = args[ii-1];
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &amp;vptr, SWIGTYPE_p_b2Fixture, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_B2Fixture_get_shape__SWIG_0(nargs, args, self);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &amp;vptr, SWIGTYPE_p_b2Fixture, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_B2Fixture_get_shape__SWIG_1(nargs, args, self);
+    }
+  }
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
-
-					
-					<div class="method-source-code"
-						id="set-sensor-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_set_sensor(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="test-point-method" class="method-detail ">
-				<a name="method-i-test_point"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">test_point(B2Vec2 p) &rarr; bool</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+fail:
+  Ruby_Format_OverloadedError( argc, 2, &quot;B2Fixture.get_shape&quot;, 
+    &quot;    b2Shape B2Fixture.get_shape()\n&quot;
+    &quot;    b2Shape const * B2Fixture.get_shape()\n&quot;);
   
-</pre>
-<p>
-An instance method.
-</p>
-<pre>
-  </pre>
-					
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="test-point-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Fixture_test_point(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-get_type" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_type &rarr; int
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-		</div>
-	
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
 
-	</div>
+          
+          <div class="method-source-code" id="get_type-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_get_type(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Shape::Type result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;GetType&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  {
+    try {
+      result = (b2Shape::Type)((b2Fixture const *)arg1)-&gt;GetType();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast&lt; int &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-is_sensor" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            is_sensor &rarr; bool
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="is_sensor-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_is_sensor(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;IsSensor&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  {
+    try {
+      result = (bool)((b2Fixture const *)arg1)-&gt;IsSensor();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast&lt; bool &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ray_cast" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            ray_cast(b2RayCastOutput * output, b2RayCastInput const &amp; input, int32 childIndex) &rarr; bool
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="ray_cast-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_ray_cast(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  b2RayCastOutput *arg2 = (b2RayCastOutput *) 0 ;
+  b2RayCastInput *arg3 = 0 ;
+  int32 arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 3) || (argc &gt; 3)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 3)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;RayCast&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2RayCastOutput, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RayCastOutput *&quot;,&quot;RayCast&quot;, 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast&lt; b2RayCastOutput * &gt;(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &amp;argp3, SWIGTYPE_p_b2RayCastInput,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RayCastInput const &amp;&quot;,&quot;RayCast&quot;, 3, argv[1] )); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2RayCastInput const &amp;&quot;,&quot;RayCast&quot;, 3, argv[1])); 
+  }
+  arg3 = reinterpret_cast&lt; b2RayCastInput * &gt;(argp3);
+  ecode4 = SWIG_AsVal_int(argv[2], &amp;val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( &quot;&quot;, &quot;int32&quot;,&quot;RayCast&quot;, 4, argv[2] ));
+  } 
+  arg4 = static_cast&lt; int32 &gt;(val4);
+  {
+    try {
+      result = (bool)((b2Fixture const *)arg1)-&gt;RayCast(arg2,(b2RayCastInput const &amp;)*arg3,arg4);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast&lt; bool &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-refilter" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            refilter
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="refilter-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_refilter(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture *&quot;,&quot;Refilter&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  {
+    try {
+      (arg1)-&gt;Refilter();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_density" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_density(float32 density)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_density-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_set_density(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture *&quot;,&quot;SetDensity&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetDensity&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetDensity(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_filter_data" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_filter_data(B2Filter filter)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_filter_data-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_set_filter_data(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  b2Filter *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture *&quot;,&quot;SetFilterData&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Filter,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Filter const &amp;&quot;,&quot;SetFilterData&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Filter const &amp;&quot;,&quot;SetFilterData&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2Filter * &gt;(argp2);
+  {
+    try {
+      (arg1)-&gt;SetFilterData((b2Filter const &amp;)*arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_friction" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_friction(float32 friction)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_friction-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_set_friction(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture *&quot;,&quot;SetFriction&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetFriction&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetFriction(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_restitution" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_restitution(float32 restitution)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_restitution-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_set_restitution(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture *&quot;,&quot;SetRestitution&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetRestitution&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetRestitution(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_sensor" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_sensor(bool sensor)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_sensor-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_set_sensor(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture *&quot;,&quot;SetSensor&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;bool&quot;,&quot;SetSensor&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; bool &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetSensor(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_point" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            test_point(B2Vec2 p) &rarr; bool
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_point-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Fixture_test_point(int argc, VALUE *argv, VALUE self) {
+  b2Fixture *arg1 = (b2Fixture *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Fixture, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Fixture const *&quot;,&quot;TestPoint&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Fixture * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;TestPoint&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;TestPoint&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2Vec2 * &gt;(argp2);
+  {
+    try {
+      result = (bool)((b2Fixture const *)arg1)-&gt;TestPoint((b2Vec2 const &amp;)*arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast&lt; bool &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
 
 
-	<div id="rdoc-debugging-section-dump" class="debugging-section">
-	
-		<p>Disabled; run with --debug to generate this.</p>
-	
-	</div>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
-
-</body>
-</html>
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
 

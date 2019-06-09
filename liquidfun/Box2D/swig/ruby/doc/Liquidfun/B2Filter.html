@@ -1,460 +1,527 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta charset="UTF-8">
 
-	<title>Class: Liquidfun::B2Filter</title>
+<title>class Liquidfun::B2Filter - RDoc Documentation</title>
 
-	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
 
-	<script src="../js/jquery.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/thickbox-compressed.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/quicksearch.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/darkfish.js" type="text/javascript"
-		charset="utf-8"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
 
-</head>
-<body class="class">
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
 
-	<div id="metadata">
-		<div id="home-metadata">
-			<div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-			</div>
-		</div>
 
-		<div id="file-metadata">
-			<div id="file-list-section" class="section">
-				<h3 class="section-header">In Files</h3>
-				<div class="section-body">
-					<ul>
-					
-						<li><a href="../liquidfun_wrap_cxx.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="liquidfun_wrap.cxx">liquidfun_wrap.cxx</a></li>
-					
-					</ul>
-				</div>
-			</div>
 
-			
-		</div>
 
-		<div id="class-metadata">
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
 
-			<!-- Parent Class -->
-			
-			<div id="parent-class-section" class="section">
-				<h3 class="section-header">Parent</h3>
-				
-				<p class="link">Object</p>
-				
-			</div>
-			
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
 
-			<!-- Namespace Contents -->
-			
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
 
-			<!-- Method Quickref -->
-			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#method-c-new">::new</a></li>
-					
-					<li><a href="#method-i-categoryBits">#categoryBits</a></li>
-					
-					<li><a href="#method-i-categoryBits%3D">#categoryBits=</a></li>
-					
-					<li><a href="#method-i-groupIndex">#groupIndex</a></li>
-					
-					<li><a href="#method-i-groupIndex%3D">#groupIndex=</a></li>
-					
-					<li><a href="#method-i-maskBits">#maskBits</a></li>
-					
-					<li><a href="#method-i-maskBits%3D">#maskBits=</a></li>
-					
-				</ul>
-			</div>
-			
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
 
-			<!-- Included Modules -->
-			
-		</div>
+  </div>
 
-		<div id="project-metadata">
-			
-			
-
-			<div id="classindex-section" class="section project-section">
-				<h3 class="section-header">Class Index
-					<span class="search-toggle"><img src="../images/find.png"
-						height="16" width="16" alt="[+]"
-						title="show/hide quicksearch" /></span></h3>
-				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-				<fieldset>
-					<legend>Quicksearch</legend>
-					<input type="text" name="quicksearch" value=""
-						class="quicksearch-field" />
-				</fieldset>
-				</form>
-
-				<ul class="link-list">
-				
-					<li><a href="../Liquidfun.html">Liquidfun</a></li>
-				
-					<li><a href="../Liquidfun/B2Body.html">Liquidfun::B2Body</a></li>
-				
-					<li><a href="../Liquidfun/B2BodyDef.html">Liquidfun::B2BodyDef</a></li>
-				
-					<li><a href="../Liquidfun/B2CircleShape.html">Liquidfun::B2CircleShape</a></li>
-				
-					<li><a href="../Liquidfun/B2Color.html">Liquidfun::B2Color</a></li>
-				
-					<li><a href="../Liquidfun/B2Draw.html">Liquidfun::B2Draw</a></li>
-				
-					<li><a href="../Liquidfun/B2EdgeShape.html">Liquidfun::B2EdgeShape</a></li>
-				
-					<li><a href="../Liquidfun/B2Filter.html">Liquidfun::B2Filter</a></li>
-				
-					<li><a href="../Liquidfun/B2Fixture.html">Liquidfun::B2Fixture</a></li>
-				
-					<li><a href="../Liquidfun/B2FixtureDef.html">Liquidfun::B2FixtureDef</a></li>
-				
-					<li><a href="../Liquidfun/B2MassData.html">Liquidfun::B2MassData</a></li>
-				
-					<li><a href="../Liquidfun/B2PolygonShape.html">Liquidfun::B2PolygonShape</a></li>
-				
-					<li><a href="../Liquidfun/B2QueryCallback.html">Liquidfun::B2QueryCallback</a></li>
-				
-					<li><a href="../Liquidfun/B2Shape.html">Liquidfun::B2Shape</a></li>
-				
-					<li><a href="../Liquidfun/B2Transform.html">Liquidfun::B2Transform</a></li>
-				
-					<li><a href="../Liquidfun/B2Vec2.html">Liquidfun::B2Vec2</a></li>
-				
-					<li><a href="../Liquidfun/B2Version.html">Liquidfun::B2Version</a></li>
-				
-					<li><a href="../Liquidfun/B2World.html">Liquidfun::B2World</a></li>
-				
-					<li><a href="../SWIG.html">SWIG</a></li>
-				
-					<li><a href="../SWIG/Pointer.html">SWIG::Pointer</a></li>
-				
-					<li><a href="../NullReferenceError.html">NullReferenceError</a></li>
-				
-					<li><a href="../ObjectPreviouslyDeleted.html">ObjectPreviouslyDeleted</a></li>
-				
-					<li><a href="../swig_runtime_data.html">swig_runtime_data</a></li>
-				
-				</ul>
-				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
-			</div>
-
-			
-		</div>
-	</div>
-
-	<div id="documentation">
-		<h1 class="class">Liquidfun::B2Filter</h1>
-
-		<div id="description">
-			<p>
-Proxy of C++ <a href="B2Filter.html">Liquidfun::B2Filter</a> class
-</p>
-
-		</div>
-
-		<!-- Constants -->
-		
-
-		<!-- Attributes -->
-		
-
-		<!-- Methods -->
-		
-		<div id="public-class-method-details" class="method-section section">
-			<h3 class="section-header">Public Class Methods</h3>
-
-		
-			<div id="new-method" class="method-detail ">
-				<a name="method-c-new"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">new</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
   
-</pre>
-<p>
-Class constructor.
-</p>
-<pre>
-  </pre>
-					
 
-					
-					<div class="method-source-code"
-						id="new-source">
-<pre>
-SWIGINTERN VALUE
-_wrap_new_B2Filter(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
 
-				
-
-				
-			</div>
-
-		
-		</div>
-	
-		<div id="public-instance-method-details" class="method-section section">
-			<h3 class="section-header">Public Instance Methods</h3>
-
-		
-			<div id="category-its-method" class="method-detail ">
-				<a name="method-i-categoryBits"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">categoryBits &rarr; uint16</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
   
-</pre>
-<p>
-Get value of attribute.
-</p>
-<pre>
-  </pre>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="category-its--method" class="method-detail ">
-				<a name="method-i-categoryBits%3D"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">categoryBits=(x) &rarr; uint16</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+  <p class="link">Object
   
-</pre>
-<p>
-Set new value for attribute.
-</p>
-<pre>
-  </pre>
-					
+</div>
 
-					
-					<div class="method-source-code"
-						id="category-its--source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Filter_categoryBits_set(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-				
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-categoryBits">#categoryBits</a>
+    
+    <li ><a href="#method-i-categoryBits-3D">#categoryBits=</a>
+    
+    <li ><a href="#method-i-groupIndex">#groupIndex</a>
+    
+    <li ><a href="#method-i-groupIndex-3D">#groupIndex=</a>
+    
+    <li ><a href="#method-i-maskBits">#maskBits</a>
+    
+    <li ><a href="#method-i-maskBits-3D">#maskBits=</a>
+    
+  </ul>
+</div>
 
-				
-			</div>
+  </div>
+</nav>
 
-		
-			<div id="group-ndex-method" class="method-detail ">
-				<a name="method-i-groupIndex"></a>
+<main role="main" aria-labelledby="class-Liquidfun::B2Filter">
+  <h1 id="class-Liquidfun::B2Filter" class="class">
+    class Liquidfun::B2Filter
+  </h1>
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">groupIndex &rarr; int16</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+  <section class="description">
+    
+<p>Proxy of C++ <a href="B2Filter.html"><code>Liquidfun::B2Filter</code></a> class</p>
 
-				<div class="method-description">
-					
-					<pre>
+  </section>
+
   
-</pre>
-<p>
-Get value of attribute.
-</p>
-<pre>
-  </pre>
-					
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
-					
-				</div>
+    
 
-				
+    
 
-				
-			</div>
+    
 
-		
-			<div id="group-ndex--method" class="method-detail ">
-				<a name="method-i-groupIndex%3D"></a>
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
 
-				<div class="method-heading">
-				
-					<span class="method-callseq">groupIndex=(x) &rarr; int16</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            new
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-				<div class="method-description">
-					
-					<pre>
+        <div class="method-description">
+          
+          <p>Class constructor.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre>SWIGINTERN VALUE
+_wrap_new_B2Filter(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = &quot;Liquidfun::B2Filter&quot;;
+  b2Filter *result = 0 ;
   
-</pre>
-<p>
-Set new value for attribute.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2Filter *)new b2Filter();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="group-ndex--source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Filter_groupIndex_set(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
-
-		
-			<div id="mask-its-method" class="method-detail ">
-				<a name="method-i-maskBits"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">maskBits &rarr; uint16</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+    
+    </section>
   
-</pre>
-<p>
-Get value of attribute.
-</p>
-<pre>
-  </pre>
-					
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
-					
-				</div>
+    
+      <div id="method-i-categoryBits" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">categoryBits</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
 
-				
+        <div class="method-description">
+          
+          
+          
+          
 
-				
-			</div>
-
-		
-			<div id="mask-its--method" class="method-detail ">
-				<a name="method-i-maskBits%3D"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-callseq">maskBits=(x) &rarr; uint16</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<pre>
+          
+          <div class="method-source-code" id="categoryBits-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Filter_categoryBits_get(int argc, VALUE *argv, VALUE self) {
+  b2Filter *arg1 = (b2Filter *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint16 result;
+  VALUE vresult = Qnil;
   
-</pre>
-<p>
-Set new value for attribute.
-</p>
-<pre>
-  </pre>
-					
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Filter, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Filter *&quot;,&quot;categoryBits&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Filter * &gt;(argp1);
+  result = (uint16) ((arg1)-&gt;categoryBits);
+  vresult = SWIG_From_unsigned_SS_short(static_cast&lt; unsigned short &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
 
-					
-					<div class="method-source-code"
-						id="mask-its--source">
-<pre>
-SWIGINTERN VALUE
-_wrap_B2Filter_maskBits_set(int argc, VALUE *argv, VALUE self) </pre>
-					</div>
-					
-				</div>
+        
 
-				
+        
+      </div>
 
-				
-			</div>
+    
+      <div id="method-i-categoryBits-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            categoryBits=(x) &rarr; uint16
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
-		
-		</div>
-	
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
 
-	</div>
+          
+          <div class="method-source-code" id="categoryBits-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Filter_categoryBits_set(int argc, VALUE *argv, VALUE self) {
+  b2Filter *arg1 = (b2Filter *) 0 ;
+  uint16 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned short val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Filter, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Filter *&quot;,&quot;categoryBits&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Filter * &gt;(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_short(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;uint16&quot;,&quot;categoryBits&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; uint16 &gt;(val2);
+  if (arg1) (arg1)-&gt;categoryBits = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-groupIndex" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">groupIndex</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="groupIndex-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Filter_groupIndex_get(int argc, VALUE *argv, VALUE self) {
+  b2Filter *arg1 = (b2Filter *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int16 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Filter, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Filter *&quot;,&quot;groupIndex&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Filter * &gt;(argp1);
+  result = (int16) ((arg1)-&gt;groupIndex);
+  vresult = SWIG_From_short(static_cast&lt; short &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-groupIndex-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            groupIndex=(x) &rarr; int16
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="groupIndex-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Filter_groupIndex_set(int argc, VALUE *argv, VALUE self) {
+  b2Filter *arg1 = (b2Filter *) 0 ;
+  int16 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  short val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Filter, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Filter *&quot;,&quot;groupIndex&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Filter * &gt;(argp1);
+  ecode2 = SWIG_AsVal_short(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;int16&quot;,&quot;groupIndex&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; int16 &gt;(val2);
+  if (arg1) (arg1)-&gt;groupIndex = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-maskBits" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">maskBits</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="maskBits-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Filter_maskBits_get(int argc, VALUE *argv, VALUE self) {
+  b2Filter *arg1 = (b2Filter *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint16 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Filter, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Filter *&quot;,&quot;maskBits&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Filter * &gt;(argp1);
+  result = (uint16) ((arg1)-&gt;maskBits);
+  vresult = SWIG_From_unsigned_SS_short(static_cast&lt; unsigned short &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-maskBits-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            maskBits=(x) &rarr; uint16
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="maskBits-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2Filter_maskBits_set(int argc, VALUE *argv, VALUE self) {
+  b2Filter *arg1 = (b2Filter *) 0 ;
+  uint16 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned short val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2Filter, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Filter *&quot;,&quot;maskBits&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2Filter * &gt;(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_short(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;uint16&quot;,&quot;maskBits&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; uint16 &gt;(val2);
+  if (arg1) (arg1)-&gt;maskBits = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
 
 
-	<div id="rdoc-debugging-section-dump" class="debugging-section">
-	
-		<p>Disabled; run with --debug to generate this.</p>
-	
-	</div>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
-
-</body>
-</html>
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
 

@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Liquidfun::B2RevoluteJointDef - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="B2JointDef.html">Liquidfun::B2JointDef</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-enableLimit">#enableLimit</a>
+    
+    <li ><a href="#method-i-enableLimit-3D">#enableLimit=</a>
+    
+    <li ><a href="#method-i-enableMotor">#enableMotor</a>
+    
+    <li ><a href="#method-i-enableMotor-3D">#enableMotor=</a>
+    
+    <li ><a href="#method-i-init">#init</a>
+    
+    <li ><a href="#method-i-localAnchorA">#localAnchorA</a>
+    
+    <li ><a href="#method-i-localAnchorA-3D">#localAnchorA=</a>
+    
+    <li ><a href="#method-i-localAnchorB">#localAnchorB</a>
+    
+    <li ><a href="#method-i-localAnchorB-3D">#localAnchorB=</a>
+    
+    <li ><a href="#method-i-lowerAngle">#lowerAngle</a>
+    
+    <li ><a href="#method-i-lowerAngle-3D">#lowerAngle=</a>
+    
+    <li ><a href="#method-i-maxMotorTorque">#maxMotorTorque</a>
+    
+    <li ><a href="#method-i-maxMotorTorque-3D">#maxMotorTorque=</a>
+    
+    <li ><a href="#method-i-motorSpeed">#motorSpeed</a>
+    
+    <li ><a href="#method-i-motorSpeed-3D">#motorSpeed=</a>
+    
+    <li ><a href="#method-i-referenceAngle">#referenceAngle</a>
+    
+    <li ><a href="#method-i-referenceAngle-3D">#referenceAngle=</a>
+    
+    <li ><a href="#method-i-upperAngle">#upperAngle</a>
+    
+    <li ><a href="#method-i-upperAngle-3D">#upperAngle=</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Liquidfun::B2RevoluteJointDef">
+  <h1 id="class-Liquidfun::B2RevoluteJointDef" class="class">
+    class Liquidfun::B2RevoluteJointDef
+  </h1>
+
+  <section class="description">
+    
+<p>Proxy of C++ <a href="B2RevoluteJointDef.html"><code>Liquidfun::B2RevoluteJointDef</code></a> class</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            new
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Class constructor.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre>SWIGINTERN VALUE
+_wrap_new_B2RevoluteJointDef(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = &quot;Liquidfun::B2RevoluteJointDef&quot;;
+  b2RevoluteJointDef *result = 0 ;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2RevoluteJointDef *)new b2RevoluteJointDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-enableLimit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enableLimit</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="enableLimit-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_enableLimit_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;enableLimit&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (bool) ((arg1)-&gt;enableLimit);
+  vresult = SWIG_From_bool(static_cast&lt; bool &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-enableLimit-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            enableLimit=(x) &rarr; bool
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="enableLimit-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_enableLimit_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;enableLimit&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;bool&quot;,&quot;enableLimit&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; bool &gt;(val2);
+  if (arg1) (arg1)-&gt;enableLimit = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-enableMotor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enableMotor</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="enableMotor-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_enableMotor_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;enableMotor&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (bool) ((arg1)-&gt;enableMotor);
+  vresult = SWIG_From_bool(static_cast&lt; bool &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-enableMotor-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            enableMotor=(x) &rarr; bool
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="enableMotor-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_enableMotor_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;enableMotor&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;bool&quot;,&quot;enableMotor&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; bool &gt;(val2);
+  if (arg1) (arg1)-&gt;enableMotor = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-init" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            init(B2Body bodyA, B2Body bodyB, B2Vec2 anchor)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="init-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_init(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  b2Body *arg3 = (b2Body *) 0 ;
+  b2Vec2 *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  
+  if ((argc &lt; 3) || (argc &gt; 3)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 3)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;Initialize&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Body *&quot;,&quot;Initialize&quot;, 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast&lt; b2Body * &gt;(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &amp;argp3,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Body *&quot;,&quot;Initialize&quot;, 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast&lt; b2Body * &gt;(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &amp;argp4, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 4, argv[2] )); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 4, argv[2])); 
+  }
+  arg4 = reinterpret_cast&lt; b2Vec2 * &gt;(argp4);
+  {
+    try {
+      (arg1)-&gt;Initialize(arg2,arg3,(b2Vec2 const &amp;)*arg4);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-localAnchorA" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">localAnchorA</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="localAnchorA-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_localAnchorA_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;localAnchorA&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (b2Vec2 *) &amp; ((arg1)-&gt;localAnchorA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-localAnchorA-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            localAnchorA=(x) &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="localAnchorA-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_localAnchorA_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;localAnchorA&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorA&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorA&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2Vec2 * &gt;(argp2);
+  if (arg1) (arg1)-&gt;localAnchorA = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-localAnchorB" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">localAnchorB</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="localAnchorB-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_localAnchorB_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;localAnchorB&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (b2Vec2 *) &amp; ((arg1)-&gt;localAnchorB);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-localAnchorB-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            localAnchorB=(x) &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="localAnchorB-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_localAnchorB_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;localAnchorB&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorB&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorB&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2Vec2 * &gt;(argp2);
+  if (arg1) (arg1)-&gt;localAnchorB = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-lowerAngle" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lowerAngle</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lowerAngle-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_lowerAngle_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;lowerAngle&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;lowerAngle);
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-lowerAngle-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            lowerAngle=(x) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="lowerAngle-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_lowerAngle_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;lowerAngle&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;lowerAngle&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  if (arg1) (arg1)-&gt;lowerAngle = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-maxMotorTorque" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">maxMotorTorque</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="maxMotorTorque-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_maxMotorTorque_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;maxMotorTorque&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;maxMotorTorque);
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-maxMotorTorque-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            maxMotorTorque=(x) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="maxMotorTorque-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_maxMotorTorque_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;maxMotorTorque&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;maxMotorTorque&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  if (arg1) (arg1)-&gt;maxMotorTorque = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-motorSpeed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">motorSpeed</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="motorSpeed-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_motorSpeed_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;motorSpeed&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;motorSpeed);
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-motorSpeed-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            motorSpeed=(x) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="motorSpeed-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_motorSpeed_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;motorSpeed&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;motorSpeed&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  if (arg1) (arg1)-&gt;motorSpeed = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-referenceAngle" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">referenceAngle</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="referenceAngle-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_referenceAngle_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;referenceAngle&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;referenceAngle);
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-referenceAngle-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            referenceAngle=(x) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="referenceAngle-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_referenceAngle_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;referenceAngle&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;referenceAngle&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  if (arg1) (arg1)-&gt;referenceAngle = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-upperAngle" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">upperAngle</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="upperAngle-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_upperAngle_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;upperAngle&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;upperAngle);
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-upperAngle-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            upperAngle=(x) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="upperAngle-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_upperAngle_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;upperAngle&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;upperAngle&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  if (arg1) (arg1)-&gt;upperAngle = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

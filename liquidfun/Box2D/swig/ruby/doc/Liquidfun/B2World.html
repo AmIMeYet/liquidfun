@@ -76,9 +76,13 @@
     
     <li ><a href="#method-i-create_body">#create_body</a>
     
+    <li ><a href="#method-i-create_joint">#create_joint</a>
+    
     <li ><a href="#method-i-create_particle_system">#create_particle_system</a>
     
     <li ><a href="#method-i-destroy_body">#destroy_body</a>
+    
+    <li ><a href="#method-i-destroy_joint">#destroy_joint</a>
     
     <li ><a href="#method-i-draw_debug_data">#draw_debug_data</a>
     
@@ -271,6 +275,75 @@ fail:
       </div>
 
     
+      <div id="method-i-create_joint" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            create_joint(B2JointDef C_def) &rarr; B2Joint
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_joint-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2World_create_joint(int argc, VALUE *argv, VALUE self) {
+  b2World *arg1 = (b2World *) 0 ;
+  b2JointDef *arg2 = (b2JointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  b2Joint *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2World, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2World *&quot;,&quot;CreateJoint&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2World * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2JointDef const *&quot;,&quot;CreateJoint&quot;, 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast&lt; b2JointDef * &gt;(argp2);
+  {
+    try {
+      result = (b2Joint *)(arg1)-&gt;CreateJoint((b2JointDef const *)arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Joint, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-create_particle_system" class="method-detail ">
         
         
@@ -387,6 +460,72 @@ _wrap_B2World_destroy_body(int argc, VALUE *argv, VALUE self) {
   {
     try {
       (arg1)-&gt;DestroyBody(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_joint" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            destroy_joint(B2Joint joint)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_joint-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2World_destroy_joint(int argc, VALUE *argv, VALUE self) {
+  b2World *arg1 = (b2World *) 0 ;
+  b2Joint *arg2 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2World, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2World *&quot;,&quot;DestroyJoint&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2World * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Joint *&quot;,&quot;DestroyJoint&quot;, 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast&lt; b2Joint * &gt;(argp2);
+  {
+    try {
+      (arg1)-&gt;DestroyJoint(arg2);
     }
     catch (const std::exception&amp; e) {
       SWIG_exception(SWIG_RuntimeError, e.what());

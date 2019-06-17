@@ -23,6 +23,7 @@ class b2Body;
 
 %newobject b2World::b2World;
 %newobject b2World::CreateBody;
+%newobject b2World::CreateJoint;
 %newobject b2World::CreateParticleSystem;
 
 %markfunc b2World "mark_b2World";
@@ -38,7 +39,18 @@ class b2Body;
                 VALUE object = SWIG_RubyInstanceFor(b);
                 if (object != Qnil) {
                     rb_gc_mark(object);
-                } 
+                }
+            }
+        }
+
+        if (world->GetJointCount() > 0) {
+            b2Joint* jointList = world->GetJointList();
+            for (b2Joint* j = jointList; j; j = j->GetNext())
+            {
+                VALUE object = SWIG_RubyInstanceFor(j);
+                if (object != Qnil) {
+                    rb_gc_mark(object);
+                }
             }
         }
 
@@ -78,6 +90,10 @@ public:
     b2Body* CreateBody(const b2BodyDef* def);
     
     void DestroyBody(b2Body* body);
+
+    b2Joint* CreateJoint(const b2JointDef* def);
+
+    void DestroyJoint(b2Joint* joint);
 
     void Step(
         float32 timeStep,

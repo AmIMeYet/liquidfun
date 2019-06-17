@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>oldmakefile - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Collision/Shapes/b2CircleShape_swig.html">b2CircleShape.swig</a>
+  
+    <li><a href="./Collision/Shapes/b2EdgeShape_swig.html">b2EdgeShape.swig</a>
+  
+    <li><a href="./Collision/Shapes/b2PolygonShape_swig.html">b2PolygonShape.swig</a>
+  
+    <li><a href="./Collision/Shapes/b2Shape_swig.html">b2Shape.swig</a>
+  
+    <li><a href="./Common/b2Draw_swig.html">b2Draw.swig</a>
+  
+    <li><a href="./Common/b2Math_swig.html">b2Math.swig</a>
+  
+    <li><a href="./Common/b2Settings_swig.html">b2Settings.swig</a>
+  
+    <li><a href="./Dynamics/b2Body_swig.html">b2Body.swig</a>
+  
+    <li><a href="./Dynamics/b2Fixture_swig.html">b2Fixture.swig</a>
+  
+    <li><a href="./Dynamics/b2World_swig.html">b2World.swig</a>
+  
+    <li><a href="./Dynamics/b2WorldCallbacks_swig.html">b2WorldCallbacks.swig</a>
+  
+    <li><a href="./Makefile.html">Makefile</a>
+  
+    <li><a href="./Particle/b2Particle_swig.html">b2Particle.swig</a>
+  
+    <li><a href="./Particle/b2ParticleGroup_swig.html">b2ParticleGroup.swig</a>
+  
+    <li><a href="./Particle/b2ParticleSystem_swig.html">b2ParticleSystem.swig</a>
+  
+    <li><a href="./build_sh.html">build.sh</a>
+  
+    <li><a href="./liquidfun_swig.html">liquidfun.swig</a>
+  
+    <li><a href="./oldmakefile.html">oldmakefile</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page oldmakefile">
+
+<p># Copyright © 2014 Google, Inc. # # This software is provided &#39;as-is&#39;, without any express or implied # warranty.  In no event will the authors be held liable for any damages # arising from the use of this software. # Permission is granted to anyone to use this software for any purpose, # including commercial applications, and to alter it and redistribute it # freely, subject to the following restrictions: # 1. The origin of this software must not be misrepresented; you must not # claim that you wrote the original software. If you use this software # in a product, an acknowledgment in the product documentation would be # appreciated but is not required. # 2. Altered source versions must be plainly marked as such, and must not be # misrepresented as being the original software. # 3. This notice may not be removed or altered from any source distribution.</p>
+
+<p>ifneq ($(NDK_PROJECT_PATH),)</p>
+
+<p>LOCAL_PATH:=$(call my-dir)/..</p>
+
+<p>include $(CLEAR_VARS)</p>
+
+<p>SWIG_BIN ?= swig swig_ruby_package:=liquidfun swig_ruby_out_dir:=$(LOCAL_PATH)/gen/ruby/liquidfun swig_cpp_out_dir:=gen/cpp/$(TARGET_ARCH_ABI) swig_cpp_out_file:=liquidfun_wrap.cpp swig_cpp_out_dir_full:=$(LOCAL_PATH)/$(swig_cpp_out_dir) swig_cpp_out_buildsrc:=$(swig_cpp_out_dir)/$(swig_cpp_out_file) swig_cpp_out:=$(LOCAL_PATH)/$(swig_cpp_out_buildsrc) swig_in_file:=$(LOCAL_PATH)/ruby/liquidfun.swig</p>
+
+<p># Check swig version swig_minversion_minmaj:=2.0 swig_minversion_patch:=11 swig_version:=$(word 3, $(shell $(SWIG_BIN) -version)) swig_version_space:=$(subst ., ,$(swig_version)) swig_version_minmaj:=\ $(word 1,$(swig_version_space)).$(word 2,$(swig_version_space)) swig_version_patch:=$(word 3,$(swig_version_space))</p>
+
+<p>ifneq (,$(findstring cmd,$(SHELL)))</p>
+
+<pre>swig_minmaj_too_old:=$(shell \
+      if ${swig_version_minmaj} lss ${swig_minversion_minmaj} echo 1)
+swig_patch_too_old:=
+ifeq (${swig_version_minmaj},${swig_minversion_minmaj})
+  swig_version_patch_too_old:=$(shell \
+    if ${swig_version_patch} lss ${swig_minversion_patch} echo 1)
+endif
+swig_version_too_old:=$(swig_minmaj_too_old)$(swig_patch_too_old)</pre>
+
+<p>else</p>
+
+<pre>swig_version_too_old:=$(shell \
+  if [[ &quot;${swig_version_minmaj}&quot; &lt; &quot;${swig_minversion_minmaj}&quot; ]]; then \
+    echo 1; \
+  elif [[ &quot;${swig_version_minmaj}&quot; == &quot;${swig_minversion_minmaj}&quot; &amp;&amp; \
+          &quot;${swig_version_patch}&quot; -lt &quot;${swig_minversion_patch}&quot; ]]; then \
+    echo 1; \
+      fi)</pre>
+
+<p>endif</p>
+
+<p>ifeq ($(swig_version_too_old),1)</p>
+
+<pre>$(error Found SWIG $(swig_version), requires\</pre>
+
+<p>$(swig_minversion_minmaj).$(swig_minversion_patch) or above) endif</p>
+
+<p># All <a href="SWIG.html"><code>SWIG</code></a> interface files swig_src_files:=$(swig_in_file) swig_src_dirs:=\</p>
+
+<pre>Collision/Shapes \
+Common \
+Dynamics \
+Particle</pre>
+
+<p>swig_src_files+=\</p>
+
+<pre>$(foreach dir,$(swig_src_dirs),\
+  $(wildcard $(LOCAL_PATH)/ruby/$(dir)/*.swig))</pre>
+
+<p>namespace:=$(if $(NDK_PROJECT_PATH),,_liquidfun) LOCAL_MODULE:=libliquidfun_rb${namespace} LOCAL_C_INCLUDES:=$(LOCAL_PATH)/../ LOCAL_CFLAGS:=-frtti</p>
+
+<p>LOCAL_SRC_FILES+=$(swig_cpp_out_buildsrc) LOCAL_STATIC_LIBRARIES+=libliquidfun #ANDROIDUTIL_ADDITIONAL_CFLAGS:=-DANDROID_LOG_PRINT_TAG=“$(LOCAL_MODULE)” #LOCAL_ARM_MODE:=arm</p>
+
+<p>$(swig_cpp_out): PRIVATE_SWIG_RUBY_OUT_DIR:=$(swig_ruby_out_dir) $(swig_cpp_out): PRIVATE_SWIG_CPP_OUT_DIR_FULL:=$(swig_cpp_out_dir_full) $(swig_cpp_out): PRIVATE_SWIG_RUBY_PACKAGE:=$(swig_ruby_package) $(swig_cpp_out): PRIVATE_SWIG_CPP_OUT:=$(swig_cpp_out) $(swig_cpp_out): PRIVATE_SWIG_IN_FILE:=$(swig_in_file)</p>
+
+<p>#RUBY_CFLAGS=  -DHAVE_CONFIG_H #RUBY_INCLUDE= -I/usr/local/lib/ruby/1.4/arch #RUBY_LIB     = /usr/local/lib/ruby/1.4/arch #RUBY_DLNK =</p>
+
+<p># Define <a href="SWIG.html"><code>SWIG</code></a> target and call <a href="SWIG.html"><code>SWIG</code></a> when input files change $(swig_cpp_out): $(swig_src_files)</p>
+
+<pre>$(call host-mkdir,$(PRIVATE_SWIG_RUBY_OUT_DIR))
+$(call host-mkdir,$(PRIVATE_SWIG_CPP_OUT_DIR_FULL))
+$(SWIG_BIN) -c++ -ruby -v -package $(PRIVATE_SWIG_RUBY_PACKAGE) \
+                -outdir $(PRIVATE_SWIG_RUBY_OUT_DIR) \
+                -o $(PRIVATE_SWIG_CPP_OUT) \
+                $(PRIVATE_SWIG_IN_FILE)</pre>
+
+<p>#                       ruby_cpp: $(SRCS) #               $(SWIG) -c++ -ruby $(SWIGOPT) $(INTERFACE) #               $(CXX) -c $(CCSHARED) $(CFLAGS) $(RUBY_CFLAGS) $(ICXXSRCS) $(SRCS) $(CXXSRCS) $(INCLUDES) $(RUBY_INCLUDE) #               $(CXXSHARED) $(OBJS) $(IOBJS) $(RUBY_DLNK) $(LIBS) $(CPP_DLLIBS) -o $(LIBPREFIX)$(TARGET)$(SO)</p>
+
+<p>clean_swig-$(TARGET_ARCH_ABI): PRIVATE_SWIG_RUBY_OUT_DIR:=$(swig_ruby_out_dir) clean_swig-$(TARGET_ARCH_ABI): \</p>
+
+<pre>PRIVATE_SWIG_CPP_OUT_DIR_FULL:=$(swig_cpp_out_dir_full)</pre>
+
+<p># Remove all <a href="SWIG.html"><code>SWIG</code></a> generated files during clean. clean_swig-$(TARGET_ARCH_ABI):</p>
+
+<pre>$(call host-rmdir,$(PRIVATE_SWIG_RUBY_OUT_DIR))
+$(call host-rmdir,$(PRIVATE_SWIG_CPP_OUT_DIR_FULL))</pre>
+
+<p># Add <a href="SWIG.html"><code>SWIG</code></a> clean rule to the list of clean rules. clean: clean_swig-$(TARGET_ARCH_ABI)</p>
+
+<p>include $(BUILD_SHARED_LIBRARY)</p>
+
+<p># Import Box2D libraries #$(call import-module,Box2D/jni)</p>
+
+<p>endif ifneq ($(NDK_PROJECT_PATH),)</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

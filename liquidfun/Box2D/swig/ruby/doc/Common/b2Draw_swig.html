@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>b2Draw.swig - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Collision/Shapes/b2CircleShape_swig.html">b2CircleShape.swig</a>
+  
+    <li><a href="../Collision/Shapes/b2EdgeShape_swig.html">b2EdgeShape.swig</a>
+  
+    <li><a href="../Collision/Shapes/b2PolygonShape_swig.html">b2PolygonShape.swig</a>
+  
+    <li><a href="../Collision/Shapes/b2Shape_swig.html">b2Shape.swig</a>
+  
+    <li><a href="../Common/b2Draw_swig.html">b2Draw.swig</a>
+  
+    <li><a href="../Common/b2Math_swig.html">b2Math.swig</a>
+  
+    <li><a href="../Common/b2Settings_swig.html">b2Settings.swig</a>
+  
+    <li><a href="../Dynamics/b2Body_swig.html">b2Body.swig</a>
+  
+    <li><a href="../Dynamics/b2Fixture_swig.html">b2Fixture.swig</a>
+  
+    <li><a href="../Dynamics/b2World_swig.html">b2World.swig</a>
+  
+    <li><a href="../Dynamics/b2WorldCallbacks_swig.html">b2WorldCallbacks.swig</a>
+  
+    <li><a href="../Makefile.html">Makefile</a>
+  
+    <li><a href="../Particle/b2Particle_swig.html">b2Particle.swig</a>
+  
+    <li><a href="../Particle/b2ParticleGroup_swig.html">b2ParticleGroup.swig</a>
+  
+    <li><a href="../Particle/b2ParticleSystem_swig.html">b2ParticleSystem.swig</a>
+  
+    <li><a href="../build_sh.html">build.sh</a>
+  
+    <li><a href="../liquidfun_swig.html">liquidfun.swig</a>
+  
+    <li><a href="../oldmakefile.html">oldmakefile</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page Common/b2Draw.swig">
+
+<pre>Copyright (c) 2014 Google, Inc.
+
+This software is provided &#39;as-is&#39;, without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+1. The origin of this software must not be misrepresented; you must not
+claim that you wrote the original software. If you use this software
+in a product, an acknowledgment in the product documentation would be
+appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be
+misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.</pre>
+
+<p>%module(directors=“1”) b2Draw</p>
+
+<p>%feature(“director”) b2Draw;</p>
+
+<p>/// Rename the enums as <a href="../SWIG.html"><code>SWIG</code></a> doesn&#39;t allow multiple rename rules except with /// a script that can slow <a href="../SWIG.html"><code>SWIG</code></a> down quite a bit %rename (SHAPE_BIT) e_shapeBit; %rename (JOINT_BIT) e_jointBit; %rename (AABB_BIT) e_aabbBit; %rename (PAIR_BIT) e_pairBit; %rename (CENTER_OF_MASS_BIT) e_centerOfMassBit; %rename (PARTICLE_BIT) e_particleBit;</p>
+
+<p>// Include (…, int32 vertexCount) to hide it from ruby %typemap(directorin) (const b2Vec2* vertices, int32 vertexCount) {</p>
+
+<pre>$input = rb_ary_new2(vertexCount);
+VALUE vertex;
+for(int i = 0; i &lt; vertexCount; ++i) {
+    vertex = SWIG_NewPointerObj(SWIG_as_voidptr(&amp;(vertices[i])), $1_descriptor, 0);
+    rb_ary_push($input, vertex);
+}</pre>
+
+<p>}</p>
+
+<p>// Injected into DrawParticles(). // Also takes (…, int32 count) but we can only use it once, so use it for (b2ParticleColor* colors, …) %typemap(directorin) (const b2Vec2* centers) {</p>
+
+<pre>$input = rb_ary_new2(count);
+VALUE vertex;
+for(int i = 0; i &lt; count; i++) {
+    vertex = SWIG_NewPointerObj(SWIG_as_voidptr(&amp;centers[i]), $1_descriptor, 0);
+    rb_ary_push($input, vertex);
+}</pre>
+
+<p>}</p>
+
+<p>/// Director Typemaps for b2ParticleColor* %apply (const b2Vec2*) { const b2ParticleColor* }</p>
+
+<p>// // Injected into DrawParticles(). // Include (…, int32 count) to hide it from ruby %typemap(directorin) (const b2ParticleColor* colors, int32 count) {</p>
+
+<pre>if ($1 != NULL) {
+    $input = rb_ary_new2(count);
+    VALUE vertex;
+    for(int i = 0; i &lt; count; i++) {
+        vertex = SWIG_NewPointerObj(SWIG_as_voidptr(&amp;$1[i]), $1_descriptor, 0);
+        rb_ary_push($input, vertex);
+    }
+}
+else {
+    $input = Qnil;
+}</pre>
+
+<p>}</p>
+
+<p>/// Include original .h file for <a href="../SWIG.html"><code>SWIG</code></a> /// The original file is simple enough we will just pull it in %include “../../../Box2D/Box2D/Common/b2Draw.h”</p>
+
+<p>/// Disable all the Typemaps so they don&#39;t get generated for other files %clear (const b2Vec2*); %clear (const b2Vec2* vertices); %clear (const b2Vec2* centers); %clear (const b2ParticleColor*);</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>b2ParticleSystem.swig - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Collision/Shapes/b2CircleShape_swig.html">b2CircleShape.swig</a>
+  
+    <li><a href="../Collision/Shapes/b2EdgeShape_swig.html">b2EdgeShape.swig</a>
+  
+    <li><a href="../Collision/Shapes/b2PolygonShape_swig.html">b2PolygonShape.swig</a>
+  
+    <li><a href="../Collision/Shapes/b2Shape_swig.html">b2Shape.swig</a>
+  
+    <li><a href="../Common/b2Draw_swig.html">b2Draw.swig</a>
+  
+    <li><a href="../Common/b2Math_swig.html">b2Math.swig</a>
+  
+    <li><a href="../Common/b2Settings_swig.html">b2Settings.swig</a>
+  
+    <li><a href="../Dynamics/b2Body_swig.html">b2Body.swig</a>
+  
+    <li><a href="../Dynamics/b2Fixture_swig.html">b2Fixture.swig</a>
+  
+    <li><a href="../Dynamics/b2World_swig.html">b2World.swig</a>
+  
+    <li><a href="../Dynamics/b2WorldCallbacks_swig.html">b2WorldCallbacks.swig</a>
+  
+    <li><a href="../Makefile.html">Makefile</a>
+  
+    <li><a href="../Particle/b2Particle_swig.html">b2Particle.swig</a>
+  
+    <li><a href="../Particle/b2ParticleGroup_swig.html">b2ParticleGroup.swig</a>
+  
+    <li><a href="../Particle/b2ParticleSystem_swig.html">b2ParticleSystem.swig</a>
+  
+    <li><a href="../build_sh.html">build.sh</a>
+  
+    <li><a href="../liquidfun_swig.html">liquidfun.swig</a>
+  
+    <li><a href="../oldmakefile.html">oldmakefile</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page Particle/b2ParticleSystem.swig">
+
+<pre>Copyright (c) 2014 Google, Inc.
+
+This software is provided &#39;as-is&#39;, without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+1. The origin of this software must not be misrepresented; you must not
+claim that you wrote the original software. If you use this software
+in a product, an acknowledgment in the product documentation would be
+appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be
+misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.</pre>
+
+<p>%module b2ParticleSystem</p>
+
+<p>// error enums and strings for Java exceptions %{ enum b2ExceptionType {</p>
+
+<pre>BUFFER_TOO_SMALL,
+PARTICLE_INDEX_OUTOFBOUNDS,
+NUM_ERRORS,
+NO_EXCEPTIONS,</pre>
+
+<p>};</p>
+
+<p>struct b2Exception {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">int</span> <span class="ruby-identifier">swigType</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">char</span><span class="ruby-operator">*</span> <span class="ruby-identifier">errorMsg</span>;
+</pre>
+
+<p>} <a href="NUM_ERRORS">g_liquidfunExceptions</a> = {</p>
+
+<pre>{SWIG_OverflowError, &quot;Supplied buffer is too small&quot;},
+{SWIG_IndexError, &quot;Particle index is out of bounds. Check startIndex and numParticles.&quot;},</pre>
+
+<p>}; %}</p>
+
+<p>// Typemaps for getting the raw address of output java.nio.ByteBuffer // This is mapping all function arguments with the signature //     (void* outBuf, int size) // to different Java intermediate ByteBuffer types. // See the Get*Buffer() functions for examples. // %typemap(jni) (void* outBuf, int size) “jobject” // %typemap(jtype) (void* outBuf, int size) “java.nio.ByteBuffer” // %typemap(jstype) (void* outBuf, int size) “java.nio.ByteBuffer” // %typemap(javain) (void* outBuf, int size) “$javainput” // %typemap(javaout) (void* outBuf, int size) { //     return $jnicall; // } // This extracts the Java ByteBuffer address from C++ %typemap(in) (void* outBuf, int size) {</p>
+
+<pre>$1 = jenv-&gt;GetDirectBufferAddress($input);
+$2 = jenv-&gt;GetDirectBufferCapacity($input);
+if (($1 == NULL) &amp;&amp; ($2 != 0)) {
+    SWIG_exception(SWIG_RuntimeError, &quot;Unable to determine output buffer correctly&quot;);
+}</pre>
+
+<p>} // This checks the output of the C++ functions for exceptions %typemap(argout) (void* outBuf, int size) {</p>
+
+<pre>if($result != NO_EXCEPTIONS) {
+    SWIG_exception(g_liquidfunExceptions[$result].swigType, g_liquidfunExceptions[$result].errorMsg);\
+}</pre>
+
+<p>}</p>
+
+<p>// TODO Undo %ignore CopyPositionBuffer; %ignore CopyColorBuffer; %ignore CopyWeightBuffer;</p>
+
+<p>// Disallow constructors and destructors; only made through b2World %nodefaultctor b2ParticleSystem; %nodefaultdtor b2ParticleSystem; class b2ParticleSystem { public:</p>
+
+<pre>int32 CreateParticle(const b2ParticleDef&amp; def);
+void JoinParticleGroups(b2ParticleGroup* groupA, b2ParticleGroup* groupB);
+const b2ParticleGroup* GetParticleGroupList() const;
+void DestroyParticlesInShape(const b2Shape&amp; shape, const b2Transform&amp; xf);
+b2ParticleGroup* CreateParticleGroup (const b2ParticleGroupDef &amp;def);
+int32 GetParticleGroupCount() const;
+int32 GetParticleCount() const;
+void SetMaxParticleCount(int32 count);
+void SetDamping(float32 damping);
+void SetRadius(float32 radius);
+
+void QueryShapeAABB(
+        b2QueryCallback* callback,
+        const b2Shape&amp; shape,
+        const b2Transform&amp; xf) const;
+
+void SetParticleVelocity(int32 index, float32 vx, float32 vy);
+float GetParticlePositionX(int32 index) const;
+float GetParticlePositionY(int32 index) const;
+
+int CopyPositionBuffer(
+        int startIndex, int numParticles, void* outBuf, int size) const;
+int CopyColorBuffer(
+        int startIndex, int numParticles, void* outBuf, int size) const;
+int CopyWeightBuffer(
+        int startIndex, int numParticles, void* outBuf, int size) const;</pre>
+
+<p>};</p>
+
+<p>/// Ignore other classes %ignore b2ParticleContact; %ignore b2ParticleBodyContact;</p>
+
+<p>// Ignore the original version of b2ParticleSystem as it&#39;s too complex %ignore b2ParticleSystem;</p>
+
+<p>/// Include original .h file for <a href="../SWIG.html"><code>SWIG</code></a> /// The original file is simple enough we will just pull it in %include “../../../Box2D/Box2D/Particle/b2ParticleSystem.h”</p>
+
+<p>/// Clear the typemaps %clear (void* outBuf, int size);</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

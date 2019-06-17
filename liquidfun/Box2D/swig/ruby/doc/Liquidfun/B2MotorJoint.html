@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Liquidfun::B2MotorJoint - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="B2Joint.html">Liquidfun::B2Joint</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-dump">#dump</a>
+    
+    <li ><a href="#method-i-get_anchor_a">#get_anchor_a</a>
+    
+    <li ><a href="#method-i-get_anchor_b">#get_anchor_b</a>
+    
+    <li ><a href="#method-i-get_angular_offset">#get_angular_offset</a>
+    
+    <li ><a href="#method-i-get_correction_factor">#get_correction_factor</a>
+    
+    <li ><a href="#method-i-get_linear_offset">#get_linear_offset</a>
+    
+    <li ><a href="#method-i-get_max_force">#get_max_force</a>
+    
+    <li ><a href="#method-i-get_max_torque">#get_max_torque</a>
+    
+    <li ><a href="#method-i-get_reaction_force">#get_reaction_force</a>
+    
+    <li ><a href="#method-i-get_reaction_torque">#get_reaction_torque</a>
+    
+    <li ><a href="#method-i-set_angular_offset">#set_angular_offset</a>
+    
+    <li ><a href="#method-i-set_correction_factor">#set_correction_factor</a>
+    
+    <li ><a href="#method-i-set_linear_offset">#set_linear_offset</a>
+    
+    <li ><a href="#method-i-set_max_force">#set_max_force</a>
+    
+    <li ><a href="#method-i-set_max_torque">#set_max_torque</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Liquidfun::B2MotorJoint">
+  <h1 id="class-Liquidfun::B2MotorJoint" class="class">
+    class Liquidfun::B2MotorJoint
+  </h1>
+
+  <section class="description">
+    
+<p>Proxy of C++ <a href="B2MotorJoint.html"><code>Liquidfun::B2MotorJoint</code></a> class</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-dump" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            dump
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="dump-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_dump(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint *&quot;,&quot;Dump&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  {
+    try {
+      (arg1)-&gt;Dump();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_anchor_a" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_anchor_a &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_anchor_a-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetAnchorA&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  {
+    try {
+      result = ((b2MotorJoint const *)arg1)-&gt;GetAnchorA();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast&lt; const b2Vec2&amp; &gt;(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_anchor_b" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_anchor_b &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_anchor_b-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetAnchorB&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  {
+    try {
+      result = ((b2MotorJoint const *)arg1)-&gt;GetAnchorB();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast&lt; const b2Vec2&amp; &gt;(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_angular_offset" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_angular_offset &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_angular_offset-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_angular_offset(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetAngularOffset&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)-&gt;GetAngularOffset();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_correction_factor" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_correction_factor &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_correction_factor-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_correction_factor(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetCorrectionFactor&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)-&gt;GetCorrectionFactor();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_linear_offset" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_linear_offset &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_linear_offset-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_linear_offset(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetLinearOffset&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &amp;((b2MotorJoint const *)arg1)-&gt;GetLinearOffset();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_max_force" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_max_force &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_max_force-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_max_force(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetMaxForce&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)-&gt;GetMaxForce();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_max_torque" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_max_torque &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_max_torque-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_max_torque(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetMaxTorque&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)-&gt;GetMaxTorque();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_reaction_force" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_reaction_force(float32 inv_dt) &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_reaction_force-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_reaction_force(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetReactionForce&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;GetReactionForce&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      result = ((b2MotorJoint const *)arg1)-&gt;GetReactionForce(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast&lt; const b2Vec2&amp; &gt;(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_reaction_torque" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_reaction_torque(float32 inv_dt) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_reaction_torque-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_reaction_torque(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint const *&quot;,&quot;GetReactionTorque&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;GetReactionTorque&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)-&gt;GetReactionTorque(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_angular_offset" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_angular_offset(float32 angularOffset)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_angular_offset-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_angular_offset(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint *&quot;,&quot;SetAngularOffset&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetAngularOffset&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetAngularOffset(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_correction_factor" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_correction_factor(float32 factor)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_correction_factor-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_correction_factor(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint *&quot;,&quot;SetCorrectionFactor&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetCorrectionFactor&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetCorrectionFactor(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_linear_offset" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_linear_offset(B2Vec2 linearOffset)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_linear_offset-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_linear_offset(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint *&quot;,&quot;SetLinearOffset&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;SetLinearOffset&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;SetLinearOffset&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2Vec2 * &gt;(argp2);
+  {
+    try {
+      (arg1)-&gt;SetLinearOffset((b2Vec2 const &amp;)*arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_max_force" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_max_force(float32 force)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_max_force-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_max_force(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint *&quot;,&quot;SetMaxForce&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetMaxForce&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetMaxForce(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_max_torque" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_max_torque(float32 torque)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_max_torque-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_max_torque(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJoint *&quot;,&quot;SetMaxTorque&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2MotorJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetMaxTorque&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetMaxTorque(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

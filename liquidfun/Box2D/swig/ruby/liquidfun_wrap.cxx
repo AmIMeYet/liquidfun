@@ -2208,38 +2208,45 @@ namespace Swig {
 #define SWIGTYPE_p_b2Filter swig_types[8]
 #define SWIGTYPE_p_b2Fixture swig_types[9]
 #define SWIGTYPE_p_b2FixtureDef swig_types[10]
-#define SWIGTYPE_p_b2JointEdge swig_types[11]
-#define SWIGTYPE_p_b2MassData swig_types[12]
-#define SWIGTYPE_p_b2ParticleColor swig_types[13]
-#define SWIGTYPE_p_b2ParticleDef swig_types[14]
-#define SWIGTYPE_p_b2ParticleGroup swig_types[15]
-#define SWIGTYPE_p_b2ParticleGroupDef swig_types[16]
-#define SWIGTYPE_p_b2ParticlePair swig_types[17]
-#define SWIGTYPE_p_b2ParticleSystem swig_types[18]
-#define SWIGTYPE_p_b2ParticleSystemDef swig_types[19]
-#define SWIGTYPE_p_b2ParticleTriad swig_types[20]
-#define SWIGTYPE_p_b2PolygonShape swig_types[21]
-#define SWIGTYPE_p_b2QueryCallback swig_types[22]
-#define SWIGTYPE_p_b2RayCastInput swig_types[23]
-#define SWIGTYPE_p_b2RayCastOutput swig_types[24]
-#define SWIGTYPE_p_b2Shape swig_types[25]
-#define SWIGTYPE_p_b2Transform swig_types[26]
-#define SWIGTYPE_p_b2Vec2 swig_types[27]
-#define SWIGTYPE_p_b2Version swig_types[28]
-#define SWIGTYPE_p_b2World swig_types[29]
-#define SWIGTYPE_p_char swig_types[30]
-#define SWIGTYPE_p_double swig_types[31]
-#define SWIGTYPE_p_float swig_types[32]
-#define SWIGTYPE_p_int swig_types[33]
-#define SWIGTYPE_p_long_long swig_types[34]
-#define SWIGTYPE_p_short swig_types[35]
-#define SWIGTYPE_p_signed_char swig_types[36]
-#define SWIGTYPE_p_unsigned_char swig_types[37]
-#define SWIGTYPE_p_unsigned_int swig_types[38]
-#define SWIGTYPE_p_unsigned_long_long swig_types[39]
-#define SWIGTYPE_p_unsigned_short swig_types[40]
-static swig_type_info *swig_types[42];
-static swig_module_info swig_module = {swig_types, 41, 0, 0, 0, 0};
+#define SWIGTYPE_p_b2Jacobian swig_types[11]
+#define SWIGTYPE_p_b2Joint swig_types[12]
+#define SWIGTYPE_p_b2JointDef swig_types[13]
+#define SWIGTYPE_p_b2JointEdge swig_types[14]
+#define SWIGTYPE_p_b2MassData swig_types[15]
+#define SWIGTYPE_p_b2MotorJoint swig_types[16]
+#define SWIGTYPE_p_b2MotorJointDef swig_types[17]
+#define SWIGTYPE_p_b2ParticleColor swig_types[18]
+#define SWIGTYPE_p_b2ParticleDef swig_types[19]
+#define SWIGTYPE_p_b2ParticleGroup swig_types[20]
+#define SWIGTYPE_p_b2ParticleGroupDef swig_types[21]
+#define SWIGTYPE_p_b2ParticlePair swig_types[22]
+#define SWIGTYPE_p_b2ParticleSystem swig_types[23]
+#define SWIGTYPE_p_b2ParticleSystemDef swig_types[24]
+#define SWIGTYPE_p_b2ParticleTriad swig_types[25]
+#define SWIGTYPE_p_b2PolygonShape swig_types[26]
+#define SWIGTYPE_p_b2QueryCallback swig_types[27]
+#define SWIGTYPE_p_b2RayCastInput swig_types[28]
+#define SWIGTYPE_p_b2RayCastOutput swig_types[29]
+#define SWIGTYPE_p_b2RevoluteJoint swig_types[30]
+#define SWIGTYPE_p_b2RevoluteJointDef swig_types[31]
+#define SWIGTYPE_p_b2Shape swig_types[32]
+#define SWIGTYPE_p_b2Transform swig_types[33]
+#define SWIGTYPE_p_b2Vec2 swig_types[34]
+#define SWIGTYPE_p_b2Version swig_types[35]
+#define SWIGTYPE_p_b2World swig_types[36]
+#define SWIGTYPE_p_char swig_types[37]
+#define SWIGTYPE_p_double swig_types[38]
+#define SWIGTYPE_p_float swig_types[39]
+#define SWIGTYPE_p_int swig_types[40]
+#define SWIGTYPE_p_long_long swig_types[41]
+#define SWIGTYPE_p_short swig_types[42]
+#define SWIGTYPE_p_signed_char swig_types[43]
+#define SWIGTYPE_p_unsigned_char swig_types[44]
+#define SWIGTYPE_p_unsigned_int swig_types[45]
+#define SWIGTYPE_p_unsigned_long_long swig_types[46]
+#define SWIGTYPE_p_unsigned_short swig_types[47]
+static swig_type_info *swig_types[49];
+static swig_module_info swig_module = {swig_types, 48, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2590,7 +2597,18 @@ SWIG_From_short  (short value)
                 VALUE object = SWIG_RubyInstanceFor(b);
                 if (object != Qnil) {
                     rb_gc_mark(object);
-                } 
+                }
+            }
+        }
+
+        if (world->GetJointCount() > 0) {
+            b2Joint* jointList = world->GetJointList();
+            for (b2Joint* j = jointList; j; j = j->GetNext())
+            {
+                VALUE object = SWIG_RubyInstanceFor(j);
+                if (object != Qnil) {
+                    rb_gc_mark(object);
+                }
             }
         }
 
@@ -9664,8 +9682,8 @@ fail:
   Document-method: Liquidfun::B2Body.get_joint_list
 
   call-seq:
-    get_joint_list -> b2JointEdge *
-    get_joint_list -> b2JointEdge const
+    get_joint_list -> B2JointEdge
+    get_joint_list -> B2JointEdge
 
 An instance method.
 
@@ -12515,6 +12533,99 @@ fail:
 
 
 /*
+  Document-method: Liquidfun::B2World.create_joint
+
+  call-seq:
+    create_joint(B2JointDef C_def) -> B2Joint
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2World_create_joint(int argc, VALUE *argv, VALUE self) {
+  b2World *arg1 = (b2World *) 0 ;
+  b2JointDef *arg2 = (b2JointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  b2Joint *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2World, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2World *","CreateJoint", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2World * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2JointDef const *","CreateJoint", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2JointDef * >(argp2);
+  {
+    try {
+      result = (b2Joint *)(arg1)->CreateJoint((b2JointDef const *)arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Joint, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2World.destroy_joint
+
+  call-seq:
+    destroy_joint(B2Joint joint)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2World_destroy_joint(int argc, VALUE *argv, VALUE self) {
+  b2World *arg1 = (b2World *) 0 ;
+  b2Joint *arg2 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2World, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2World *","DestroyJoint", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2World * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Joint *","DestroyJoint", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Joint * >(argp2);
+  {
+    try {
+      (arg1)->DestroyJoint(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
   Document-method: Liquidfun::B2World.step
 
   call-seq:
@@ -12983,6 +13094,4404 @@ _wrap_disown_B2QueryCallback(int argc, VALUE *argv, VALUE self) {
     if (director) director->swig_disown();
   }
   
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-class: Liquidfun::B2Jacobian
+
+  Proxy of C++ Liquidfun::B2Jacobian class
+
+
+*/
+static swig_class SwigClassB2Jacobian;
+
+/*
+  Document-method: Liquidfun::B2Jacobian.linear
+
+  call-seq:
+    linear -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2Jacobian.linear=
+
+  call-seq:
+    linear=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Jacobian_linear_set(int argc, VALUE *argv, VALUE self) {
+  b2Jacobian *arg1 = (b2Jacobian *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Jacobian, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Jacobian *","linear", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Jacobian * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","linear", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","linear", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->linear = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2Jacobian_linear_get(int argc, VALUE *argv, VALUE self) {
+  b2Jacobian *arg1 = (b2Jacobian *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Jacobian, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Jacobian *","linear", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Jacobian * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->linear);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Jacobian.angularA
+
+  call-seq:
+    angularA -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2Jacobian.angularA=
+
+  call-seq:
+    angularA=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Jacobian_angularA_set(int argc, VALUE *argv, VALUE self) {
+  b2Jacobian *arg1 = (b2Jacobian *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Jacobian, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Jacobian *","angularA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Jacobian * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","angularA", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->angularA = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2Jacobian_angularA_get(int argc, VALUE *argv, VALUE self) {
+  b2Jacobian *arg1 = (b2Jacobian *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Jacobian, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Jacobian *","angularA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Jacobian * >(argp1);
+  result = (float32) ((arg1)->angularA);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Jacobian.angularB
+
+  call-seq:
+    angularB -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2Jacobian.angularB=
+
+  call-seq:
+    angularB=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Jacobian_angularB_set(int argc, VALUE *argv, VALUE self) {
+  b2Jacobian *arg1 = (b2Jacobian *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Jacobian, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Jacobian *","angularB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Jacobian * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","angularB", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->angularB = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2Jacobian_angularB_get(int argc, VALUE *argv, VALUE self) {
+  b2Jacobian *arg1 = (b2Jacobian *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Jacobian, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Jacobian *","angularB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Jacobian * >(argp1);
+  result = (float32) ((arg1)->angularB);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2Jacobian_allocate(VALUE self)
+#else
+_wrap_B2Jacobian_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2Jacobian);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Jacobian.new
+
+  call-seq:
+    B2Jacobian.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2Jacobian(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2Jacobian";
+  b2Jacobian *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2Jacobian *)new b2Jacobian();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2Jacobian(void *self) {
+    b2Jacobian *arg1 = (b2Jacobian *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2JointEdge
+
+  Proxy of C++ Liquidfun::B2JointEdge class
+
+
+*/
+static swig_class SwigClassB2JointEdge;
+
+/*
+  Document-method: Liquidfun::B2JointEdge.other
+
+  call-seq:
+    other -> B2Body
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2JointEdge.other=
+
+  call-seq:
+    other=(x) -> B2Body
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2JointEdge_other_set(int argc, VALUE *argv, VALUE self) {
+  b2JointEdge *arg1 = (b2JointEdge *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointEdge *","other", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointEdge * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Body, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Body *","other", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Body * >(argp2);
+  if (arg1) (arg1)->other = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2JointEdge_other_get(int argc, VALUE *argv, VALUE self) {
+  b2JointEdge *arg1 = (b2JointEdge *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Body *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointEdge *","other", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointEdge * >(argp1);
+  result = (b2Body *) ((arg1)->other);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Body, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointEdge.joint
+
+  call-seq:
+    joint -> B2Joint
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2JointEdge.joint=
+
+  call-seq:
+    joint=(x) -> B2Joint
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2JointEdge_joint_set(int argc, VALUE *argv, VALUE self) {
+  b2JointEdge *arg1 = (b2JointEdge *) 0 ;
+  b2Joint *arg2 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointEdge *","joint", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointEdge * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Joint, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Joint *","joint", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Joint * >(argp2);
+  if (arg1) (arg1)->joint = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2JointEdge_joint_get(int argc, VALUE *argv, VALUE self) {
+  b2JointEdge *arg1 = (b2JointEdge *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Joint *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointEdge *","joint", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointEdge * >(argp1);
+  result = (b2Joint *) ((arg1)->joint);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Joint, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointEdge.prev
+
+  call-seq:
+    prev -> B2JointEdge
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2JointEdge.prev=
+
+  call-seq:
+    prev=(x) -> B2JointEdge
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2JointEdge_prev_set(int argc, VALUE *argv, VALUE self) {
+  b2JointEdge *arg1 = (b2JointEdge *) 0 ;
+  b2JointEdge *arg2 = (b2JointEdge *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointEdge *","prev", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointEdge * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2JointEdge, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2JointEdge *","prev", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2JointEdge * >(argp2);
+  if (arg1) (arg1)->prev = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2JointEdge_prev_get(int argc, VALUE *argv, VALUE self) {
+  b2JointEdge *arg1 = (b2JointEdge *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2JointEdge *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointEdge *","prev", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointEdge * >(argp1);
+  result = (b2JointEdge *) ((arg1)->prev);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointEdge.next
+
+  call-seq:
+    next -> B2JointEdge
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2JointEdge.next=
+
+  call-seq:
+    next=(x) -> B2JointEdge
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2JointEdge_next_set(int argc, VALUE *argv, VALUE self) {
+  b2JointEdge *arg1 = (b2JointEdge *) 0 ;
+  b2JointEdge *arg2 = (b2JointEdge *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointEdge *","next", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointEdge * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2JointEdge, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2JointEdge *","next", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2JointEdge * >(argp2);
+  if (arg1) (arg1)->next = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2JointEdge_next_get(int argc, VALUE *argv, VALUE self) {
+  b2JointEdge *arg1 = (b2JointEdge *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2JointEdge *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointEdge *","next", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointEdge * >(argp1);
+  result = (b2JointEdge *) ((arg1)->next);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2JointEdge, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2JointEdge_allocate(VALUE self)
+#else
+_wrap_B2JointEdge_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2JointEdge);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointEdge.new
+
+  call-seq:
+    B2JointEdge.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2JointEdge(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2JointEdge";
+  b2JointEdge *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2JointEdge *)new b2JointEdge();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2JointEdge(void *self) {
+    b2JointEdge *arg1 = (b2JointEdge *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2JointDef
+
+  Proxy of C++ Liquidfun::B2JointDef class
+
+
+*/
+static swig_class SwigClassB2JointDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2JointDef_allocate(VALUE self)
+#else
+_wrap_B2JointDef_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2JointDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointDef.new
+
+  call-seq:
+    B2JointDef.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2JointDef(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2JointDef";
+  b2JointDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2JointDef *)new b2JointDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointDef.type
+
+  call-seq:
+    type -> int
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2JointDef.type=
+
+  call-seq:
+    type=(x) -> int
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2JointDef_type_set(int argc, VALUE *argv, VALUE self) {
+  b2JointDef *arg1 = (b2JointDef *) 0 ;
+  b2JointType arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointDef *","type", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointDef * >(argp1);
+  ecode2 = SWIG_AsVal_int(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "b2JointType","type", 2, argv[0] ));
+  } 
+  arg2 = static_cast< b2JointType >(val2);
+  if (arg1) (arg1)->type = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2JointDef_type_get(int argc, VALUE *argv, VALUE self) {
+  b2JointDef *arg1 = (b2JointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2JointType result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointDef *","type", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointDef * >(argp1);
+  result = (b2JointType) ((arg1)->type);
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointDef.bodyA
+
+  call-seq:
+    bodyA -> B2Body
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2JointDef.bodyA=
+
+  call-seq:
+    bodyA=(x) -> B2Body
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2JointDef_bodyA_set(int argc, VALUE *argv, VALUE self) {
+  b2JointDef *arg1 = (b2JointDef *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointDef *","bodyA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Body, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Body *","bodyA", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Body * >(argp2);
+  if (arg1) (arg1)->bodyA = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2JointDef_bodyA_get(int argc, VALUE *argv, VALUE self) {
+  b2JointDef *arg1 = (b2JointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Body *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointDef *","bodyA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointDef * >(argp1);
+  result = (b2Body *) ((arg1)->bodyA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Body, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointDef.bodyB
+
+  call-seq:
+    bodyB -> B2Body
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2JointDef.bodyB=
+
+  call-seq:
+    bodyB=(x) -> B2Body
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2JointDef_bodyB_set(int argc, VALUE *argv, VALUE self) {
+  b2JointDef *arg1 = (b2JointDef *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointDef *","bodyB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Body, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Body *","bodyB", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Body * >(argp2);
+  if (arg1) (arg1)->bodyB = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2JointDef_bodyB_get(int argc, VALUE *argv, VALUE self) {
+  b2JointDef *arg1 = (b2JointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Body *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointDef *","bodyB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointDef * >(argp1);
+  result = (b2Body *) ((arg1)->bodyB);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Body, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2JointDef.collideConnected
+
+  call-seq:
+    collideConnected -> bool
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2JointDef.collideConnected=
+
+  call-seq:
+    collideConnected=(x) -> bool
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2JointDef_collideConnected_set(int argc, VALUE *argv, VALUE self) {
+  b2JointDef *arg1 = (b2JointDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointDef *","collideConnected", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointDef * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","collideConnected", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->collideConnected = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2JointDef_collideConnected_get(int argc, VALUE *argv, VALUE self) {
+  b2JointDef *arg1 = (b2JointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2JointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2JointDef *","collideConnected", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2JointDef * >(argp1);
+  result = (bool) ((arg1)->collideConnected);
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2JointDef(void *self) {
+    b2JointDef *arg1 = (b2JointDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2Joint
+
+  Proxy of C++ Liquidfun::B2Joint class
+
+
+*/
+static swig_class SwigClassB2Joint;
+
+/*
+  Document-method: Liquidfun::B2Joint.get_type
+
+  call-seq:
+    get_type -> int
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_type(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2JointType result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint const *","GetType", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = (b2JointType)((b2Joint const *)arg1)->GetType();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_int(static_cast< int >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.get_body_a
+
+  call-seq:
+    get_body_a -> B2Body
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_body_a(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Body *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint *","GetBodyA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = (b2Body *)(arg1)->GetBodyA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Body, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.get_body_b
+
+  call-seq:
+    get_body_b -> B2Body
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_body_b(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Body *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint *","GetBodyB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = (b2Body *)(arg1)->GetBodyB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Body, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.get_anchor_a
+
+  call-seq:
+    get_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint const *","GetAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = ((b2Joint const *)arg1)->GetAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.get_anchor_b
+
+  call-seq:
+    get_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint const *","GetAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = ((b2Joint const *)arg1)->GetAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.get_reaction_force
+
+  call-seq:
+    get_reaction_force(float32 inv_dt) -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_reaction_force(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint const *","GetReactionForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = ((b2Joint const *)arg1)->GetReactionForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.get_reaction_torque
+
+  call-seq:
+    get_reaction_torque(float32 inv_dt) -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_reaction_torque(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint const *","GetReactionTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = (float32)((b2Joint const *)arg1)->GetReactionTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.get_next
+
+  call-seq:
+    get_next -> B2Joint
+    get_next -> B2Joint
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_next__SWIG_0(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Joint *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint *","GetNext", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = (b2Joint *)(arg1)->GetNext();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Joint, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2Joint_get_next__SWIG_1(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Joint *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint const *","GetNext", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = (b2Joint *)((b2Joint const *)arg1)->GetNext();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Joint, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE _wrap_B2Joint_get_next(int nargs, VALUE *args, VALUE self) {
+  int argc;
+  VALUE argv[2];
+  int ii;
+  
+  argc = nargs + 1;
+  argv[0] = self;
+  if (argc > 2) SWIG_fail;
+  for (ii = 1; (ii < argc); ++ii) {
+    argv[ii] = args[ii-1];
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_b2Joint, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_B2Joint_get_next__SWIG_0(nargs, args, self);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_b2Joint, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_B2Joint_get_next__SWIG_1(nargs, args, self);
+    }
+  }
+  
+fail:
+  Ruby_Format_OverloadedError( argc, 2, "B2Joint.get_next", 
+    "    b2Joint B2Joint.get_next()\n"
+    "    b2Joint const * B2Joint.get_next()\n");
+  
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.is_active
+
+  call-seq:
+    is_active -> bool
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_is_active(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint const *","IsActive", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = (bool)((b2Joint const *)arg1)->IsActive();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.get_collide_connected
+
+  call-seq:
+    get_collide_connected -> bool
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_get_collide_connected(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint const *","GetCollideConnected", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      result = (bool)((b2Joint const *)arg1)->GetCollideConnected();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.dump
+
+  call-seq:
+    dump
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_dump(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint *","Dump", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  {
+    try {
+      (arg1)->Dump();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2Joint.shift_origin
+
+  call-seq:
+    shift_origin(B2Vec2 newOrigin)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2Joint_shift_origin(int argc, VALUE *argv, VALUE self) {
+  b2Joint *arg1 = (b2Joint *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2Joint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2Joint *","ShiftOrigin", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2Joint * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","ShiftOrigin", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","ShiftOrigin", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  {
+    try {
+      (arg1)->ShiftOrigin((b2Vec2 const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-class: Liquidfun::B2RevoluteJointDef < Liquidfun::B2JointDef
+
+  Proxy of C++ Liquidfun::B2RevoluteJointDef class
+
+
+*/
+static swig_class SwigClassB2RevoluteJointDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2RevoluteJointDef_allocate(VALUE self)
+#else
+_wrap_B2RevoluteJointDef_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2RevoluteJointDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.new
+
+  call-seq:
+    B2RevoluteJointDef.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2RevoluteJointDef(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2RevoluteJointDef";
+  b2RevoluteJointDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2RevoluteJointDef *)new b2RevoluteJointDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.init
+
+  call-seq:
+    init(B2Body bodyA, B2Body bodyB, B2Vec2 anchor)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_init(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  b2Body *arg3 = (b2Body *) 0 ;
+  b2Vec2 *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","Initialize", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Body *","Initialize", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Body * >(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "b2Body *","Initialize", 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast< b2Body * >(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &argp4, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 4, argv[2] )); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 4, argv[2])); 
+  }
+  arg4 = reinterpret_cast< b2Vec2 * >(argp4);
+  {
+    try {
+      (arg1)->Initialize(arg2,arg3,(b2Vec2 const &)*arg4);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.localAnchorA
+
+  call-seq:
+    localAnchorA -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.localAnchorA=
+
+  call-seq:
+    localAnchorA=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_localAnchorA_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","localAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAnchorA", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAnchorA", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAnchorA = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_localAnchorA_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","localAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAnchorA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.localAnchorB
+
+  call-seq:
+    localAnchorB -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.localAnchorB=
+
+  call-seq:
+    localAnchorB=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_localAnchorB_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","localAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAnchorB", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAnchorB", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAnchorB = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_localAnchorB_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","localAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAnchorB);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.referenceAngle
+
+  call-seq:
+    referenceAngle -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.referenceAngle=
+
+  call-seq:
+    referenceAngle=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_referenceAngle_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","referenceAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","referenceAngle", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->referenceAngle = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_referenceAngle_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","referenceAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (float32) ((arg1)->referenceAngle);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.enableLimit
+
+  call-seq:
+    enableLimit -> bool
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.enableLimit=
+
+  call-seq:
+    enableLimit=(x) -> bool
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_enableLimit_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","enableLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","enableLimit", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->enableLimit = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_enableLimit_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","enableLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (bool) ((arg1)->enableLimit);
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.lowerAngle
+
+  call-seq:
+    lowerAngle -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.lowerAngle=
+
+  call-seq:
+    lowerAngle=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_lowerAngle_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","lowerAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","lowerAngle", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->lowerAngle = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_lowerAngle_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","lowerAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (float32) ((arg1)->lowerAngle);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.upperAngle
+
+  call-seq:
+    upperAngle -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.upperAngle=
+
+  call-seq:
+    upperAngle=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_upperAngle_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","upperAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","upperAngle", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->upperAngle = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_upperAngle_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","upperAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (float32) ((arg1)->upperAngle);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.enableMotor
+
+  call-seq:
+    enableMotor -> bool
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.enableMotor=
+
+  call-seq:
+    enableMotor=(x) -> bool
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_enableMotor_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","enableMotor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","enableMotor", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->enableMotor = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_enableMotor_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","enableMotor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (bool) ((arg1)->enableMotor);
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.motorSpeed
+
+  call-seq:
+    motorSpeed -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.motorSpeed=
+
+  call-seq:
+    motorSpeed=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_motorSpeed_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","motorSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","motorSpeed", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->motorSpeed = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_motorSpeed_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","motorSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (float32) ((arg1)->motorSpeed);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.maxMotorTorque
+
+  call-seq:
+    maxMotorTorque -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2RevoluteJointDef.maxMotorTorque=
+
+  call-seq:
+    maxMotorTorque=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_maxMotorTorque_set(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","maxMotorTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","maxMotorTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->maxMotorTorque = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2RevoluteJointDef_maxMotorTorque_get(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJointDef *","maxMotorTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJointDef * >(argp1);
+  result = (float32) ((arg1)->maxMotorTorque);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2RevoluteJointDef(void *self) {
+    b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2RevoluteJoint < Liquidfun::B2Joint
+
+  Proxy of C++ Liquidfun::B2RevoluteJoint class
+
+
+*/
+static swig_class SwigClassB2RevoluteJoint;
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_anchor_a
+
+  call-seq:
+    get_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = ((b2RevoluteJoint const *)arg1)->GetAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_anchor_b
+
+  call-seq:
+    get_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = ((b2RevoluteJoint const *)arg1)->GetAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_local_anchor_a
+
+  call-seq:
+    get_local_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_local_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetLocalAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2RevoluteJoint const *)arg1)->GetLocalAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_local_anchor_b
+
+  call-seq:
+    get_local_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_local_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetLocalAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2RevoluteJoint const *)arg1)->GetLocalAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_reference_angle
+
+  call-seq:
+    get_reference_angle -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_reference_angle(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetReferenceAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetReferenceAngle();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_joint_angle
+
+  call-seq:
+    get_joint_angle -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_joint_angle(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetJointAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetJointAngle();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_joint_speed
+
+  call-seq:
+    get_joint_speed -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_joint_speed(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetJointSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetJointSpeed();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.is_limit_enabled
+
+  call-seq:
+    is_limit_enabled -> bool
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_is_limit_enabled(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","IsLimitEnabled", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (bool)((b2RevoluteJoint const *)arg1)->IsLimitEnabled();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.enable_limit
+
+  call-seq:
+    enable_limit(bool flag)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_enable_limit(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint *","EnableLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","EnableLimit", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    try {
+      (arg1)->EnableLimit(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_lower_limit
+
+  call-seq:
+    get_lower_limit -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_lower_limit(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetLowerLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetLowerLimit();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_upper_limit
+
+  call-seq:
+    get_upper_limit -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_upper_limit(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetUpperLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetUpperLimit();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.set_limits
+
+  call-seq:
+    set_limits(float32 lower, float32 upper)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_set_limits(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  float32 arg2 ;
+  float32 arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint *","SetLimits", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetLimits", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  ecode3 = SWIG_AsVal_float(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "float32","SetLimits", 3, argv[1] ));
+  } 
+  arg3 = static_cast< float32 >(val3);
+  {
+    try {
+      (arg1)->SetLimits(arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.is_motor_enabled
+
+  call-seq:
+    is_motor_enabled -> bool
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_is_motor_enabled(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","IsMotorEnabled", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (bool)((b2RevoluteJoint const *)arg1)->IsMotorEnabled();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.enable_motor
+
+  call-seq:
+    enable_motor(bool flag)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_enable_motor(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint *","EnableMotor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","EnableMotor", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    try {
+      (arg1)->EnableMotor(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.set_motor_speed
+
+  call-seq:
+    set_motor_speed(float32 speed)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_set_motor_speed(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint *","SetMotorSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetMotorSpeed", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetMotorSpeed(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_motor_speed
+
+  call-seq:
+    get_motor_speed -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_motor_speed(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetMotorSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetMotorSpeed();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.set_max_motor_torque
+
+  call-seq:
+    set_max_motor_torque(float32 torque)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_set_max_motor_torque(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint *","SetMaxMotorTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetMaxMotorTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetMaxMotorTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_max_motor_torque
+
+  call-seq:
+    get_max_motor_torque -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_max_motor_torque(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetMaxMotorTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetMaxMotorTorque();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_reaction_force
+
+  call-seq:
+    get_reaction_force(float32 inv_dt) -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_reaction_force(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetReactionForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = ((b2RevoluteJoint const *)arg1)->GetReactionForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_reaction_torque
+
+  call-seq:
+    get_reaction_torque(float32 inv_dt) -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_reaction_torque(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetReactionTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetReactionTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.get_motor_torque
+
+  call-seq:
+    get_motor_torque(float32 inv_dt) -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_get_motor_torque(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint const *","GetMotorTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetMotorTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = (float32)((b2RevoluteJoint const *)arg1)->GetMotorTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2RevoluteJoint.dump
+
+  call-seq:
+    dump
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2RevoluteJoint_dump(int argc, VALUE *argv, VALUE self) {
+  b2RevoluteJoint *arg1 = (b2RevoluteJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2RevoluteJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2RevoluteJoint *","Dump", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2RevoluteJoint * >(argp1);
+  {
+    try {
+      (arg1)->Dump();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-class: Liquidfun::B2MotorJointDef < Liquidfun::B2JointDef
+
+  Proxy of C++ Liquidfun::B2MotorJointDef class
+
+
+*/
+static swig_class SwigClassB2MotorJointDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_B2MotorJointDef_allocate(VALUE self)
+#else
+_wrap_B2MotorJointDef_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2MotorJointDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJointDef.new
+
+  call-seq:
+    B2MotorJointDef.new
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_B2MotorJointDef(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2MotorJointDef";
+  b2MotorJointDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2MotorJointDef *)new b2MotorJointDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJointDef.init
+
+  call-seq:
+    init(B2Body bodyA, B2Body bodyB)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_init(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  b2Body *arg3 = (b2Body *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","Initialize", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Body *","Initialize", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Body * >(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "b2Body *","Initialize", 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast< b2Body * >(argp3);
+  {
+    try {
+      (arg1)->Initialize(arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJointDef.linearOffset
+
+  call-seq:
+    linearOffset -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2MotorJointDef.linearOffset=
+
+  call-seq:
+    linearOffset=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_linearOffset_set(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","linearOffset", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","linearOffset", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","linearOffset", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->linearOffset = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_linearOffset_get(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","linearOffset", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->linearOffset);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJointDef.angularOffset
+
+  call-seq:
+    angularOffset -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2MotorJointDef.angularOffset=
+
+  call-seq:
+    angularOffset=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_angularOffset_set(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","angularOffset", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","angularOffset", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->angularOffset = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_angularOffset_get(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","angularOffset", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  result = (float32) ((arg1)->angularOffset);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJointDef.maxForce
+
+  call-seq:
+    maxForce -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2MotorJointDef.maxForce=
+
+  call-seq:
+    maxForce=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_maxForce_set(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","maxForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","maxForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->maxForce = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_maxForce_get(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","maxForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  result = (float32) ((arg1)->maxForce);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJointDef.maxTorque
+
+  call-seq:
+    maxTorque -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2MotorJointDef.maxTorque=
+
+  call-seq:
+    maxTorque=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_maxTorque_set(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","maxTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","maxTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->maxTorque = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_maxTorque_get(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","maxTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  result = (float32) ((arg1)->maxTorque);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJointDef.correctionFactor
+
+  call-seq:
+    correctionFactor -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2MotorJointDef.correctionFactor=
+
+  call-seq:
+    correctionFactor=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_correctionFactor_set(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","correctionFactor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","correctionFactor", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->correctionFactor = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2MotorJointDef_correctionFactor_get(int argc, VALUE *argv, VALUE self) {
+  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJointDef *","correctionFactor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJointDef * >(argp1);
+  result = (float32) ((arg1)->correctionFactor);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2MotorJointDef(void *self) {
+    b2MotorJointDef *arg1 = (b2MotorJointDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2MotorJoint < Liquidfun::B2Joint
+
+  Proxy of C++ Liquidfun::B2MotorJoint class
+
+
+*/
+static swig_class SwigClassB2MotorJoint;
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_anchor_a
+
+  call-seq:
+    get_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  {
+    try {
+      result = ((b2MotorJoint const *)arg1)->GetAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_anchor_b
+
+  call-seq:
+    get_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  {
+    try {
+      result = ((b2MotorJoint const *)arg1)->GetAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_reaction_force
+
+  call-seq:
+    get_reaction_force(float32 inv_dt) -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_reaction_force(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetReactionForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = ((b2MotorJoint const *)arg1)->GetReactionForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_reaction_torque
+
+  call-seq:
+    get_reaction_torque(float32 inv_dt) -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_reaction_torque(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetReactionTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)->GetReactionTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.set_linear_offset
+
+  call-seq:
+    set_linear_offset(B2Vec2 linearOffset)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_linear_offset(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint *","SetLinearOffset", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","SetLinearOffset", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","SetLinearOffset", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  {
+    try {
+      (arg1)->SetLinearOffset((b2Vec2 const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_linear_offset
+
+  call-seq:
+    get_linear_offset -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_linear_offset(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetLinearOffset", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2MotorJoint const *)arg1)->GetLinearOffset();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.set_angular_offset
+
+  call-seq:
+    set_angular_offset(float32 angularOffset)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_angular_offset(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint *","SetAngularOffset", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetAngularOffset", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetAngularOffset(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_angular_offset
+
+  call-seq:
+    get_angular_offset -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_angular_offset(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetAngularOffset", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)->GetAngularOffset();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.set_max_force
+
+  call-seq:
+    set_max_force(float32 force)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_max_force(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint *","SetMaxForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetMaxForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetMaxForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_max_force
+
+  call-seq:
+    get_max_force -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_max_force(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetMaxForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)->GetMaxForce();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.set_max_torque
+
+  call-seq:
+    set_max_torque(float32 torque)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_max_torque(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint *","SetMaxTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetMaxTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetMaxTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_max_torque
+
+  call-seq:
+    get_max_torque -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_max_torque(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetMaxTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)->GetMaxTorque();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.set_correction_factor
+
+  call-seq:
+    set_correction_factor(float32 factor)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_set_correction_factor(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint *","SetCorrectionFactor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetCorrectionFactor", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetCorrectionFactor(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.get_correction_factor
+
+  call-seq:
+    get_correction_factor -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_get_correction_factor(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint const *","GetCorrectionFactor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2MotorJoint const *)arg1)->GetCorrectionFactor();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2MotorJoint.dump
+
+  call-seq:
+    dump
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2MotorJoint_dump(int argc, VALUE *argv, VALUE self) {
+  b2MotorJoint *arg1 = (b2MotorJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2MotorJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2MotorJoint *","Dump", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2MotorJoint * >(argp1);
+  {
+    try {
+      (arg1)->Dump();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   return Qnil;
 fail:
   return Qnil;
@@ -20133,6 +24642,18 @@ free_b2ParticleSystemDef(void *self) {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static void *_p_b2RevoluteJointDefTo_p_b2JointDef(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2JointDef *)  ((b2RevoluteJointDef *) x));
+}
+static void *_p_b2MotorJointDefTo_p_b2JointDef(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2JointDef *)  ((b2MotorJointDef *) x));
+}
+static void *_p_b2RevoluteJointTo_p_b2Joint(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2Joint *)  ((b2RevoluteJoint *) x));
+}
+static void *_p_b2MotorJointTo_p_b2Joint(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2Joint *)  ((b2MotorJoint *) x));
+}
 static void *_p_b2CircleShapeTo_p_b2Shape(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((b2Shape *)  ((b2CircleShape *) x));
 }
@@ -20153,8 +24674,13 @@ static swig_type_info _swigt__p_b2EdgeShape = {"_p_b2EdgeShape", "b2EdgeShape *"
 static swig_type_info _swigt__p_b2Filter = {"_p_b2Filter", "b2Filter *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2Fixture = {"_p_b2Fixture", "b2Fixture *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2FixtureDef = {"_p_b2FixtureDef", "b2FixtureDef *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2Jacobian = {"_p_b2Jacobian", "b2Jacobian *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2Joint = {"_p_b2Joint", "b2Joint *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2JointDef = {"_p_b2JointDef", "b2JointDef *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2JointEdge = {"_p_b2JointEdge", "b2JointEdge *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2MassData = {"_p_b2MassData", "b2MassData *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2MotorJoint = {"_p_b2MotorJoint", "b2MotorJoint *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2MotorJointDef = {"_p_b2MotorJointDef", "b2MotorJointDef *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2ParticleColor = {"_p_b2ParticleColor", "b2ParticleColor *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2ParticleDef = {"_p_b2ParticleDef", "b2ParticleDef *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2ParticleGroup = {"_p_b2ParticleGroup", "b2ParticleGroup *", 0, 0, (void*)0, 0};
@@ -20167,6 +24693,8 @@ static swig_type_info _swigt__p_b2PolygonShape = {"_p_b2PolygonShape", "b2Polygo
 static swig_type_info _swigt__p_b2QueryCallback = {"_p_b2QueryCallback", "b2QueryCallback *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2RayCastInput = {"_p_b2RayCastInput", "b2RayCastInput *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2RayCastOutput = {"_p_b2RayCastOutput", "b2RayCastOutput *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2RevoluteJoint = {"_p_b2RevoluteJoint", "b2RevoluteJoint *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2RevoluteJointDef = {"_p_b2RevoluteJointDef", "b2RevoluteJointDef *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2Shape = {"_p_b2Shape", "b2Shape *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2Transform = {"_p_b2Transform", "b2Transform *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2Vec2 = {"_p_b2Vec2", "b2Vec2 *", 0, 0, (void*)0, 0};
@@ -20196,8 +24724,13 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_b2Filter,
   &_swigt__p_b2Fixture,
   &_swigt__p_b2FixtureDef,
+  &_swigt__p_b2Jacobian,
+  &_swigt__p_b2Joint,
+  &_swigt__p_b2JointDef,
   &_swigt__p_b2JointEdge,
   &_swigt__p_b2MassData,
+  &_swigt__p_b2MotorJoint,
+  &_swigt__p_b2MotorJointDef,
   &_swigt__p_b2ParticleColor,
   &_swigt__p_b2ParticleDef,
   &_swigt__p_b2ParticleGroup,
@@ -20210,6 +24743,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_b2QueryCallback,
   &_swigt__p_b2RayCastInput,
   &_swigt__p_b2RayCastOutput,
+  &_swigt__p_b2RevoluteJoint,
+  &_swigt__p_b2RevoluteJointDef,
   &_swigt__p_b2Shape,
   &_swigt__p_b2Transform,
   &_swigt__p_b2Vec2,
@@ -20239,8 +24774,13 @@ static swig_cast_info _swigc__p_b2EdgeShape[] = {  {&_swigt__p_b2EdgeShape, 0, 0
 static swig_cast_info _swigc__p_b2Filter[] = {  {&_swigt__p_b2Filter, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Fixture[] = {  {&_swigt__p_b2Fixture, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2FixtureDef[] = {  {&_swigt__p_b2FixtureDef, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2Jacobian[] = {  {&_swigt__p_b2Jacobian, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2Joint[] = {  {&_swigt__p_b2RevoluteJoint, _p_b2RevoluteJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2MotorJoint, _p_b2MotorJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2Joint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2JointDef[] = {  {&_swigt__p_b2JointDef, 0, 0, 0},  {&_swigt__p_b2RevoluteJointDef, _p_b2RevoluteJointDefTo_p_b2JointDef, 0, 0},  {&_swigt__p_b2MotorJointDef, _p_b2MotorJointDefTo_p_b2JointDef, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2JointEdge[] = {  {&_swigt__p_b2JointEdge, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2MassData[] = {  {&_swigt__p_b2MassData, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2MotorJoint[] = {  {&_swigt__p_b2MotorJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2MotorJointDef[] = {  {&_swigt__p_b2MotorJointDef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2ParticleColor[] = {  {&_swigt__p_b2ParticleColor, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2ParticleDef[] = {  {&_swigt__p_b2ParticleDef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2ParticleGroup[] = {  {&_swigt__p_b2ParticleGroup, 0, 0, 0},{0, 0, 0, 0}};
@@ -20253,6 +24793,8 @@ static swig_cast_info _swigc__p_b2PolygonShape[] = {  {&_swigt__p_b2PolygonShape
 static swig_cast_info _swigc__p_b2QueryCallback[] = {  {&_swigt__p_b2QueryCallback, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2RayCastInput[] = {  {&_swigt__p_b2RayCastInput, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2RayCastOutput[] = {  {&_swigt__p_b2RayCastOutput, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2RevoluteJoint[] = {  {&_swigt__p_b2RevoluteJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2RevoluteJointDef[] = {  {&_swigt__p_b2RevoluteJointDef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Shape[] = {  {&_swigt__p_b2CircleShape, _p_b2CircleShapeTo_p_b2Shape, 0, 0},  {&_swigt__p_b2PolygonShape, _p_b2PolygonShapeTo_p_b2Shape, 0, 0},  {&_swigt__p_b2Shape, 0, 0, 0},  {&_swigt__p_b2EdgeShape, _p_b2EdgeShapeTo_p_b2Shape, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Transform[] = {  {&_swigt__p_b2Transform, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Vec2[] = {  {&_swigt__p_b2Vec2, 0, 0, 0},{0, 0, 0, 0}};
@@ -20282,8 +24824,13 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_b2Filter,
   _swigc__p_b2Fixture,
   _swigc__p_b2FixtureDef,
+  _swigc__p_b2Jacobian,
+  _swigc__p_b2Joint,
+  _swigc__p_b2JointDef,
   _swigc__p_b2JointEdge,
   _swigc__p_b2MassData,
+  _swigc__p_b2MotorJoint,
+  _swigc__p_b2MotorJointDef,
   _swigc__p_b2ParticleColor,
   _swigc__p_b2ParticleDef,
   _swigc__p_b2ParticleGroup,
@@ -20296,6 +24843,8 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_b2QueryCallback,
   _swigc__p_b2RayCastInput,
   _swigc__p_b2RayCastOutput,
+  _swigc__p_b2RevoluteJoint,
+  _swigc__p_b2RevoluteJointDef,
   _swigc__p_b2Shape,
   _swigc__p_b2Transform,
   _swigc__p_b2Vec2,
@@ -20910,6 +25459,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   rb_define_method(SwigClassB2World.klass, "set_debug_draw", VALUEFUNC(_wrap_B2World_set_debug_draw), -1);
   rb_define_method(SwigClassB2World.klass, "create_body", VALUEFUNC(_wrap_B2World_create_body), -1);
   rb_define_method(SwigClassB2World.klass, "destroy_body", VALUEFUNC(_wrap_B2World_destroy_body), -1);
+  rb_define_method(SwigClassB2World.klass, "create_joint", VALUEFUNC(_wrap_B2World_create_joint), -1);
+  rb_define_method(SwigClassB2World.klass, "destroy_joint", VALUEFUNC(_wrap_B2World_destroy_joint), -1);
   rb_define_method(SwigClassB2World.klass, "step", VALUEFUNC(_wrap_B2World_step), -1);
   rb_define_method(SwigClassB2World.klass, "draw_debug_data", VALUEFUNC(_wrap_B2World_draw_debug_data), -1);
   rb_define_method(SwigClassB2World.klass, "get_body_count", VALUEFUNC(_wrap_B2World_get_body_count), -1);
@@ -20929,6 +25480,181 @@ SWIGEXPORT void Init_liquidfun(void) {
   SwigClassB2QueryCallback.mark = 0;
   SwigClassB2QueryCallback.destroy = (void (*)(void *)) free_b2QueryCallback;
   SwigClassB2QueryCallback.trackObjects = 1;
+  rb_define_const(mLiquidfun, "JOINT_UNKNOWN", SWIG_From_int(static_cast< int >(e_unknownJoint)));
+  rb_define_const(mLiquidfun, "JOINT_REVOLUTE", SWIG_From_int(static_cast< int >(e_revoluteJoint)));
+  rb_define_const(mLiquidfun, "JOINT_PRISMATIC", SWIG_From_int(static_cast< int >(e_prismaticJoint)));
+  rb_define_const(mLiquidfun, "JOINT_DISTANCE", SWIG_From_int(static_cast< int >(e_distanceJoint)));
+  rb_define_const(mLiquidfun, "JOINT_PULLEY", SWIG_From_int(static_cast< int >(e_pulleyJoint)));
+  rb_define_const(mLiquidfun, "JOINT_MOUSE", SWIG_From_int(static_cast< int >(e_mouseJoint)));
+  rb_define_const(mLiquidfun, "JOINT_GEAR", SWIG_From_int(static_cast< int >(e_gearJoint)));
+  rb_define_const(mLiquidfun, "JOINT_WHEEL", SWIG_From_int(static_cast< int >(e_wheelJoint)));
+  rb_define_const(mLiquidfun, "JOINT_WELD", SWIG_From_int(static_cast< int >(e_weldJoint)));
+  rb_define_const(mLiquidfun, "JOINT_FRICTION", SWIG_From_int(static_cast< int >(e_frictionJoint)));
+  rb_define_const(mLiquidfun, "JOINT_ROPE", SWIG_From_int(static_cast< int >(e_ropeJoint)));
+  rb_define_const(mLiquidfun, "JOINT_MOTOR", SWIG_From_int(static_cast< int >(e_motorJoint)));
+  rb_define_const(mLiquidfun, "LIMIT_INACTIVE", SWIG_From_int(static_cast< int >(e_inactiveLimit)));
+  rb_define_const(mLiquidfun, "LIMIT_LOWER", SWIG_From_int(static_cast< int >(e_atLowerLimit)));
+  rb_define_const(mLiquidfun, "LIMIT_UPPER", SWIG_From_int(static_cast< int >(e_atUpperLimit)));
+  rb_define_const(mLiquidfun, "LIMIT_EQUAL", SWIG_From_int(static_cast< int >(e_equalLimits)));
+  
+  SwigClassB2Jacobian.klass = rb_define_class_under(mLiquidfun, "B2Jacobian", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2Jacobian, (void *) &SwigClassB2Jacobian);
+  rb_define_alloc_func(SwigClassB2Jacobian.klass, _wrap_B2Jacobian_allocate);
+  rb_define_method(SwigClassB2Jacobian.klass, "initialize", VALUEFUNC(_wrap_new_B2Jacobian), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "linear=", VALUEFUNC(_wrap_B2Jacobian_linear_set), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "linear", VALUEFUNC(_wrap_B2Jacobian_linear_get), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "angularA=", VALUEFUNC(_wrap_B2Jacobian_angularA_set), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "angularA", VALUEFUNC(_wrap_B2Jacobian_angularA_get), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "angularB=", VALUEFUNC(_wrap_B2Jacobian_angularB_set), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "angularB", VALUEFUNC(_wrap_B2Jacobian_angularB_get), -1);
+  SwigClassB2Jacobian.mark = 0;
+  SwigClassB2Jacobian.destroy = (void (*)(void *)) free_b2Jacobian;
+  SwigClassB2Jacobian.trackObjects = 1;
+  
+  SwigClassB2JointEdge.klass = rb_define_class_under(mLiquidfun, "B2JointEdge", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2JointEdge, (void *) &SwigClassB2JointEdge);
+  rb_define_alloc_func(SwigClassB2JointEdge.klass, _wrap_B2JointEdge_allocate);
+  rb_define_method(SwigClassB2JointEdge.klass, "initialize", VALUEFUNC(_wrap_new_B2JointEdge), -1);
+  rb_define_method(SwigClassB2JointEdge.klass, "other=", VALUEFUNC(_wrap_B2JointEdge_other_set), -1);
+  rb_define_method(SwigClassB2JointEdge.klass, "other", VALUEFUNC(_wrap_B2JointEdge_other_get), -1);
+  rb_define_method(SwigClassB2JointEdge.klass, "joint=", VALUEFUNC(_wrap_B2JointEdge_joint_set), -1);
+  rb_define_method(SwigClassB2JointEdge.klass, "joint", VALUEFUNC(_wrap_B2JointEdge_joint_get), -1);
+  rb_define_method(SwigClassB2JointEdge.klass, "prev=", VALUEFUNC(_wrap_B2JointEdge_prev_set), -1);
+  rb_define_method(SwigClassB2JointEdge.klass, "prev", VALUEFUNC(_wrap_B2JointEdge_prev_get), -1);
+  rb_define_method(SwigClassB2JointEdge.klass, "next=", VALUEFUNC(_wrap_B2JointEdge_next_set), -1);
+  rb_define_method(SwigClassB2JointEdge.klass, "next", VALUEFUNC(_wrap_B2JointEdge_next_get), -1);
+  SwigClassB2JointEdge.mark = 0;
+  SwigClassB2JointEdge.destroy = (void (*)(void *)) free_b2JointEdge;
+  SwigClassB2JointEdge.trackObjects = 1;
+  
+  SwigClassB2JointDef.klass = rb_define_class_under(mLiquidfun, "B2JointDef", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2JointDef, (void *) &SwigClassB2JointDef);
+  rb_define_alloc_func(SwigClassB2JointDef.klass, _wrap_B2JointDef_allocate);
+  rb_define_method(SwigClassB2JointDef.klass, "initialize", VALUEFUNC(_wrap_new_B2JointDef), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "type=", VALUEFUNC(_wrap_B2JointDef_type_set), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "type", VALUEFUNC(_wrap_B2JointDef_type_get), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "bodyA=", VALUEFUNC(_wrap_B2JointDef_bodyA_set), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "bodyA", VALUEFUNC(_wrap_B2JointDef_bodyA_get), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "bodyB=", VALUEFUNC(_wrap_B2JointDef_bodyB_set), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "bodyB", VALUEFUNC(_wrap_B2JointDef_bodyB_get), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "collideConnected=", VALUEFUNC(_wrap_B2JointDef_collideConnected_set), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "collideConnected", VALUEFUNC(_wrap_B2JointDef_collideConnected_get), -1);
+  SwigClassB2JointDef.mark = 0;
+  SwigClassB2JointDef.destroy = (void (*)(void *)) free_b2JointDef;
+  SwigClassB2JointDef.trackObjects = 1;
+  
+  SwigClassB2Joint.klass = rb_define_class_under(mLiquidfun, "B2Joint", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_b2Joint, (void *) &SwigClassB2Joint);
+  rb_undef_alloc_func(SwigClassB2Joint.klass);
+  rb_define_method(SwigClassB2Joint.klass, "get_type", VALUEFUNC(_wrap_B2Joint_get_type), -1);
+  rb_define_method(SwigClassB2Joint.klass, "get_body_a", VALUEFUNC(_wrap_B2Joint_get_body_a), -1);
+  rb_define_method(SwigClassB2Joint.klass, "get_body_b", VALUEFUNC(_wrap_B2Joint_get_body_b), -1);
+  rb_define_method(SwigClassB2Joint.klass, "get_anchor_a", VALUEFUNC(_wrap_B2Joint_get_anchor_a), -1);
+  rb_define_method(SwigClassB2Joint.klass, "get_anchor_b", VALUEFUNC(_wrap_B2Joint_get_anchor_b), -1);
+  rb_define_method(SwigClassB2Joint.klass, "get_reaction_force", VALUEFUNC(_wrap_B2Joint_get_reaction_force), -1);
+  rb_define_method(SwigClassB2Joint.klass, "get_reaction_torque", VALUEFUNC(_wrap_B2Joint_get_reaction_torque), -1);
+  rb_define_method(SwigClassB2Joint.klass, "get_next", VALUEFUNC(_wrap_B2Joint_get_next), -1);
+  rb_define_method(SwigClassB2Joint.klass, "is_active", VALUEFUNC(_wrap_B2Joint_is_active), -1);
+  rb_define_method(SwigClassB2Joint.klass, "get_collide_connected", VALUEFUNC(_wrap_B2Joint_get_collide_connected), -1);
+  rb_define_method(SwigClassB2Joint.klass, "dump", VALUEFUNC(_wrap_B2Joint_dump), -1);
+  rb_define_method(SwigClassB2Joint.klass, "shift_origin", VALUEFUNC(_wrap_B2Joint_shift_origin), -1);
+  SwigClassB2Joint.mark = 0;
+  SwigClassB2Joint.trackObjects = 1;
+  
+  SwigClassB2RevoluteJointDef.klass = rb_define_class_under(mLiquidfun, "B2RevoluteJointDef", ((swig_class *) SWIGTYPE_p_b2JointDef->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2RevoluteJointDef, (void *) &SwigClassB2RevoluteJointDef);
+  rb_define_alloc_func(SwigClassB2RevoluteJointDef.klass, _wrap_B2RevoluteJointDef_allocate);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "initialize", VALUEFUNC(_wrap_new_B2RevoluteJointDef), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "init", VALUEFUNC(_wrap_B2RevoluteJointDef_init), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "localAnchorA=", VALUEFUNC(_wrap_B2RevoluteJointDef_localAnchorA_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "localAnchorA", VALUEFUNC(_wrap_B2RevoluteJointDef_localAnchorA_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "localAnchorB=", VALUEFUNC(_wrap_B2RevoluteJointDef_localAnchorB_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "localAnchorB", VALUEFUNC(_wrap_B2RevoluteJointDef_localAnchorB_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "referenceAngle=", VALUEFUNC(_wrap_B2RevoluteJointDef_referenceAngle_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "referenceAngle", VALUEFUNC(_wrap_B2RevoluteJointDef_referenceAngle_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enableLimit=", VALUEFUNC(_wrap_B2RevoluteJointDef_enableLimit_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enableLimit", VALUEFUNC(_wrap_B2RevoluteJointDef_enableLimit_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "lowerAngle=", VALUEFUNC(_wrap_B2RevoluteJointDef_lowerAngle_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "lowerAngle", VALUEFUNC(_wrap_B2RevoluteJointDef_lowerAngle_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "upperAngle=", VALUEFUNC(_wrap_B2RevoluteJointDef_upperAngle_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "upperAngle", VALUEFUNC(_wrap_B2RevoluteJointDef_upperAngle_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enableMotor=", VALUEFUNC(_wrap_B2RevoluteJointDef_enableMotor_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enableMotor", VALUEFUNC(_wrap_B2RevoluteJointDef_enableMotor_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "motorSpeed=", VALUEFUNC(_wrap_B2RevoluteJointDef_motorSpeed_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "motorSpeed", VALUEFUNC(_wrap_B2RevoluteJointDef_motorSpeed_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "maxMotorTorque=", VALUEFUNC(_wrap_B2RevoluteJointDef_maxMotorTorque_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "maxMotorTorque", VALUEFUNC(_wrap_B2RevoluteJointDef_maxMotorTorque_get), -1);
+  SwigClassB2RevoluteJointDef.mark = 0;
+  SwigClassB2RevoluteJointDef.destroy = (void (*)(void *)) free_b2RevoluteJointDef;
+  SwigClassB2RevoluteJointDef.trackObjects = 1;
+  
+  SwigClassB2RevoluteJoint.klass = rb_define_class_under(mLiquidfun, "B2RevoluteJoint", ((swig_class *) SWIGTYPE_p_b2Joint->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2RevoluteJoint, (void *) &SwigClassB2RevoluteJoint);
+  rb_undef_alloc_func(SwigClassB2RevoluteJoint.klass);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_anchor_a", VALUEFUNC(_wrap_B2RevoluteJoint_get_anchor_a), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_anchor_b", VALUEFUNC(_wrap_B2RevoluteJoint_get_anchor_b), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_local_anchor_a", VALUEFUNC(_wrap_B2RevoluteJoint_get_local_anchor_a), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_local_anchor_b", VALUEFUNC(_wrap_B2RevoluteJoint_get_local_anchor_b), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_reference_angle", VALUEFUNC(_wrap_B2RevoluteJoint_get_reference_angle), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_joint_angle", VALUEFUNC(_wrap_B2RevoluteJoint_get_joint_angle), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_joint_speed", VALUEFUNC(_wrap_B2RevoluteJoint_get_joint_speed), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "is_limit_enabled", VALUEFUNC(_wrap_B2RevoluteJoint_is_limit_enabled), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "enable_limit", VALUEFUNC(_wrap_B2RevoluteJoint_enable_limit), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_lower_limit", VALUEFUNC(_wrap_B2RevoluteJoint_get_lower_limit), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_upper_limit", VALUEFUNC(_wrap_B2RevoluteJoint_get_upper_limit), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "set_limits", VALUEFUNC(_wrap_B2RevoluteJoint_set_limits), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "is_motor_enabled", VALUEFUNC(_wrap_B2RevoluteJoint_is_motor_enabled), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "enable_motor", VALUEFUNC(_wrap_B2RevoluteJoint_enable_motor), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "set_motor_speed", VALUEFUNC(_wrap_B2RevoluteJoint_set_motor_speed), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_motor_speed", VALUEFUNC(_wrap_B2RevoluteJoint_get_motor_speed), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "set_max_motor_torque", VALUEFUNC(_wrap_B2RevoluteJoint_set_max_motor_torque), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_max_motor_torque", VALUEFUNC(_wrap_B2RevoluteJoint_get_max_motor_torque), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_reaction_force", VALUEFUNC(_wrap_B2RevoluteJoint_get_reaction_force), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_reaction_torque", VALUEFUNC(_wrap_B2RevoluteJoint_get_reaction_torque), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "get_motor_torque", VALUEFUNC(_wrap_B2RevoluteJoint_get_motor_torque), -1);
+  rb_define_method(SwigClassB2RevoluteJoint.klass, "dump", VALUEFUNC(_wrap_B2RevoluteJoint_dump), -1);
+  SwigClassB2RevoluteJoint.mark = 0;
+  SwigClassB2RevoluteJoint.trackObjects = 1;
+  
+  SwigClassB2MotorJointDef.klass = rb_define_class_under(mLiquidfun, "B2MotorJointDef", ((swig_class *) SWIGTYPE_p_b2JointDef->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2MotorJointDef, (void *) &SwigClassB2MotorJointDef);
+  rb_define_alloc_func(SwigClassB2MotorJointDef.klass, _wrap_B2MotorJointDef_allocate);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "initialize", VALUEFUNC(_wrap_new_B2MotorJointDef), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "init", VALUEFUNC(_wrap_B2MotorJointDef_init), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "linearOffset=", VALUEFUNC(_wrap_B2MotorJointDef_linearOffset_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "linearOffset", VALUEFUNC(_wrap_B2MotorJointDef_linearOffset_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "angularOffset=", VALUEFUNC(_wrap_B2MotorJointDef_angularOffset_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "angularOffset", VALUEFUNC(_wrap_B2MotorJointDef_angularOffset_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "maxForce=", VALUEFUNC(_wrap_B2MotorJointDef_maxForce_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "maxForce", VALUEFUNC(_wrap_B2MotorJointDef_maxForce_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "maxTorque=", VALUEFUNC(_wrap_B2MotorJointDef_maxTorque_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "maxTorque", VALUEFUNC(_wrap_B2MotorJointDef_maxTorque_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "correctionFactor=", VALUEFUNC(_wrap_B2MotorJointDef_correctionFactor_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "correctionFactor", VALUEFUNC(_wrap_B2MotorJointDef_correctionFactor_get), -1);
+  SwigClassB2MotorJointDef.mark = 0;
+  SwigClassB2MotorJointDef.destroy = (void (*)(void *)) free_b2MotorJointDef;
+  SwigClassB2MotorJointDef.trackObjects = 1;
+  
+  SwigClassB2MotorJoint.klass = rb_define_class_under(mLiquidfun, "B2MotorJoint", ((swig_class *) SWIGTYPE_p_b2Joint->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2MotorJoint, (void *) &SwigClassB2MotorJoint);
+  rb_undef_alloc_func(SwigClassB2MotorJoint.klass);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_anchor_a", VALUEFUNC(_wrap_B2MotorJoint_get_anchor_a), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_anchor_b", VALUEFUNC(_wrap_B2MotorJoint_get_anchor_b), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_reaction_force", VALUEFUNC(_wrap_B2MotorJoint_get_reaction_force), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_reaction_torque", VALUEFUNC(_wrap_B2MotorJoint_get_reaction_torque), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "set_linear_offset", VALUEFUNC(_wrap_B2MotorJoint_set_linear_offset), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_linear_offset", VALUEFUNC(_wrap_B2MotorJoint_get_linear_offset), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "set_angular_offset", VALUEFUNC(_wrap_B2MotorJoint_set_angular_offset), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_angular_offset", VALUEFUNC(_wrap_B2MotorJoint_get_angular_offset), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "set_max_force", VALUEFUNC(_wrap_B2MotorJoint_set_max_force), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_max_force", VALUEFUNC(_wrap_B2MotorJoint_get_max_force), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "set_max_torque", VALUEFUNC(_wrap_B2MotorJoint_set_max_torque), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_max_torque", VALUEFUNC(_wrap_B2MotorJoint_get_max_torque), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "set_correction_factor", VALUEFUNC(_wrap_B2MotorJoint_set_correction_factor), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "get_correction_factor", VALUEFUNC(_wrap_B2MotorJoint_get_correction_factor), -1);
+  rb_define_method(SwigClassB2MotorJoint.klass, "dump", VALUEFUNC(_wrap_B2MotorJoint_dump), -1);
+  SwigClassB2MotorJoint.mark = 0;
+  SwigClassB2MotorJoint.trackObjects = 1;
   rb_define_const(mLiquidfun, "B2_WATERPARTICLE", SWIG_From_int(static_cast< int >(b2_waterParticle)));
   rb_define_const(mLiquidfun, "B2_ZOMBIEPARTICLE", SWIG_From_int(static_cast< int >(b2_zombieParticle)));
   rb_define_const(mLiquidfun, "B2_WALLPARTICLE", SWIG_From_int(static_cast< int >(b2_wallParticle)));

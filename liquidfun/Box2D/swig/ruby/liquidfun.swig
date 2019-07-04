@@ -42,16 +42,20 @@ typedef unsigned char uint8;
 // // rename class names to Java convention
 // %rename("%(strip:[b2])s") "";
 
-// // rename functions to Ruby convention
-// %rename("%(undercase)s", %$isfunction) "";
+// rename functions to Ruby convention
+%rename("%(undercase)s", %$isfunction) "";
+%rename("%(undercase)s", %$ismember) "";
+%rename("%(undercase)s", %$ismemberget) "";
+%rename("%(undercase)s", %$ismemberset) "";
 
-// // rename member variables to Java convention
+// rename member variables to Java convention
 // %rename("%(strip:[m_])s", %$isvariable) "";
 
 // // rename enums; not quite Java convention but close enough.
 // %rename("%(strip:[b2_])s", %$isenumitem) "";
 
 %rename("%(uppercase)s", %$isenumitem) "";
+%rename("%(uppercase)s", %$isconstant) "";
 
 /// Ignore most operators as they generate new Java or native objects.
 /// Note that swig will return a new Java object when a reference is returned,
@@ -59,6 +63,7 @@ typedef unsigned char uint8;
 /// memory.
 /// Alas, there doesn't seem to be any wildcard symbols other than *, which
 /// doesn't work in this case (operator* maps to the * operator).
+// TODO figure out if this is still the case / also the case for b2Vec2
 %ignore operator=;
 %ignore operator*=;
 %ignore operator*;
@@ -99,8 +104,13 @@ typedef unsigned char uint8;
 %include "Dynamics/b2World.swig"
 %include "Dynamics/b2WorldCallbacks.swig"
 
+// TODO Gear joint
+// TODO implement mark functions
 %include "Dynamics/Joints/b2Joint.swig"
+%include "Dynamics/Joints/b2DistanceJoint.swig"
 %include "Dynamics/Joints/b2RevoluteJoint.swig"
+%include "Dynamics/Joints/b2PrismaticJoint.swig"
+%include "Dynamics/Joints/b2PulleyJoint.swig"
 %include "Dynamics/Joints/b2MotorJoint.swig"
 
 %include "Particle/b2Particle.swig"

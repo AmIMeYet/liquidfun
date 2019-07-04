@@ -66,6 +66,10 @@
 
 // %newmethod b2Joint::CreateFixture;
 
+// Not needed?
+// %newmethod b2Joint::GetReactionForce;
+// %newobject b2Joint::GetReactionForce;
+
 /// Include original .h file for SWIG
 /// The original file is simple enough we will just pull it in
 %include "../../../Box2D/Box2D/Dynamics/Joints/b2Joint.h"

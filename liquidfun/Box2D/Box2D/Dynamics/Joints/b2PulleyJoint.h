@@ -85,6 +85,14 @@ public:
 	b2Vec2 GetReactionForce(float32 inv_dt) const;
 	float32 GetReactionTorque(float32 inv_dt) const;
 
+#if LIQUIDFUN_EXTERNAL_LANGUAGE_API
+public:
+	/// Get the first ground anchor.
+	const b2Vec2& GetGroundAnchorAExt() const { return m_groundAnchorA; }
+	/// Get the second ground anchor.
+	const b2Vec2& GetGroundAnchorBExt() const { return m_groundAnchorB; }
+#endif // LIQUIDFUN_EXTERNAL_LANGUAGE_API
+
 	/// Get the first ground anchor.
 	b2Vec2 GetGroundAnchorA() const;
 

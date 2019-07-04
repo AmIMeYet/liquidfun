@@ -74,17 +74,17 @@
     
     <li ><a href="#method-c-new">::new</a>
     
-    <li ><a href="#method-i-bodyA">#bodyA</a>
+    <li ><a href="#method-i-body_a">#body_a</a>
     
-    <li ><a href="#method-i-bodyA-3D">#bodyA=</a>
+    <li ><a href="#method-i-body_a-3D">#body_a=</a>
     
-    <li ><a href="#method-i-bodyB">#bodyB</a>
+    <li ><a href="#method-i-body_b">#body_b</a>
     
-    <li ><a href="#method-i-bodyB-3D">#bodyB=</a>
+    <li ><a href="#method-i-body_b-3D">#body_b=</a>
     
-    <li ><a href="#method-i-collideConnected">#collideConnected</a>
+    <li ><a href="#method-i-collide_connected">#collide_connected</a>
     
-    <li ><a href="#method-i-collideConnected-3D">#collideConnected=</a>
+    <li ><a href="#method-i-collide_connected-3D">#collide_connected=</a>
     
     <li ><a href="#method-i-type">#type</a>
     
@@ -129,7 +129,7 @@
         
         <div class="method-heading">
           <span class="method-callseq">
-            new
+            new()
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -147,7 +147,7 @@
           
           <div class="method-source-code" id="new-source">
             <pre>SWIGINTERN VALUE
-_wrap_new_B2JointDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2joint_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = &quot;Liquidfun::B2JointDef&quot;;
   b2JointDef *result = 0 ;
   
@@ -186,10 +186,10 @@ fail:
        </header>
 
     
-      <div id="method-i-bodyA" class="method-detail ">
+      <div id="method-i-body_a" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">bodyA</span><span
+          <span class="method-name">body_a</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -204,9 +204,9 @@ fail:
           
 
           
-          <div class="method-source-code" id="bodyA-source">
+          <div class="method-source-code" id="body_a-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2JointDef_bodyA_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_body_a_get(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -237,12 +237,12 @@ fail:
       </div>
 
     
-      <div id="method-i-bodyA-3D" class="method-detail ">
+      <div id="method-i-body_a-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            bodyA=(x) &rarr; B2Body
+            body_a=(x) &rarr; B2Body
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -258,9 +258,9 @@ fail:
           
 
           
-          <div class="method-source-code" id="bodyA-3D-source">
+          <div class="method-source-code" id="body_a-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2JointDef_bodyA_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_body_a_set(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   b2Body *arg2 = (b2Body *) 0 ;
   void *argp1 = 0 ;
@@ -296,10 +296,10 @@ fail:
       </div>
 
     
-      <div id="method-i-bodyB" class="method-detail ">
+      <div id="method-i-body_b" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">bodyB</span><span
+          <span class="method-name">body_b</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -314,9 +314,9 @@ fail:
           
 
           
-          <div class="method-source-code" id="bodyB-source">
+          <div class="method-source-code" id="body_b-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2JointDef_bodyB_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_body_b_get(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -347,12 +347,12 @@ fail:
       </div>
 
     
-      <div id="method-i-bodyB-3D" class="method-detail ">
+      <div id="method-i-body_b-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            bodyB=(x) &rarr; B2Body
+            body_b=(x) &rarr; B2Body
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -368,9 +368,9 @@ fail:
           
 
           
-          <div class="method-source-code" id="bodyB-3D-source">
+          <div class="method-source-code" id="body_b-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2JointDef_bodyB_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_body_b_set(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   b2Body *arg2 = (b2Body *) 0 ;
   void *argp1 = 0 ;
@@ -406,10 +406,10 @@ fail:
       </div>
 
     
-      <div id="method-i-collideConnected" class="method-detail ">
+      <div id="method-i-collide_connected" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">collideConnected</span><span
+          <span class="method-name">collide_connected</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -424,9 +424,9 @@ fail:
           
 
           
-          <div class="method-source-code" id="collideConnected-source">
+          <div class="method-source-code" id="collide_connected-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2JointDef_collideConnected_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_collide_connected_get(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -457,12 +457,12 @@ fail:
       </div>
 
     
-      <div id="method-i-collideConnected-3D" class="method-detail ">
+      <div id="method-i-collide_connected-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            collideConnected=(x) &rarr; bool
+            collide_connected=(x) &rarr; bool
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -478,9 +478,9 @@ fail:
           
 
           
-          <div class="method-source-code" id="collideConnected-3D-source">
+          <div class="method-source-code" id="collide_connected-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2JointDef_collideConnected_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_collide_connected_set(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;

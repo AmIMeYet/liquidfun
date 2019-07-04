@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Liquidfun::B2RevoluteJointDef - RDoc Documentation</title>
+<title>class Liquidfun::B2PrismaticJointDef - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -92,13 +92,17 @@
     
     <li ><a href="#method-i-local_anchor_b-3D">#local_anchor_b=</a>
     
-    <li ><a href="#method-i-lower_angle">#lower_angle</a>
+    <li ><a href="#method-i-local_axis_a">#local_axis_a</a>
     
-    <li ><a href="#method-i-lower_angle-3D">#lower_angle=</a>
+    <li ><a href="#method-i-local_axis_a-3D">#local_axis_a=</a>
     
-    <li ><a href="#method-i-max_motor_torque">#max_motor_torque</a>
+    <li ><a href="#method-i-lower_translation">#lower_translation</a>
     
-    <li ><a href="#method-i-max_motor_torque-3D">#max_motor_torque=</a>
+    <li ><a href="#method-i-lower_translation-3D">#lower_translation=</a>
+    
+    <li ><a href="#method-i-max_motor_force">#max_motor_force</a>
+    
+    <li ><a href="#method-i-max_motor_force-3D">#max_motor_force=</a>
     
     <li ><a href="#method-i-motor_speed">#motor_speed</a>
     
@@ -108,9 +112,9 @@
     
     <li ><a href="#method-i-reference_angle-3D">#reference_angle=</a>
     
-    <li ><a href="#method-i-upper_angle">#upper_angle</a>
+    <li ><a href="#method-i-upper_translation">#upper_translation</a>
     
-    <li ><a href="#method-i-upper_angle-3D">#upper_angle=</a>
+    <li ><a href="#method-i-upper_translation-3D">#upper_translation=</a>
     
   </ul>
 </div>
@@ -118,14 +122,14 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-Liquidfun::B2RevoluteJointDef">
-  <h1 id="class-Liquidfun::B2RevoluteJointDef" class="class">
-    class Liquidfun::B2RevoluteJointDef
+<main role="main" aria-labelledby="class-Liquidfun::B2PrismaticJointDef">
+  <h1 id="class-Liquidfun::B2PrismaticJointDef" class="class">
+    class Liquidfun::B2PrismaticJointDef
   </h1>
 
   <section class="description">
     
-<p>Proxy of C++ <a href="B2RevoluteJointDef.html"><code>Liquidfun::B2RevoluteJointDef</code></a> class</p>
+<p>Proxy of C++ <a href="B2PrismaticJointDef.html"><code>Liquidfun::B2PrismaticJointDef</code></a> class</p>
 
   </section>
 
@@ -169,16 +173,16 @@
           
           <div class="method-source-code" id="new-source">
             <pre>SWIGINTERN VALUE
-_wrap_new_b_2revolute_joint_def(int argc, VALUE *argv, VALUE self) {
-  const char *classname SWIGUNUSED = &quot;Liquidfun::B2RevoluteJointDef&quot;;
-  b2RevoluteJointDef *result = 0 ;
+_wrap_new_b_2prismatic_joint_def(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = &quot;Liquidfun::B2PrismaticJointDef&quot;;
+  b2PrismaticJointDef *result = 0 ;
   
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
   {
     try {
-      result = (b2RevoluteJointDef *)new b2RevoluteJointDef();
+      result = (b2PrismaticJointDef *)new b2PrismaticJointDef();
       DATA_PTR(self) = result;
       SWIG_RubyAddTracking(result, self);
     }
@@ -228,8 +232,8 @@ fail:
           
           <div class="method-source-code" id="enable_limit-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_enable_limit_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_enable_limit_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
@@ -238,11 +242,11 @@ _wrap_B2RevoluteJointDef_enable_limit_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;enableLimit&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;enableLimit&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   result = (bool) ((arg1)-&gt;enableLimit);
   vresult = SWIG_From_bool(static_cast&lt; bool &gt;(result));
   return vresult;
@@ -282,8 +286,8 @@ fail:
           
           <div class="method-source-code" id="enable_limit-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_enable_limit_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_enable_limit_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -293,11 +297,11 @@ _wrap_B2RevoluteJointDef_enable_limit_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;enableLimit&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;enableLimit&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   ecode2 = SWIG_AsVal_bool(argv[0], &amp;val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;bool&quot;,&quot;enableLimit&quot;, 2, argv[0] ));
@@ -338,8 +342,8 @@ fail:
           
           <div class="method-source-code" id="enable_motor-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_enable_motor_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_enable_motor_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
@@ -348,11 +352,11 @@ _wrap_B2RevoluteJointDef_enable_motor_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;enableMotor&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;enableMotor&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   result = (bool) ((arg1)-&gt;enableMotor);
   vresult = SWIG_From_bool(static_cast&lt; bool &gt;(result));
   return vresult;
@@ -392,8 +396,8 @@ fail:
           
           <div class="method-source-code" id="enable_motor-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_enable_motor_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_enable_motor_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -403,11 +407,11 @@ _wrap_B2RevoluteJointDef_enable_motor_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;enableMotor&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;enableMotor&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   ecode2 = SWIG_AsVal_bool(argv[0], &amp;val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;bool&quot;,&quot;enableMotor&quot;, 2, argv[0] ));
@@ -433,7 +437,7 @@ fail:
         
         <div class="method-heading">
           <span class="method-callseq">
-            init(B2Body bodyA, B2Body bodyB, B2Vec2 anchor)
+            init(B2Body bodyA, B2Body bodyB, B2Vec2 anchor, B2Vec2 axis)
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -451,11 +455,12 @@ fail:
           
           <div class="method-source-code" id="init-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_init(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_init(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   b2Body *arg2 = (b2Body *) 0 ;
   b2Body *arg3 = (b2Body *) 0 ;
   b2Vec2 *arg4 = 0 ;
+  b2Vec2 *arg5 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -464,15 +469,17 @@ _wrap_B2RevoluteJointDef_init(int argc, VALUE *argv, VALUE self) {
   int res3 = 0 ;
   void *argp4 ;
   int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
   
-  if ((argc &lt; 3) || (argc &gt; 3)) {
-    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 3)&quot;,argc); SWIG_fail;
+  if ((argc &lt; 4) || (argc &gt; 4)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 4)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;Initialize&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;Initialize&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2Body, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Body *&quot;,&quot;Initialize&quot;, 2, argv[0] )); 
@@ -491,9 +498,17 @@ _wrap_B2RevoluteJointDef_init(int argc, VALUE *argv, VALUE self) {
     SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 4, argv[2])); 
   }
   arg4 = reinterpret_cast&lt; b2Vec2 * &gt;(argp4);
+  res5 = SWIG_ConvertPtr(argv[3], &amp;argp5, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 5, argv[3] )); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 5, argv[3])); 
+  }
+  arg5 = reinterpret_cast&lt; b2Vec2 * &gt;(argp5);
   {
     try {
-      (arg1)-&gt;Initialize(arg2,arg3,(b2Vec2 const &amp;)*arg4);
+      (arg1)-&gt;Initialize(arg2,arg3,(b2Vec2 const &amp;)*arg4,(b2Vec2 const &amp;)*arg5);
     }
     catch (const std::exception&amp; e) {
       SWIG_exception(SWIG_RuntimeError, e.what());
@@ -533,8 +548,8 @@ fail:
           
           <div class="method-source-code" id="local_anchor_a-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_local_anchor_a_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_local_anchor_a_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   b2Vec2 *result = 0 ;
@@ -543,11 +558,11 @@ _wrap_B2RevoluteJointDef_local_anchor_a_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;localAnchorA&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;localAnchorA&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   result = (b2Vec2 *) &amp; ((arg1)-&gt;localAnchorA);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
   return vresult;
@@ -587,8 +602,8 @@ fail:
           
           <div class="method-source-code" id="local_anchor_a-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_local_anchor_a_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_local_anchor_a_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -598,11 +613,11 @@ _wrap_B2RevoluteJointDef_local_anchor_a_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;localAnchorA&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;localAnchorA&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorA&quot;, 2, argv[0] )); 
@@ -646,8 +661,8 @@ fail:
           
           <div class="method-source-code" id="local_anchor_b-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_local_anchor_b_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_local_anchor_b_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   b2Vec2 *result = 0 ;
@@ -656,11 +671,11 @@ _wrap_B2RevoluteJointDef_local_anchor_b_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;localAnchorB&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;localAnchorB&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   result = (b2Vec2 *) &amp; ((arg1)-&gt;localAnchorB);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
   return vresult;
@@ -700,8 +715,8 @@ fail:
           
           <div class="method-source-code" id="local_anchor_b-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_local_anchor_b_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_local_anchor_b_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -711,11 +726,11 @@ _wrap_B2RevoluteJointDef_local_anchor_b_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;localAnchorB&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;localAnchorB&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorB&quot;, 2, argv[0] )); 
@@ -739,10 +754,10 @@ fail:
       </div>
 
     
-      <div id="method-i-lower_angle" class="method-detail ">
+      <div id="method-i-local_axis_a" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">lower_angle</span><span
+          <span class="method-name">local_axis_a</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -757,25 +772,25 @@ fail:
           
 
           
-          <div class="method-source-code" id="lower_angle-source">
+          <div class="method-source-code" id="local_axis_a-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_lower_angle_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_local_axis_a_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  float32 result;
+  b2Vec2 *result = 0 ;
   VALUE vresult = Qnil;
   
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;lowerAngle&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;localAxisA&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
-  result = (float32) ((arg1)-&gt;lowerAngle);
-  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
+  result = (b2Vec2 *) &amp; ((arg1)-&gt;localAxisA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
   return vresult;
 fail:
   return Qnil;
@@ -790,12 +805,12 @@ fail:
       </div>
 
     
-      <div id="method-i-lower_angle-3D" class="method-detail ">
+      <div id="method-i-local_axis_a-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            lower_angle=(x) &rarr; float32
+            local_axis_a=(x) &rarr; B2Vec2
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -811,30 +826,33 @@ fail:
           
 
           
-          <div class="method-source-code" id="lower_angle-3D-source">
+          <div class="method-source-code" id="local_axis_a-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_lower_angle_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
-  float32 arg2 ;
+_wrap_B2PrismaticJointDef_local_axis_a_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  float val2 ;
-  int ecode2 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;lowerAngle&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;localAxisA&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
-  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;lowerAngle&quot;, 2, argv[0] ));
-  } 
-  arg2 = static_cast&lt; float32 &gt;(val2);
-  if (arg1) (arg1)-&gt;lowerAngle = arg2;
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAxisA&quot;, 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAxisA&quot;, 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast&lt; b2Vec2 * &gt;(argp2);
+  if (arg1) (arg1)-&gt;localAxisA = *arg2;
   return Qnil;
 fail:
   return Qnil;
@@ -849,10 +867,10 @@ fail:
       </div>
 
     
-      <div id="method-i-max_motor_torque" class="method-detail ">
+      <div id="method-i-lower_translation" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">max_motor_torque</span><span
+          <span class="method-name">lower_translation</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -867,10 +885,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="max_motor_torque-source">
+          <div class="method-source-code" id="lower_translation-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_max_motor_torque_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_lower_translation_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   float32 result;
@@ -879,12 +897,12 @@ _wrap_B2RevoluteJointDef_max_motor_torque_get(int argc, VALUE *argv, VALUE self)
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;maxMotorTorque&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;lowerTranslation&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
-  result = (float32) ((arg1)-&gt;maxMotorTorque);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;lowerTranslation);
   vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
   return vresult;
 fail:
@@ -900,12 +918,12 @@ fail:
       </div>
 
     
-      <div id="method-i-max_motor_torque-3D" class="method-detail ">
+      <div id="method-i-lower_translation-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            max_motor_torque=(x) &rarr; float32
+            lower_translation=(x) &rarr; float32
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -921,10 +939,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="max_motor_torque-3D-source">
+          <div class="method-source-code" id="lower_translation-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_max_motor_torque_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_lower_translation_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -934,17 +952,127 @@ _wrap_B2RevoluteJointDef_max_motor_torque_set(int argc, VALUE *argv, VALUE self)
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;maxMotorTorque&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;lowerTranslation&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;maxMotorTorque&quot;, 2, argv[0] ));
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;lowerTranslation&quot;, 2, argv[0] ));
   } 
   arg2 = static_cast&lt; float32 &gt;(val2);
-  if (arg1) (arg1)-&gt;maxMotorTorque = arg2;
+  if (arg1) (arg1)-&gt;lowerTranslation = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-max_motor_force" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">max_motor_force</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="max_motor_force-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_max_motor_force_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;maxMotorForce&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;maxMotorForce);
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-max_motor_force-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            max_motor_force=(x) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="max_motor_force-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_max_motor_force_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;maxMotorForce&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;maxMotorForce&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  if (arg1) (arg1)-&gt;maxMotorForce = arg2;
   return Qnil;
 fail:
   return Qnil;
@@ -979,8 +1107,8 @@ fail:
           
           <div class="method-source-code" id="motor_speed-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_motor_speed_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_motor_speed_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   float32 result;
@@ -989,11 +1117,11 @@ _wrap_B2RevoluteJointDef_motor_speed_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;motorSpeed&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;motorSpeed&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   result = (float32) ((arg1)-&gt;motorSpeed);
   vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
   return vresult;
@@ -1033,8 +1161,8 @@ fail:
           
           <div class="method-source-code" id="motor_speed-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_motor_speed_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_motor_speed_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -1044,11 +1172,11 @@ _wrap_B2RevoluteJointDef_motor_speed_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;motorSpeed&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;motorSpeed&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;motorSpeed&quot;, 2, argv[0] ));
@@ -1089,8 +1217,8 @@ fail:
           
           <div class="method-source-code" id="reference_angle-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_reference_angle_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_reference_angle_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   float32 result;
@@ -1099,11 +1227,11 @@ _wrap_B2RevoluteJointDef_reference_angle_get(int argc, VALUE *argv, VALUE self) 
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;referenceAngle&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;referenceAngle&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   result = (float32) ((arg1)-&gt;referenceAngle);
   vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
   return vresult;
@@ -1143,8 +1271,8 @@ fail:
           
           <div class="method-source-code" id="reference_angle-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_reference_angle_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_reference_angle_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -1154,11 +1282,11 @@ _wrap_B2RevoluteJointDef_reference_angle_set(int argc, VALUE *argv, VALUE self) 
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;referenceAngle&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;referenceAngle&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;referenceAngle&quot;, 2, argv[0] ));
@@ -1179,10 +1307,10 @@ fail:
       </div>
 
     
-      <div id="method-i-upper_angle" class="method-detail ">
+      <div id="method-i-upper_translation" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">upper_angle</span><span
+          <span class="method-name">upper_translation</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -1197,10 +1325,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="upper_angle-source">
+          <div class="method-source-code" id="upper_translation-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_upper_angle_get(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_upper_translation_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   float32 result;
@@ -1209,12 +1337,12 @@ _wrap_B2RevoluteJointDef_upper_angle_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;upperAngle&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;upperTranslation&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
-  result = (float32) ((arg1)-&gt;upperAngle);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;upperTranslation);
   vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
   return vresult;
 fail:
@@ -1230,12 +1358,12 @@ fail:
       </div>
 
     
-      <div id="method-i-upper_angle-3D" class="method-detail ">
+      <div id="method-i-upper_translation-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            upper_angle=(x) &rarr; float32
+            upper_translation=(x) &rarr; float32
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -1251,10 +1379,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="upper_angle-3D-source">
+          <div class="method-source-code" id="upper_translation-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_upper_angle_set(int argc, VALUE *argv, VALUE self) {
-  b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
+_wrap_B2PrismaticJointDef_upper_translation_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -1264,17 +1392,17 @@ _wrap_B2RevoluteJointDef_upper_angle_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2RevoluteJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2RevoluteJointDef *&quot;,&quot;upperAngle&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2PrismaticJointDef *&quot;,&quot;upperTranslation&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2RevoluteJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2PrismaticJointDef * &gt;(argp1);
   ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;upperAngle&quot;, 2, argv[0] ));
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;upperTranslation&quot;, 2, argv[0] ));
   } 
   arg2 = static_cast&lt; float32 &gt;(val2);
-  if (arg1) (arg1)-&gt;upperAngle = arg2;
+  if (arg1) (arg1)-&gt;upperTranslation = arg2;
   return Qnil;
 fail:
   return Qnil;

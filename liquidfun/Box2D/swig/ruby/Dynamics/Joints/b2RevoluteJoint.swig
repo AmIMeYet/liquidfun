@@ -53,6 +53,35 @@
 
 %rename (init) b2RevoluteJointDef::Initialize;
 
+// Not needed?
+// %newobject b2RevoluteJoint::GetReactionForce;
+
+%markfunc b2RevoluteJoint "mark_b2RevoluteJoint";
+%header %{
+    static void mark_b2RevoluteJoint(void* ptr) {
+        b2RevoluteJoint* joint = (b2RevoluteJoint*) ptr;
+        // Ignoring Joint variables that will already be tracked by world:
+        //   m_bodyA, m_bodyB, m_next, m_prev
+        // Ignoring internal MotorJoint variables:
+        //   m_impulse -> not actualy shared
+
+        const b2Vec2* m_localAnchorA = &(joint->GetLocalAnchorA());
+        if (m_localAnchorA != NULL) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localAnchorA);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+        const b2Vec2* m_localAnchorB = &joint->GetLocalAnchorB();
+        if (m_localAnchorB != NULL) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localAnchorB);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+    }
+%}
+
 /// Include original .h file for SWIG
 /// The original file is simple enough we will just pull it in
 %include "../../../Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h"

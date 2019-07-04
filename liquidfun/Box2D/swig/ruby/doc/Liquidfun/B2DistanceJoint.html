@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Liquidfun::B2DistanceJoint - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="B2Joint.html">Liquidfun::B2Joint</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-dump">#dump</a>
+    
+    <li ><a href="#method-i-get_anchor_a">#get_anchor_a</a>
+    
+    <li ><a href="#method-i-get_anchor_b">#get_anchor_b</a>
+    
+    <li ><a href="#method-i-get_damping_ratio">#get_damping_ratio</a>
+    
+    <li ><a href="#method-i-get_frequency">#get_frequency</a>
+    
+    <li ><a href="#method-i-get_length">#get_length</a>
+    
+    <li ><a href="#method-i-get_local_anchor_a">#get_local_anchor_a</a>
+    
+    <li ><a href="#method-i-get_local_anchor_b">#get_local_anchor_b</a>
+    
+    <li ><a href="#method-i-get_reaction_force">#get_reaction_force</a>
+    
+    <li ><a href="#method-i-get_reaction_torque">#get_reaction_torque</a>
+    
+    <li ><a href="#method-i-set_damping_ratio">#set_damping_ratio</a>
+    
+    <li ><a href="#method-i-set_frequency">#set_frequency</a>
+    
+    <li ><a href="#method-i-set_length">#set_length</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Liquidfun::B2DistanceJoint">
+  <h1 id="class-Liquidfun::B2DistanceJoint" class="class">
+    class Liquidfun::B2DistanceJoint
+  </h1>
+
+  <section class="description">
+    
+<p>Proxy of C++ <a href="B2DistanceJoint.html"><code>Liquidfun::B2DistanceJoint</code></a> class</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-dump" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            dump
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="dump-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_dump(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint *&quot;,&quot;Dump&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  {
+    try {
+      (arg1)-&gt;Dump();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_anchor_a" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_anchor_a &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_anchor_a-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetAnchorA&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  {
+    try {
+      result = ((b2DistanceJoint const *)arg1)-&gt;GetAnchorA();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast&lt; const b2Vec2&amp; &gt;(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_anchor_b" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_anchor_b &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_anchor_b-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetAnchorB&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  {
+    try {
+      result = ((b2DistanceJoint const *)arg1)-&gt;GetAnchorB();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast&lt; const b2Vec2&amp; &gt;(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_damping_ratio" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_damping_ratio &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_damping_ratio-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_damping_ratio(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetDampingRatio&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2DistanceJoint const *)arg1)-&gt;GetDampingRatio();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_frequency" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_frequency &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_frequency-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_frequency(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetFrequency&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2DistanceJoint const *)arg1)-&gt;GetFrequency();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_length" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_length &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_length-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_length(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetLength&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  {
+    try {
+      result = (float32)((b2DistanceJoint const *)arg1)-&gt;GetLength();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_local_anchor_a" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_local_anchor_a &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_local_anchor_a-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_local_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetLocalAnchorA&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &amp;((b2DistanceJoint const *)arg1)-&gt;GetLocalAnchorA();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_local_anchor_b" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_local_anchor_b &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_local_anchor_b-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_local_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetLocalAnchorB&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &amp;((b2DistanceJoint const *)arg1)-&gt;GetLocalAnchorB();
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_reaction_force" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_reaction_force(float32 inv_dt) &rarr; B2Vec2
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_reaction_force-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_reaction_force(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetReactionForce&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;GetReactionForce&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      result = ((b2DistanceJoint const *)arg1)-&gt;GetReactionForce(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast&lt; const b2Vec2&amp; &gt;(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_reaction_torque" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            get_reaction_torque(float32 inv_dt) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="get_reaction_torque-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_reaction_torque(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint const *&quot;,&quot;GetReactionTorque&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;GetReactionTorque&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      result = (float32)((b2DistanceJoint const *)arg1)-&gt;GetReactionTorque(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_damping_ratio" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_damping_ratio(float32 ratio)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_damping_ratio-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_set_damping_ratio(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint *&quot;,&quot;SetDampingRatio&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetDampingRatio&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetDampingRatio(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_frequency" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_frequency(float32 hz)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_frequency-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_set_frequency(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint *&quot;,&quot;SetFrequency&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetFrequency&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetFrequency(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_length" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            set_length(float32 length)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>An instance method.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_length-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJoint_set_length(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJoint *&quot;,&quot;SetLength&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJoint * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;SetLength&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  {
+    try {
+      (arg1)-&gt;SetLength(arg2);
+    }
+    catch (const std::exception&amp; e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

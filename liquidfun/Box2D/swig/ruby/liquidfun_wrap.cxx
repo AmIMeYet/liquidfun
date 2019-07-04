@@ -2203,50 +2203,56 @@ namespace Swig {
 #define SWIGTYPE_p_b2CircleShape swig_types[3]
 #define SWIGTYPE_p_b2Color swig_types[4]
 #define SWIGTYPE_p_b2ContactEdge swig_types[5]
-#define SWIGTYPE_p_b2Draw swig_types[6]
-#define SWIGTYPE_p_b2EdgeShape swig_types[7]
-#define SWIGTYPE_p_b2Filter swig_types[8]
-#define SWIGTYPE_p_b2Fixture swig_types[9]
-#define SWIGTYPE_p_b2FixtureDef swig_types[10]
-#define SWIGTYPE_p_b2Jacobian swig_types[11]
-#define SWIGTYPE_p_b2Joint swig_types[12]
-#define SWIGTYPE_p_b2JointDef swig_types[13]
-#define SWIGTYPE_p_b2JointEdge swig_types[14]
-#define SWIGTYPE_p_b2MassData swig_types[15]
-#define SWIGTYPE_p_b2MotorJoint swig_types[16]
-#define SWIGTYPE_p_b2MotorJointDef swig_types[17]
-#define SWIGTYPE_p_b2ParticleColor swig_types[18]
-#define SWIGTYPE_p_b2ParticleDef swig_types[19]
-#define SWIGTYPE_p_b2ParticleGroup swig_types[20]
-#define SWIGTYPE_p_b2ParticleGroupDef swig_types[21]
-#define SWIGTYPE_p_b2ParticlePair swig_types[22]
-#define SWIGTYPE_p_b2ParticleSystem swig_types[23]
-#define SWIGTYPE_p_b2ParticleSystemDef swig_types[24]
-#define SWIGTYPE_p_b2ParticleTriad swig_types[25]
-#define SWIGTYPE_p_b2PolygonShape swig_types[26]
-#define SWIGTYPE_p_b2QueryCallback swig_types[27]
-#define SWIGTYPE_p_b2RayCastInput swig_types[28]
-#define SWIGTYPE_p_b2RayCastOutput swig_types[29]
-#define SWIGTYPE_p_b2RevoluteJoint swig_types[30]
-#define SWIGTYPE_p_b2RevoluteJointDef swig_types[31]
-#define SWIGTYPE_p_b2Shape swig_types[32]
-#define SWIGTYPE_p_b2Transform swig_types[33]
-#define SWIGTYPE_p_b2Vec2 swig_types[34]
-#define SWIGTYPE_p_b2Version swig_types[35]
-#define SWIGTYPE_p_b2World swig_types[36]
-#define SWIGTYPE_p_char swig_types[37]
-#define SWIGTYPE_p_double swig_types[38]
-#define SWIGTYPE_p_float swig_types[39]
-#define SWIGTYPE_p_int swig_types[40]
-#define SWIGTYPE_p_long_long swig_types[41]
-#define SWIGTYPE_p_short swig_types[42]
-#define SWIGTYPE_p_signed_char swig_types[43]
-#define SWIGTYPE_p_unsigned_char swig_types[44]
-#define SWIGTYPE_p_unsigned_int swig_types[45]
-#define SWIGTYPE_p_unsigned_long_long swig_types[46]
-#define SWIGTYPE_p_unsigned_short swig_types[47]
-static swig_type_info *swig_types[49];
-static swig_module_info swig_module = {swig_types, 48, 0, 0, 0, 0};
+#define SWIGTYPE_p_b2DistanceJoint swig_types[6]
+#define SWIGTYPE_p_b2DistanceJointDef swig_types[7]
+#define SWIGTYPE_p_b2Draw swig_types[8]
+#define SWIGTYPE_p_b2EdgeShape swig_types[9]
+#define SWIGTYPE_p_b2Filter swig_types[10]
+#define SWIGTYPE_p_b2Fixture swig_types[11]
+#define SWIGTYPE_p_b2FixtureDef swig_types[12]
+#define SWIGTYPE_p_b2Jacobian swig_types[13]
+#define SWIGTYPE_p_b2Joint swig_types[14]
+#define SWIGTYPE_p_b2JointDef swig_types[15]
+#define SWIGTYPE_p_b2JointEdge swig_types[16]
+#define SWIGTYPE_p_b2MassData swig_types[17]
+#define SWIGTYPE_p_b2MotorJoint swig_types[18]
+#define SWIGTYPE_p_b2MotorJointDef swig_types[19]
+#define SWIGTYPE_p_b2ParticleColor swig_types[20]
+#define SWIGTYPE_p_b2ParticleDef swig_types[21]
+#define SWIGTYPE_p_b2ParticleGroup swig_types[22]
+#define SWIGTYPE_p_b2ParticleGroupDef swig_types[23]
+#define SWIGTYPE_p_b2ParticlePair swig_types[24]
+#define SWIGTYPE_p_b2ParticleSystem swig_types[25]
+#define SWIGTYPE_p_b2ParticleSystemDef swig_types[26]
+#define SWIGTYPE_p_b2ParticleTriad swig_types[27]
+#define SWIGTYPE_p_b2PolygonShape swig_types[28]
+#define SWIGTYPE_p_b2PrismaticJoint swig_types[29]
+#define SWIGTYPE_p_b2PrismaticJointDef swig_types[30]
+#define SWIGTYPE_p_b2PulleyJoint swig_types[31]
+#define SWIGTYPE_p_b2PulleyJointDef swig_types[32]
+#define SWIGTYPE_p_b2QueryCallback swig_types[33]
+#define SWIGTYPE_p_b2RayCastInput swig_types[34]
+#define SWIGTYPE_p_b2RayCastOutput swig_types[35]
+#define SWIGTYPE_p_b2RevoluteJoint swig_types[36]
+#define SWIGTYPE_p_b2RevoluteJointDef swig_types[37]
+#define SWIGTYPE_p_b2Shape swig_types[38]
+#define SWIGTYPE_p_b2Transform swig_types[39]
+#define SWIGTYPE_p_b2Vec2 swig_types[40]
+#define SWIGTYPE_p_b2Version swig_types[41]
+#define SWIGTYPE_p_b2World swig_types[42]
+#define SWIGTYPE_p_char swig_types[43]
+#define SWIGTYPE_p_double swig_types[44]
+#define SWIGTYPE_p_float swig_types[45]
+#define SWIGTYPE_p_int swig_types[46]
+#define SWIGTYPE_p_long_long swig_types[47]
+#define SWIGTYPE_p_short swig_types[48]
+#define SWIGTYPE_p_signed_char swig_types[49]
+#define SWIGTYPE_p_unsigned_char swig_types[50]
+#define SWIGTYPE_p_unsigned_int swig_types[51]
+#define SWIGTYPE_p_unsigned_long_long swig_types[52]
+#define SWIGTYPE_p_unsigned_short swig_types[53]
+static swig_type_info *swig_types[55];
+static swig_module_info swig_module = {swig_types, 54, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2628,6 +2634,127 @@ SWIG_From_short  (short value)
                 if (object != Qnil) {
                     rb_gc_mark(object);
                 } 
+            }
+        }
+    }
+
+
+    static void mark_b2DistanceJoint(void* ptr) {
+        b2DistanceJoint* joint = (b2DistanceJoint*) ptr;
+        // Ignoring Joint variables that will already be tracked by world:
+        //   m_bodyA, m_bodyB, m_next, m_prev
+        // Ignoring internal DistanceJoint variables:
+        //   m_u, m_rA, m_rB, m_localCenterA, m_localCenterB
+        const b2Vec2* m_localAnchorA = &(joint->GetLocalAnchorA());
+        if (m_localAnchorA != 0) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localAnchorA);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+        const b2Vec2* m_localAnchorB = &joint->GetLocalAnchorB();
+        if (m_localAnchorB != NULL) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localAnchorB);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+    }
+
+
+    static void mark_b2RevoluteJoint(void* ptr) {
+        b2RevoluteJoint* joint = (b2RevoluteJoint*) ptr;
+        // Ignoring Joint variables that will already be tracked by world:
+        //   m_bodyA, m_bodyB, m_next, m_prev
+        // Ignoring internal MotorJoint variables:
+        //   m_impulse -> not actualy shared
+
+        const b2Vec2* m_localAnchorA = &(joint->GetLocalAnchorA());
+        if (m_localAnchorA != NULL) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localAnchorA);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+        const b2Vec2* m_localAnchorB = &joint->GetLocalAnchorB();
+        if (m_localAnchorB != NULL) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localAnchorB);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+    }
+
+
+    static void mark_b2PrismaticJoint(void* ptr) {
+        b2PrismaticJoint* joint = (b2PrismaticJoint*) ptr;
+        // Ignoring Joint variables that will already be tracked by world:
+        //   m_bodyA, m_bodyB, m_next, m_prev
+        // Ignoring internal MotorJoint variables:
+        //   m_localYAxisA, m_impulse, m_limitState -> not actualy shared
+
+        const b2Vec2* m_localAnchorA = &(joint->GetLocalAnchorA());
+        if (m_localAnchorA != 0) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localAnchorA);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+        const b2Vec2* m_localAnchorB = &(joint->GetLocalAnchorB());
+        if (m_localAnchorB != 0) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localAnchorB);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+        // Local (X) axis A
+        const b2Vec2* m_localXAxisA = &(joint->GetLocalAxisA());
+        if (m_localXAxisA != 0) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_localXAxisA);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+    }
+
+
+    static void mark_b2PulleyJoint(void* ptr) {
+        b2PulleyJoint* joint = (b2PulleyJoint*) ptr;
+        // Ignoring Joint variables that will already be tracked by world:
+        //   m_bodyA, m_bodyB, m_next, m_prev
+        // Ignoring internal MotorJoint variables:
+        //   m_localAnchorA, m_localAnchorB -> not actualy shared
+
+        const b2Vec2* m_groundAnchorA = &(joint->GetGroundAnchorAExt());
+        if (m_groundAnchorA != 0) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_groundAnchorA);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+        const b2Vec2* m_groundAnchorB = &(joint->GetGroundAnchorBExt());
+        if (m_groundAnchorB != 0) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_groundAnchorB);
+            if (object != Qnil) {
+                rb_gc_mark(object);
+            }
+        }
+    }
+
+
+    static void mark_b2MotorJoint(void* ptr) {
+        b2MotorJoint* joint = (b2MotorJoint*) ptr;
+        // Ignoring Joint variables that will already be tracked by world:
+        //   m_bodyA, m_bodyB, m_next, m_prev
+        // Ignoring internal MotorJoint variables:
+        //   m_rA, m_rB, m_localCenterA, m_localCenterB, m_linearError
+        //   m_linearImpulse -> not actualy shared
+
+        const b2Vec2* m_linearOffset = &(joint->GetLinearOffset());
+        if (m_linearOffset != 0) {
+            VALUE object = SWIG_RubyInstanceFor((b2Vec2*) m_linearOffset);
+            if (object != Qnil) {
+                rb_gc_mark(object);
             }
         }
     }
@@ -3287,25 +3414,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2MassData.I
+  Document-method: Liquidfun::B2MassData.i
 
   call-seq:
-    I -> float32
+    i -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2MassData.I=
+  Document-method: Liquidfun::B2MassData.i=
 
   call-seq:
-    I=(x) -> float32
+    i=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2MassData_I_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MassData_i_set(int argc, VALUE *argv, VALUE self) {
   b2MassData *arg1 = (b2MassData *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -3334,7 +3461,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2MassData_I_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MassData_i_get(int argc, VALUE *argv, VALUE self) {
   b2MassData *arg1 = (b2MassData *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -3374,7 +3501,7 @@ free_b2MassData(void *self) {
 static swig_class SwigClassB2Shape;
 
 /*
-  Document-method: Liquidfun::Type.CIRCLE
+  Document-method: Liquidfun::type.CIRCLE
 
   call-seq:
     CIRCLE -> int
@@ -3383,7 +3510,7 @@ A class method.
 
 */
 /*
-  Document-method: Liquidfun::Type.EDGE
+  Document-method: Liquidfun::type.EDGE
 
   call-seq:
     EDGE -> int
@@ -3392,7 +3519,7 @@ A class method.
 
 */
 /*
-  Document-method: Liquidfun::Type.POLYGON
+  Document-method: Liquidfun::type.POLYGON
 
   call-seq:
     POLYGON -> int
@@ -3401,7 +3528,7 @@ A class method.
 
 */
 /*
-  Document-method: Liquidfun::Type.CHAIN
+  Document-method: Liquidfun::type.CHAIN
 
   call-seq:
     CHAIN -> int
@@ -3410,7 +3537,7 @@ A class method.
 
 */
 /*
-  Document-method: Liquidfun::Type.E_TYPECOUNT
+  Document-method: Liquidfun::type.E_TYPECOUNT
 
   call-seq:
     E_TYPECOUNT -> int
@@ -3733,9 +3860,9 @@ static swig_class SwigClassB2CircleShape;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2CircleShape_allocate(VALUE self)
+_wrap_b_2circle_shape_allocate(VALUE self)
 #else
-_wrap_B2CircleShape_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2circle_shape_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2CircleShape);
@@ -3750,13 +3877,13 @@ _wrap_B2CircleShape_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2CircleShape.new
 
   call-seq:
-    B2CircleShape.new
+    B2CircleShape.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2CircleShape(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2circle_shape(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2CircleShape";
   b2CircleShape *result = 0 ;
   
@@ -3930,9 +4057,9 @@ static swig_class SwigClassB2EdgeShape;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2EdgeShape_allocate(VALUE self)
+_wrap_b_2edge_shape_allocate(VALUE self)
 #else
-_wrap_B2EdgeShape_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2edge_shape_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2EdgeShape);
@@ -3947,13 +4074,13 @@ _wrap_B2EdgeShape_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2EdgeShape.new
 
   call-seq:
-    B2EdgeShape.new
+    B2EdgeShape.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2EdgeShape(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2edge_shape(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2EdgeShape";
   b2EdgeShape *result = 0 ;
   
@@ -4063,9 +4190,9 @@ static swig_class SwigClassB2PolygonShape;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2PolygonShape_allocate(VALUE self)
+_wrap_b_2polygon_shape_allocate(VALUE self)
 #else
-_wrap_B2PolygonShape_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2polygon_shape_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2PolygonShape);
@@ -4080,13 +4207,13 @@ _wrap_B2PolygonShape_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2PolygonShape.new
 
   call-seq:
-    B2PolygonShape.new
+    B2PolygonShape.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2PolygonShape(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2polygon_shape(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2PolygonShape";
   b2PolygonShape *result = 0 ;
   
@@ -4395,14 +4522,14 @@ static swig_class SwigClassB2Color;
   Document-method: Liquidfun::B2Color.new
 
   call-seq:
-    B2Color.new
+    B2Color.new()
     B2Color.new(float32 r, float32 g, float32 b)
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2Color__SWIG_0(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2color__SWIG_0(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2Color";
   b2Color *result = 0 ;
   
@@ -4427,9 +4554,9 @@ fail:
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2Color_allocate(VALUE self)
+_wrap_b_2color_allocate(VALUE self)
 #else
-_wrap_B2Color_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2color_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2Color);
@@ -4440,18 +4567,8 @@ _wrap_B2Color_allocate(int argc, VALUE *argv, VALUE self)
 }
 
 
-/*
-  Document-method: Liquidfun::B2Color.new
-
-  call-seq:
-    B2Color.new()
-    B2Color.new(float32 r, float32 g, float32 b)
-
-Class constructor.
-
-*/
 SWIGINTERN VALUE
-_wrap_new_B2Color__SWIG_1(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2color__SWIG_1(int argc, VALUE *argv, VALUE self) {
   float32 arg1 ;
   float32 arg2 ;
   float32 arg3 ;
@@ -4498,7 +4615,7 @@ fail:
 }
 
 
-SWIGINTERN VALUE _wrap_new_B2Color(int nargs, VALUE *args, VALUE self) {
+SWIGINTERN VALUE _wrap_new_b_2color(int nargs, VALUE *args, VALUE self) {
   int argc;
   VALUE argv[3];
   int ii;
@@ -4509,7 +4626,7 @@ SWIGINTERN VALUE _wrap_new_B2Color(int nargs, VALUE *args, VALUE self) {
     argv[ii] = args[ii];
   }
   if (argc == 0) {
-    return _wrap_new_B2Color__SWIG_0(nargs, args, self);
+    return _wrap_new_b_2color__SWIG_0(nargs, args, self);
   }
   if (argc == 3) {
     int _v;
@@ -4528,16 +4645,16 @@ SWIGINTERN VALUE _wrap_new_B2Color(int nargs, VALUE *args, VALUE self) {
           _v = SWIG_CheckState(res);
         }
         if (_v) {
-          return _wrap_new_B2Color__SWIG_1(nargs, args, self);
+          return _wrap_new_b_2color__SWIG_1(nargs, args, self);
         }
       }
     }
   }
   
 fail:
-  Ruby_Format_OverloadedError( argc, 3, "b2Color.new", 
-    "    b2Color.new()\n"
-    "    b2Color.new(float32 r, float32 g, float32 b)\n");
+  Ruby_Format_OverloadedError( argc, 3, "b_2color.new", 
+    "    b_2color.new()\n"
+    "    b_2color.new(float32 r, float32 g, float32 b)\n");
   
   return Qnil;
 }
@@ -4835,9 +4952,9 @@ static swig_class SwigClassB2Draw;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2Draw_allocate(VALUE self)
+_wrap_b_2draw_allocate(VALUE self)
 #else
-_wrap_B2Draw_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2draw_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2Draw);
@@ -4852,13 +4969,13 @@ _wrap_B2Draw_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2Draw.new
 
   call-seq:
-    B2Draw.new
+    B2Draw.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2Draw(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2draw(int argc, VALUE *argv, VALUE self) {
   VALUE arg1 = (VALUE) 0 ;
   const char *classname SWIGUNUSED = "Liquidfun::B2Draw";
   b2Draw *result = 0 ;
@@ -5715,14 +5832,14 @@ static swig_class SwigClassB2Vec2;
   Document-method: Liquidfun::B2Vec2.new
 
   call-seq:
-    B2Vec2.new
+    B2Vec2.new()
     B2Vec2.new(float32 x, float32 y)
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2Vec2__SWIG_0(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2vec2__SWIG_0(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2Vec2";
   b2Vec2 *result = 0 ;
   
@@ -5747,9 +5864,9 @@ fail:
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2Vec2_allocate(VALUE self)
+_wrap_b_2vec2_allocate(VALUE self)
 #else
-_wrap_B2Vec2_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2vec2_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2Vec2);
@@ -5760,18 +5877,8 @@ _wrap_B2Vec2_allocate(int argc, VALUE *argv, VALUE self)
 }
 
 
-/*
-  Document-method: Liquidfun::B2Vec2.new
-
-  call-seq:
-    B2Vec2.new()
-    B2Vec2.new(float32 x, float32 y)
-
-Class constructor.
-
-*/
 SWIGINTERN VALUE
-_wrap_new_B2Vec2__SWIG_1(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2vec2__SWIG_1(int argc, VALUE *argv, VALUE self) {
   float32 arg1 ;
   float32 arg2 ;
   float val1 ;
@@ -5810,7 +5917,7 @@ fail:
 }
 
 
-SWIGINTERN VALUE _wrap_new_B2Vec2(int nargs, VALUE *args, VALUE self) {
+SWIGINTERN VALUE _wrap_new_b_2vec2(int nargs, VALUE *args, VALUE self) {
   int argc;
   VALUE argv[2];
   int ii;
@@ -5821,7 +5928,7 @@ SWIGINTERN VALUE _wrap_new_B2Vec2(int nargs, VALUE *args, VALUE self) {
     argv[ii] = args[ii];
   }
   if (argc == 0) {
-    return _wrap_new_B2Vec2__SWIG_0(nargs, args, self);
+    return _wrap_new_b_2vec2__SWIG_0(nargs, args, self);
   }
   if (argc == 2) {
     int _v;
@@ -5835,15 +5942,15 @@ SWIGINTERN VALUE _wrap_new_B2Vec2(int nargs, VALUE *args, VALUE self) {
         _v = SWIG_CheckState(res);
       }
       if (_v) {
-        return _wrap_new_B2Vec2__SWIG_1(nargs, args, self);
+        return _wrap_new_b_2vec2__SWIG_1(nargs, args, self);
       }
     }
   }
   
 fail:
-  Ruby_Format_OverloadedError( argc, 2, "b2Vec2.new", 
-    "    b2Vec2.new()\n"
-    "    b2Vec2.new(float32 x, float32 y)\n");
+  Ruby_Format_OverloadedError( argc, 2, "b_2vec2.new", 
+    "    b_2vec2.new()\n"
+    "    b_2vec2.new(float32 x, float32 y)\n");
   
   return Qnil;
 }
@@ -6062,9 +6169,9 @@ static swig_class SwigClassB2Transform;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2Transform_allocate(VALUE self)
+_wrap_b_2transform_allocate(VALUE self)
 #else
-_wrap_B2Transform_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2transform_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2Transform);
@@ -6079,13 +6186,13 @@ _wrap_B2Transform_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2Transform.new
 
   call-seq:
-    B2Transform.new
+    B2Transform.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2Transform(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2transform(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2Transform";
   b2Transform *result = 0 ;
   
@@ -6323,9 +6430,9 @@ static swig_class SwigClassB2BodyDef;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2BodyDef_allocate(VALUE self)
+_wrap_b_2body_def_allocate(VALUE self)
 #else
-_wrap_B2BodyDef_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2body_def_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2BodyDef);
@@ -6340,13 +6447,13 @@ _wrap_B2BodyDef_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2BodyDef.new
 
   call-seq:
-    B2BodyDef.new
+    B2BodyDef.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2BodyDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2body_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2BodyDef";
   b2BodyDef *result = 0 ;
   
@@ -6639,25 +6746,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2BodyDef.linearVelocity
+  Document-method: Liquidfun::B2BodyDef.linear_velocity
 
   call-seq:
-    linearVelocity -> B2Vec2
+    linear_velocity -> B2Vec2
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2BodyDef.linearVelocity=
+  Document-method: Liquidfun::B2BodyDef.linear_velocity=
 
   call-seq:
-    linearVelocity=(x) -> B2Vec2
+    linear_velocity=(x) -> B2Vec2
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2BodyDef_linearVelocity_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_linear_velocity_set(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
@@ -6689,7 +6796,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2BodyDef_linearVelocity_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_linear_velocity_get(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6713,25 +6820,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2BodyDef.angularVelocity
+  Document-method: Liquidfun::B2BodyDef.angular_velocity
 
   call-seq:
-    angularVelocity -> float32
+    angular_velocity -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2BodyDef.angularVelocity=
+  Document-method: Liquidfun::B2BodyDef.angular_velocity=
 
   call-seq:
-    angularVelocity=(x) -> float32
+    angular_velocity=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2BodyDef_angularVelocity_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_angular_velocity_set(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -6760,7 +6867,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2BodyDef_angularVelocity_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_angular_velocity_get(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6784,25 +6891,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2BodyDef.linearDamping
+  Document-method: Liquidfun::B2BodyDef.linear_damping
 
   call-seq:
-    linearDamping -> float32
+    linear_damping -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2BodyDef.linearDamping=
+  Document-method: Liquidfun::B2BodyDef.linear_damping=
 
   call-seq:
-    linearDamping=(x) -> float32
+    linear_damping=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2BodyDef_linearDamping_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_linear_damping_set(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -6831,7 +6938,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2BodyDef_linearDamping_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_linear_damping_get(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6855,25 +6962,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2BodyDef.angularDamping
+  Document-method: Liquidfun::B2BodyDef.angular_damping
 
   call-seq:
-    angularDamping -> float32
+    angular_damping -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2BodyDef.angularDamping=
+  Document-method: Liquidfun::B2BodyDef.angular_damping=
 
   call-seq:
-    angularDamping=(x) -> float32
+    angular_damping=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2BodyDef_angularDamping_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_angular_damping_set(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -6902,7 +7009,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2BodyDef_angularDamping_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_angular_damping_get(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6926,25 +7033,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2BodyDef.allowSleep
+  Document-method: Liquidfun::B2BodyDef.allow_sleep
 
   call-seq:
-    allowSleep -> bool
+    allow_sleep -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2BodyDef.allowSleep=
+  Document-method: Liquidfun::B2BodyDef.allow_sleep=
 
   call-seq:
-    allowSleep=(x) -> bool
+    allow_sleep=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2BodyDef_allowSleep_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_allow_sleep_set(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -6973,7 +7080,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2BodyDef_allowSleep_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_allow_sleep_get(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7068,25 +7175,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2BodyDef.fixedRotation
+  Document-method: Liquidfun::B2BodyDef.fixed_rotation
 
   call-seq:
-    fixedRotation -> bool
+    fixed_rotation -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2BodyDef.fixedRotation=
+  Document-method: Liquidfun::B2BodyDef.fixed_rotation=
 
   call-seq:
-    fixedRotation=(x) -> bool
+    fixed_rotation=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2BodyDef_fixedRotation_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_fixed_rotation_set(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -7115,7 +7222,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2BodyDef_fixedRotation_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_fixed_rotation_get(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7281,25 +7388,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2BodyDef.gravityScale
+  Document-method: Liquidfun::B2BodyDef.gravity_scale
 
   call-seq:
-    gravityScale -> float32
+    gravity_scale -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2BodyDef.gravityScale=
+  Document-method: Liquidfun::B2BodyDef.gravity_scale=
 
   call-seq:
-    gravityScale=(x) -> float32
+    gravity_scale=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2BodyDef_gravityScale_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_gravity_scale_set(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -7328,7 +7435,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2BodyDef_gravityScale_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2BodyDef_gravity_scale_get(int argc, VALUE *argv, VALUE self) {
   b2BodyDef *arg1 = (b2BodyDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7409,7 +7516,7 @@ _wrap_B2Body_create_fixture__SWIG_0(int argc, VALUE *argv, VALUE self) {
       SWIG_exception(SWIG_RuntimeError, e.what());
     }
   }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Fixture, 0 |  0 );
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Fixture, SWIG_POINTER_OWN |  0 );
   return vresult;
 fail:
   return Qnil;
@@ -7456,7 +7563,7 @@ _wrap_B2Body_create_fixture__SWIG_1(int argc, VALUE *argv, VALUE self) {
       SWIG_exception(SWIG_RuntimeError, e.what());
     }
   }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Fixture, 0 |  0 );
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Fixture, SWIG_POINTER_OWN |  0 );
   return vresult;
 fail:
   return Qnil;
@@ -10380,9 +10487,9 @@ static swig_class SwigClassB2Filter;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2Filter_allocate(VALUE self)
+_wrap_b_2filter_allocate(VALUE self)
 #else
-_wrap_B2Filter_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2filter_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2Filter);
@@ -10397,13 +10504,13 @@ _wrap_B2Filter_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2Filter.new
 
   call-seq:
-    B2Filter.new
+    B2Filter.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2Filter(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2filter(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2Filter";
   b2Filter *result = 0 ;
   
@@ -10427,25 +10534,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2Filter.categoryBits
+  Document-method: Liquidfun::B2Filter.category_bits
 
   call-seq:
-    categoryBits -> uint16
+    category_bits -> uint16
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2Filter.categoryBits=
+  Document-method: Liquidfun::B2Filter.category_bits=
 
   call-seq:
-    categoryBits=(x) -> uint16
+    category_bits=(x) -> uint16
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2Filter_categoryBits_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Filter_category_bits_set(int argc, VALUE *argv, VALUE self) {
   b2Filter *arg1 = (b2Filter *) 0 ;
   uint16 arg2 ;
   void *argp1 = 0 ;
@@ -10474,7 +10581,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2Filter_categoryBits_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Filter_category_bits_get(int argc, VALUE *argv, VALUE self) {
   b2Filter *arg1 = (b2Filter *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10498,25 +10605,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2Filter.maskBits
+  Document-method: Liquidfun::B2Filter.mask_bits
 
   call-seq:
-    maskBits -> uint16
+    mask_bits -> uint16
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2Filter.maskBits=
+  Document-method: Liquidfun::B2Filter.mask_bits=
 
   call-seq:
-    maskBits=(x) -> uint16
+    mask_bits=(x) -> uint16
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2Filter_maskBits_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Filter_mask_bits_set(int argc, VALUE *argv, VALUE self) {
   b2Filter *arg1 = (b2Filter *) 0 ;
   uint16 arg2 ;
   void *argp1 = 0 ;
@@ -10545,7 +10652,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2Filter_maskBits_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Filter_mask_bits_get(int argc, VALUE *argv, VALUE self) {
   b2Filter *arg1 = (b2Filter *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10569,25 +10676,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2Filter.groupIndex
+  Document-method: Liquidfun::B2Filter.group_index
 
   call-seq:
-    groupIndex -> int16
+    group_index -> int16
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2Filter.groupIndex=
+  Document-method: Liquidfun::B2Filter.group_index=
 
   call-seq:
-    groupIndex=(x) -> int16
+    group_index=(x) -> int16
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2Filter_groupIndex_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Filter_group_index_set(int argc, VALUE *argv, VALUE self) {
   b2Filter *arg1 = (b2Filter *) 0 ;
   int16 arg2 ;
   void *argp1 = 0 ;
@@ -10616,7 +10723,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2Filter_groupIndex_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Filter_group_index_get(int argc, VALUE *argv, VALUE self) {
   b2Filter *arg1 = (b2Filter *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10657,9 +10764,9 @@ static swig_class SwigClassB2FixtureDef;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2FixtureDef_allocate(VALUE self)
+_wrap_b_2fixture_def_allocate(VALUE self)
 #else
-_wrap_B2FixtureDef_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2fixture_def_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2FixtureDef);
@@ -10674,13 +10781,13 @@ _wrap_B2FixtureDef_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2FixtureDef.new
 
   call-seq:
-    B2FixtureDef.new
+    B2FixtureDef.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2FixtureDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2fixture_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2FixtureDef";
   b2FixtureDef *result = 0 ;
   
@@ -10988,25 +11095,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2FixtureDef.isSensor
+  Document-method: Liquidfun::B2FixtureDef.is_sensor
 
   call-seq:
-    isSensor -> bool
+    is_sensor -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2FixtureDef.isSensor=
+  Document-method: Liquidfun::B2FixtureDef.is_sensor=
 
   call-seq:
-    isSensor=(x) -> bool
+    is_sensor=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2FixtureDef_isSensor_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2FixtureDef_is_sensor_set(int argc, VALUE *argv, VALUE self) {
   b2FixtureDef *arg1 = (b2FixtureDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -11035,7 +11142,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2FixtureDef_isSensor_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2FixtureDef_is_sensor_get(int argc, VALUE *argv, VALUE self) {
   b2FixtureDef *arg1 = (b2FixtureDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -12325,9 +12432,9 @@ static swig_class SwigClassB2World;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2World_allocate(VALUE self)
+_wrap_b_2world_allocate(VALUE self)
 #else
-_wrap_B2World_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2world_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2World);
@@ -12348,7 +12455,7 @@ Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2World(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2world(int argc, VALUE *argv, VALUE self) {
   float32 arg1 ;
   float32 arg2 ;
   float val1 ;
@@ -12883,9 +12990,9 @@ static swig_class SwigClassB2QueryCallback;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2QueryCallback_allocate(VALUE self)
+_wrap_b_2query_callback_allocate(VALUE self)
 #else
-_wrap_B2QueryCallback_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2query_callback_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2QueryCallback);
@@ -12900,13 +13007,13 @@ _wrap_B2QueryCallback_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2QueryCallback.new
 
   call-seq:
-    B2QueryCallback.new
+    B2QueryCallback.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2QueryCallback(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2query_callback(int argc, VALUE *argv, VALUE self) {
   VALUE arg1 = (VALUE) 0 ;
   const char *classname SWIGUNUSED = "Liquidfun::B2QueryCallback";
   b2QueryCallback *result = 0 ;
@@ -13184,25 +13291,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2Jacobian.angularA
+  Document-method: Liquidfun::B2Jacobian.angular_a
 
   call-seq:
-    angularA -> float32
+    angular_a -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2Jacobian.angularA=
+  Document-method: Liquidfun::B2Jacobian.angular_a=
 
   call-seq:
-    angularA=(x) -> float32
+    angular_a=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2Jacobian_angularA_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Jacobian_angular_a_set(int argc, VALUE *argv, VALUE self) {
   b2Jacobian *arg1 = (b2Jacobian *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -13231,7 +13338,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2Jacobian_angularA_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Jacobian_angular_a_get(int argc, VALUE *argv, VALUE self) {
   b2Jacobian *arg1 = (b2Jacobian *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13255,25 +13362,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2Jacobian.angularB
+  Document-method: Liquidfun::B2Jacobian.angular_b
 
   call-seq:
-    angularB -> float32
+    angular_b -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2Jacobian.angularB=
+  Document-method: Liquidfun::B2Jacobian.angular_b=
 
   call-seq:
-    angularB=(x) -> float32
+    angular_b=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2Jacobian_angularB_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Jacobian_angular_b_set(int argc, VALUE *argv, VALUE self) {
   b2Jacobian *arg1 = (b2Jacobian *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -13302,7 +13409,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2Jacobian_angularB_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2Jacobian_angular_b_get(int argc, VALUE *argv, VALUE self) {
   b2Jacobian *arg1 = (b2Jacobian *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13739,9 +13846,9 @@ static swig_class SwigClassB2JointDef;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2JointDef_allocate(VALUE self)
+_wrap_b_2joint_def_allocate(VALUE self)
 #else
-_wrap_B2JointDef_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2joint_def_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2JointDef);
@@ -13756,13 +13863,13 @@ _wrap_B2JointDef_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2JointDef.new
 
   call-seq:
-    B2JointDef.new
+    B2JointDef.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2JointDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2joint_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2JointDef";
   b2JointDef *result = 0 ;
   
@@ -13857,25 +13964,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2JointDef.bodyA
+  Document-method: Liquidfun::B2JointDef.body_a
 
   call-seq:
-    bodyA -> B2Body
+    body_a -> B2Body
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2JointDef.bodyA=
+  Document-method: Liquidfun::B2JointDef.body_a=
 
   call-seq:
-    bodyA=(x) -> B2Body
+    body_a=(x) -> B2Body
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2JointDef_bodyA_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_body_a_set(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   b2Body *arg2 = (b2Body *) 0 ;
   void *argp1 = 0 ;
@@ -13904,7 +14011,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2JointDef_bodyA_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_body_a_get(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13928,25 +14035,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2JointDef.bodyB
+  Document-method: Liquidfun::B2JointDef.body_b
 
   call-seq:
-    bodyB -> B2Body
+    body_b -> B2Body
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2JointDef.bodyB=
+  Document-method: Liquidfun::B2JointDef.body_b=
 
   call-seq:
-    bodyB=(x) -> B2Body
+    body_b=(x) -> B2Body
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2JointDef_bodyB_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_body_b_set(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   b2Body *arg2 = (b2Body *) 0 ;
   void *argp1 = 0 ;
@@ -13975,7 +14082,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2JointDef_bodyB_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_body_b_get(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13999,25 +14106,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2JointDef.collideConnected
+  Document-method: Liquidfun::B2JointDef.collide_connected
 
   call-seq:
-    collideConnected -> bool
+    collide_connected -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2JointDef.collideConnected=
+  Document-method: Liquidfun::B2JointDef.collide_connected=
 
   call-seq:
-    collideConnected=(x) -> bool
+    collide_connected=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2JointDef_collideConnected_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_collide_connected_set(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -14046,7 +14153,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2JointDef_collideConnected_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2JointDef_collide_connected_get(int argc, VALUE *argv, VALUE self) {
   b2JointDef *arg1 = (b2JointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14658,6 +14765,1063 @@ fail:
 
 
 /*
+  Document-class: Liquidfun::B2DistanceJointDef < Liquidfun::B2JointDef
+
+  Proxy of C++ Liquidfun::B2DistanceJointDef class
+
+
+*/
+static swig_class SwigClassB2DistanceJointDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_b_2distance_joint_def_allocate(VALUE self)
+#else
+_wrap_b_2distance_joint_def_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2DistanceJointDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.new
+
+  call-seq:
+    B2DistanceJointDef.new()
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_b_2distance_joint_def(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2DistanceJointDef";
+  b2DistanceJointDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2DistanceJointDef *)new b2DistanceJointDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.init
+
+  call-seq:
+    init(B2Body bodyA, B2Body bodyB, B2Vec2 anchorA, B2Vec2 anchorB)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_init(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  b2Body *arg3 = (b2Body *) 0 ;
+  b2Vec2 *arg4 = 0 ;
+  b2Vec2 *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  
+  if ((argc < 4) || (argc > 4)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","Initialize", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Body *","Initialize", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Body * >(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "b2Body *","Initialize", 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast< b2Body * >(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &argp4, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 4, argv[2] )); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 4, argv[2])); 
+  }
+  arg4 = reinterpret_cast< b2Vec2 * >(argp4);
+  res5 = SWIG_ConvertPtr(argv[3], &argp5, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 5, argv[3] )); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 5, argv[3])); 
+  }
+  arg5 = reinterpret_cast< b2Vec2 * >(argp5);
+  {
+    try {
+      (arg1)->Initialize(arg2,arg3,(b2Vec2 const &)*arg4,(b2Vec2 const &)*arg5);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.local_anchor_a
+
+  call-seq:
+    local_anchor_a -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.local_anchor_a=
+
+  call-seq:
+    local_anchor_a=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_local_anchor_a_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","localAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAnchorA", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAnchorA", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAnchorA = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_local_anchor_a_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","localAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAnchorA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.local_anchor_b
+
+  call-seq:
+    local_anchor_b -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.local_anchor_b=
+
+  call-seq:
+    local_anchor_b=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_local_anchor_b_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","localAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAnchorB", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAnchorB", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAnchorB = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_local_anchor_b_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","localAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAnchorB);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.length
+
+  call-seq:
+    length -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.length=
+
+  call-seq:
+    length=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_length_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","length", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","length", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->length = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_length_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","length", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  result = (float32) ((arg1)->length);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.frequency_hz
+
+  call-seq:
+    frequency_hz -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.frequency_hz=
+
+  call-seq:
+    frequency_hz=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_frequency_hz_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","frequencyHz", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","frequencyHz", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->frequencyHz = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_frequency_hz_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","frequencyHz", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  result = (float32) ((arg1)->frequencyHz);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.damping_ratio
+
+  call-seq:
+    damping_ratio -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2DistanceJointDef.damping_ratio=
+
+  call-seq:
+    damping_ratio=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_damping_ratio_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","dampingRatio", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","dampingRatio", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->dampingRatio = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_damping_ratio_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJointDef *","dampingRatio", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJointDef * >(argp1);
+  result = (float32) ((arg1)->dampingRatio);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2DistanceJointDef(void *self) {
+    b2DistanceJointDef *arg1 = (b2DistanceJointDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2DistanceJoint < Liquidfun::B2Joint
+
+  Proxy of C++ Liquidfun::B2DistanceJoint class
+
+
+*/
+static swig_class SwigClassB2DistanceJoint;
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_anchor_a
+
+  call-seq:
+    get_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  {
+    try {
+      result = ((b2DistanceJoint const *)arg1)->GetAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_anchor_b
+
+  call-seq:
+    get_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  {
+    try {
+      result = ((b2DistanceJoint const *)arg1)->GetAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_reaction_force
+
+  call-seq:
+    get_reaction_force(float32 inv_dt) -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_reaction_force(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetReactionForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = ((b2DistanceJoint const *)arg1)->GetReactionForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_reaction_torque
+
+  call-seq:
+    get_reaction_torque(float32 inv_dt) -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_reaction_torque(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetReactionTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = (float32)((b2DistanceJoint const *)arg1)->GetReactionTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_local_anchor_a
+
+  call-seq:
+    get_local_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_local_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetLocalAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2DistanceJoint const *)arg1)->GetLocalAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_local_anchor_b
+
+  call-seq:
+    get_local_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_local_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetLocalAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2DistanceJoint const *)arg1)->GetLocalAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.set_length
+
+  call-seq:
+    set_length(float32 length)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_set_length(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint *","SetLength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetLength", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetLength(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_length
+
+  call-seq:
+    get_length -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_length(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetLength", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2DistanceJoint const *)arg1)->GetLength();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.set_frequency
+
+  call-seq:
+    set_frequency(float32 hz)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_set_frequency(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint *","SetFrequency", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetFrequency", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetFrequency(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_frequency
+
+  call-seq:
+    get_frequency -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_frequency(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetFrequency", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2DistanceJoint const *)arg1)->GetFrequency();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.set_damping_ratio
+
+  call-seq:
+    set_damping_ratio(float32 ratio)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_set_damping_ratio(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint *","SetDampingRatio", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetDampingRatio", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetDampingRatio(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.get_damping_ratio
+
+  call-seq:
+    get_damping_ratio -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_get_damping_ratio(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint const *","GetDampingRatio", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2DistanceJoint const *)arg1)->GetDampingRatio();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2DistanceJoint.dump
+
+  call-seq:
+    dump
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2DistanceJoint_dump(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJoint *arg1 = (b2DistanceJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2DistanceJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2DistanceJoint *","Dump", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2DistanceJoint * >(argp1);
+  {
+    try {
+      (arg1)->Dump();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
   Document-class: Liquidfun::B2RevoluteJointDef < Liquidfun::B2JointDef
 
   Proxy of C++ Liquidfun::B2RevoluteJointDef class
@@ -14668,9 +15832,9 @@ static swig_class SwigClassB2RevoluteJointDef;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2RevoluteJointDef_allocate(VALUE self)
+_wrap_b_2revolute_joint_def_allocate(VALUE self)
 #else
-_wrap_B2RevoluteJointDef_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2revolute_joint_def_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2RevoluteJointDef);
@@ -14685,13 +15849,13 @@ _wrap_B2RevoluteJointDef_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2RevoluteJointDef.new
 
   call-seq:
-    B2RevoluteJointDef.new
+    B2RevoluteJointDef.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2RevoluteJointDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2revolute_joint_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2RevoluteJointDef";
   b2RevoluteJointDef *result = 0 ;
   
@@ -14779,25 +15943,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.localAnchorA
+  Document-method: Liquidfun::B2RevoluteJointDef.local_anchor_a
 
   call-seq:
-    localAnchorA -> B2Vec2
+    local_anchor_a -> B2Vec2
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.localAnchorA=
+  Document-method: Liquidfun::B2RevoluteJointDef.local_anchor_a=
 
   call-seq:
-    localAnchorA=(x) -> B2Vec2
+    local_anchor_a=(x) -> B2Vec2
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_localAnchorA_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_local_anchor_a_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
@@ -14829,7 +15993,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_localAnchorA_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_local_anchor_a_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14853,25 +16017,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.localAnchorB
+  Document-method: Liquidfun::B2RevoluteJointDef.local_anchor_b
 
   call-seq:
-    localAnchorB -> B2Vec2
+    local_anchor_b -> B2Vec2
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.localAnchorB=
+  Document-method: Liquidfun::B2RevoluteJointDef.local_anchor_b=
 
   call-seq:
-    localAnchorB=(x) -> B2Vec2
+    local_anchor_b=(x) -> B2Vec2
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_localAnchorB_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_local_anchor_b_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
@@ -14903,7 +16067,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_localAnchorB_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_local_anchor_b_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14927,25 +16091,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.referenceAngle
+  Document-method: Liquidfun::B2RevoluteJointDef.reference_angle
 
   call-seq:
-    referenceAngle -> float32
+    reference_angle -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.referenceAngle=
+  Document-method: Liquidfun::B2RevoluteJointDef.reference_angle=
 
   call-seq:
-    referenceAngle=(x) -> float32
+    reference_angle=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_referenceAngle_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_reference_angle_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -14974,7 +16138,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_referenceAngle_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_reference_angle_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14998,25 +16162,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.enableLimit
+  Document-method: Liquidfun::B2RevoluteJointDef.enable_limit
 
   call-seq:
-    enableLimit -> bool
+    enable_limit -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.enableLimit=
+  Document-method: Liquidfun::B2RevoluteJointDef.enable_limit=
 
   call-seq:
-    enableLimit=(x) -> bool
+    enable_limit=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_enableLimit_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_enable_limit_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -15045,7 +16209,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_enableLimit_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_enable_limit_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -15069,25 +16233,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.lowerAngle
+  Document-method: Liquidfun::B2RevoluteJointDef.lower_angle
 
   call-seq:
-    lowerAngle -> float32
+    lower_angle -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.lowerAngle=
+  Document-method: Liquidfun::B2RevoluteJointDef.lower_angle=
 
   call-seq:
-    lowerAngle=(x) -> float32
+    lower_angle=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_lowerAngle_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_lower_angle_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -15116,7 +16280,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_lowerAngle_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_lower_angle_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -15140,25 +16304,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.upperAngle
+  Document-method: Liquidfun::B2RevoluteJointDef.upper_angle
 
   call-seq:
-    upperAngle -> float32
+    upper_angle -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.upperAngle=
+  Document-method: Liquidfun::B2RevoluteJointDef.upper_angle=
 
   call-seq:
-    upperAngle=(x) -> float32
+    upper_angle=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_upperAngle_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_upper_angle_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -15187,7 +16351,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_upperAngle_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_upper_angle_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -15211,25 +16375,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.enableMotor
+  Document-method: Liquidfun::B2RevoluteJointDef.enable_motor
 
   call-seq:
-    enableMotor -> bool
+    enable_motor -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.enableMotor=
+  Document-method: Liquidfun::B2RevoluteJointDef.enable_motor=
 
   call-seq:
-    enableMotor=(x) -> bool
+    enable_motor=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_enableMotor_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_enable_motor_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -15258,7 +16422,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_enableMotor_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_enable_motor_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -15282,25 +16446,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.motorSpeed
+  Document-method: Liquidfun::B2RevoluteJointDef.motor_speed
 
   call-seq:
-    motorSpeed -> float32
+    motor_speed -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.motorSpeed=
+  Document-method: Liquidfun::B2RevoluteJointDef.motor_speed=
 
   call-seq:
-    motorSpeed=(x) -> float32
+    motor_speed=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_motorSpeed_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_motor_speed_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -15329,7 +16493,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_motorSpeed_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_motor_speed_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -15353,25 +16517,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.maxMotorTorque
+  Document-method: Liquidfun::B2RevoluteJointDef.max_motor_torque
 
   call-seq:
-    maxMotorTorque -> float32
+    max_motor_torque -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2RevoluteJointDef.maxMotorTorque=
+  Document-method: Liquidfun::B2RevoluteJointDef.max_motor_torque=
 
   call-seq:
-    maxMotorTorque=(x) -> float32
+    max_motor_torque=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_maxMotorTorque_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_max_motor_torque_set(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -15400,7 +16564,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2RevoluteJointDef_maxMotorTorque_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2RevoluteJointDef_max_motor_torque_get(int argc, VALUE *argv, VALUE self) {
   b2RevoluteJointDef *arg1 = (b2RevoluteJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -16374,6 +17538,3174 @@ fail:
 
 
 /*
+  Document-class: Liquidfun::B2PrismaticJointDef < Liquidfun::B2JointDef
+
+  Proxy of C++ Liquidfun::B2PrismaticJointDef class
+
+
+*/
+static swig_class SwigClassB2PrismaticJointDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_b_2prismatic_joint_def_allocate(VALUE self)
+#else
+_wrap_b_2prismatic_joint_def_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2PrismaticJointDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.new
+
+  call-seq:
+    B2PrismaticJointDef.new()
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_b_2prismatic_joint_def(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2PrismaticJointDef";
+  b2PrismaticJointDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2PrismaticJointDef *)new b2PrismaticJointDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.init
+
+  call-seq:
+    init(B2Body bodyA, B2Body bodyB, B2Vec2 anchor, B2Vec2 axis)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_init(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  b2Body *arg3 = (b2Body *) 0 ;
+  b2Vec2 *arg4 = 0 ;
+  b2Vec2 *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  
+  if ((argc < 4) || (argc > 4)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","Initialize", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Body *","Initialize", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Body * >(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "b2Body *","Initialize", 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast< b2Body * >(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &argp4, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 4, argv[2] )); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 4, argv[2])); 
+  }
+  arg4 = reinterpret_cast< b2Vec2 * >(argp4);
+  res5 = SWIG_ConvertPtr(argv[3], &argp5, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 5, argv[3] )); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 5, argv[3])); 
+  }
+  arg5 = reinterpret_cast< b2Vec2 * >(argp5);
+  {
+    try {
+      (arg1)->Initialize(arg2,arg3,(b2Vec2 const &)*arg4,(b2Vec2 const &)*arg5);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.local_anchor_a
+
+  call-seq:
+    local_anchor_a -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.local_anchor_a=
+
+  call-seq:
+    local_anchor_a=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_local_anchor_a_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","localAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAnchorA", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAnchorA", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAnchorA = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_local_anchor_a_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","localAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAnchorA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.local_anchor_b
+
+  call-seq:
+    local_anchor_b -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.local_anchor_b=
+
+  call-seq:
+    local_anchor_b=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_local_anchor_b_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","localAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAnchorB", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAnchorB", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAnchorB = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_local_anchor_b_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","localAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAnchorB);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.local_axis_a
+
+  call-seq:
+    local_axis_a -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.local_axis_a=
+
+  call-seq:
+    local_axis_a=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_local_axis_a_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","localAxisA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAxisA", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAxisA", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAxisA = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_local_axis_a_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","localAxisA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAxisA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.reference_angle
+
+  call-seq:
+    reference_angle -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.reference_angle=
+
+  call-seq:
+    reference_angle=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_reference_angle_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","referenceAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","referenceAngle", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->referenceAngle = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_reference_angle_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","referenceAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (float32) ((arg1)->referenceAngle);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.enable_limit
+
+  call-seq:
+    enable_limit -> bool
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.enable_limit=
+
+  call-seq:
+    enable_limit=(x) -> bool
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_enable_limit_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","enableLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","enableLimit", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->enableLimit = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_enable_limit_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","enableLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (bool) ((arg1)->enableLimit);
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.lower_translation
+
+  call-seq:
+    lower_translation -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.lower_translation=
+
+  call-seq:
+    lower_translation=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_lower_translation_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","lowerTranslation", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","lowerTranslation", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->lowerTranslation = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_lower_translation_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","lowerTranslation", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (float32) ((arg1)->lowerTranslation);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.upper_translation
+
+  call-seq:
+    upper_translation -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.upper_translation=
+
+  call-seq:
+    upper_translation=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_upper_translation_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","upperTranslation", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","upperTranslation", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->upperTranslation = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_upper_translation_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","upperTranslation", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (float32) ((arg1)->upperTranslation);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.enable_motor
+
+  call-seq:
+    enable_motor -> bool
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.enable_motor=
+
+  call-seq:
+    enable_motor=(x) -> bool
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_enable_motor_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","enableMotor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","enableMotor", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->enableMotor = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_enable_motor_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","enableMotor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (bool) ((arg1)->enableMotor);
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.max_motor_force
+
+  call-seq:
+    max_motor_force -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.max_motor_force=
+
+  call-seq:
+    max_motor_force=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_max_motor_force_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","maxMotorForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","maxMotorForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->maxMotorForce = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_max_motor_force_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","maxMotorForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (float32) ((arg1)->maxMotorForce);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.motor_speed
+
+  call-seq:
+    motor_speed -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PrismaticJointDef.motor_speed=
+
+  call-seq:
+    motor_speed=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_motor_speed_set(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","motorSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","motorSpeed", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->motorSpeed = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PrismaticJointDef_motor_speed_get(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJointDef *","motorSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJointDef * >(argp1);
+  result = (float32) ((arg1)->motorSpeed);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2PrismaticJointDef(void *self) {
+    b2PrismaticJointDef *arg1 = (b2PrismaticJointDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2PrismaticJoint < Liquidfun::B2Joint
+
+  Proxy of C++ Liquidfun::B2PrismaticJoint class
+
+
+*/
+static swig_class SwigClassB2PrismaticJoint;
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_anchor_a
+
+  call-seq:
+    get_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = ((b2PrismaticJoint const *)arg1)->GetAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_anchor_b
+
+  call-seq:
+    get_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = ((b2PrismaticJoint const *)arg1)->GetAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_reaction_force
+
+  call-seq:
+    get_reaction_force(float32 inv_dt) -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_reaction_force(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetReactionForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = ((b2PrismaticJoint const *)arg1)->GetReactionForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_reaction_torque
+
+  call-seq:
+    get_reaction_torque(float32 inv_dt) -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_reaction_torque(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetReactionTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetReactionTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_local_anchor_a
+
+  call-seq:
+    get_local_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_local_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetLocalAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2PrismaticJoint const *)arg1)->GetLocalAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_local_anchor_b
+
+  call-seq:
+    get_local_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_local_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetLocalAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2PrismaticJoint const *)arg1)->GetLocalAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_local_axis_a
+
+  call-seq:
+    get_local_axis_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_local_axis_a(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetLocalAxisA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2PrismaticJoint const *)arg1)->GetLocalAxisA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_reference_angle
+
+  call-seq:
+    get_reference_angle -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_reference_angle(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetReferenceAngle", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetReferenceAngle();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_joint_translation
+
+  call-seq:
+    get_joint_translation -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_joint_translation(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetJointTranslation", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetJointTranslation();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_joint_speed
+
+  call-seq:
+    get_joint_speed -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_joint_speed(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetJointSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetJointSpeed();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.is_limit_enabled
+
+  call-seq:
+    is_limit_enabled -> bool
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_is_limit_enabled(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","IsLimitEnabled", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (bool)((b2PrismaticJoint const *)arg1)->IsLimitEnabled();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.enable_limit
+
+  call-seq:
+    enable_limit(bool flag)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_enable_limit(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint *","EnableLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","EnableLimit", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    try {
+      (arg1)->EnableLimit(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_lower_limit
+
+  call-seq:
+    get_lower_limit -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_lower_limit(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetLowerLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetLowerLimit();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_upper_limit
+
+  call-seq:
+    get_upper_limit -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_upper_limit(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetUpperLimit", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetUpperLimit();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.set_limits
+
+  call-seq:
+    set_limits(float32 lower, float32 upper)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_set_limits(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  float32 arg2 ;
+  float32 arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint *","SetLimits", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetLimits", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  ecode3 = SWIG_AsVal_float(argv[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "float32","SetLimits", 3, argv[1] ));
+  } 
+  arg3 = static_cast< float32 >(val3);
+  {
+    try {
+      (arg1)->SetLimits(arg2,arg3);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.is_motor_enabled
+
+  call-seq:
+    is_motor_enabled -> bool
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_is_motor_enabled(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","IsMotorEnabled", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (bool)((b2PrismaticJoint const *)arg1)->IsMotorEnabled();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_bool(static_cast< bool >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.enable_motor
+
+  call-seq:
+    enable_motor(bool flag)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_enable_motor(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint *","EnableMotor", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","EnableMotor", 2, argv[0] ));
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    try {
+      (arg1)->EnableMotor(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.set_motor_speed
+
+  call-seq:
+    set_motor_speed(float32 speed)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_set_motor_speed(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint *","SetMotorSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetMotorSpeed", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetMotorSpeed(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_motor_speed
+
+  call-seq:
+    get_motor_speed -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_motor_speed(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetMotorSpeed", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetMotorSpeed();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.set_max_motor_force
+
+  call-seq:
+    set_max_motor_force(float32 force)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_set_max_motor_force(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint *","SetMaxMotorForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","SetMaxMotorForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      (arg1)->SetMaxMotorForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_max_motor_force
+
+  call-seq:
+    get_max_motor_force -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_max_motor_force(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetMaxMotorForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetMaxMotorForce();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.get_motor_force
+
+  call-seq:
+    get_motor_force(float32 inv_dt) -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_get_motor_force(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint const *","GetMotorForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetMotorForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = (float32)((b2PrismaticJoint const *)arg1)->GetMotorForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PrismaticJoint.dump
+
+  call-seq:
+    dump
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PrismaticJoint_dump(int argc, VALUE *argv, VALUE self) {
+  b2PrismaticJoint *arg1 = (b2PrismaticJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PrismaticJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PrismaticJoint *","Dump", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PrismaticJoint * >(argp1);
+  {
+    try {
+      (arg1)->Dump();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun.b2_minPulleyLength
+
+  call-seq:
+    b2_minPulleyLength -> float32 const
+
+Get value of attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_b2_minPulleyLength_get(VALUE self) {
+  VALUE _val;
+  
+  _val = SWIG_From_float(static_cast< float >(b2_minPulleyLength));
+  return _val;
+}
+
+
+/*
+  Document-class: Liquidfun::B2PulleyJointDef < Liquidfun::B2JointDef
+
+  Proxy of C++ Liquidfun::B2PulleyJointDef class
+
+
+*/
+static swig_class SwigClassB2PulleyJointDef;
+
+SWIGINTERN VALUE
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+_wrap_b_2pulley_joint_def_allocate(VALUE self)
+#else
+_wrap_b_2pulley_joint_def_allocate(int argc, VALUE *argv, VALUE self)
+#endif
+{
+  VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2PulleyJointDef);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+  rb_obj_call_init(vresult, argc, argv);
+#endif
+  return vresult;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.new
+
+  call-seq:
+    B2PulleyJointDef.new()
+
+Class constructor.
+
+*/
+SWIGINTERN VALUE
+_wrap_new_b_2pulley_joint_def(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = "Liquidfun::B2PulleyJointDef";
+  b2PulleyJointDef *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  {
+    try {
+      result = (b2PulleyJointDef *)new b2PulleyJointDef();
+      DATA_PTR(self) = result;
+      SWIG_RubyAddTracking(result, self);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return self;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.init
+
+  call-seq:
+    init(B2Body bodyA, B2Body bodyB, B2Vec2 groundAnchorA, B2Vec2 groundAnchorB, B2Vec2 anchorA, 
+    B2Vec2 anchorB, float32 ratio)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_init(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  b2Body *arg2 = (b2Body *) 0 ;
+  b2Body *arg3 = (b2Body *) 0 ;
+  b2Vec2 *arg4 = 0 ;
+  b2Vec2 *arg5 = 0 ;
+  b2Vec2 *arg6 = 0 ;
+  b2Vec2 *arg7 = 0 ;
+  float32 arg8 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  void *argp6 ;
+  int res6 = 0 ;
+  void *argp7 ;
+  int res7 = 0 ;
+  float val8 ;
+  int ecode8 = 0 ;
+  
+  if ((argc < 7) || (argc > 7)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 7)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","Initialize", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Body *","Initialize", 2, argv[0] )); 
+  }
+  arg2 = reinterpret_cast< b2Body * >(argp2);
+  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_b2Body, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "b2Body *","Initialize", 3, argv[1] )); 
+  }
+  arg3 = reinterpret_cast< b2Body * >(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &argp4, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 4, argv[2] )); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 4, argv[2])); 
+  }
+  arg4 = reinterpret_cast< b2Vec2 * >(argp4);
+  res5 = SWIG_ConvertPtr(argv[3], &argp5, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 5, argv[3] )); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 5, argv[3])); 
+  }
+  arg5 = reinterpret_cast< b2Vec2 * >(argp5);
+  res6 = SWIG_ConvertPtr(argv[4], &argp6, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 6, argv[4] )); 
+  }
+  if (!argp6) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 6, argv[4])); 
+  }
+  arg6 = reinterpret_cast< b2Vec2 * >(argp6);
+  res7 = SWIG_ConvertPtr(argv[5], &argp7, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res7)) {
+    SWIG_exception_fail(SWIG_ArgError(res7), Ruby_Format_TypeError( "", "b2Vec2 const &","Initialize", 7, argv[5] )); 
+  }
+  if (!argp7) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","Initialize", 7, argv[5])); 
+  }
+  arg7 = reinterpret_cast< b2Vec2 * >(argp7);
+  ecode8 = SWIG_AsVal_float(argv[6], &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), Ruby_Format_TypeError( "", "float32","Initialize", 8, argv[6] ));
+  } 
+  arg8 = static_cast< float32 >(val8);
+  {
+    try {
+      (arg1)->Initialize(arg2,arg3,(b2Vec2 const &)*arg4,(b2Vec2 const &)*arg5,(b2Vec2 const &)*arg6,(b2Vec2 const &)*arg7,arg8);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.ground_anchor_a
+
+  call-seq:
+    ground_anchor_a -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.ground_anchor_a=
+
+  call-seq:
+    ground_anchor_a=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_ground_anchor_a_set(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","groundAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","groundAnchorA", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","groundAnchorA", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->groundAnchorA = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_ground_anchor_a_get(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","groundAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->groundAnchorA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.ground_anchor_b
+
+  call-seq:
+    ground_anchor_b -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.ground_anchor_b=
+
+  call-seq:
+    ground_anchor_b=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_ground_anchor_b_set(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","groundAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","groundAnchorB", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","groundAnchorB", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->groundAnchorB = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_ground_anchor_b_get(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","groundAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->groundAnchorB);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.local_anchor_a
+
+  call-seq:
+    local_anchor_a -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.local_anchor_a=
+
+  call-seq:
+    local_anchor_a=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_local_anchor_a_set(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","localAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAnchorA", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAnchorA", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAnchorA = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_local_anchor_a_get(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","localAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAnchorA);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.local_anchor_b
+
+  call-seq:
+    local_anchor_b -> B2Vec2
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.local_anchor_b=
+
+  call-seq:
+    local_anchor_b=(x) -> B2Vec2
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_local_anchor_b_set(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","localAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","localAnchorB", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","localAnchorB", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  if (arg1) (arg1)->localAnchorB = *arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_local_anchor_b_get(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","localAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  result = (b2Vec2 *) & ((arg1)->localAnchorB);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.length_a
+
+  call-seq:
+    length_a -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.length_a=
+
+  call-seq:
+    length_a=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_length_a_set(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","lengthA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","lengthA", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->lengthA = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_length_a_get(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","lengthA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  result = (float32) ((arg1)->lengthA);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.length_b
+
+  call-seq:
+    length_b -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.length_b=
+
+  call-seq:
+    length_b=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_length_b_set(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","lengthB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","lengthB", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->lengthB = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_length_b_get(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","lengthB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  result = (float32) ((arg1)->lengthB);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.ratio
+
+  call-seq:
+    ratio -> float32
+
+Get value of attribute.
+
+*/
+/*
+  Document-method: Liquidfun::B2PulleyJointDef.ratio=
+
+  call-seq:
+    ratio=(x) -> float32
+
+Set new value for attribute.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_ratio_set(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","ratio", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","ratio", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  if (arg1) (arg1)->ratio = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_B2PulleyJointDef_ratio_get(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJointDef *arg1 = (b2PulleyJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJointDef *","ratio", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJointDef * >(argp1);
+  result = (float32) ((arg1)->ratio);
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_b2PulleyJointDef(void *self) {
+    b2PulleyJointDef *arg1 = (b2PulleyJointDef *)self;
+    SWIG_RubyRemoveTracking(arg1);
+    delete arg1;
+}
+
+/*
+  Document-class: Liquidfun::B2PulleyJoint < Liquidfun::B2Joint
+
+  Proxy of C++ Liquidfun::B2PulleyJoint class
+
+
+*/
+static swig_class SwigClassB2PulleyJoint;
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_anchor_a
+
+  call-seq:
+    get_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = ((b2PulleyJoint const *)arg1)->GetAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_anchor_b
+
+  call-seq:
+    get_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = ((b2PulleyJoint const *)arg1)->GetAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_reaction_force
+
+  call-seq:
+    get_reaction_force(float32 inv_dt) -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_reaction_force(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetReactionForce", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionForce", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = ((b2PulleyJoint const *)arg1)->GetReactionForce(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_reaction_torque
+
+  call-seq:
+    get_reaction_torque(float32 inv_dt) -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_reaction_torque(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetReactionTorque", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "float32","GetReactionTorque", 2, argv[0] ));
+  } 
+  arg2 = static_cast< float32 >(val2);
+  {
+    try {
+      result = (float32)((b2PulleyJoint const *)arg1)->GetReactionTorque(arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_ground_anchor_aext
+
+  call-seq:
+    get_ground_anchor_aext -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_ground_anchor_aext(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetGroundAnchorAExt", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2PulleyJoint const *)arg1)->GetGroundAnchorAExt();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_ground_anchor_bext
+
+  call-seq:
+    get_ground_anchor_bext -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_ground_anchor_bext(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetGroundAnchorBExt", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = (b2Vec2 *) &((b2PulleyJoint const *)arg1)->GetGroundAnchorBExt();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_ground_anchor_a
+
+  call-seq:
+    get_ground_anchor_a -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_ground_anchor_a(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetGroundAnchorA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = ((b2PulleyJoint const *)arg1)->GetGroundAnchorA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_ground_anchor_b
+
+  call-seq:
+    get_ground_anchor_b -> B2Vec2
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_ground_anchor_b(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  b2Vec2 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetGroundAnchorB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = ((b2PulleyJoint const *)arg1)->GetGroundAnchorB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_NewPointerObj((new b2Vec2(static_cast< const b2Vec2& >(result))), SWIGTYPE_p_b2Vec2, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_length_a
+
+  call-seq:
+    get_length_a -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_length_a(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetLengthA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PulleyJoint const *)arg1)->GetLengthA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_length_b
+
+  call-seq:
+    get_length_b -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_length_b(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetLengthB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PulleyJoint const *)arg1)->GetLengthB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_ratio
+
+  call-seq:
+    get_ratio -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_ratio(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetRatio", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PulleyJoint const *)arg1)->GetRatio();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_current_length_a
+
+  call-seq:
+    get_current_length_a -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_current_length_a(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetCurrentLengthA", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PulleyJoint const *)arg1)->GetCurrentLengthA();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.get_current_length_b
+
+  call-seq:
+    get_current_length_b -> float32
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_get_current_length_b(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint const *","GetCurrentLengthB", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      result = (float32)((b2PulleyJoint const *)arg1)->GetCurrentLengthB();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  vresult = SWIG_From_float(static_cast< float >(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.dump
+
+  call-seq:
+    dump
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_dump(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint *","Dump", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  {
+    try {
+      (arg1)->Dump();
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
+  Document-method: Liquidfun::B2PulleyJoint.shift_origin
+
+  call-seq:
+    shift_origin(B2Vec2 newOrigin)
+
+An instance method.
+
+*/
+SWIGINTERN VALUE
+_wrap_B2PulleyJoint_shift_origin(int argc, VALUE *argv, VALUE self) {
+  b2PulleyJoint *arg1 = (b2PulleyJoint *) 0 ;
+  b2Vec2 *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_b2PulleyJoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "b2PulleyJoint *","ShiftOrigin", 1, self )); 
+  }
+  arg1 = reinterpret_cast< b2PulleyJoint * >(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "b2Vec2 const &","ShiftOrigin", 2, argv[0] )); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "b2Vec2 const &","ShiftOrigin", 2, argv[0])); 
+  }
+  arg2 = reinterpret_cast< b2Vec2 * >(argp2);
+  {
+    try {
+      (arg1)->ShiftOrigin((b2Vec2 const &)*arg2);
+    }
+    catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+/*
   Document-class: Liquidfun::B2MotorJointDef < Liquidfun::B2JointDef
 
   Proxy of C++ Liquidfun::B2MotorJointDef class
@@ -16384,9 +20716,9 @@ static swig_class SwigClassB2MotorJointDef;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2MotorJointDef_allocate(VALUE self)
+_wrap_b_2motor_joint_def_allocate(VALUE self)
 #else
-_wrap_B2MotorJointDef_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2motor_joint_def_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2MotorJointDef);
@@ -16401,13 +20733,13 @@ _wrap_B2MotorJointDef_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2MotorJointDef.new
 
   call-seq:
-    B2MotorJointDef.new
+    B2MotorJointDef.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2MotorJointDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2motor_joint_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2MotorJointDef";
   b2MotorJointDef *result = 0 ;
   
@@ -16484,25 +20816,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2MotorJointDef.linearOffset
+  Document-method: Liquidfun::B2MotorJointDef.linear_offset
 
   call-seq:
-    linearOffset -> B2Vec2
+    linear_offset -> B2Vec2
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2MotorJointDef.linearOffset=
+  Document-method: Liquidfun::B2MotorJointDef.linear_offset=
 
   call-seq:
-    linearOffset=(x) -> B2Vec2
+    linear_offset=(x) -> B2Vec2
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_linearOffset_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_linear_offset_set(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
@@ -16534,7 +20866,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_linearOffset_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_linear_offset_get(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -16558,25 +20890,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2MotorJointDef.angularOffset
+  Document-method: Liquidfun::B2MotorJointDef.angular_offset
 
   call-seq:
-    angularOffset -> float32
+    angular_offset -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2MotorJointDef.angularOffset=
+  Document-method: Liquidfun::B2MotorJointDef.angular_offset=
 
   call-seq:
-    angularOffset=(x) -> float32
+    angular_offset=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_angularOffset_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_angular_offset_set(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -16605,7 +20937,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_angularOffset_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_angular_offset_get(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -16629,25 +20961,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2MotorJointDef.maxForce
+  Document-method: Liquidfun::B2MotorJointDef.max_force
 
   call-seq:
-    maxForce -> float32
+    max_force -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2MotorJointDef.maxForce=
+  Document-method: Liquidfun::B2MotorJointDef.max_force=
 
   call-seq:
-    maxForce=(x) -> float32
+    max_force=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_maxForce_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_max_force_set(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -16676,7 +21008,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_maxForce_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_max_force_get(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -16700,25 +21032,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2MotorJointDef.maxTorque
+  Document-method: Liquidfun::B2MotorJointDef.max_torque
 
   call-seq:
-    maxTorque -> float32
+    max_torque -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2MotorJointDef.maxTorque=
+  Document-method: Liquidfun::B2MotorJointDef.max_torque=
 
   call-seq:
-    maxTorque=(x) -> float32
+    max_torque=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_maxTorque_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_max_torque_set(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -16747,7 +21079,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_maxTorque_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_max_torque_get(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -16771,25 +21103,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2MotorJointDef.correctionFactor
+  Document-method: Liquidfun::B2MotorJointDef.correction_factor
 
   call-seq:
-    correctionFactor -> float32
+    correction_factor -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2MotorJointDef.correctionFactor=
+  Document-method: Liquidfun::B2MotorJointDef.correction_factor=
 
   call-seq:
-    correctionFactor=(x) -> float32
+    correction_factor=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_correctionFactor_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_correction_factor_set(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -16818,7 +21150,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2MotorJointDef_correctionFactor_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2MotorJointDef_correction_factor_get(int argc, VALUE *argv, VALUE self) {
   b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -17511,7 +21843,7 @@ static swig_class SwigClassB2ParticleColor;
   Document-method: Liquidfun::B2ParticleColor.new
 
   call-seq:
-    B2ParticleColor.new
+    B2ParticleColor.new()
     B2ParticleColor.new(uint8 r, uint8 g, uint8 b, uint8 a)
     B2ParticleColor.new(B2Color color)
 
@@ -17519,7 +21851,7 @@ Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2ParticleColor__SWIG_0(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2particle_color__SWIG_0(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2ParticleColor";
   b2ParticleColor *result = 0 ;
   
@@ -17542,19 +21874,8 @@ fail:
 }
 
 
-/*
-  Document-method: Liquidfun::B2ParticleColor.new
-
-  call-seq:
-    B2ParticleColor.new()
-    B2ParticleColor.new(uint8 r, uint8 g, uint8 b, uint8 a)
-    B2ParticleColor.new(B2Color color)
-
-Class constructor.
-
-*/
 SWIGINTERN VALUE
-_wrap_new_B2ParticleColor__SWIG_1(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2particle_color__SWIG_1(int argc, VALUE *argv, VALUE self) {
   uint8 arg1 ;
   uint8 arg2 ;
   uint8 arg3 ;
@@ -17611,9 +21932,9 @@ fail:
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2ParticleColor_allocate(VALUE self)
+_wrap_b_2particle_color_allocate(VALUE self)
 #else
-_wrap_B2ParticleColor_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2particle_color_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleColor);
@@ -17625,7 +21946,7 @@ _wrap_B2ParticleColor_allocate(int argc, VALUE *argv, VALUE self)
 
 
 SWIGINTERN VALUE
-_wrap_new_B2ParticleColor__SWIG_2(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2particle_color__SWIG_2(int argc, VALUE *argv, VALUE self) {
   b2Color *arg1 = 0 ;
   void *argp1 ;
   int res1 = 0 ;
@@ -17659,7 +21980,7 @@ fail:
 }
 
 
-SWIGINTERN VALUE _wrap_new_B2ParticleColor(int nargs, VALUE *args, VALUE self) {
+SWIGINTERN VALUE _wrap_new_b_2particle_color(int nargs, VALUE *args, VALUE self) {
   int argc;
   VALUE argv[4];
   int ii;
@@ -17670,7 +21991,7 @@ SWIGINTERN VALUE _wrap_new_B2ParticleColor(int nargs, VALUE *args, VALUE self) {
     argv[ii] = args[ii];
   }
   if (argc == 0) {
-    return _wrap_new_B2ParticleColor__SWIG_0(nargs, args, self);
+    return _wrap_new_b_2particle_color__SWIG_0(nargs, args, self);
   }
   if (argc == 1) {
     int _v;
@@ -17678,7 +21999,7 @@ SWIGINTERN VALUE _wrap_new_B2ParticleColor(int nargs, VALUE *args, VALUE self) {
     int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_b2Color, SWIG_POINTER_NO_NULL);
     _v = SWIG_CheckState(res);
     if (_v) {
-      return _wrap_new_B2ParticleColor__SWIG_2(nargs, args, self);
+      return _wrap_new_b_2particle_color__SWIG_2(nargs, args, self);
     }
   }
   if (argc == 4) {
@@ -17703,7 +22024,7 @@ SWIGINTERN VALUE _wrap_new_B2ParticleColor(int nargs, VALUE *args, VALUE self) {
             _v = SWIG_CheckState(res);
           }
           if (_v) {
-            return _wrap_new_B2ParticleColor__SWIG_1(nargs, args, self);
+            return _wrap_new_b_2particle_color__SWIG_1(nargs, args, self);
           }
         }
       }
@@ -17711,10 +22032,10 @@ SWIGINTERN VALUE _wrap_new_B2ParticleColor(int nargs, VALUE *args, VALUE self) {
   }
   
 fail:
-  Ruby_Format_OverloadedError( argc, 4, "b2ParticleColor.new", 
-    "    b2ParticleColor.new()\n"
-    "    b2ParticleColor.new(uint8 r, uint8 g, uint8 b, uint8 a)\n"
-    "    b2ParticleColor.new(b2Color const &color)\n");
+  Ruby_Format_OverloadedError( argc, 4, "b_2particle_color.new", 
+    "    b_2particle_color.new()\n"
+    "    b_2particle_color.new(uint8 r, uint8 g, uint8 b, uint8 a)\n"
+    "    b_2particle_color.new(b2Color const &color)\n");
   
   return Qnil;
 }
@@ -18681,9 +23002,9 @@ static swig_class SwigClassB2ParticleDef;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2ParticleDef_allocate(VALUE self)
+_wrap_b_2particle_def_allocate(VALUE self)
 #else
-_wrap_B2ParticleDef_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2particle_def_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleDef);
@@ -18698,13 +23019,13 @@ _wrap_B2ParticleDef_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2ParticleDef.new
 
   call-seq:
-    B2ParticleDef.new
+    B2ParticleDef.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2ParticleDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2particle_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2ParticleDef";
   b2ParticleDef *result = 0 ;
   
@@ -19527,9 +23848,9 @@ static swig_class SwigClassB2ParticleGroupDef;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2ParticleGroupDef_allocate(VALUE self)
+_wrap_b_2particle_group_def_allocate(VALUE self)
 #else
-_wrap_B2ParticleGroupDef_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2particle_group_def_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleGroupDef);
@@ -19544,13 +23865,13 @@ _wrap_B2ParticleGroupDef_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2ParticleGroupDef.new
 
   call-seq:
-    B2ParticleGroupDef.new
+    B2ParticleGroupDef.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2ParticleGroupDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2particle_group_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2ParticleGroupDef";
   b2ParticleGroupDef *result = 0 ;
   
@@ -19652,25 +23973,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.groupFlags
+  Document-method: Liquidfun::B2ParticleGroupDef.group_flags
 
   call-seq:
-    groupFlags -> uint32
+    group_flags -> uint32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.groupFlags=
+  Document-method: Liquidfun::B2ParticleGroupDef.group_flags=
 
   call-seq:
-    groupFlags=(x) -> uint32
+    group_flags=(x) -> uint32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_groupFlags_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_group_flags_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   uint32 arg2 ;
   void *argp1 = 0 ;
@@ -19699,7 +24020,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_groupFlags_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_group_flags_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -19868,25 +24189,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.linearVelocity
+  Document-method: Liquidfun::B2ParticleGroupDef.linear_velocity
 
   call-seq:
-    linearVelocity -> B2Vec2
+    linear_velocity -> B2Vec2
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.linearVelocity=
+  Document-method: Liquidfun::B2ParticleGroupDef.linear_velocity=
 
   call-seq:
-    linearVelocity=(x) -> B2Vec2
+    linear_velocity=(x) -> B2Vec2
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_linearVelocity_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_linear_velocity_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
@@ -19918,7 +24239,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_linearVelocity_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_linear_velocity_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -19942,25 +24263,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.angularVelocity
+  Document-method: Liquidfun::B2ParticleGroupDef.angular_velocity
 
   call-seq:
-    angularVelocity -> float32
+    angular_velocity -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.angularVelocity=
+  Document-method: Liquidfun::B2ParticleGroupDef.angular_velocity=
 
   call-seq:
-    angularVelocity=(x) -> float32
+    angular_velocity=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_angularVelocity_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_angular_velocity_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -19989,7 +24310,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_angularVelocity_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_angular_velocity_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -20229,25 +24550,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.shapeCount
+  Document-method: Liquidfun::B2ParticleGroupDef.shape_count
 
   call-seq:
-    shapeCount -> int32
+    shape_count -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.shapeCount=
+  Document-method: Liquidfun::B2ParticleGroupDef.shape_count=
 
   call-seq:
-    shapeCount=(x) -> int32
+    shape_count=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_shapeCount_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_shape_count_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -20276,7 +24597,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_shapeCount_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_shape_count_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -20371,25 +24692,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.particleCount
+  Document-method: Liquidfun::B2ParticleGroupDef.particle_count
 
   call-seq:
-    particleCount -> int32
+    particle_count -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.particleCount=
+  Document-method: Liquidfun::B2ParticleGroupDef.particle_count=
 
   call-seq:
-    particleCount=(x) -> int32
+    particle_count=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_particleCount_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_particle_count_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -20418,7 +24739,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_particleCount_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_particle_count_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -20442,25 +24763,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.positionData
+  Document-method: Liquidfun::B2ParticleGroupDef.position_data
 
   call-seq:
-    positionData -> B2Vec2
+    position_data -> B2Vec2
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.positionData=
+  Document-method: Liquidfun::B2ParticleGroupDef.position_data=
 
   call-seq:
-    positionData=(x) -> B2Vec2
+    position_data=(x) -> B2Vec2
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_positionData_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_position_data_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   b2Vec2 *arg2 = (b2Vec2 *) 0 ;
   void *argp1 = 0 ;
@@ -20489,7 +24810,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_positionData_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_position_data_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -20655,25 +24976,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.circleShapes
+  Document-method: Liquidfun::B2ParticleGroupDef.circle_shapes
 
   call-seq:
-    circleShapes -> B2CircleShape
+    circle_shapes -> B2CircleShape
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.circleShapes=
+  Document-method: Liquidfun::B2ParticleGroupDef.circle_shapes=
 
   call-seq:
-    circleShapes=(x) -> B2CircleShape
+    circle_shapes=(x) -> B2CircleShape
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_circleShapes_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_circle_shapes_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   b2CircleShape *arg2 = (b2CircleShape *) 0 ;
   void *argp1 = 0 ;
@@ -20702,7 +25023,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_circleShapes_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_circle_shapes_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -20726,25 +25047,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.ownShapesArray
+  Document-method: Liquidfun::B2ParticleGroupDef.own_shapes_array
 
   call-seq:
-    ownShapesArray -> bool
+    own_shapes_array -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleGroupDef.ownShapesArray=
+  Document-method: Liquidfun::B2ParticleGroupDef.own_shapes_array=
 
   call-seq:
-    ownShapesArray=(x) -> bool
+    own_shapes_array=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_ownShapesArray_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_own_shapes_array_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -20773,7 +25094,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleGroupDef_ownShapesArray_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleGroupDef_own_shapes_array_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleGroupDef *arg1 = (b2ParticleGroupDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -21750,25 +26071,25 @@ fail:
 static swig_class SwigClassB2ParticlePair;
 
 /*
-  Document-method: Liquidfun::B2ParticlePair.indexA
+  Document-method: Liquidfun::B2ParticlePair.index_a
 
   call-seq:
-    indexA -> int32
+    index_a -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticlePair.indexA=
+  Document-method: Liquidfun::B2ParticlePair.index_a=
 
   call-seq:
-    indexA=(x) -> int32
+    index_a=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticlePair_indexA_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticlePair_index_a_set(int argc, VALUE *argv, VALUE self) {
   b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -21797,7 +26118,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticlePair_indexA_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticlePair_index_a_get(int argc, VALUE *argv, VALUE self) {
   b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -21821,25 +26142,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticlePair.indexB
+  Document-method: Liquidfun::B2ParticlePair.index_b
 
   call-seq:
-    indexB -> int32
+    index_b -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticlePair.indexB=
+  Document-method: Liquidfun::B2ParticlePair.index_b=
 
   call-seq:
-    indexB=(x) -> int32
+    index_b=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticlePair_indexB_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticlePair_index_b_set(int argc, VALUE *argv, VALUE self) {
   b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -21868,7 +26189,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticlePair_indexB_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticlePair_index_b_get(int argc, VALUE *argv, VALUE self) {
   b2ParticlePair *arg1 = (b2ParticlePair *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -22169,25 +26490,25 @@ free_b2ParticlePair(void *self) {
 static swig_class SwigClassB2ParticleTriad;
 
 /*
-  Document-method: Liquidfun::B2ParticleTriad.indexA
+  Document-method: Liquidfun::B2ParticleTriad.index_a
 
   call-seq:
-    indexA -> int32
+    index_a -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleTriad.indexA=
+  Document-method: Liquidfun::B2ParticleTriad.index_a=
 
   call-seq:
-    indexA=(x) -> int32
+    index_a=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleTriad_indexA_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleTriad_index_a_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -22216,7 +26537,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleTriad_indexA_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleTriad_index_a_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -22240,25 +26561,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleTriad.indexB
+  Document-method: Liquidfun::B2ParticleTriad.index_b
 
   call-seq:
-    indexB -> int32
+    index_b -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleTriad.indexB=
+  Document-method: Liquidfun::B2ParticleTriad.index_b=
 
   call-seq:
-    indexB=(x) -> int32
+    index_b=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleTriad_indexB_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleTriad_index_b_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -22287,7 +26608,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleTriad_indexB_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleTriad_index_b_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -22311,25 +26632,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleTriad.indexC
+  Document-method: Liquidfun::B2ParticleTriad.index_c
 
   call-seq:
-    indexC -> int32
+    index_c -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleTriad.indexC=
+  Document-method: Liquidfun::B2ParticleTriad.index_c=
 
   call-seq:
-    indexC=(x) -> int32
+    index_c=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleTriad_indexC_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleTriad_index_c_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -22358,7 +26679,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleTriad_indexC_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleTriad_index_c_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleTriad *arg1 = (b2ParticleTriad *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23095,9 +27416,9 @@ static swig_class SwigClassB2ParticleSystemDef;
 
 SWIGINTERN VALUE
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-_wrap_B2ParticleSystemDef_allocate(VALUE self)
+_wrap_b_2particle_system_def_allocate(VALUE self)
 #else
-_wrap_B2ParticleSystemDef_allocate(int argc, VALUE *argv, VALUE self)
+_wrap_b_2particle_system_def_allocate(int argc, VALUE *argv, VALUE self)
 #endif
 {
   VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_b2ParticleSystemDef);
@@ -23112,13 +27433,13 @@ _wrap_B2ParticleSystemDef_allocate(int argc, VALUE *argv, VALUE self)
   Document-method: Liquidfun::B2ParticleSystemDef.new
 
   call-seq:
-    B2ParticleSystemDef.new
+    B2ParticleSystemDef.new()
 
 Class constructor.
 
 */
 SWIGINTERN VALUE
-_wrap_new_B2ParticleSystemDef(int argc, VALUE *argv, VALUE self) {
+_wrap_new_b_2particle_system_def(int argc, VALUE *argv, VALUE self) {
   const char *classname SWIGUNUSED = "Liquidfun::B2ParticleSystemDef";
   b2ParticleSystemDef *result = 0 ;
   
@@ -23142,25 +27463,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.strictContactCheck
+  Document-method: Liquidfun::B2ParticleSystemDef.strict_contact_check
 
   call-seq:
-    strictContactCheck -> bool
+    strict_contact_check -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.strictContactCheck=
+  Document-method: Liquidfun::B2ParticleSystemDef.strict_contact_check=
 
   call-seq:
-    strictContactCheck=(x) -> bool
+    strict_contact_check=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_strictContactCheck_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_strict_contact_check_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -23189,7 +27510,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_strictContactCheck_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_strict_contact_check_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23284,25 +27605,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.gravityScale
+  Document-method: Liquidfun::B2ParticleSystemDef.gravity_scale
 
   call-seq:
-    gravityScale -> float32
+    gravity_scale -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.gravityScale=
+  Document-method: Liquidfun::B2ParticleSystemDef.gravity_scale=
 
   call-seq:
-    gravityScale=(x) -> float32
+    gravity_scale=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_gravityScale_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_gravity_scale_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -23331,7 +27652,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_gravityScale_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_gravity_scale_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23426,25 +27747,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.maxCount
+  Document-method: Liquidfun::B2ParticleSystemDef.max_count
 
   call-seq:
-    maxCount -> int32
+    max_count -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.maxCount=
+  Document-method: Liquidfun::B2ParticleSystemDef.max_count=
 
   call-seq:
-    maxCount=(x) -> int32
+    max_count=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_maxCount_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_max_count_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -23473,7 +27794,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_maxCount_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_max_count_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23497,25 +27818,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.pressureStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.pressure_strength
 
   call-seq:
-    pressureStrength -> float32
+    pressure_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.pressureStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.pressure_strength=
 
   call-seq:
-    pressureStrength=(x) -> float32
+    pressure_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_pressureStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_pressure_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -23544,7 +27865,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_pressureStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_pressure_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23568,25 +27889,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.dampingStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.damping_strength
 
   call-seq:
-    dampingStrength -> float32
+    damping_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.dampingStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.damping_strength=
 
   call-seq:
-    dampingStrength=(x) -> float32
+    damping_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_dampingStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_damping_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -23615,7 +27936,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_dampingStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_damping_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23639,25 +27960,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.elasticStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.elastic_strength
 
   call-seq:
-    elasticStrength -> float32
+    elastic_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.elasticStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.elastic_strength=
 
   call-seq:
-    elasticStrength=(x) -> float32
+    elastic_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_elasticStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_elastic_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -23686,7 +28007,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_elasticStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_elastic_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23710,25 +28031,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.springStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.spring_strength
 
   call-seq:
-    springStrength -> float32
+    spring_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.springStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.spring_strength=
 
   call-seq:
-    springStrength=(x) -> float32
+    spring_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_springStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_spring_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -23757,7 +28078,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_springStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_spring_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23781,25 +28102,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.viscousStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.viscous_strength
 
   call-seq:
-    viscousStrength -> float32
+    viscous_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.viscousStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.viscous_strength=
 
   call-seq:
-    viscousStrength=(x) -> float32
+    viscous_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_viscousStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_viscous_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -23828,7 +28149,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_viscousStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_viscous_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23852,25 +28173,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.surfaceTensionPressureStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.surface_tension_pressure_strength
 
   call-seq:
-    surfaceTensionPressureStrength -> float32
+    surface_tension_pressure_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.surfaceTensionPressureStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.surface_tension_pressure_strength=
 
   call-seq:
-    surfaceTensionPressureStrength=(x) -> float32
+    surface_tension_pressure_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_surfaceTensionPressureStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_surface_tension_pressure_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -23899,7 +28220,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_surfaceTensionPressureStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_surface_tension_pressure_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23923,25 +28244,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.surfaceTensionNormalStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.surface_tension_normal_strength
 
   call-seq:
-    surfaceTensionNormalStrength -> float32
+    surface_tension_normal_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.surfaceTensionNormalStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.surface_tension_normal_strength=
 
   call-seq:
-    surfaceTensionNormalStrength=(x) -> float32
+    surface_tension_normal_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_surfaceTensionNormalStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_surface_tension_normal_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -23970,7 +28291,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_surfaceTensionNormalStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_surface_tension_normal_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -23994,25 +28315,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.repulsiveStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.repulsive_strength
 
   call-seq:
-    repulsiveStrength -> float32
+    repulsive_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.repulsiveStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.repulsive_strength=
 
   call-seq:
-    repulsiveStrength=(x) -> float32
+    repulsive_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_repulsiveStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_repulsive_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -24041,7 +28362,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_repulsiveStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_repulsive_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24065,25 +28386,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.powderStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.powder_strength
 
   call-seq:
-    powderStrength -> float32
+    powder_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.powderStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.powder_strength=
 
   call-seq:
-    powderStrength=(x) -> float32
+    powder_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_powderStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_powder_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -24112,7 +28433,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_powderStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_powder_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24136,25 +28457,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.ejectionStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.ejection_strength
 
   call-seq:
-    ejectionStrength -> float32
+    ejection_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.ejectionStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.ejection_strength=
 
   call-seq:
-    ejectionStrength=(x) -> float32
+    ejection_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_ejectionStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_ejection_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -24183,7 +28504,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_ejectionStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_ejection_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24207,25 +28528,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.static_pressure_strength
 
   call-seq:
-    staticPressureStrength -> float32
+    static_pressure_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.static_pressure_strength=
 
   call-seq:
-    staticPressureStrength=(x) -> float32
+    static_pressure_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_staticPressureStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_static_pressure_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -24254,7 +28575,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_staticPressureStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_static_pressure_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24278,25 +28599,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureRelaxation
+  Document-method: Liquidfun::B2ParticleSystemDef.static_pressure_relaxation
 
   call-seq:
-    staticPressureRelaxation -> float32
+    static_pressure_relaxation -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureRelaxation=
+  Document-method: Liquidfun::B2ParticleSystemDef.static_pressure_relaxation=
 
   call-seq:
-    staticPressureRelaxation=(x) -> float32
+    static_pressure_relaxation=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_staticPressureRelaxation_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_static_pressure_relaxation_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -24325,7 +28646,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_staticPressureRelaxation_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_static_pressure_relaxation_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24349,25 +28670,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureIterations
+  Document-method: Liquidfun::B2ParticleSystemDef.static_pressure_iterations
 
   call-seq:
-    staticPressureIterations -> int32
+    static_pressure_iterations -> int32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.staticPressureIterations=
+  Document-method: Liquidfun::B2ParticleSystemDef.static_pressure_iterations=
 
   call-seq:
-    staticPressureIterations=(x) -> int32
+    static_pressure_iterations=(x) -> int32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_staticPressureIterations_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_static_pressure_iterations_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   int32 arg2 ;
   void *argp1 = 0 ;
@@ -24396,7 +28717,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_staticPressureIterations_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_static_pressure_iterations_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24420,25 +28741,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.colorMixingStrength
+  Document-method: Liquidfun::B2ParticleSystemDef.color_mixing_strength
 
   call-seq:
-    colorMixingStrength -> float32
+    color_mixing_strength -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.colorMixingStrength=
+  Document-method: Liquidfun::B2ParticleSystemDef.color_mixing_strength=
 
   call-seq:
-    colorMixingStrength=(x) -> float32
+    color_mixing_strength=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_colorMixingStrength_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_color_mixing_strength_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -24467,7 +28788,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_colorMixingStrength_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_color_mixing_strength_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24491,25 +28812,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.destroyByAge
+  Document-method: Liquidfun::B2ParticleSystemDef.destroy_by_age
 
   call-seq:
-    destroyByAge -> bool
+    destroy_by_age -> bool
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.destroyByAge=
+  Document-method: Liquidfun::B2ParticleSystemDef.destroy_by_age=
 
   call-seq:
-    destroyByAge=(x) -> bool
+    destroy_by_age=(x) -> bool
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_destroyByAge_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_destroy_by_age_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   bool arg2 ;
   void *argp1 = 0 ;
@@ -24538,7 +28859,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_destroyByAge_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_destroy_by_age_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24562,25 +28883,25 @@ fail:
 
 
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.lifetimeGranularity
+  Document-method: Liquidfun::B2ParticleSystemDef.lifetime_granularity
 
   call-seq:
-    lifetimeGranularity -> float32
+    lifetime_granularity -> float32
 
 Get value of attribute.
 
 */
 /*
-  Document-method: Liquidfun::B2ParticleSystemDef.lifetimeGranularity=
+  Document-method: Liquidfun::B2ParticleSystemDef.lifetime_granularity=
 
   call-seq:
-    lifetimeGranularity=(x) -> float32
+    lifetime_granularity=(x) -> float32
 
 Set new value for attribute.
 
 */
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_lifetimeGranularity_set(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_lifetime_granularity_set(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
@@ -24609,7 +28930,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_B2ParticleSystemDef_lifetimeGranularity_get(int argc, VALUE *argv, VALUE self) {
+_wrap_B2ParticleSystemDef_lifetime_granularity_get(int argc, VALUE *argv, VALUE self) {
   b2ParticleSystemDef *arg1 = (b2ParticleSystemDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -24642,14 +28963,32 @@ free_b2ParticleSystemDef(void *self) {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static void *_p_b2DistanceJointDefTo_p_b2JointDef(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2JointDef *)  ((b2DistanceJointDef *) x));
+}
 static void *_p_b2RevoluteJointDefTo_p_b2JointDef(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((b2JointDef *)  ((b2RevoluteJointDef *) x));
+}
+static void *_p_b2PrismaticJointDefTo_p_b2JointDef(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2JointDef *)  ((b2PrismaticJointDef *) x));
+}
+static void *_p_b2PulleyJointDefTo_p_b2JointDef(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2JointDef *)  ((b2PulleyJointDef *) x));
 }
 static void *_p_b2MotorJointDefTo_p_b2JointDef(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((b2JointDef *)  ((b2MotorJointDef *) x));
 }
+static void *_p_b2DistanceJointTo_p_b2Joint(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2Joint *)  ((b2DistanceJoint *) x));
+}
 static void *_p_b2RevoluteJointTo_p_b2Joint(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((b2Joint *)  ((b2RevoluteJoint *) x));
+}
+static void *_p_b2PrismaticJointTo_p_b2Joint(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2Joint *)  ((b2PrismaticJoint *) x));
+}
+static void *_p_b2PulleyJointTo_p_b2Joint(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((b2Joint *)  ((b2PulleyJoint *) x));
 }
 static void *_p_b2MotorJointTo_p_b2Joint(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((b2Joint *)  ((b2MotorJoint *) x));
@@ -24669,6 +29008,8 @@ static swig_type_info _swigt__p_b2BodyDef = {"_p_b2BodyDef", "b2BodyDef *", 0, 0
 static swig_type_info _swigt__p_b2CircleShape = {"_p_b2CircleShape", "b2CircleShape *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2Color = {"_p_b2Color", "b2Color *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2ContactEdge = {"_p_b2ContactEdge", "b2ContactEdge *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2DistanceJoint = {"_p_b2DistanceJoint", "b2DistanceJoint *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2DistanceJointDef = {"_p_b2DistanceJointDef", "b2DistanceJointDef *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2Draw = {"_p_b2Draw", "b2Draw *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2EdgeShape = {"_p_b2EdgeShape", "b2EdgeShape *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2Filter = {"_p_b2Filter", "b2Filter *", 0, 0, (void*)0, 0};
@@ -24690,6 +29031,10 @@ static swig_type_info _swigt__p_b2ParticleSystem = {"_p_b2ParticleSystem", "b2Pa
 static swig_type_info _swigt__p_b2ParticleSystemDef = {"_p_b2ParticleSystemDef", "b2ParticleSystemDef *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2ParticleTriad = {"_p_b2ParticleTriad", "b2ParticleTriad *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2PolygonShape = {"_p_b2PolygonShape", "b2PolygonShape *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2PrismaticJoint = {"_p_b2PrismaticJoint", "b2PrismaticJoint *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2PrismaticJointDef = {"_p_b2PrismaticJointDef", "b2PrismaticJointDef *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2PulleyJoint = {"_p_b2PulleyJoint", "b2PulleyJoint *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_b2PulleyJointDef = {"_p_b2PulleyJointDef", "b2PulleyJointDef *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2QueryCallback = {"_p_b2QueryCallback", "b2QueryCallback *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2RayCastInput = {"_p_b2RayCastInput", "b2RayCastInput *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_b2RayCastOutput = {"_p_b2RayCastOutput", "b2RayCastOutput *", 0, 0, (void*)0, 0};
@@ -24719,6 +29064,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_b2CircleShape,
   &_swigt__p_b2Color,
   &_swigt__p_b2ContactEdge,
+  &_swigt__p_b2DistanceJoint,
+  &_swigt__p_b2DistanceJointDef,
   &_swigt__p_b2Draw,
   &_swigt__p_b2EdgeShape,
   &_swigt__p_b2Filter,
@@ -24740,6 +29087,10 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_b2ParticleSystemDef,
   &_swigt__p_b2ParticleTriad,
   &_swigt__p_b2PolygonShape,
+  &_swigt__p_b2PrismaticJoint,
+  &_swigt__p_b2PrismaticJointDef,
+  &_swigt__p_b2PulleyJoint,
+  &_swigt__p_b2PulleyJointDef,
   &_swigt__p_b2QueryCallback,
   &_swigt__p_b2RayCastInput,
   &_swigt__p_b2RayCastOutput,
@@ -24769,14 +29120,16 @@ static swig_cast_info _swigc__p_b2BodyDef[] = {  {&_swigt__p_b2BodyDef, 0, 0, 0}
 static swig_cast_info _swigc__p_b2CircleShape[] = {  {&_swigt__p_b2CircleShape, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Color[] = {  {&_swigt__p_b2Color, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2ContactEdge[] = {  {&_swigt__p_b2ContactEdge, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2DistanceJoint[] = {  {&_swigt__p_b2DistanceJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2DistanceJointDef[] = {  {&_swigt__p_b2DistanceJointDef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Draw[] = {  {&_swigt__p_b2Draw, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2EdgeShape[] = {  {&_swigt__p_b2EdgeShape, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Filter[] = {  {&_swigt__p_b2Filter, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Fixture[] = {  {&_swigt__p_b2Fixture, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2FixtureDef[] = {  {&_swigt__p_b2FixtureDef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2Jacobian[] = {  {&_swigt__p_b2Jacobian, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_b2Joint[] = {  {&_swigt__p_b2RevoluteJoint, _p_b2RevoluteJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2MotorJoint, _p_b2MotorJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2Joint, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_b2JointDef[] = {  {&_swigt__p_b2JointDef, 0, 0, 0},  {&_swigt__p_b2RevoluteJointDef, _p_b2RevoluteJointDefTo_p_b2JointDef, 0, 0},  {&_swigt__p_b2MotorJointDef, _p_b2MotorJointDefTo_p_b2JointDef, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2Joint[] = {  {&_swigt__p_b2DistanceJoint, _p_b2DistanceJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2RevoluteJoint, _p_b2RevoluteJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2PrismaticJoint, _p_b2PrismaticJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2PulleyJoint, _p_b2PulleyJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2MotorJoint, _p_b2MotorJointTo_p_b2Joint, 0, 0},  {&_swigt__p_b2Joint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2JointDef[] = {  {&_swigt__p_b2JointDef, 0, 0, 0},  {&_swigt__p_b2DistanceJointDef, _p_b2DistanceJointDefTo_p_b2JointDef, 0, 0},  {&_swigt__p_b2RevoluteJointDef, _p_b2RevoluteJointDefTo_p_b2JointDef, 0, 0},  {&_swigt__p_b2PrismaticJointDef, _p_b2PrismaticJointDefTo_p_b2JointDef, 0, 0},  {&_swigt__p_b2PulleyJointDef, _p_b2PulleyJointDefTo_p_b2JointDef, 0, 0},  {&_swigt__p_b2MotorJointDef, _p_b2MotorJointDefTo_p_b2JointDef, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2JointEdge[] = {  {&_swigt__p_b2JointEdge, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2MassData[] = {  {&_swigt__p_b2MassData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2MotorJoint[] = {  {&_swigt__p_b2MotorJoint, 0, 0, 0},{0, 0, 0, 0}};
@@ -24790,6 +29143,10 @@ static swig_cast_info _swigc__p_b2ParticleSystem[] = {  {&_swigt__p_b2ParticleSy
 static swig_cast_info _swigc__p_b2ParticleSystemDef[] = {  {&_swigt__p_b2ParticleSystemDef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2ParticleTriad[] = {  {&_swigt__p_b2ParticleTriad, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2PolygonShape[] = {  {&_swigt__p_b2PolygonShape, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2PrismaticJoint[] = {  {&_swigt__p_b2PrismaticJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2PrismaticJointDef[] = {  {&_swigt__p_b2PrismaticJointDef, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2PulleyJoint[] = {  {&_swigt__p_b2PulleyJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_b2PulleyJointDef[] = {  {&_swigt__p_b2PulleyJointDef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2QueryCallback[] = {  {&_swigt__p_b2QueryCallback, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2RayCastInput[] = {  {&_swigt__p_b2RayCastInput, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_b2RayCastOutput[] = {  {&_swigt__p_b2RayCastOutput, 0, 0, 0},{0, 0, 0, 0}};
@@ -24819,6 +29176,8 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_b2CircleShape,
   _swigc__p_b2Color,
   _swigc__p_b2ContactEdge,
+  _swigc__p_b2DistanceJoint,
+  _swigc__p_b2DistanceJointDef,
   _swigc__p_b2Draw,
   _swigc__p_b2EdgeShape,
   _swigc__p_b2Filter,
@@ -24840,6 +29199,10 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_b2ParticleSystemDef,
   _swigc__p_b2ParticleTriad,
   _swigc__p_b2PolygonShape,
+  _swigc__p_b2PrismaticJoint,
+  _swigc__p_b2PrismaticJointDef,
+  _swigc__p_b2PulleyJoint,
+  _swigc__p_b2PulleyJointDef,
   _swigc__p_b2QueryCallback,
   _swigc__p_b2RayCastInput,
   _swigc__p_b2RayCastOutput,
@@ -25171,8 +29534,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   rb_define_method(SwigClassB2MassData.klass, "mass", VALUEFUNC(_wrap_B2MassData_mass_get), -1);
   rb_define_method(SwigClassB2MassData.klass, "center=", VALUEFUNC(_wrap_B2MassData_center_set), -1);
   rb_define_method(SwigClassB2MassData.klass, "center", VALUEFUNC(_wrap_B2MassData_center_get), -1);
-  rb_define_method(SwigClassB2MassData.klass, "I=", VALUEFUNC(_wrap_B2MassData_I_set), -1);
-  rb_define_method(SwigClassB2MassData.klass, "I", VALUEFUNC(_wrap_B2MassData_I_get), -1);
+  rb_define_method(SwigClassB2MassData.klass, "i=", VALUEFUNC(_wrap_B2MassData_i_set), -1);
+  rb_define_method(SwigClassB2MassData.klass, "i", VALUEFUNC(_wrap_B2MassData_i_get), -1);
   SwigClassB2MassData.mark = 0;
   SwigClassB2MassData.destroy = (void (*)(void *)) free_b2MassData;
   SwigClassB2MassData.trackObjects = 1;
@@ -25198,8 +29561,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2CircleShape.klass = rb_define_class_under(mLiquidfun, "B2CircleShape", ((swig_class *) SWIGTYPE_p_b2Shape->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_b2CircleShape, (void *) &SwigClassB2CircleShape);
-  rb_define_alloc_func(SwigClassB2CircleShape.klass, _wrap_B2CircleShape_allocate);
-  rb_define_method(SwigClassB2CircleShape.klass, "initialize", VALUEFUNC(_wrap_new_B2CircleShape), -1);
+  rb_define_alloc_func(SwigClassB2CircleShape.klass, _wrap_b_2circle_shape_allocate);
+  rb_define_method(SwigClassB2CircleShape.klass, "initialize", VALUEFUNC(_wrap_new_b_2circle_shape), -1);
   rb_define_method(SwigClassB2CircleShape.klass, "set_position", VALUEFUNC(_wrap_B2CircleShape_set_position), -1);
   rb_define_method(SwigClassB2CircleShape.klass, "get_position_x", VALUEFUNC(_wrap_B2CircleShape_get_position_x), -1);
   rb_define_method(SwigClassB2CircleShape.klass, "get_position_y", VALUEFUNC(_wrap_B2CircleShape_get_position_y), -1);
@@ -25209,8 +29572,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2EdgeShape.klass = rb_define_class_under(mLiquidfun, "B2EdgeShape", ((swig_class *) SWIGTYPE_p_b2Shape->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_b2EdgeShape, (void *) &SwigClassB2EdgeShape);
-  rb_define_alloc_func(SwigClassB2EdgeShape.klass, _wrap_B2EdgeShape_allocate);
-  rb_define_method(SwigClassB2EdgeShape.klass, "initialize", VALUEFUNC(_wrap_new_B2EdgeShape), -1);
+  rb_define_alloc_func(SwigClassB2EdgeShape.klass, _wrap_b_2edge_shape_allocate);
+  rb_define_method(SwigClassB2EdgeShape.klass, "initialize", VALUEFUNC(_wrap_new_b_2edge_shape), -1);
   rb_define_method(SwigClassB2EdgeShape.klass, "set", VALUEFUNC(_wrap_B2EdgeShape_set), -1);
   SwigClassB2EdgeShape.mark = 0;
   SwigClassB2EdgeShape.destroy = (void (*)(void *)) free_b2EdgeShape;
@@ -25218,8 +29581,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2PolygonShape.klass = rb_define_class_under(mLiquidfun, "B2PolygonShape", ((swig_class *) SWIGTYPE_p_b2Shape->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_b2PolygonShape, (void *) &SwigClassB2PolygonShape);
-  rb_define_alloc_func(SwigClassB2PolygonShape.klass, _wrap_B2PolygonShape_allocate);
-  rb_define_method(SwigClassB2PolygonShape.klass, "initialize", VALUEFUNC(_wrap_new_B2PolygonShape), -1);
+  rb_define_alloc_func(SwigClassB2PolygonShape.klass, _wrap_b_2polygon_shape_allocate);
+  rb_define_method(SwigClassB2PolygonShape.klass, "initialize", VALUEFUNC(_wrap_new_b_2polygon_shape), -1);
   rb_define_method(SwigClassB2PolygonShape.klass, "set_centroid", VALUEFUNC(_wrap_B2PolygonShape_set_centroid), -1);
   rb_define_method(SwigClassB2PolygonShape.klass, "set_as_box", VALUEFUNC(_wrap_B2PolygonShape_set_as_box), -1);
   SwigClassB2PolygonShape.mark = 0;
@@ -25228,8 +29591,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2Color.klass = rb_define_class_under(mLiquidfun, "B2Color", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2Color, (void *) &SwigClassB2Color);
-  rb_define_alloc_func(SwigClassB2Color.klass, _wrap_B2Color_allocate);
-  rb_define_method(SwigClassB2Color.klass, "initialize", VALUEFUNC(_wrap_new_B2Color), -1);
+  rb_define_alloc_func(SwigClassB2Color.klass, _wrap_b_2color_allocate);
+  rb_define_method(SwigClassB2Color.klass, "initialize", VALUEFUNC(_wrap_new_b_2color), -1);
   rb_define_method(SwigClassB2Color.klass, "set", VALUEFUNC(_wrap_B2Color_set), -1);
   rb_define_method(SwigClassB2Color.klass, "r=", VALUEFUNC(_wrap_B2Color_r_set), -1);
   rb_define_method(SwigClassB2Color.klass, "r", VALUEFUNC(_wrap_B2Color_r_get), -1);
@@ -25244,8 +29607,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2Draw.klass = rb_define_class_under(mLiquidfun, "B2Draw", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2Draw, (void *) &SwigClassB2Draw);
-  rb_define_alloc_func(SwigClassB2Draw.klass, _wrap_B2Draw_allocate);
-  rb_define_method(SwigClassB2Draw.klass, "initialize", VALUEFUNC(_wrap_new_B2Draw), -1);
+  rb_define_alloc_func(SwigClassB2Draw.klass, _wrap_b_2draw_allocate);
+  rb_define_method(SwigClassB2Draw.klass, "initialize", VALUEFUNC(_wrap_new_b_2draw), -1);
   rb_define_const(SwigClassB2Draw.klass, "SHAPE_BIT", SWIG_From_int(static_cast< int >(b2Draw::e_shapeBit)));
   rb_define_const(SwigClassB2Draw.klass, "JOINT_BIT", SWIG_From_int(static_cast< int >(b2Draw::e_jointBit)));
   rb_define_const(SwigClassB2Draw.klass, "AABB_BIT", SWIG_From_int(static_cast< int >(b2Draw::e_aabbBit)));
@@ -25269,8 +29632,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2Vec2.klass = rb_define_class_under(mLiquidfun, "B2Vec2", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2Vec2, (void *) &SwigClassB2Vec2);
-  rb_define_alloc_func(SwigClassB2Vec2.klass, _wrap_B2Vec2_allocate);
-  rb_define_method(SwigClassB2Vec2.klass, "initialize", VALUEFUNC(_wrap_new_B2Vec2), -1);
+  rb_define_alloc_func(SwigClassB2Vec2.klass, _wrap_b_2vec2_allocate);
+  rb_define_method(SwigClassB2Vec2.klass, "initialize", VALUEFUNC(_wrap_new_b_2vec2), -1);
   rb_define_method(SwigClassB2Vec2.klass, "set", VALUEFUNC(_wrap_B2Vec2_set), -1);
   rb_define_method(SwigClassB2Vec2.klass, "x=", VALUEFUNC(_wrap_B2Vec2_x_set), -1);
   rb_define_method(SwigClassB2Vec2.klass, "x", VALUEFUNC(_wrap_B2Vec2_x_get), -1);
@@ -25282,8 +29645,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2Transform.klass = rb_define_class_under(mLiquidfun, "B2Transform", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2Transform, (void *) &SwigClassB2Transform);
-  rb_define_alloc_func(SwigClassB2Transform.klass, _wrap_B2Transform_allocate);
-  rb_define_method(SwigClassB2Transform.klass, "initialize", VALUEFUNC(_wrap_new_B2Transform), -1);
+  rb_define_alloc_func(SwigClassB2Transform.klass, _wrap_b_2transform_allocate);
+  rb_define_method(SwigClassB2Transform.klass, "initialize", VALUEFUNC(_wrap_new_b_2transform), -1);
   rb_define_method(SwigClassB2Transform.klass, "set_identity", VALUEFUNC(_wrap_B2Transform_set_identity), -1);
   rb_define_method(SwigClassB2Transform.klass, "get_position_x", VALUEFUNC(_wrap_B2Transform_get_position_x), -1);
   rb_define_method(SwigClassB2Transform.klass, "get_position_y", VALUEFUNC(_wrap_B2Transform_get_position_y), -1);
@@ -25298,8 +29661,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2BodyDef.klass = rb_define_class_under(mLiquidfun, "B2BodyDef", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2BodyDef, (void *) &SwigClassB2BodyDef);
-  rb_define_alloc_func(SwigClassB2BodyDef.klass, _wrap_B2BodyDef_allocate);
-  rb_define_method(SwigClassB2BodyDef.klass, "initialize", VALUEFUNC(_wrap_new_B2BodyDef), -1);
+  rb_define_alloc_func(SwigClassB2BodyDef.klass, _wrap_b_2body_def_allocate);
+  rb_define_method(SwigClassB2BodyDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2body_def), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "set_position", VALUEFUNC(_wrap_B2BodyDef_set_position), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "type=", VALUEFUNC(_wrap_B2BodyDef_type_set), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "type", VALUEFUNC(_wrap_B2BodyDef_type_get), -1);
@@ -25307,26 +29670,26 @@ SWIGEXPORT void Init_liquidfun(void) {
   rb_define_method(SwigClassB2BodyDef.klass, "position", VALUEFUNC(_wrap_B2BodyDef_position_get), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "angle=", VALUEFUNC(_wrap_B2BodyDef_angle_set), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "angle", VALUEFUNC(_wrap_B2BodyDef_angle_get), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "linearVelocity=", VALUEFUNC(_wrap_B2BodyDef_linearVelocity_set), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "linearVelocity", VALUEFUNC(_wrap_B2BodyDef_linearVelocity_get), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "angularVelocity=", VALUEFUNC(_wrap_B2BodyDef_angularVelocity_set), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "angularVelocity", VALUEFUNC(_wrap_B2BodyDef_angularVelocity_get), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "linearDamping=", VALUEFUNC(_wrap_B2BodyDef_linearDamping_set), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "linearDamping", VALUEFUNC(_wrap_B2BodyDef_linearDamping_get), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "angularDamping=", VALUEFUNC(_wrap_B2BodyDef_angularDamping_set), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "angularDamping", VALUEFUNC(_wrap_B2BodyDef_angularDamping_get), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "allowSleep=", VALUEFUNC(_wrap_B2BodyDef_allowSleep_set), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "allowSleep", VALUEFUNC(_wrap_B2BodyDef_allowSleep_get), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "linear_velocity=", VALUEFUNC(_wrap_B2BodyDef_linear_velocity_set), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "linear_velocity", VALUEFUNC(_wrap_B2BodyDef_linear_velocity_get), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "angular_velocity=", VALUEFUNC(_wrap_B2BodyDef_angular_velocity_set), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "angular_velocity", VALUEFUNC(_wrap_B2BodyDef_angular_velocity_get), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "linear_damping=", VALUEFUNC(_wrap_B2BodyDef_linear_damping_set), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "linear_damping", VALUEFUNC(_wrap_B2BodyDef_linear_damping_get), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "angular_damping=", VALUEFUNC(_wrap_B2BodyDef_angular_damping_set), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "angular_damping", VALUEFUNC(_wrap_B2BodyDef_angular_damping_get), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "allow_sleep=", VALUEFUNC(_wrap_B2BodyDef_allow_sleep_set), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "allow_sleep", VALUEFUNC(_wrap_B2BodyDef_allow_sleep_get), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "awake=", VALUEFUNC(_wrap_B2BodyDef_awake_set), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "awake", VALUEFUNC(_wrap_B2BodyDef_awake_get), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "fixedRotation=", VALUEFUNC(_wrap_B2BodyDef_fixedRotation_set), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "fixedRotation", VALUEFUNC(_wrap_B2BodyDef_fixedRotation_get), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "fixed_rotation=", VALUEFUNC(_wrap_B2BodyDef_fixed_rotation_set), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "fixed_rotation", VALUEFUNC(_wrap_B2BodyDef_fixed_rotation_get), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "bullet=", VALUEFUNC(_wrap_B2BodyDef_bullet_set), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "bullet", VALUEFUNC(_wrap_B2BodyDef_bullet_get), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "active=", VALUEFUNC(_wrap_B2BodyDef_active_set), -1);
   rb_define_method(SwigClassB2BodyDef.klass, "active", VALUEFUNC(_wrap_B2BodyDef_active_get), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "gravityScale=", VALUEFUNC(_wrap_B2BodyDef_gravityScale_set), -1);
-  rb_define_method(SwigClassB2BodyDef.klass, "gravityScale", VALUEFUNC(_wrap_B2BodyDef_gravityScale_get), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "gravity_scale=", VALUEFUNC(_wrap_B2BodyDef_gravity_scale_set), -1);
+  rb_define_method(SwigClassB2BodyDef.klass, "gravity_scale", VALUEFUNC(_wrap_B2BodyDef_gravity_scale_get), -1);
   SwigClassB2BodyDef.mark = 0;
   SwigClassB2BodyDef.destroy = (void (*)(void *)) free_b2BodyDef;
   SwigClassB2BodyDef.trackObjects = 1;
@@ -25393,22 +29756,22 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2Filter.klass = rb_define_class_under(mLiquidfun, "B2Filter", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2Filter, (void *) &SwigClassB2Filter);
-  rb_define_alloc_func(SwigClassB2Filter.klass, _wrap_B2Filter_allocate);
-  rb_define_method(SwigClassB2Filter.klass, "initialize", VALUEFUNC(_wrap_new_B2Filter), -1);
-  rb_define_method(SwigClassB2Filter.klass, "categoryBits=", VALUEFUNC(_wrap_B2Filter_categoryBits_set), -1);
-  rb_define_method(SwigClassB2Filter.klass, "categoryBits", VALUEFUNC(_wrap_B2Filter_categoryBits_get), -1);
-  rb_define_method(SwigClassB2Filter.klass, "maskBits=", VALUEFUNC(_wrap_B2Filter_maskBits_set), -1);
-  rb_define_method(SwigClassB2Filter.klass, "maskBits", VALUEFUNC(_wrap_B2Filter_maskBits_get), -1);
-  rb_define_method(SwigClassB2Filter.klass, "groupIndex=", VALUEFUNC(_wrap_B2Filter_groupIndex_set), -1);
-  rb_define_method(SwigClassB2Filter.klass, "groupIndex", VALUEFUNC(_wrap_B2Filter_groupIndex_get), -1);
+  rb_define_alloc_func(SwigClassB2Filter.klass, _wrap_b_2filter_allocate);
+  rb_define_method(SwigClassB2Filter.klass, "initialize", VALUEFUNC(_wrap_new_b_2filter), -1);
+  rb_define_method(SwigClassB2Filter.klass, "category_bits=", VALUEFUNC(_wrap_B2Filter_category_bits_set), -1);
+  rb_define_method(SwigClassB2Filter.klass, "category_bits", VALUEFUNC(_wrap_B2Filter_category_bits_get), -1);
+  rb_define_method(SwigClassB2Filter.klass, "mask_bits=", VALUEFUNC(_wrap_B2Filter_mask_bits_set), -1);
+  rb_define_method(SwigClassB2Filter.klass, "mask_bits", VALUEFUNC(_wrap_B2Filter_mask_bits_get), -1);
+  rb_define_method(SwigClassB2Filter.klass, "group_index=", VALUEFUNC(_wrap_B2Filter_group_index_set), -1);
+  rb_define_method(SwigClassB2Filter.klass, "group_index", VALUEFUNC(_wrap_B2Filter_group_index_get), -1);
   SwigClassB2Filter.mark = 0;
   SwigClassB2Filter.destroy = (void (*)(void *)) free_b2Filter;
   SwigClassB2Filter.trackObjects = 1;
   
   SwigClassB2FixtureDef.klass = rb_define_class_under(mLiquidfun, "B2FixtureDef", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2FixtureDef, (void *) &SwigClassB2FixtureDef);
-  rb_define_alloc_func(SwigClassB2FixtureDef.klass, _wrap_B2FixtureDef_allocate);
-  rb_define_method(SwigClassB2FixtureDef.klass, "initialize", VALUEFUNC(_wrap_new_B2FixtureDef), -1);
+  rb_define_alloc_func(SwigClassB2FixtureDef.klass, _wrap_b_2fixture_def_allocate);
+  rb_define_method(SwigClassB2FixtureDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2fixture_def), -1);
   rb_define_method(SwigClassB2FixtureDef.klass, "shape=", VALUEFUNC(_wrap_B2FixtureDef_shape_set), -1);
   rb_define_method(SwigClassB2FixtureDef.klass, "shape", VALUEFUNC(_wrap_B2FixtureDef_shape_get), -1);
   rb_define_method(SwigClassB2FixtureDef.klass, "friction=", VALUEFUNC(_wrap_B2FixtureDef_friction_set), -1);
@@ -25417,8 +29780,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   rb_define_method(SwigClassB2FixtureDef.klass, "restitution", VALUEFUNC(_wrap_B2FixtureDef_restitution_get), -1);
   rb_define_method(SwigClassB2FixtureDef.klass, "density=", VALUEFUNC(_wrap_B2FixtureDef_density_set), -1);
   rb_define_method(SwigClassB2FixtureDef.klass, "density", VALUEFUNC(_wrap_B2FixtureDef_density_get), -1);
-  rb_define_method(SwigClassB2FixtureDef.klass, "isSensor=", VALUEFUNC(_wrap_B2FixtureDef_isSensor_set), -1);
-  rb_define_method(SwigClassB2FixtureDef.klass, "isSensor", VALUEFUNC(_wrap_B2FixtureDef_isSensor_get), -1);
+  rb_define_method(SwigClassB2FixtureDef.klass, "is_sensor=", VALUEFUNC(_wrap_B2FixtureDef_is_sensor_set), -1);
+  rb_define_method(SwigClassB2FixtureDef.klass, "is_sensor", VALUEFUNC(_wrap_B2FixtureDef_is_sensor_get), -1);
   rb_define_method(SwigClassB2FixtureDef.klass, "filter=", VALUEFUNC(_wrap_B2FixtureDef_filter_set), -1);
   rb_define_method(SwigClassB2FixtureDef.klass, "filter", VALUEFUNC(_wrap_B2FixtureDef_filter_get), -1);
   SwigClassB2FixtureDef.mark = 0;
@@ -25454,8 +29817,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2World.klass = rb_define_class_under(mLiquidfun, "B2World", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2World, (void *) &SwigClassB2World);
-  rb_define_alloc_func(SwigClassB2World.klass, _wrap_B2World_allocate);
-  rb_define_method(SwigClassB2World.klass, "initialize", VALUEFUNC(_wrap_new_B2World), -1);
+  rb_define_alloc_func(SwigClassB2World.klass, _wrap_b_2world_allocate);
+  rb_define_method(SwigClassB2World.klass, "initialize", VALUEFUNC(_wrap_new_b_2world), -1);
   rb_define_method(SwigClassB2World.klass, "set_debug_draw", VALUEFUNC(_wrap_B2World_set_debug_draw), -1);
   rb_define_method(SwigClassB2World.klass, "create_body", VALUEFUNC(_wrap_B2World_create_body), -1);
   rb_define_method(SwigClassB2World.klass, "destroy_body", VALUEFUNC(_wrap_B2World_destroy_body), -1);
@@ -25473,8 +29836,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2QueryCallback.klass = rb_define_class_under(mLiquidfun, "B2QueryCallback", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2QueryCallback, (void *) &SwigClassB2QueryCallback);
-  rb_define_alloc_func(SwigClassB2QueryCallback.klass, _wrap_B2QueryCallback_allocate);
-  rb_define_method(SwigClassB2QueryCallback.klass, "initialize", VALUEFUNC(_wrap_new_B2QueryCallback), -1);
+  rb_define_alloc_func(SwigClassB2QueryCallback.klass, _wrap_b_2query_callback_allocate);
+  rb_define_method(SwigClassB2QueryCallback.klass, "initialize", VALUEFUNC(_wrap_new_b_2query_callback), -1);
   rb_define_method(SwigClassB2QueryCallback.klass, "report_fixture", VALUEFUNC(_wrap_B2QueryCallback_report_fixture), -1);
   rb_define_method(SwigClassB2QueryCallback.klass, "report_particle", VALUEFUNC(_wrap_B2QueryCallback_report_particle), -1);
   SwigClassB2QueryCallback.mark = 0;
@@ -25503,10 +29866,10 @@ SWIGEXPORT void Init_liquidfun(void) {
   rb_define_method(SwigClassB2Jacobian.klass, "initialize", VALUEFUNC(_wrap_new_B2Jacobian), -1);
   rb_define_method(SwigClassB2Jacobian.klass, "linear=", VALUEFUNC(_wrap_B2Jacobian_linear_set), -1);
   rb_define_method(SwigClassB2Jacobian.klass, "linear", VALUEFUNC(_wrap_B2Jacobian_linear_get), -1);
-  rb_define_method(SwigClassB2Jacobian.klass, "angularA=", VALUEFUNC(_wrap_B2Jacobian_angularA_set), -1);
-  rb_define_method(SwigClassB2Jacobian.klass, "angularA", VALUEFUNC(_wrap_B2Jacobian_angularA_get), -1);
-  rb_define_method(SwigClassB2Jacobian.klass, "angularB=", VALUEFUNC(_wrap_B2Jacobian_angularB_set), -1);
-  rb_define_method(SwigClassB2Jacobian.klass, "angularB", VALUEFUNC(_wrap_B2Jacobian_angularB_get), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "angular_a=", VALUEFUNC(_wrap_B2Jacobian_angular_a_set), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "angular_a", VALUEFUNC(_wrap_B2Jacobian_angular_a_get), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "angular_b=", VALUEFUNC(_wrap_B2Jacobian_angular_b_set), -1);
+  rb_define_method(SwigClassB2Jacobian.klass, "angular_b", VALUEFUNC(_wrap_B2Jacobian_angular_b_get), -1);
   SwigClassB2Jacobian.mark = 0;
   SwigClassB2Jacobian.destroy = (void (*)(void *)) free_b2Jacobian;
   SwigClassB2Jacobian.trackObjects = 1;
@@ -25529,16 +29892,16 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2JointDef.klass = rb_define_class_under(mLiquidfun, "B2JointDef", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2JointDef, (void *) &SwigClassB2JointDef);
-  rb_define_alloc_func(SwigClassB2JointDef.klass, _wrap_B2JointDef_allocate);
-  rb_define_method(SwigClassB2JointDef.klass, "initialize", VALUEFUNC(_wrap_new_B2JointDef), -1);
+  rb_define_alloc_func(SwigClassB2JointDef.klass, _wrap_b_2joint_def_allocate);
+  rb_define_method(SwigClassB2JointDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2joint_def), -1);
   rb_define_method(SwigClassB2JointDef.klass, "type=", VALUEFUNC(_wrap_B2JointDef_type_set), -1);
   rb_define_method(SwigClassB2JointDef.klass, "type", VALUEFUNC(_wrap_B2JointDef_type_get), -1);
-  rb_define_method(SwigClassB2JointDef.klass, "bodyA=", VALUEFUNC(_wrap_B2JointDef_bodyA_set), -1);
-  rb_define_method(SwigClassB2JointDef.klass, "bodyA", VALUEFUNC(_wrap_B2JointDef_bodyA_get), -1);
-  rb_define_method(SwigClassB2JointDef.klass, "bodyB=", VALUEFUNC(_wrap_B2JointDef_bodyB_set), -1);
-  rb_define_method(SwigClassB2JointDef.klass, "bodyB", VALUEFUNC(_wrap_B2JointDef_bodyB_get), -1);
-  rb_define_method(SwigClassB2JointDef.klass, "collideConnected=", VALUEFUNC(_wrap_B2JointDef_collideConnected_set), -1);
-  rb_define_method(SwigClassB2JointDef.klass, "collideConnected", VALUEFUNC(_wrap_B2JointDef_collideConnected_get), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "body_a=", VALUEFUNC(_wrap_B2JointDef_body_a_set), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "body_a", VALUEFUNC(_wrap_B2JointDef_body_a_get), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "body_b=", VALUEFUNC(_wrap_B2JointDef_body_b_set), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "body_b", VALUEFUNC(_wrap_B2JointDef_body_b_get), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "collide_connected=", VALUEFUNC(_wrap_B2JointDef_collide_connected_set), -1);
+  rb_define_method(SwigClassB2JointDef.klass, "collide_connected", VALUEFUNC(_wrap_B2JointDef_collide_connected_get), -1);
   SwigClassB2JointDef.mark = 0;
   SwigClassB2JointDef.destroy = (void (*)(void *)) free_b2JointDef;
   SwigClassB2JointDef.trackObjects = 1;
@@ -25561,29 +29924,67 @@ SWIGEXPORT void Init_liquidfun(void) {
   SwigClassB2Joint.mark = 0;
   SwigClassB2Joint.trackObjects = 1;
   
+  SwigClassB2DistanceJointDef.klass = rb_define_class_under(mLiquidfun, "B2DistanceJointDef", ((swig_class *) SWIGTYPE_p_b2JointDef->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2DistanceJointDef, (void *) &SwigClassB2DistanceJointDef);
+  rb_define_alloc_func(SwigClassB2DistanceJointDef.klass, _wrap_b_2distance_joint_def_allocate);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2distance_joint_def), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "init", VALUEFUNC(_wrap_B2DistanceJointDef_init), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "local_anchor_a=", VALUEFUNC(_wrap_B2DistanceJointDef_local_anchor_a_set), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "local_anchor_a", VALUEFUNC(_wrap_B2DistanceJointDef_local_anchor_a_get), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "local_anchor_b=", VALUEFUNC(_wrap_B2DistanceJointDef_local_anchor_b_set), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "local_anchor_b", VALUEFUNC(_wrap_B2DistanceJointDef_local_anchor_b_get), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "length=", VALUEFUNC(_wrap_B2DistanceJointDef_length_set), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "length", VALUEFUNC(_wrap_B2DistanceJointDef_length_get), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "frequency_hz=", VALUEFUNC(_wrap_B2DistanceJointDef_frequency_hz_set), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "frequency_hz", VALUEFUNC(_wrap_B2DistanceJointDef_frequency_hz_get), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "damping_ratio=", VALUEFUNC(_wrap_B2DistanceJointDef_damping_ratio_set), -1);
+  rb_define_method(SwigClassB2DistanceJointDef.klass, "damping_ratio", VALUEFUNC(_wrap_B2DistanceJointDef_damping_ratio_get), -1);
+  SwigClassB2DistanceJointDef.mark = 0;
+  SwigClassB2DistanceJointDef.destroy = (void (*)(void *)) free_b2DistanceJointDef;
+  SwigClassB2DistanceJointDef.trackObjects = 1;
+  
+  SwigClassB2DistanceJoint.klass = rb_define_class_under(mLiquidfun, "B2DistanceJoint", ((swig_class *) SWIGTYPE_p_b2Joint->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2DistanceJoint, (void *) &SwigClassB2DistanceJoint);
+  rb_undef_alloc_func(SwigClassB2DistanceJoint.klass);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_anchor_a", VALUEFUNC(_wrap_B2DistanceJoint_get_anchor_a), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_anchor_b", VALUEFUNC(_wrap_B2DistanceJoint_get_anchor_b), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_reaction_force", VALUEFUNC(_wrap_B2DistanceJoint_get_reaction_force), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_reaction_torque", VALUEFUNC(_wrap_B2DistanceJoint_get_reaction_torque), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_local_anchor_a", VALUEFUNC(_wrap_B2DistanceJoint_get_local_anchor_a), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_local_anchor_b", VALUEFUNC(_wrap_B2DistanceJoint_get_local_anchor_b), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "set_length", VALUEFUNC(_wrap_B2DistanceJoint_set_length), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_length", VALUEFUNC(_wrap_B2DistanceJoint_get_length), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "set_frequency", VALUEFUNC(_wrap_B2DistanceJoint_set_frequency), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_frequency", VALUEFUNC(_wrap_B2DistanceJoint_get_frequency), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "set_damping_ratio", VALUEFUNC(_wrap_B2DistanceJoint_set_damping_ratio), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "get_damping_ratio", VALUEFUNC(_wrap_B2DistanceJoint_get_damping_ratio), -1);
+  rb_define_method(SwigClassB2DistanceJoint.klass, "dump", VALUEFUNC(_wrap_B2DistanceJoint_dump), -1);
+  SwigClassB2DistanceJoint.mark = (void (*)(void *)) mark_b2DistanceJoint;
+  SwigClassB2DistanceJoint.trackObjects = 1;
+  
   SwigClassB2RevoluteJointDef.klass = rb_define_class_under(mLiquidfun, "B2RevoluteJointDef", ((swig_class *) SWIGTYPE_p_b2JointDef->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_b2RevoluteJointDef, (void *) &SwigClassB2RevoluteJointDef);
-  rb_define_alloc_func(SwigClassB2RevoluteJointDef.klass, _wrap_B2RevoluteJointDef_allocate);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "initialize", VALUEFUNC(_wrap_new_B2RevoluteJointDef), -1);
+  rb_define_alloc_func(SwigClassB2RevoluteJointDef.klass, _wrap_b_2revolute_joint_def_allocate);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2revolute_joint_def), -1);
   rb_define_method(SwigClassB2RevoluteJointDef.klass, "init", VALUEFUNC(_wrap_B2RevoluteJointDef_init), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "localAnchorA=", VALUEFUNC(_wrap_B2RevoluteJointDef_localAnchorA_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "localAnchorA", VALUEFUNC(_wrap_B2RevoluteJointDef_localAnchorA_get), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "localAnchorB=", VALUEFUNC(_wrap_B2RevoluteJointDef_localAnchorB_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "localAnchorB", VALUEFUNC(_wrap_B2RevoluteJointDef_localAnchorB_get), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "referenceAngle=", VALUEFUNC(_wrap_B2RevoluteJointDef_referenceAngle_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "referenceAngle", VALUEFUNC(_wrap_B2RevoluteJointDef_referenceAngle_get), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enableLimit=", VALUEFUNC(_wrap_B2RevoluteJointDef_enableLimit_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enableLimit", VALUEFUNC(_wrap_B2RevoluteJointDef_enableLimit_get), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "lowerAngle=", VALUEFUNC(_wrap_B2RevoluteJointDef_lowerAngle_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "lowerAngle", VALUEFUNC(_wrap_B2RevoluteJointDef_lowerAngle_get), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "upperAngle=", VALUEFUNC(_wrap_B2RevoluteJointDef_upperAngle_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "upperAngle", VALUEFUNC(_wrap_B2RevoluteJointDef_upperAngle_get), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enableMotor=", VALUEFUNC(_wrap_B2RevoluteJointDef_enableMotor_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enableMotor", VALUEFUNC(_wrap_B2RevoluteJointDef_enableMotor_get), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "motorSpeed=", VALUEFUNC(_wrap_B2RevoluteJointDef_motorSpeed_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "motorSpeed", VALUEFUNC(_wrap_B2RevoluteJointDef_motorSpeed_get), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "maxMotorTorque=", VALUEFUNC(_wrap_B2RevoluteJointDef_maxMotorTorque_set), -1);
-  rb_define_method(SwigClassB2RevoluteJointDef.klass, "maxMotorTorque", VALUEFUNC(_wrap_B2RevoluteJointDef_maxMotorTorque_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "local_anchor_a=", VALUEFUNC(_wrap_B2RevoluteJointDef_local_anchor_a_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "local_anchor_a", VALUEFUNC(_wrap_B2RevoluteJointDef_local_anchor_a_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "local_anchor_b=", VALUEFUNC(_wrap_B2RevoluteJointDef_local_anchor_b_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "local_anchor_b", VALUEFUNC(_wrap_B2RevoluteJointDef_local_anchor_b_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "reference_angle=", VALUEFUNC(_wrap_B2RevoluteJointDef_reference_angle_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "reference_angle", VALUEFUNC(_wrap_B2RevoluteJointDef_reference_angle_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enable_limit=", VALUEFUNC(_wrap_B2RevoluteJointDef_enable_limit_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enable_limit", VALUEFUNC(_wrap_B2RevoluteJointDef_enable_limit_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "lower_angle=", VALUEFUNC(_wrap_B2RevoluteJointDef_lower_angle_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "lower_angle", VALUEFUNC(_wrap_B2RevoluteJointDef_lower_angle_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "upper_angle=", VALUEFUNC(_wrap_B2RevoluteJointDef_upper_angle_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "upper_angle", VALUEFUNC(_wrap_B2RevoluteJointDef_upper_angle_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enable_motor=", VALUEFUNC(_wrap_B2RevoluteJointDef_enable_motor_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "enable_motor", VALUEFUNC(_wrap_B2RevoluteJointDef_enable_motor_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "motor_speed=", VALUEFUNC(_wrap_B2RevoluteJointDef_motor_speed_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "motor_speed", VALUEFUNC(_wrap_B2RevoluteJointDef_motor_speed_get), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "max_motor_torque=", VALUEFUNC(_wrap_B2RevoluteJointDef_max_motor_torque_set), -1);
+  rb_define_method(SwigClassB2RevoluteJointDef.klass, "max_motor_torque", VALUEFUNC(_wrap_B2RevoluteJointDef_max_motor_torque_get), -1);
   SwigClassB2RevoluteJointDef.mark = 0;
   SwigClassB2RevoluteJointDef.destroy = (void (*)(void *)) free_b2RevoluteJointDef;
   SwigClassB2RevoluteJointDef.trackObjects = 1;
@@ -25613,24 +30014,127 @@ SWIGEXPORT void Init_liquidfun(void) {
   rb_define_method(SwigClassB2RevoluteJoint.klass, "get_reaction_torque", VALUEFUNC(_wrap_B2RevoluteJoint_get_reaction_torque), -1);
   rb_define_method(SwigClassB2RevoluteJoint.klass, "get_motor_torque", VALUEFUNC(_wrap_B2RevoluteJoint_get_motor_torque), -1);
   rb_define_method(SwigClassB2RevoluteJoint.klass, "dump", VALUEFUNC(_wrap_B2RevoluteJoint_dump), -1);
-  SwigClassB2RevoluteJoint.mark = 0;
+  SwigClassB2RevoluteJoint.mark = (void (*)(void *)) mark_b2RevoluteJoint;
   SwigClassB2RevoluteJoint.trackObjects = 1;
+  
+  SwigClassB2PrismaticJointDef.klass = rb_define_class_under(mLiquidfun, "B2PrismaticJointDef", ((swig_class *) SWIGTYPE_p_b2JointDef->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2PrismaticJointDef, (void *) &SwigClassB2PrismaticJointDef);
+  rb_define_alloc_func(SwigClassB2PrismaticJointDef.klass, _wrap_b_2prismatic_joint_def_allocate);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2prismatic_joint_def), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "init", VALUEFUNC(_wrap_B2PrismaticJointDef_init), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "local_anchor_a=", VALUEFUNC(_wrap_B2PrismaticJointDef_local_anchor_a_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "local_anchor_a", VALUEFUNC(_wrap_B2PrismaticJointDef_local_anchor_a_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "local_anchor_b=", VALUEFUNC(_wrap_B2PrismaticJointDef_local_anchor_b_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "local_anchor_b", VALUEFUNC(_wrap_B2PrismaticJointDef_local_anchor_b_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "local_axis_a=", VALUEFUNC(_wrap_B2PrismaticJointDef_local_axis_a_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "local_axis_a", VALUEFUNC(_wrap_B2PrismaticJointDef_local_axis_a_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "reference_angle=", VALUEFUNC(_wrap_B2PrismaticJointDef_reference_angle_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "reference_angle", VALUEFUNC(_wrap_B2PrismaticJointDef_reference_angle_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "enable_limit=", VALUEFUNC(_wrap_B2PrismaticJointDef_enable_limit_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "enable_limit", VALUEFUNC(_wrap_B2PrismaticJointDef_enable_limit_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "lower_translation=", VALUEFUNC(_wrap_B2PrismaticJointDef_lower_translation_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "lower_translation", VALUEFUNC(_wrap_B2PrismaticJointDef_lower_translation_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "upper_translation=", VALUEFUNC(_wrap_B2PrismaticJointDef_upper_translation_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "upper_translation", VALUEFUNC(_wrap_B2PrismaticJointDef_upper_translation_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "enable_motor=", VALUEFUNC(_wrap_B2PrismaticJointDef_enable_motor_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "enable_motor", VALUEFUNC(_wrap_B2PrismaticJointDef_enable_motor_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "max_motor_force=", VALUEFUNC(_wrap_B2PrismaticJointDef_max_motor_force_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "max_motor_force", VALUEFUNC(_wrap_B2PrismaticJointDef_max_motor_force_get), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "motor_speed=", VALUEFUNC(_wrap_B2PrismaticJointDef_motor_speed_set), -1);
+  rb_define_method(SwigClassB2PrismaticJointDef.klass, "motor_speed", VALUEFUNC(_wrap_B2PrismaticJointDef_motor_speed_get), -1);
+  SwigClassB2PrismaticJointDef.mark = 0;
+  SwigClassB2PrismaticJointDef.destroy = (void (*)(void *)) free_b2PrismaticJointDef;
+  SwigClassB2PrismaticJointDef.trackObjects = 1;
+  
+  SwigClassB2PrismaticJoint.klass = rb_define_class_under(mLiquidfun, "B2PrismaticJoint", ((swig_class *) SWIGTYPE_p_b2Joint->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2PrismaticJoint, (void *) &SwigClassB2PrismaticJoint);
+  rb_undef_alloc_func(SwigClassB2PrismaticJoint.klass);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_anchor_a", VALUEFUNC(_wrap_B2PrismaticJoint_get_anchor_a), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_anchor_b", VALUEFUNC(_wrap_B2PrismaticJoint_get_anchor_b), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_reaction_force", VALUEFUNC(_wrap_B2PrismaticJoint_get_reaction_force), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_reaction_torque", VALUEFUNC(_wrap_B2PrismaticJoint_get_reaction_torque), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_local_anchor_a", VALUEFUNC(_wrap_B2PrismaticJoint_get_local_anchor_a), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_local_anchor_b", VALUEFUNC(_wrap_B2PrismaticJoint_get_local_anchor_b), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_local_axis_a", VALUEFUNC(_wrap_B2PrismaticJoint_get_local_axis_a), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_reference_angle", VALUEFUNC(_wrap_B2PrismaticJoint_get_reference_angle), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_joint_translation", VALUEFUNC(_wrap_B2PrismaticJoint_get_joint_translation), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_joint_speed", VALUEFUNC(_wrap_B2PrismaticJoint_get_joint_speed), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "is_limit_enabled", VALUEFUNC(_wrap_B2PrismaticJoint_is_limit_enabled), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "enable_limit", VALUEFUNC(_wrap_B2PrismaticJoint_enable_limit), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_lower_limit", VALUEFUNC(_wrap_B2PrismaticJoint_get_lower_limit), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_upper_limit", VALUEFUNC(_wrap_B2PrismaticJoint_get_upper_limit), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "set_limits", VALUEFUNC(_wrap_B2PrismaticJoint_set_limits), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "is_motor_enabled", VALUEFUNC(_wrap_B2PrismaticJoint_is_motor_enabled), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "enable_motor", VALUEFUNC(_wrap_B2PrismaticJoint_enable_motor), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "set_motor_speed", VALUEFUNC(_wrap_B2PrismaticJoint_set_motor_speed), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_motor_speed", VALUEFUNC(_wrap_B2PrismaticJoint_get_motor_speed), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "set_max_motor_force", VALUEFUNC(_wrap_B2PrismaticJoint_set_max_motor_force), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_max_motor_force", VALUEFUNC(_wrap_B2PrismaticJoint_get_max_motor_force), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "get_motor_force", VALUEFUNC(_wrap_B2PrismaticJoint_get_motor_force), -1);
+  rb_define_method(SwigClassB2PrismaticJoint.klass, "dump", VALUEFUNC(_wrap_B2PrismaticJoint_dump), -1);
+  SwigClassB2PrismaticJoint.mark = (void (*)(void *)) mark_b2PrismaticJoint;
+  SwigClassB2PrismaticJoint.trackObjects = 1;
+  rb_define_singleton_method(mLiquidfun, "b2_minPulleyLength", VALUEFUNC(_wrap_b2_minPulleyLength_get), 0);
+  
+  SwigClassB2PulleyJointDef.klass = rb_define_class_under(mLiquidfun, "B2PulleyJointDef", ((swig_class *) SWIGTYPE_p_b2JointDef->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2PulleyJointDef, (void *) &SwigClassB2PulleyJointDef);
+  rb_define_alloc_func(SwigClassB2PulleyJointDef.klass, _wrap_b_2pulley_joint_def_allocate);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2pulley_joint_def), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "init", VALUEFUNC(_wrap_B2PulleyJointDef_init), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "ground_anchor_a=", VALUEFUNC(_wrap_B2PulleyJointDef_ground_anchor_a_set), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "ground_anchor_a", VALUEFUNC(_wrap_B2PulleyJointDef_ground_anchor_a_get), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "ground_anchor_b=", VALUEFUNC(_wrap_B2PulleyJointDef_ground_anchor_b_set), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "ground_anchor_b", VALUEFUNC(_wrap_B2PulleyJointDef_ground_anchor_b_get), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "local_anchor_a=", VALUEFUNC(_wrap_B2PulleyJointDef_local_anchor_a_set), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "local_anchor_a", VALUEFUNC(_wrap_B2PulleyJointDef_local_anchor_a_get), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "local_anchor_b=", VALUEFUNC(_wrap_B2PulleyJointDef_local_anchor_b_set), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "local_anchor_b", VALUEFUNC(_wrap_B2PulleyJointDef_local_anchor_b_get), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "length_a=", VALUEFUNC(_wrap_B2PulleyJointDef_length_a_set), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "length_a", VALUEFUNC(_wrap_B2PulleyJointDef_length_a_get), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "length_b=", VALUEFUNC(_wrap_B2PulleyJointDef_length_b_set), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "length_b", VALUEFUNC(_wrap_B2PulleyJointDef_length_b_get), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "ratio=", VALUEFUNC(_wrap_B2PulleyJointDef_ratio_set), -1);
+  rb_define_method(SwigClassB2PulleyJointDef.klass, "ratio", VALUEFUNC(_wrap_B2PulleyJointDef_ratio_get), -1);
+  SwigClassB2PulleyJointDef.mark = 0;
+  SwigClassB2PulleyJointDef.destroy = (void (*)(void *)) free_b2PulleyJointDef;
+  SwigClassB2PulleyJointDef.trackObjects = 1;
+  
+  SwigClassB2PulleyJoint.klass = rb_define_class_under(mLiquidfun, "B2PulleyJoint", ((swig_class *) SWIGTYPE_p_b2Joint->clientdata)->klass);
+  SWIG_TypeClientData(SWIGTYPE_p_b2PulleyJoint, (void *) &SwigClassB2PulleyJoint);
+  rb_undef_alloc_func(SwigClassB2PulleyJoint.klass);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_anchor_a", VALUEFUNC(_wrap_B2PulleyJoint_get_anchor_a), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_anchor_b", VALUEFUNC(_wrap_B2PulleyJoint_get_anchor_b), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_reaction_force", VALUEFUNC(_wrap_B2PulleyJoint_get_reaction_force), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_reaction_torque", VALUEFUNC(_wrap_B2PulleyJoint_get_reaction_torque), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_ground_anchor_aext", VALUEFUNC(_wrap_B2PulleyJoint_get_ground_anchor_aext), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_ground_anchor_bext", VALUEFUNC(_wrap_B2PulleyJoint_get_ground_anchor_bext), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_ground_anchor_a", VALUEFUNC(_wrap_B2PulleyJoint_get_ground_anchor_a), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_ground_anchor_b", VALUEFUNC(_wrap_B2PulleyJoint_get_ground_anchor_b), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_length_a", VALUEFUNC(_wrap_B2PulleyJoint_get_length_a), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_length_b", VALUEFUNC(_wrap_B2PulleyJoint_get_length_b), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_ratio", VALUEFUNC(_wrap_B2PulleyJoint_get_ratio), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_current_length_a", VALUEFUNC(_wrap_B2PulleyJoint_get_current_length_a), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "get_current_length_b", VALUEFUNC(_wrap_B2PulleyJoint_get_current_length_b), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "dump", VALUEFUNC(_wrap_B2PulleyJoint_dump), -1);
+  rb_define_method(SwigClassB2PulleyJoint.klass, "shift_origin", VALUEFUNC(_wrap_B2PulleyJoint_shift_origin), -1);
+  SwigClassB2PulleyJoint.mark = (void (*)(void *)) mark_b2PulleyJoint;
+  SwigClassB2PulleyJoint.trackObjects = 1;
   
   SwigClassB2MotorJointDef.klass = rb_define_class_under(mLiquidfun, "B2MotorJointDef", ((swig_class *) SWIGTYPE_p_b2JointDef->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_b2MotorJointDef, (void *) &SwigClassB2MotorJointDef);
-  rb_define_alloc_func(SwigClassB2MotorJointDef.klass, _wrap_B2MotorJointDef_allocate);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "initialize", VALUEFUNC(_wrap_new_B2MotorJointDef), -1);
+  rb_define_alloc_func(SwigClassB2MotorJointDef.klass, _wrap_b_2motor_joint_def_allocate);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2motor_joint_def), -1);
   rb_define_method(SwigClassB2MotorJointDef.klass, "init", VALUEFUNC(_wrap_B2MotorJointDef_init), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "linearOffset=", VALUEFUNC(_wrap_B2MotorJointDef_linearOffset_set), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "linearOffset", VALUEFUNC(_wrap_B2MotorJointDef_linearOffset_get), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "angularOffset=", VALUEFUNC(_wrap_B2MotorJointDef_angularOffset_set), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "angularOffset", VALUEFUNC(_wrap_B2MotorJointDef_angularOffset_get), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "maxForce=", VALUEFUNC(_wrap_B2MotorJointDef_maxForce_set), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "maxForce", VALUEFUNC(_wrap_B2MotorJointDef_maxForce_get), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "maxTorque=", VALUEFUNC(_wrap_B2MotorJointDef_maxTorque_set), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "maxTorque", VALUEFUNC(_wrap_B2MotorJointDef_maxTorque_get), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "correctionFactor=", VALUEFUNC(_wrap_B2MotorJointDef_correctionFactor_set), -1);
-  rb_define_method(SwigClassB2MotorJointDef.klass, "correctionFactor", VALUEFUNC(_wrap_B2MotorJointDef_correctionFactor_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "linear_offset=", VALUEFUNC(_wrap_B2MotorJointDef_linear_offset_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "linear_offset", VALUEFUNC(_wrap_B2MotorJointDef_linear_offset_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "angular_offset=", VALUEFUNC(_wrap_B2MotorJointDef_angular_offset_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "angular_offset", VALUEFUNC(_wrap_B2MotorJointDef_angular_offset_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "max_force=", VALUEFUNC(_wrap_B2MotorJointDef_max_force_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "max_force", VALUEFUNC(_wrap_B2MotorJointDef_max_force_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "max_torque=", VALUEFUNC(_wrap_B2MotorJointDef_max_torque_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "max_torque", VALUEFUNC(_wrap_B2MotorJointDef_max_torque_get), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "correction_factor=", VALUEFUNC(_wrap_B2MotorJointDef_correction_factor_set), -1);
+  rb_define_method(SwigClassB2MotorJointDef.klass, "correction_factor", VALUEFUNC(_wrap_B2MotorJointDef_correction_factor_get), -1);
   SwigClassB2MotorJointDef.mark = 0;
   SwigClassB2MotorJointDef.destroy = (void (*)(void *)) free_b2MotorJointDef;
   SwigClassB2MotorJointDef.trackObjects = 1;
@@ -25653,7 +30157,7 @@ SWIGEXPORT void Init_liquidfun(void) {
   rb_define_method(SwigClassB2MotorJoint.klass, "set_correction_factor", VALUEFUNC(_wrap_B2MotorJoint_set_correction_factor), -1);
   rb_define_method(SwigClassB2MotorJoint.klass, "get_correction_factor", VALUEFUNC(_wrap_B2MotorJoint_get_correction_factor), -1);
   rb_define_method(SwigClassB2MotorJoint.klass, "dump", VALUEFUNC(_wrap_B2MotorJoint_dump), -1);
-  SwigClassB2MotorJoint.mark = 0;
+  SwigClassB2MotorJoint.mark = (void (*)(void *)) mark_b2MotorJoint;
   SwigClassB2MotorJoint.trackObjects = 1;
   rb_define_const(mLiquidfun, "B2_WATERPARTICLE", SWIG_From_int(static_cast< int >(b2_waterParticle)));
   rb_define_const(mLiquidfun, "B2_ZOMBIEPARTICLE", SWIG_From_int(static_cast< int >(b2_zombieParticle)));
@@ -25676,8 +30180,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2ParticleColor.klass = rb_define_class_under(mLiquidfun, "B2ParticleColor", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2ParticleColor, (void *) &SwigClassB2ParticleColor);
-  rb_define_alloc_func(SwigClassB2ParticleColor.klass, _wrap_B2ParticleColor_allocate);
-  rb_define_method(SwigClassB2ParticleColor.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleColor), -1);
+  rb_define_alloc_func(SwigClassB2ParticleColor.klass, _wrap_b_2particle_color_allocate);
+  rb_define_method(SwigClassB2ParticleColor.klass, "initialize", VALUEFUNC(_wrap_new_b_2particle_color), -1);
   rb_define_method(SwigClassB2ParticleColor.klass, "is_zero", VALUEFUNC(_wrap_B2ParticleColor_is_zero), -1);
   rb_define_method(SwigClassB2ParticleColor.klass, "set", VALUEFUNC(_wrap_B2ParticleColor_set), -1);
   rb_define_method(SwigClassB2ParticleColor.klass, "*", VALUEFUNC(_wrap_B2ParticleColor___mul__), -1);
@@ -25702,8 +30206,8 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2ParticleDef.klass = rb_define_class_under(mLiquidfun, "B2ParticleDef", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2ParticleDef, (void *) &SwigClassB2ParticleDef);
-  rb_define_alloc_func(SwigClassB2ParticleDef.klass, _wrap_B2ParticleDef_allocate);
-  rb_define_method(SwigClassB2ParticleDef.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleDef), -1);
+  rb_define_alloc_func(SwigClassB2ParticleDef.klass, _wrap_b_2particle_def_allocate);
+  rb_define_method(SwigClassB2ParticleDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2particle_def), -1);
   rb_define_method(SwigClassB2ParticleDef.klass, "set_position", VALUEFUNC(_wrap_B2ParticleDef_set_position), -1);
   rb_define_method(SwigClassB2ParticleDef.klass, "set_color", VALUEFUNC(_wrap_B2ParticleDef_set_color), -1);
   rb_define_method(SwigClassB2ParticleDef.klass, "flags=", VALUEFUNC(_wrap_B2ParticleDef_flags_set), -1);
@@ -25738,42 +30242,42 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2ParticleGroupDef.klass = rb_define_class_under(mLiquidfun, "B2ParticleGroupDef", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2ParticleGroupDef, (void *) &SwigClassB2ParticleGroupDef);
-  rb_define_alloc_func(SwigClassB2ParticleGroupDef.klass, _wrap_B2ParticleGroupDef_allocate);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleGroupDef), -1);
+  rb_define_alloc_func(SwigClassB2ParticleGroupDef.klass, _wrap_b_2particle_group_def_allocate);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2particle_group_def), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "flags=", VALUEFUNC(_wrap_B2ParticleGroupDef_flags_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "flags", VALUEFUNC(_wrap_B2ParticleGroupDef_flags_get), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "groupFlags=", VALUEFUNC(_wrap_B2ParticleGroupDef_groupFlags_set), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "groupFlags", VALUEFUNC(_wrap_B2ParticleGroupDef_groupFlags_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "group_flags=", VALUEFUNC(_wrap_B2ParticleGroupDef_group_flags_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "group_flags", VALUEFUNC(_wrap_B2ParticleGroupDef_group_flags_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "position=", VALUEFUNC(_wrap_B2ParticleGroupDef_position_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "position", VALUEFUNC(_wrap_B2ParticleGroupDef_position_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "angle=", VALUEFUNC(_wrap_B2ParticleGroupDef_angle_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "angle", VALUEFUNC(_wrap_B2ParticleGroupDef_angle_get), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "linearVelocity=", VALUEFUNC(_wrap_B2ParticleGroupDef_linearVelocity_set), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "linearVelocity", VALUEFUNC(_wrap_B2ParticleGroupDef_linearVelocity_get), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "angularVelocity=", VALUEFUNC(_wrap_B2ParticleGroupDef_angularVelocity_set), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "angularVelocity", VALUEFUNC(_wrap_B2ParticleGroupDef_angularVelocity_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "linear_velocity=", VALUEFUNC(_wrap_B2ParticleGroupDef_linear_velocity_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "linear_velocity", VALUEFUNC(_wrap_B2ParticleGroupDef_linear_velocity_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "angular_velocity=", VALUEFUNC(_wrap_B2ParticleGroupDef_angular_velocity_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "angular_velocity", VALUEFUNC(_wrap_B2ParticleGroupDef_angular_velocity_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "color=", VALUEFUNC(_wrap_B2ParticleGroupDef_color_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "color", VALUEFUNC(_wrap_B2ParticleGroupDef_color_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "strength=", VALUEFUNC(_wrap_B2ParticleGroupDef_strength_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "strength", VALUEFUNC(_wrap_B2ParticleGroupDef_strength_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "shape=", VALUEFUNC(_wrap_B2ParticleGroupDef_shape_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "shape", VALUEFUNC(_wrap_B2ParticleGroupDef_shape_get), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "shapeCount=", VALUEFUNC(_wrap_B2ParticleGroupDef_shapeCount_set), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "shapeCount", VALUEFUNC(_wrap_B2ParticleGroupDef_shapeCount_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "shape_count=", VALUEFUNC(_wrap_B2ParticleGroupDef_shape_count_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "shape_count", VALUEFUNC(_wrap_B2ParticleGroupDef_shape_count_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "stride=", VALUEFUNC(_wrap_B2ParticleGroupDef_stride_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "stride", VALUEFUNC(_wrap_B2ParticleGroupDef_stride_get), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "particleCount=", VALUEFUNC(_wrap_B2ParticleGroupDef_particleCount_set), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "particleCount", VALUEFUNC(_wrap_B2ParticleGroupDef_particleCount_get), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "positionData=", VALUEFUNC(_wrap_B2ParticleGroupDef_positionData_set), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "positionData", VALUEFUNC(_wrap_B2ParticleGroupDef_positionData_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "particle_count=", VALUEFUNC(_wrap_B2ParticleGroupDef_particle_count_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "particle_count", VALUEFUNC(_wrap_B2ParticleGroupDef_particle_count_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "position_data=", VALUEFUNC(_wrap_B2ParticleGroupDef_position_data_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "position_data", VALUEFUNC(_wrap_B2ParticleGroupDef_position_data_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "lifetime=", VALUEFUNC(_wrap_B2ParticleGroupDef_lifetime_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "lifetime", VALUEFUNC(_wrap_B2ParticleGroupDef_lifetime_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "group=", VALUEFUNC(_wrap_B2ParticleGroupDef_group_set), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "group", VALUEFUNC(_wrap_B2ParticleGroupDef_group_get), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "circleShapes=", VALUEFUNC(_wrap_B2ParticleGroupDef_circleShapes_set), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "circleShapes", VALUEFUNC(_wrap_B2ParticleGroupDef_circleShapes_get), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "ownShapesArray=", VALUEFUNC(_wrap_B2ParticleGroupDef_ownShapesArray_set), -1);
-  rb_define_method(SwigClassB2ParticleGroupDef.klass, "ownShapesArray", VALUEFUNC(_wrap_B2ParticleGroupDef_ownShapesArray_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "circle_shapes=", VALUEFUNC(_wrap_B2ParticleGroupDef_circle_shapes_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "circle_shapes", VALUEFUNC(_wrap_B2ParticleGroupDef_circle_shapes_get), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "own_shapes_array=", VALUEFUNC(_wrap_B2ParticleGroupDef_own_shapes_array_set), -1);
+  rb_define_method(SwigClassB2ParticleGroupDef.klass, "own_shapes_array", VALUEFUNC(_wrap_B2ParticleGroupDef_own_shapes_array_get), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "free_shapes_memory", VALUEFUNC(_wrap_B2ParticleGroupDef_free_shapes_memory), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "set_circle_shapes_from_vertex_list", VALUEFUNC(_wrap_B2ParticleGroupDef_set_circle_shapes_from_vertex_list), -1);
   rb_define_method(SwigClassB2ParticleGroupDef.klass, "set_position", VALUEFUNC(_wrap_B2ParticleGroupDef_set_position), -1);
@@ -25806,10 +30310,10 @@ SWIGEXPORT void Init_liquidfun(void) {
   SWIG_TypeClientData(SWIGTYPE_p_b2ParticlePair, (void *) &SwigClassB2ParticlePair);
   rb_define_alloc_func(SwigClassB2ParticlePair.klass, _wrap_B2ParticlePair_allocate);
   rb_define_method(SwigClassB2ParticlePair.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticlePair), -1);
-  rb_define_method(SwigClassB2ParticlePair.klass, "indexA=", VALUEFUNC(_wrap_B2ParticlePair_indexA_set), -1);
-  rb_define_method(SwigClassB2ParticlePair.klass, "indexA", VALUEFUNC(_wrap_B2ParticlePair_indexA_get), -1);
-  rb_define_method(SwigClassB2ParticlePair.klass, "indexB=", VALUEFUNC(_wrap_B2ParticlePair_indexB_set), -1);
-  rb_define_method(SwigClassB2ParticlePair.klass, "indexB", VALUEFUNC(_wrap_B2ParticlePair_indexB_get), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "index_a=", VALUEFUNC(_wrap_B2ParticlePair_index_a_set), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "index_a", VALUEFUNC(_wrap_B2ParticlePair_index_a_get), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "index_b=", VALUEFUNC(_wrap_B2ParticlePair_index_b_set), -1);
+  rb_define_method(SwigClassB2ParticlePair.klass, "index_b", VALUEFUNC(_wrap_B2ParticlePair_index_b_get), -1);
   rb_define_method(SwigClassB2ParticlePair.klass, "flags=", VALUEFUNC(_wrap_B2ParticlePair_flags_set), -1);
   rb_define_method(SwigClassB2ParticlePair.klass, "flags", VALUEFUNC(_wrap_B2ParticlePair_flags_get), -1);
   rb_define_method(SwigClassB2ParticlePair.klass, "strength=", VALUEFUNC(_wrap_B2ParticlePair_strength_set), -1);
@@ -25824,12 +30328,12 @@ SWIGEXPORT void Init_liquidfun(void) {
   SWIG_TypeClientData(SWIGTYPE_p_b2ParticleTriad, (void *) &SwigClassB2ParticleTriad);
   rb_define_alloc_func(SwigClassB2ParticleTriad.klass, _wrap_B2ParticleTriad_allocate);
   rb_define_method(SwigClassB2ParticleTriad.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleTriad), -1);
-  rb_define_method(SwigClassB2ParticleTriad.klass, "indexA=", VALUEFUNC(_wrap_B2ParticleTriad_indexA_set), -1);
-  rb_define_method(SwigClassB2ParticleTriad.klass, "indexA", VALUEFUNC(_wrap_B2ParticleTriad_indexA_get), -1);
-  rb_define_method(SwigClassB2ParticleTriad.klass, "indexB=", VALUEFUNC(_wrap_B2ParticleTriad_indexB_set), -1);
-  rb_define_method(SwigClassB2ParticleTriad.klass, "indexB", VALUEFUNC(_wrap_B2ParticleTriad_indexB_get), -1);
-  rb_define_method(SwigClassB2ParticleTriad.klass, "indexC=", VALUEFUNC(_wrap_B2ParticleTriad_indexC_set), -1);
-  rb_define_method(SwigClassB2ParticleTriad.klass, "indexC", VALUEFUNC(_wrap_B2ParticleTriad_indexC_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "index_a=", VALUEFUNC(_wrap_B2ParticleTriad_index_a_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "index_a", VALUEFUNC(_wrap_B2ParticleTriad_index_a_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "index_b=", VALUEFUNC(_wrap_B2ParticleTriad_index_b_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "index_b", VALUEFUNC(_wrap_B2ParticleTriad_index_b_get), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "index_c=", VALUEFUNC(_wrap_B2ParticleTriad_index_c_set), -1);
+  rb_define_method(SwigClassB2ParticleTriad.klass, "index_c", VALUEFUNC(_wrap_B2ParticleTriad_index_c_get), -1);
   rb_define_method(SwigClassB2ParticleTriad.klass, "flags=", VALUEFUNC(_wrap_B2ParticleTriad_flags_set), -1);
   rb_define_method(SwigClassB2ParticleTriad.klass, "flags", VALUEFUNC(_wrap_B2ParticleTriad_flags_get), -1);
   rb_define_method(SwigClassB2ParticleTriad.klass, "strength=", VALUEFUNC(_wrap_B2ParticleTriad_strength_set), -1);
@@ -25854,50 +30358,50 @@ SWIGEXPORT void Init_liquidfun(void) {
   
   SwigClassB2ParticleSystemDef.klass = rb_define_class_under(mLiquidfun, "B2ParticleSystemDef", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_b2ParticleSystemDef, (void *) &SwigClassB2ParticleSystemDef);
-  rb_define_alloc_func(SwigClassB2ParticleSystemDef.klass, _wrap_B2ParticleSystemDef_allocate);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "initialize", VALUEFUNC(_wrap_new_B2ParticleSystemDef), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "strictContactCheck=", VALUEFUNC(_wrap_B2ParticleSystemDef_strictContactCheck_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "strictContactCheck", VALUEFUNC(_wrap_B2ParticleSystemDef_strictContactCheck_get), -1);
+  rb_define_alloc_func(SwigClassB2ParticleSystemDef.klass, _wrap_b_2particle_system_def_allocate);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "initialize", VALUEFUNC(_wrap_new_b_2particle_system_def), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "strict_contact_check=", VALUEFUNC(_wrap_B2ParticleSystemDef_strict_contact_check_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "strict_contact_check", VALUEFUNC(_wrap_B2ParticleSystemDef_strict_contact_check_get), -1);
   rb_define_method(SwigClassB2ParticleSystemDef.klass, "density=", VALUEFUNC(_wrap_B2ParticleSystemDef_density_set), -1);
   rb_define_method(SwigClassB2ParticleSystemDef.klass, "density", VALUEFUNC(_wrap_B2ParticleSystemDef_density_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "gravityScale=", VALUEFUNC(_wrap_B2ParticleSystemDef_gravityScale_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "gravityScale", VALUEFUNC(_wrap_B2ParticleSystemDef_gravityScale_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "gravity_scale=", VALUEFUNC(_wrap_B2ParticleSystemDef_gravity_scale_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "gravity_scale", VALUEFUNC(_wrap_B2ParticleSystemDef_gravity_scale_get), -1);
   rb_define_method(SwigClassB2ParticleSystemDef.klass, "radius=", VALUEFUNC(_wrap_B2ParticleSystemDef_radius_set), -1);
   rb_define_method(SwigClassB2ParticleSystemDef.klass, "radius", VALUEFUNC(_wrap_B2ParticleSystemDef_radius_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "maxCount=", VALUEFUNC(_wrap_B2ParticleSystemDef_maxCount_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "maxCount", VALUEFUNC(_wrap_B2ParticleSystemDef_maxCount_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "pressureStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_pressureStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "pressureStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_pressureStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "dampingStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_dampingStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "dampingStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_dampingStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "elasticStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_elasticStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "elasticStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_elasticStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "springStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_springStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "springStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_springStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "viscousStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_viscousStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "viscousStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_viscousStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surfaceTensionPressureStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_surfaceTensionPressureStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surfaceTensionPressureStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_surfaceTensionPressureStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surfaceTensionNormalStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_surfaceTensionNormalStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surfaceTensionNormalStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_surfaceTensionNormalStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "repulsiveStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_repulsiveStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "repulsiveStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_repulsiveStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "powderStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_powderStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "powderStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_powderStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "ejectionStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_ejectionStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "ejectionStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_ejectionStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureRelaxation=", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureRelaxation_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureRelaxation", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureRelaxation_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureIterations=", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureIterations_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "staticPressureIterations", VALUEFUNC(_wrap_B2ParticleSystemDef_staticPressureIterations_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "colorMixingStrength=", VALUEFUNC(_wrap_B2ParticleSystemDef_colorMixingStrength_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "colorMixingStrength", VALUEFUNC(_wrap_B2ParticleSystemDef_colorMixingStrength_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "destroyByAge=", VALUEFUNC(_wrap_B2ParticleSystemDef_destroyByAge_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "destroyByAge", VALUEFUNC(_wrap_B2ParticleSystemDef_destroyByAge_get), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "lifetimeGranularity=", VALUEFUNC(_wrap_B2ParticleSystemDef_lifetimeGranularity_set), -1);
-  rb_define_method(SwigClassB2ParticleSystemDef.klass, "lifetimeGranularity", VALUEFUNC(_wrap_B2ParticleSystemDef_lifetimeGranularity_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "max_count=", VALUEFUNC(_wrap_B2ParticleSystemDef_max_count_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "max_count", VALUEFUNC(_wrap_B2ParticleSystemDef_max_count_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "pressure_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_pressure_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "pressure_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_pressure_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "damping_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_damping_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "damping_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_damping_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "elastic_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_elastic_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "elastic_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_elastic_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "spring_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_spring_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "spring_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_spring_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "viscous_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_viscous_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "viscous_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_viscous_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surface_tension_pressure_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_surface_tension_pressure_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surface_tension_pressure_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_surface_tension_pressure_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surface_tension_normal_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_surface_tension_normal_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "surface_tension_normal_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_surface_tension_normal_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "repulsive_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_repulsive_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "repulsive_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_repulsive_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "powder_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_powder_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "powder_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_powder_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "ejection_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_ejection_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "ejection_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_ejection_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "static_pressure_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_static_pressure_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "static_pressure_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_static_pressure_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "static_pressure_relaxation=", VALUEFUNC(_wrap_B2ParticleSystemDef_static_pressure_relaxation_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "static_pressure_relaxation", VALUEFUNC(_wrap_B2ParticleSystemDef_static_pressure_relaxation_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "static_pressure_iterations=", VALUEFUNC(_wrap_B2ParticleSystemDef_static_pressure_iterations_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "static_pressure_iterations", VALUEFUNC(_wrap_B2ParticleSystemDef_static_pressure_iterations_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "color_mixing_strength=", VALUEFUNC(_wrap_B2ParticleSystemDef_color_mixing_strength_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "color_mixing_strength", VALUEFUNC(_wrap_B2ParticleSystemDef_color_mixing_strength_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "destroy_by_age=", VALUEFUNC(_wrap_B2ParticleSystemDef_destroy_by_age_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "destroy_by_age", VALUEFUNC(_wrap_B2ParticleSystemDef_destroy_by_age_get), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "lifetime_granularity=", VALUEFUNC(_wrap_B2ParticleSystemDef_lifetime_granularity_set), -1);
+  rb_define_method(SwigClassB2ParticleSystemDef.klass, "lifetime_granularity", VALUEFUNC(_wrap_B2ParticleSystemDef_lifetime_granularity_get), -1);
   SwigClassB2ParticleSystemDef.mark = 0;
   SwigClassB2ParticleSystemDef.destroy = (void (*)(void *)) free_b2ParticleSystemDef;
   SwigClassB2ParticleSystemDef.trackObjects = 1;

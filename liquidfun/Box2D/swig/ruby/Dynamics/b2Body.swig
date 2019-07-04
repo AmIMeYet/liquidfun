@@ -51,7 +51,7 @@
 %rename (B2_KINEMATIC_BODY) b2_kinematicBody;
 %rename (B2_DYNAMIC_BODY) b2_dynamicBody;
 
-%newmethod b2Body::CreateFixture;
+%newobject b2Body::CreateFixture;
 
 /// Include original .h file for SWIG
 /// The original file is simple enough we will just pull it in

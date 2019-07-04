@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Liquidfun::B2MotorJointDef - RDoc Documentation</title>
+<title>class Liquidfun::B2DistanceJointDef - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -74,27 +74,27 @@
     
     <li ><a href="#method-c-new">::new</a>
     
-    <li ><a href="#method-i-angular_offset">#angular_offset</a>
+    <li ><a href="#method-i-damping_ratio">#damping_ratio</a>
     
-    <li ><a href="#method-i-angular_offset-3D">#angular_offset=</a>
+    <li ><a href="#method-i-damping_ratio-3D">#damping_ratio=</a>
     
-    <li ><a href="#method-i-correction_factor">#correction_factor</a>
+    <li ><a href="#method-i-frequency_hz">#frequency_hz</a>
     
-    <li ><a href="#method-i-correction_factor-3D">#correction_factor=</a>
+    <li ><a href="#method-i-frequency_hz-3D">#frequency_hz=</a>
     
     <li ><a href="#method-i-init">#init</a>
     
-    <li ><a href="#method-i-linear_offset">#linear_offset</a>
+    <li ><a href="#method-i-length">#length</a>
     
-    <li ><a href="#method-i-linear_offset-3D">#linear_offset=</a>
+    <li ><a href="#method-i-length-3D">#length=</a>
     
-    <li ><a href="#method-i-max_force">#max_force</a>
+    <li ><a href="#method-i-local_anchor_a">#local_anchor_a</a>
     
-    <li ><a href="#method-i-max_force-3D">#max_force=</a>
+    <li ><a href="#method-i-local_anchor_a-3D">#local_anchor_a=</a>
     
-    <li ><a href="#method-i-max_torque">#max_torque</a>
+    <li ><a href="#method-i-local_anchor_b">#local_anchor_b</a>
     
-    <li ><a href="#method-i-max_torque-3D">#max_torque=</a>
+    <li ><a href="#method-i-local_anchor_b-3D">#local_anchor_b=</a>
     
   </ul>
 </div>
@@ -102,14 +102,14 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-Liquidfun::B2MotorJointDef">
-  <h1 id="class-Liquidfun::B2MotorJointDef" class="class">
-    class Liquidfun::B2MotorJointDef
+<main role="main" aria-labelledby="class-Liquidfun::B2DistanceJointDef">
+  <h1 id="class-Liquidfun::B2DistanceJointDef" class="class">
+    class Liquidfun::B2DistanceJointDef
   </h1>
 
   <section class="description">
     
-<p>Proxy of C++ <a href="B2MotorJointDef.html"><code>Liquidfun::B2MotorJointDef</code></a> class</p>
+<p>Proxy of C++ <a href="B2DistanceJointDef.html"><code>Liquidfun::B2DistanceJointDef</code></a> class</p>
 
   </section>
 
@@ -153,16 +153,16 @@
           
           <div class="method-source-code" id="new-source">
             <pre>SWIGINTERN VALUE
-_wrap_new_b_2motor_joint_def(int argc, VALUE *argv, VALUE self) {
-  const char *classname SWIGUNUSED = &quot;Liquidfun::B2MotorJointDef&quot;;
-  b2MotorJointDef *result = 0 ;
+_wrap_new_b_2distance_joint_def(int argc, VALUE *argv, VALUE self) {
+  const char *classname SWIGUNUSED = &quot;Liquidfun::B2DistanceJointDef&quot;;
+  b2DistanceJointDef *result = 0 ;
   
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
   {
     try {
-      result = (b2MotorJointDef *)new b2MotorJointDef();
+      result = (b2DistanceJointDef *)new b2DistanceJointDef();
       DATA_PTR(self) = result;
       SWIG_RubyAddTracking(result, self);
     }
@@ -192,10 +192,10 @@ fail:
        </header>
 
     
-      <div id="method-i-angular_offset" class="method-detail ">
+      <div id="method-i-damping_ratio" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">angular_offset</span><span
+          <span class="method-name">damping_ratio</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -210,10 +210,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="angular_offset-source">
+          <div class="method-source-code" id="damping_ratio-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_angular_offset_get(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+_wrap_B2DistanceJointDef_damping_ratio_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   float32 result;
@@ -222,12 +222,12 @@ _wrap_B2MotorJointDef_angular_offset_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;angularOffset&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;dampingRatio&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
-  result = (float32) ((arg1)-&gt;angularOffset);
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;dampingRatio);
   vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
   return vresult;
 fail:
@@ -243,12 +243,12 @@ fail:
       </div>
 
     
-      <div id="method-i-angular_offset-3D" class="method-detail ">
+      <div id="method-i-damping_ratio-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            angular_offset=(x) &rarr; float32
+            damping_ratio=(x) &rarr; float32
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -264,10 +264,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="angular_offset-3D-source">
+          <div class="method-source-code" id="damping_ratio-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_angular_offset_set(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+_wrap_B2DistanceJointDef_damping_ratio_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -277,17 +277,17 @@ _wrap_B2MotorJointDef_angular_offset_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;angularOffset&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;dampingRatio&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
   ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;angularOffset&quot;, 2, argv[0] ));
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;dampingRatio&quot;, 2, argv[0] ));
   } 
   arg2 = static_cast&lt; float32 &gt;(val2);
-  if (arg1) (arg1)-&gt;angularOffset = arg2;
+  if (arg1) (arg1)-&gt;dampingRatio = arg2;
   return Qnil;
 fail:
   return Qnil;
@@ -302,10 +302,10 @@ fail:
       </div>
 
     
-      <div id="method-i-correction_factor" class="method-detail ">
+      <div id="method-i-frequency_hz" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">correction_factor</span><span
+          <span class="method-name">frequency_hz</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -320,10 +320,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="correction_factor-source">
+          <div class="method-source-code" id="frequency_hz-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_correction_factor_get(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+_wrap_B2DistanceJointDef_frequency_hz_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   float32 result;
@@ -332,12 +332,12 @@ _wrap_B2MotorJointDef_correction_factor_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;correctionFactor&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;frequencyHz&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
-  result = (float32) ((arg1)-&gt;correctionFactor);
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;frequencyHz);
   vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
   return vresult;
 fail:
@@ -353,12 +353,12 @@ fail:
       </div>
 
     
-      <div id="method-i-correction_factor-3D" class="method-detail ">
+      <div id="method-i-frequency_hz-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            correction_factor=(x) &rarr; float32
+            frequency_hz=(x) &rarr; float32
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -374,10 +374,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="correction_factor-3D-source">
+          <div class="method-source-code" id="frequency_hz-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_correction_factor_set(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+_wrap_B2DistanceJointDef_frequency_hz_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
   float32 arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -387,17 +387,17 @@ _wrap_B2MotorJointDef_correction_factor_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;correctionFactor&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;frequencyHz&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
   ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;correctionFactor&quot;, 2, argv[0] ));
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;frequencyHz&quot;, 2, argv[0] ));
   } 
   arg2 = static_cast&lt; float32 &gt;(val2);
-  if (arg1) (arg1)-&gt;correctionFactor = arg2;
+  if (arg1) (arg1)-&gt;frequencyHz = arg2;
   return Qnil;
 fail:
   return Qnil;
@@ -417,7 +417,7 @@ fail:
         
         <div class="method-heading">
           <span class="method-callseq">
-            init(B2Body bodyA, B2Body bodyB)
+            init(B2Body bodyA, B2Body bodyB, B2Vec2 anchorA, B2Vec2 anchorB)
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -435,25 +435,31 @@ fail:
           
           <div class="method-source-code" id="init-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_init(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+_wrap_B2DistanceJointDef_init(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
   b2Body *arg2 = (b2Body *) 0 ;
   b2Body *arg3 = (b2Body *) 0 ;
+  b2Vec2 *arg4 = 0 ;
+  b2Vec2 *arg5 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   void *argp3 = 0 ;
   int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
   
-  if ((argc &lt; 2) || (argc &gt; 2)) {
-    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 2)&quot;,argc); SWIG_fail;
+  if ((argc &lt; 4) || (argc &gt; 4)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 4)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;Initialize&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;Initialize&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
   res2 = SWIG_ConvertPtr(argv[0], &amp;argp2,SWIGTYPE_p_b2Body, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Body *&quot;,&quot;Initialize&quot;, 2, argv[0] )); 
@@ -464,9 +470,25 @@ _wrap_B2MotorJointDef_init(int argc, VALUE *argv, VALUE self) {
     SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Body *&quot;,&quot;Initialize&quot;, 3, argv[1] )); 
   }
   arg3 = reinterpret_cast&lt; b2Body * &gt;(argp3);
+  res4 = SWIG_ConvertPtr(argv[2], &amp;argp4, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 4, argv[2] )); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 4, argv[2])); 
+  }
+  arg4 = reinterpret_cast&lt; b2Vec2 * &gt;(argp4);
+  res5 = SWIG_ConvertPtr(argv[3], &amp;argp5, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 5, argv[3] )); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;Initialize&quot;, 5, argv[3])); 
+  }
+  arg5 = reinterpret_cast&lt; b2Vec2 * &gt;(argp5);
   {
     try {
-      (arg1)-&gt;Initialize(arg2,arg3);
+      (arg1)-&gt;Initialize(arg2,arg3,(b2Vec2 const &amp;)*arg4,(b2Vec2 const &amp;)*arg5);
     }
     catch (const std::exception&amp; e) {
       SWIG_exception(SWIG_RuntimeError, e.what());
@@ -486,10 +508,10 @@ fail:
       </div>
 
     
-      <div id="method-i-linear_offset" class="method-detail ">
+      <div id="method-i-length" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">linear_offset</span><span
+          <span class="method-name">length</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -504,10 +526,120 @@ fail:
           
 
           
-          <div class="method-source-code" id="linear_offset-source">
+          <div class="method-source-code" id="length-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_linear_offset_get(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+_wrap_B2DistanceJointDef_length_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float32 result;
+  VALUE vresult = Qnil;
+  
+  if ((argc &lt; 0) || (argc &gt; 0)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;length&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
+  result = (float32) ((arg1)-&gt;length);
+  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  return vresult;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-length-3D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            length=(x) &rarr; float32
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Set new value for attribute.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="length-3D-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_length_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  float32 arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc &lt; 1) || (argc &gt; 1)) {
+    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;length&quot;, 1, self )); 
+  }
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
+  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;length&quot;, 2, argv[0] ));
+  } 
+  arg2 = static_cast&lt; float32 &gt;(val2);
+  if (arg1) (arg1)-&gt;length = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-local_anchor_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">local_anchor_a</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="local_anchor_a-source">
+            <pre>SWIGINTERN VALUE
+_wrap_B2DistanceJointDef_local_anchor_a_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   b2Vec2 *result = 0 ;
@@ -516,12 +648,12 @@ _wrap_B2MotorJointDef_linear_offset_get(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;linearOffset&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;localAnchorA&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
-  result = (b2Vec2 *) &amp; ((arg1)-&gt;linearOffset);
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
+  result = (b2Vec2 *) &amp; ((arg1)-&gt;localAnchorA);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
   return vresult;
 fail:
@@ -537,12 +669,12 @@ fail:
       </div>
 
     
-      <div id="method-i-linear_offset-3D" class="method-detail ">
+      <div id="method-i-local_anchor_a-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            linear_offset=(x) &rarr; B2Vec2
+            local_anchor_a=(x) &rarr; B2Vec2
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -558,10 +690,10 @@ fail:
           
 
           
-          <div class="method-source-code" id="linear_offset-3D-source">
+          <div class="method-source-code" id="local_anchor_a-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_linear_offset_set(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+_wrap_B2DistanceJointDef_local_anchor_a_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
   b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -571,20 +703,20 @@ _wrap_B2MotorJointDef_linear_offset_set(int argc, VALUE *argv, VALUE self) {
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;linearOffset&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;localAnchorA&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
   res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;linearOffset&quot;, 2, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorA&quot;, 2, argv[0] )); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;linearOffset&quot;, 2, argv[0])); 
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorA&quot;, 2, argv[0])); 
   }
   arg2 = reinterpret_cast&lt; b2Vec2 * &gt;(argp2);
-  if (arg1) (arg1)-&gt;linearOffset = *arg2;
+  if (arg1) (arg1)-&gt;localAnchorA = *arg2;
   return Qnil;
 fail:
   return Qnil;
@@ -599,10 +731,10 @@ fail:
       </div>
 
     
-      <div id="method-i-max_force" class="method-detail ">
+      <div id="method-i-local_anchor_b" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">max_force</span><span
+          <span class="method-name">local_anchor_b</span><span
             class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -617,25 +749,25 @@ fail:
           
 
           
-          <div class="method-source-code" id="max_force-source">
+          <div class="method-source-code" id="local_anchor_b-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_max_force_get(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
+_wrap_B2DistanceJointDef_local_anchor_b_get(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  float32 result;
+  b2Vec2 *result = 0 ;
   VALUE vresult = Qnil;
   
   if ((argc &lt; 0) || (argc &gt; 0)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;maxForce&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;localAnchorB&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
-  result = (float32) ((arg1)-&gt;maxForce);
-  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
+  result = (b2Vec2 *) &amp; ((arg1)-&gt;localAnchorB);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_b2Vec2, 0 |  0 );
   return vresult;
 fail:
   return Qnil;
@@ -650,12 +782,12 @@ fail:
       </div>
 
     
-      <div id="method-i-max_force-3D" class="method-detail ">
+      <div id="method-i-local_anchor_b-3D" class="method-detail ">
         
         
         <div class="method-heading">
           <span class="method-callseq">
-            max_force=(x) &rarr; float32
+            local_anchor_b=(x) &rarr; B2Vec2
           </span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -671,140 +803,33 @@ fail:
           
 
           
-          <div class="method-source-code" id="max_force-3D-source">
+          <div class="method-source-code" id="local_anchor_b-3D-source">
             <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_max_force_set(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
-  float32 arg2 ;
+_wrap_B2DistanceJointDef_local_anchor_b_set(int argc, VALUE *argv, VALUE self) {
+  b2DistanceJointDef *arg1 = (b2DistanceJointDef *) 0 ;
+  b2Vec2 *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  float val2 ;
-  int ecode2 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   
   if ((argc &lt; 1) || (argc &gt; 1)) {
     rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
+  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2DistanceJointDef, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;maxForce&quot;, 1, self )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2DistanceJointDef *&quot;,&quot;localAnchorB&quot;, 1, self )); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
-  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;maxForce&quot;, 2, argv[0] ));
-  } 
-  arg2 = static_cast&lt; float32 &gt;(val2);
-  if (arg1) (arg1)-&gt;maxForce = arg2;
-  return Qnil;
-fail:
-  return Qnil;
-}</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-max_torque" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">max_torque</span><span
-            class="method-args">(*args)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="max_torque-source">
-            <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_max_torque_get(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  float32 result;
-  VALUE vresult = Qnil;
-  
-  if ((argc &lt; 0) || (argc &gt; 0)) {
-    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 0)&quot;,argc); SWIG_fail;
+  arg1 = reinterpret_cast&lt; b2DistanceJointDef * &gt;(argp1);
+  res2 = SWIG_ConvertPtr(argv[0], &amp;argp2, SWIGTYPE_p_b2Vec2,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( &quot;&quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorB&quot;, 2, argv[0] )); 
   }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;maxTorque&quot;, 1, self )); 
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError(&quot;invalid null reference &quot;, &quot;b2Vec2 const &amp;&quot;,&quot;localAnchorB&quot;, 2, argv[0])); 
   }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
-  result = (float32) ((arg1)-&gt;maxTorque);
-  vresult = SWIG_From_float(static_cast&lt; float &gt;(result));
-  return vresult;
-fail:
-  return Qnil;
-}</pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-max_torque-3D" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            max_torque=(x) &rarr; float32
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-        
-
-        <div class="method-description">
-          
-          <p>Set new value for attribute.</p>
-          
-          
-
-          
-          <div class="method-source-code" id="max_torque-3D-source">
-            <pre>SWIGINTERN VALUE
-_wrap_B2MotorJointDef_max_torque_set(int argc, VALUE *argv, VALUE self) {
-  b2MotorJointDef *arg1 = (b2MotorJointDef *) 0 ;
-  float32 arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  float val2 ;
-  int ecode2 = 0 ;
-  
-  if ((argc &lt; 1) || (argc &gt; 1)) {
-    rb_raise(rb_eArgError, &quot;wrong # of arguments(%d for 1)&quot;,argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &amp;argp1,SWIGTYPE_p_b2MotorJointDef, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( &quot;&quot;, &quot;b2MotorJointDef *&quot;,&quot;maxTorque&quot;, 1, self )); 
-  }
-  arg1 = reinterpret_cast&lt; b2MotorJointDef * &gt;(argp1);
-  ecode2 = SWIG_AsVal_float(argv[0], &amp;val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( &quot;&quot;, &quot;float32&quot;,&quot;maxTorque&quot;, 2, argv[0] ));
-  } 
-  arg2 = static_cast&lt; float32 &gt;(val2);
-  if (arg1) (arg1)-&gt;maxTorque = arg2;
+  arg2 = reinterpret_cast&lt; b2Vec2 * &gt;(argp2);
+  if (arg1) (arg1)-&gt;localAnchorB = *arg2;
   return Qnil;
 fail:
   return Qnil;
